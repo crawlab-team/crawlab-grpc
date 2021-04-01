@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package crawlab_grpc;
+option go_package = ".;crawlab_grpc";
+
+message Task {
+  string _id = 1;
+  string spider_id = 2;
+  string start_ts = 3;
+  string finish_ts = 4;
+  string status = 5;
+  string node_id = 6;
+  string cmd = 8;
+  string param = 9;
+  string error = 10;
+  int32 result_count = 11;
+  int32 error_log_count = 12;
+  int32 wait_duration = 13;
+  int32 runtime_duration = 14;
+  int32 total_duration = 15;
+  int32 pid = 16;
+  string run_type = 17;
+  string schedule_id = 18;
+  string type = 19;
+  string user_id = 20;
+  string create_ts = 21;
+  string update_ts = 22;
+}
+
+message Spider {
+  string _id = 1;
+  string name = 2;
+  string display_name = 3;
+  string type = 4;
+  string col = 6;
+  repeated Env envs = 8;
+  string remark = 9;
+  string project_id = 11;
+  bool is_public = 12;
+  string cmd = 13;
+  bool is_scrapy = 14;
+  string template = 15;
+  bool is_dedup = 16;
+  string dedup_field = 17;
+  string dedup_method = 18;
+  bool is_web_hook = 19;
+  string web_hook_url = 20;
+  string user_id = 21;
+  string create_ts = 22;
+  string update_ts = 23;
+}
+
+message Node {
+  string _id = 1;
+  string name = 2;
+  string ip = 3;
+  string port = 5;
+  string mac = 6;
+  string hostname = 7;
+  string description = 8;
+  string key = 9;
+  NodeSettings settings = 10;
+  bool is_master = 11;
+  string update_ts = 12;
+  string create_ts = 13;
+  int64 update_ts_unix = 14;
+}
+
+message Env {
+  string name = 1;
+  string value = 2;
+}
+
+message NodeSettings {
+  int32 max_runners = 1;
+}

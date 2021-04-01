@@ -1,4 +1,4 @@
-// source: task.proto
+// source: model.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -10,7 +10,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.crawlab_grpc.TaskServiceRequest');
+goog.provide('proto.crawlab_grpc.Env');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -26,16 +26,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.crawlab_grpc.TaskServiceRequest = function(opt_data) {
+proto.crawlab_grpc.Env = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.crawlab_grpc.TaskServiceRequest, jspb.Message);
+goog.inherits(proto.crawlab_grpc.Env, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.crawlab_grpc.TaskServiceRequest.displayName = 'proto.crawlab_grpc.TaskServiceRequest';
+  proto.crawlab_grpc.Env.displayName = 'proto.crawlab_grpc.Env';
 }
 
 
@@ -53,8 +53,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.crawlab_grpc.TaskServiceRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.crawlab_grpc.TaskServiceRequest.toObject(opt_includeInstance, this);
+proto.crawlab_grpc.Env.prototype.toObject = function(opt_includeInstance) {
+  return proto.crawlab_grpc.Env.toObject(opt_includeInstance, this);
 };
 
 
@@ -63,14 +63,14 @@ proto.crawlab_grpc.TaskServiceRequest.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.crawlab_grpc.TaskServiceRequest} msg The msg instance to transform.
+ * @param {!proto.crawlab_grpc.Env} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.TaskServiceRequest.toObject = function(includeInstance, msg) {
+proto.crawlab_grpc.Env.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taskId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    data: msg.getData_asB64()
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -84,23 +84,23 @@ proto.crawlab_grpc.TaskServiceRequest.toObject = function(includeInstance, msg) 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.crawlab_grpc.TaskServiceRequest}
+ * @return {!proto.crawlab_grpc.Env}
  */
-proto.crawlab_grpc.TaskServiceRequest.deserializeBinary = function(bytes) {
+proto.crawlab_grpc.Env.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.crawlab_grpc.TaskServiceRequest;
-  return proto.crawlab_grpc.TaskServiceRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.crawlab_grpc.Env;
+  return proto.crawlab_grpc.Env.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.crawlab_grpc.TaskServiceRequest} msg The message object to deserialize into.
+ * @param {!proto.crawlab_grpc.Env} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.crawlab_grpc.TaskServiceRequest}
+ * @return {!proto.crawlab_grpc.Env}
  */
-proto.crawlab_grpc.TaskServiceRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.crawlab_grpc.Env.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -109,11 +109,11 @@ proto.crawlab_grpc.TaskServiceRequest.deserializeBinaryFromReader = function(msg
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTaskId(value);
+      msg.setName(value);
       break;
     case 2:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setData(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValue(value);
       break;
     default:
       reader.skipField();
@@ -128,9 +128,9 @@ proto.crawlab_grpc.TaskServiceRequest.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.crawlab_grpc.TaskServiceRequest.prototype.serializeBinary = function() {
+proto.crawlab_grpc.Env.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.crawlab_grpc.TaskServiceRequest.serializeBinaryToWriter(this, writer);
+  proto.crawlab_grpc.Env.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -138,22 +138,22 @@ proto.crawlab_grpc.TaskServiceRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.crawlab_grpc.TaskServiceRequest} message
+ * @param {!proto.crawlab_grpc.Env} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.TaskServiceRequest.serializeBinaryToWriter = function(message, writer) {
+proto.crawlab_grpc.Env.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTaskId();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getData_asU8();
+  f = message.getValue();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       2,
       f
     );
@@ -162,62 +162,38 @@ proto.crawlab_grpc.TaskServiceRequest.serializeBinaryToWriter = function(message
 
 
 /**
- * optional string task_id = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.crawlab_grpc.TaskServiceRequest.prototype.getTaskId = function() {
+proto.crawlab_grpc.Env.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.TaskServiceRequest} returns this
+ * @return {!proto.crawlab_grpc.Env} returns this
  */
-proto.crawlab_grpc.TaskServiceRequest.prototype.setTaskId = function(value) {
+proto.crawlab_grpc.Env.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bytes data = 2;
+ * optional string value = 2;
  * @return {string}
  */
-proto.crawlab_grpc.TaskServiceRequest.prototype.getData = function() {
+proto.crawlab_grpc.Env.prototype.getValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes data = 2;
- * This is a type-conversion wrapper around `getData()`
- * @return {string}
+ * @param {string} value
+ * @return {!proto.crawlab_grpc.Env} returns this
  */
-proto.crawlab_grpc.TaskServiceRequest.prototype.getData_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getData()));
-};
-
-
-/**
- * optional bytes data = 2;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getData()`
- * @return {!Uint8Array}
- */
-proto.crawlab_grpc.TaskServiceRequest.prototype.getData_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getData()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
- * @return {!proto.crawlab_grpc.TaskServiceRequest} returns this
- */
-proto.crawlab_grpc.TaskServiceRequest.prototype.setData = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+proto.crawlab_grpc.Env.prototype.setValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

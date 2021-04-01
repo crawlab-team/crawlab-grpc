@@ -11,6 +11,7 @@ base_path=$(cd $BASE_DIR/..; pwd)
 cd $base_path && \
   protoc -I ./proto \
   --go_out=dist/go \
+  --go-grpc_out=dist/go \
   --python_out=dist/python \
   --js_out=dist/js \
   --java_out=dist/java \

@@ -3,19 +3,26 @@
 
 require 'google/protobuf'
 
+require 'code_pb'
+require 'model_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("task.proto", :syntax => :proto3) do
-    add_message "TaskServiceRequest" do
+    add_message "crawlab_grpc.TaskServiceRequest" do
       optional :task_id, :string, 1
-      optional :data, :string, 2
+      optional :data, :bytes, 2
     end
-    add_message "TaskServiceResponse" do
-      optional :status, :string, 1
-      optional :message, :string, 2
-      optional :data, :string, 3
+    add_message "crawlab_grpc.TaskServiceResponse" do
+      optional :code, :enum, 1, "ResponseCode"
+      optional :status, :string, 2
+      optional :error, :string, 3
+      optional :task, :message, 4, "crawlab_grpc.Task"
+      optional :spider, :message, 5, "crawlab_grpc.Spider"
+      optional :node, :message, 6, "crawlab_grpc.Node"
     end
   end
 end
 
-TaskServiceRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("TaskServiceRequest").msgclass
-TaskServiceResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("TaskServiceResponse").msgclass
+module CrawlabGrpc
+  TaskServiceRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.TaskServiceRequest").msgclass
+  TaskServiceResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.TaskServiceResponse").msgclass
+end

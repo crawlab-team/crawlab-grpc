@@ -1,21 +1,27 @@
 syntax = "proto3";
 
+import "code.proto";
+import "model.proto";
+
+package crawlab_grpc;
 option go_package = ".;crawlab_grpc";
 
 service TaskService {
-  rpc GetTask(TaskServiceRequest) returns (TaskServiceResponse){};
-  rpc GetSpider(TaskServiceRequest) returns (TaskServiceResponse){};
-  rpc GetNode(TaskServiceRequest) returns (TaskServiceResponse){};
+  rpc GetTaskInfo(TaskServiceRequest) returns (TaskServiceResponse){};
   rpc SaveItem(TaskServiceRequest) returns (TaskServiceResponse){};
+  rpc SaveItems(TaskServiceRequest) returns (TaskServiceResponse){};
 }
 
 message TaskServiceRequest {
   string task_id = 1;
-  string data = 2;
+  bytes data = 2;
 }
 
 message TaskServiceResponse {
-  string status = 1;
-  string message = 2;
-  string data = 3;
+  ResponseCode code = 1;
+  string status = 2;
+  string error = 3;
+  Task task = 4;
+  Spider spider = 5;
+  Node node = 6;
 }

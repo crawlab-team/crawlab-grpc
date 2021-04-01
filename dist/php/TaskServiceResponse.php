@@ -16,13 +16,13 @@ class TaskServiceResponse extends \Google\Protobuf\Internal\Message
      */
     protected $status = '';
     /**
-     * Generated from protobuf field <code>string message = 2;</code>
-     */
-    protected $message = '';
-    /**
-     * Generated from protobuf field <code>string data = 3;</code>
+     * Generated from protobuf field <code>string data = 2;</code>
      */
     protected $data = '';
+    /**
+     * Generated from protobuf field <code>string error = 3;</code>
+     */
+    protected $error = '';
 
     /**
      * Constructor.
@@ -31,8 +31,8 @@ class TaskServiceResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $status
-     *     @type string $message
      *     @type string $data
+     *     @type string $error
      * }
      */
     public function __construct($data = NULL) {
@@ -63,29 +63,7 @@ class TaskServiceResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 2;</code>
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    /**
-     * Generated from protobuf field <code>string message = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->message = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string data = 3;</code>
+     * Generated from protobuf field <code>string data = 2;</code>
      * @return string
      */
     public function getData()
@@ -94,7 +72,7 @@ class TaskServiceResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string data = 3;</code>
+     * Generated from protobuf field <code>string data = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -102,6 +80,28 @@ class TaskServiceResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 3;</code>
+     * @return string
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error = $var;
 
         return $this;
     }

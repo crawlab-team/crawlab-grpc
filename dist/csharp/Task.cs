@@ -9,492 +9,635 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from task.proto</summary>
-public static partial class TaskReflection {
+namespace CrawlabGrpc {
 
-  #region Descriptor
-  /// <summary>File descriptor for task.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from task.proto</summary>
+  public static partial class TaskReflection {
 
-  static TaskReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cgp0YXNrLnByb3RvIjMKElRhc2tTZXJ2aWNlUmVxdWVzdBIPCgd0YXNrX2lk",
-          "GAEgASgJEgwKBGRhdGEYAiABKAkiRAoTVGFza1NlcnZpY2VSZXNwb25zZRIO",
-          "CgZzdGF0dXMYASABKAkSDwoHbWVzc2FnZRgCIAEoCRIMCgRkYXRhGAMgASgJ",
-          "MvABCgtUYXNrU2VydmljZRI2CgdHZXRUYXNrEhMuVGFza1NlcnZpY2VSZXF1",
-          "ZXN0GhQuVGFza1NlcnZpY2VSZXNwb25zZSIAEjgKCUdldFNwaWRlchITLlRh",
-          "c2tTZXJ2aWNlUmVxdWVzdBoULlRhc2tTZXJ2aWNlUmVzcG9uc2UiABI2CgdH",
-          "ZXROb2RlEhMuVGFza1NlcnZpY2VSZXF1ZXN0GhQuVGFza1NlcnZpY2VSZXNw",
-          "b25zZSIAEjcKCFNhdmVJdGVtEhMuVGFza1NlcnZpY2VSZXF1ZXN0GhQuVGFz",
-          "a1NlcnZpY2VSZXNwb25zZSIAQhBaDi47Y3Jhd2xhYl9ncnBjYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TaskServiceRequest), global::TaskServiceRequest.Parser, new[]{ "TaskId", "Data" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::TaskServiceResponse), global::TaskServiceResponse.Parser, new[]{ "Status", "Message", "Data" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for task.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TaskReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cgp0YXNrLnByb3RvEgxjcmF3bGFiX2dycGMaCmNvZGUucHJvdG8aC21vZGVs",
+            "LnByb3RvIjMKElRhc2tTZXJ2aWNlUmVxdWVzdBIPCgd0YXNrX2lkGAEgASgJ",
+            "EgwKBGRhdGEYAiABKAwiuwEKE1Rhc2tTZXJ2aWNlUmVzcG9uc2USGwoEY29k",
+            "ZRgBIAEoDjINLlJlc3BvbnNlQ29kZRIOCgZzdGF0dXMYAiABKAkSDQoFZXJy",
+            "b3IYAyABKAkSIAoEdGFzaxgEIAEoCzISLmNyYXdsYWJfZ3JwYy5UYXNrEiQK",
+            "BnNwaWRlchgFIAEoCzIULmNyYXdsYWJfZ3JwYy5TcGlkZXISIAoEbm9kZRgG",
+            "IAEoCzISLmNyYXdsYWJfZ3JwYy5Ob2RlMooCCgtUYXNrU2VydmljZRJUCgtH",
+            "ZXRUYXNrSW5mbxIgLmNyYXdsYWJfZ3JwYy5UYXNrU2VydmljZVJlcXVlc3Qa",
+            "IS5jcmF3bGFiX2dycGMuVGFza1NlcnZpY2VSZXNwb25zZSIAElEKCFNhdmVJ",
+            "dGVtEiAuY3Jhd2xhYl9ncnBjLlRhc2tTZXJ2aWNlUmVxdWVzdBohLmNyYXds",
+            "YWJfZ3JwYy5UYXNrU2VydmljZVJlc3BvbnNlIgASUgoJU2F2ZUl0ZW1zEiAu",
+            "Y3Jhd2xhYl9ncnBjLlRhc2tTZXJ2aWNlUmVxdWVzdBohLmNyYXdsYWJfZ3Jw",
+            "Yy5UYXNrU2VydmljZVJlc3BvbnNlIgBCEFoOLjtjcmF3bGFiX2dycGNiBnBy",
+            "b3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::CodeReflection.Descriptor, global::CrawlabGrpc.ModelReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::CrawlabGrpc.TaskServiceRequest), global::CrawlabGrpc.TaskServiceRequest.Parser, new[]{ "TaskId", "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::CrawlabGrpc.TaskServiceResponse), global::CrawlabGrpc.TaskServiceResponse.Parser, new[]{ "Code", "Status", "Error", "Task", "Spider", "Node" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class TaskServiceRequest : pb::IMessage<TaskServiceRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TaskServiceRequest> _parser = new pb::MessageParser<TaskServiceRequest>(() => new TaskServiceRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TaskServiceRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::CrawlabGrpc.TaskReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TaskServiceRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TaskServiceRequest(TaskServiceRequest other) : this() {
+      taskId_ = other.taskId_;
+      data_ = other.data_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TaskServiceRequest Clone() {
+      return new TaskServiceRequest(this);
+    }
+
+    /// <summary>Field number for the "task_id" field.</summary>
+    public const int TaskIdFieldNumber = 1;
+    private string taskId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TaskId {
+      get { return taskId_; }
+      set {
+        taskId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TaskServiceRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TaskServiceRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TaskId != other.TaskId) return false;
+      if (Data != other.Data) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TaskId.Length != 0) hash ^= TaskId.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TaskId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(TaskId);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Data);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TaskId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(TaskId);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Data);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (TaskId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskId);
+      }
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TaskServiceRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TaskId.Length != 0) {
+        TaskId = other.TaskId;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            TaskId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            TaskId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class TaskServiceResponse : pb::IMessage<TaskServiceResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TaskServiceResponse> _parser = new pb::MessageParser<TaskServiceResponse>(() => new TaskServiceResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TaskServiceResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::CrawlabGrpc.TaskReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TaskServiceResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TaskServiceResponse(TaskServiceResponse other) : this() {
+      code_ = other.code_;
+      status_ = other.status_;
+      error_ = other.error_;
+      task_ = other.task_ != null ? other.task_.Clone() : null;
+      spider_ = other.spider_ != null ? other.spider_.Clone() : null;
+      node_ = other.node_ != null ? other.node_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TaskServiceResponse Clone() {
+      return new TaskServiceResponse(this);
+    }
+
+    /// <summary>Field number for the "code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private global::ResponseCode code_ = global::ResponseCode.Ok;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::ResponseCode Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 2;
+    private string status_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Status {
+      get { return status_; }
+      set {
+        status_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "error" field.</summary>
+    public const int ErrorFieldNumber = 3;
+    private string error_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Error {
+      get { return error_; }
+      set {
+        error_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "task" field.</summary>
+    public const int TaskFieldNumber = 4;
+    private global::CrawlabGrpc.Task task_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::CrawlabGrpc.Task Task {
+      get { return task_; }
+      set {
+        task_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "spider" field.</summary>
+    public const int SpiderFieldNumber = 5;
+    private global::CrawlabGrpc.Spider spider_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::CrawlabGrpc.Spider Spider {
+      get { return spider_; }
+      set {
+        spider_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "node" field.</summary>
+    public const int NodeFieldNumber = 6;
+    private global::CrawlabGrpc.Node node_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::CrawlabGrpc.Node Node {
+      get { return node_; }
+      set {
+        node_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TaskServiceResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TaskServiceResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (Status != other.Status) return false;
+      if (Error != other.Error) return false;
+      if (!object.Equals(Task, other.Task)) return false;
+      if (!object.Equals(Spider, other.Spider)) return false;
+      if (!object.Equals(Node, other.Node)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != global::ResponseCode.Ok) hash ^= Code.GetHashCode();
+      if (Status.Length != 0) hash ^= Status.GetHashCode();
+      if (Error.Length != 0) hash ^= Error.GetHashCode();
+      if (task_ != null) hash ^= Task.GetHashCode();
+      if (spider_ != null) hash ^= Spider.GetHashCode();
+      if (node_ != null) hash ^= Node.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Code != global::ResponseCode.Ok) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (Status.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Status);
+      }
+      if (Error.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Error);
+      }
+      if (task_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Task);
+      }
+      if (spider_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Spider);
+      }
+      if (node_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Node);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Code != global::ResponseCode.Ok) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (Status.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Status);
+      }
+      if (Error.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Error);
+      }
+      if (task_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Task);
+      }
+      if (spider_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Spider);
+      }
+      if (node_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Node);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != global::ResponseCode.Ok) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
+      }
+      if (Status.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
+      }
+      if (Error.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Error);
+      }
+      if (task_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Task);
+      }
+      if (spider_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Spider);
+      }
+      if (node_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Node);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TaskServiceResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != global::ResponseCode.Ok) {
+        Code = other.Code;
+      }
+      if (other.Status.Length != 0) {
+        Status = other.Status;
+      }
+      if (other.Error.Length != 0) {
+        Error = other.Error;
+      }
+      if (other.task_ != null) {
+        if (task_ == null) {
+          Task = new global::CrawlabGrpc.Task();
+        }
+        Task.MergeFrom(other.Task);
+      }
+      if (other.spider_ != null) {
+        if (spider_ == null) {
+          Spider = new global::CrawlabGrpc.Spider();
+        }
+        Spider.MergeFrom(other.Spider);
+      }
+      if (other.node_ != null) {
+        if (node_ == null) {
+          Node = new global::CrawlabGrpc.Node();
+        }
+        Node.MergeFrom(other.Node);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Code = (global::ResponseCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Status = input.ReadString();
+            break;
+          }
+          case 26: {
+            Error = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (task_ == null) {
+              Task = new global::CrawlabGrpc.Task();
+            }
+            input.ReadMessage(Task);
+            break;
+          }
+          case 42: {
+            if (spider_ == null) {
+              Spider = new global::CrawlabGrpc.Spider();
+            }
+            input.ReadMessage(Spider);
+            break;
+          }
+          case 50: {
+            if (node_ == null) {
+              Node = new global::CrawlabGrpc.Node();
+            }
+            input.ReadMessage(Node);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Code = (global::ResponseCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Status = input.ReadString();
+            break;
+          }
+          case 26: {
+            Error = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (task_ == null) {
+              Task = new global::CrawlabGrpc.Task();
+            }
+            input.ReadMessage(Task);
+            break;
+          }
+          case 42: {
+            if (spider_ == null) {
+              Spider = new global::CrawlabGrpc.Spider();
+            }
+            input.ReadMessage(Spider);
+            break;
+          }
+          case 50: {
+            if (node_ == null) {
+              Node = new global::CrawlabGrpc.Node();
+            }
+            input.ReadMessage(Node);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class TaskServiceRequest : pb::IMessage<TaskServiceRequest>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TaskServiceRequest> _parser = new pb::MessageParser<TaskServiceRequest>(() => new TaskServiceRequest());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<TaskServiceRequest> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TaskReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public TaskServiceRequest() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public TaskServiceRequest(TaskServiceRequest other) : this() {
-    taskId_ = other.taskId_;
-    data_ = other.data_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public TaskServiceRequest Clone() {
-    return new TaskServiceRequest(this);
-  }
-
-  /// <summary>Field number for the "task_id" field.</summary>
-  public const int TaskIdFieldNumber = 1;
-  private string taskId_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string TaskId {
-    get { return taskId_; }
-    set {
-      taskId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "data" field.</summary>
-  public const int DataFieldNumber = 2;
-  private string data_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Data {
-    get { return data_; }
-    set {
-      data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as TaskServiceRequest);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(TaskServiceRequest other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (TaskId != other.TaskId) return false;
-    if (Data != other.Data) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (TaskId.Length != 0) hash ^= TaskId.GetHashCode();
-    if (Data.Length != 0) hash ^= Data.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (TaskId.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(TaskId);
-    }
-    if (Data.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Data);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (TaskId.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(TaskId);
-    }
-    if (Data.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Data);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (TaskId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskId);
-    }
-    if (Data.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Data);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(TaskServiceRequest other) {
-    if (other == null) {
-      return;
-    }
-    if (other.TaskId.Length != 0) {
-      TaskId = other.TaskId;
-    }
-    if (other.Data.Length != 0) {
-      Data = other.Data;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          TaskId = input.ReadString();
-          break;
-        }
-        case 18: {
-          Data = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          TaskId = input.ReadString();
-          break;
-        }
-        case 18: {
-          Data = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-public sealed partial class TaskServiceResponse : pb::IMessage<TaskServiceResponse>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TaskServiceResponse> _parser = new pb::MessageParser<TaskServiceResponse>(() => new TaskServiceResponse());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<TaskServiceResponse> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TaskReflection.Descriptor.MessageTypes[1]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public TaskServiceResponse() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public TaskServiceResponse(TaskServiceResponse other) : this() {
-    status_ = other.status_;
-    message_ = other.message_;
-    data_ = other.data_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public TaskServiceResponse Clone() {
-    return new TaskServiceResponse(this);
-  }
-
-  /// <summary>Field number for the "status" field.</summary>
-  public const int StatusFieldNumber = 1;
-  private string status_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Status {
-    get { return status_; }
-    set {
-      status_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "message" field.</summary>
-  public const int MessageFieldNumber = 2;
-  private string message_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Message {
-    get { return message_; }
-    set {
-      message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "data" field.</summary>
-  public const int DataFieldNumber = 3;
-  private string data_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Data {
-    get { return data_; }
-    set {
-      data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as TaskServiceResponse);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(TaskServiceResponse other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Status != other.Status) return false;
-    if (Message != other.Message) return false;
-    if (Data != other.Data) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Status.Length != 0) hash ^= Status.GetHashCode();
-    if (Message.Length != 0) hash ^= Message.GetHashCode();
-    if (Data.Length != 0) hash ^= Data.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Status.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(Status);
-    }
-    if (Message.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Message);
-    }
-    if (Data.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Data);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Status.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(Status);
-    }
-    if (Message.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Message);
-    }
-    if (Data.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Data);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (Status.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
-    }
-    if (Message.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-    }
-    if (Data.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Data);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(TaskServiceResponse other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Status.Length != 0) {
-      Status = other.Status;
-    }
-    if (other.Message.Length != 0) {
-      Message = other.Message;
-    }
-    if (other.Data.Length != 0) {
-      Data = other.Data;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          Status = input.ReadString();
-          break;
-        }
-        case 18: {
-          Message = input.ReadString();
-          break;
-        }
-        case 26: {
-          Data = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          Status = input.ReadString();
-          break;
-        }
-        case 18: {
-          Message = input.ReadString();
-          break;
-        }
-        case 26: {
-          Data = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code
