@@ -6458,24 +6458,12 @@ public final class Model {
         getNameBytes();
 
     /**
-     * <code>string status = 3;</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 3;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string ip = 4;</code>
+     * <code>string ip = 3;</code>
      * @return The ip.
      */
     java.lang.String getIp();
     /**
-     * <code>string ip = 4;</code>
+     * <code>string ip = 3;</code>
      * @return The bytes for ip.
      */
     com.google.protobuf.ByteString
@@ -6607,7 +6595,6 @@ public final class Model {
     private Node() {
       Id_ = "";
       name_ = "";
-      status_ = "";
       ip_ = "";
       port_ = "";
       mac_ = "";
@@ -6661,12 +6648,6 @@ public final class Model {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
-              break;
-            }
-            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               ip_ = s;
@@ -6845,48 +6826,10 @@ public final class Model {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 3;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 3;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 3;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IP_FIELD_NUMBER = 4;
+    public static final int IP_FIELD_NUMBER = 3;
     private volatile java.lang.Object ip_;
     /**
-     * <code>string ip = 4;</code>
+     * <code>string ip = 3;</code>
      * @return The ip.
      */
     @java.lang.Override
@@ -6903,7 +6846,7 @@ public final class Model {
       }
     }
     /**
-     * <code>string ip = 4;</code>
+     * <code>string ip = 3;</code>
      * @return The bytes for ip.
      */
     @java.lang.Override
@@ -7255,11 +7198,8 @@ public final class Model {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
-      }
       if (!getIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ip_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ip_);
       }
       if (!getPortBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, port_);
@@ -7306,11 +7246,8 @@ public final class Model {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
-      }
       if (!getIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ip_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ip_);
       }
       if (!getPortBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, port_);
@@ -7364,8 +7301,6 @@ public final class Model {
           .equals(other.getId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!getIp()
           .equals(other.getIp())) return false;
       if (!getPort()
@@ -7406,8 +7341,6 @@ public final class Model {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + IP_FIELD_NUMBER;
       hash = (53 * hash) + getIp().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -7571,8 +7504,6 @@ public final class Model {
 
         name_ = "";
 
-        status_ = "";
-
         ip_ = "";
 
         port_ = "";
@@ -7627,7 +7558,6 @@ public final class Model {
         crawlab_grpc.Model.Node result = new crawlab_grpc.Model.Node(this);
         result.Id_ = Id_;
         result.name_ = name_;
-        result.status_ = status_;
         result.ip_ = ip_;
         result.port_ = port_;
         result.mac_ = mac_;
@@ -7697,10 +7627,6 @@ public final class Model {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
           onChanged();
         }
         if (!other.getIp().isEmpty()) {
@@ -7925,85 +7851,9 @@ public final class Model {
         return this;
       }
 
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 3;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 3;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 3;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 3;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object ip_ = "";
       /**
-       * <code>string ip = 4;</code>
+       * <code>string ip = 3;</code>
        * @return The ip.
        */
       public java.lang.String getIp() {
@@ -8019,7 +7869,7 @@ public final class Model {
         }
       }
       /**
-       * <code>string ip = 4;</code>
+       * <code>string ip = 3;</code>
        * @return The bytes for ip.
        */
       public com.google.protobuf.ByteString
@@ -8036,7 +7886,7 @@ public final class Model {
         }
       }
       /**
-       * <code>string ip = 4;</code>
+       * <code>string ip = 3;</code>
        * @param value The ip to set.
        * @return This builder for chaining.
        */
@@ -8051,7 +7901,7 @@ public final class Model {
         return this;
       }
       /**
-       * <code>string ip = 4;</code>
+       * <code>string ip = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIp() {
@@ -8061,7 +7911,7 @@ public final class Model {
         return this;
       }
       /**
-       * <code>string ip = 4;</code>
+       * <code>string ip = 3;</code>
        * @param value The bytes for ip to set.
        * @return This builder for chaining.
        */
@@ -10102,16 +9952,15 @@ public final class Model {
       "\030\021 \001(\t\022\024\n\014dedup_method\030\022 \001(\t\022\023\n\013is_web_h" +
       "ook\030\023 \001(\010\022\024\n\014web_hook_url\030\024 \001(\t\022\017\n\007user_" +
       "id\030\025 \001(\t\022\021\n\tcreate_ts\030\026 \001(\t\022\021\n\tupdate_ts" +
-      "\030\027 \001(\t\"\213\002\n\004Node\022\013\n\003_id\030\001 \001(\t\022\014\n\004name\030\002 \001" +
-      "(\t\022\016\n\006status\030\003 \001(\t\022\n\n\002ip\030\004 \001(\t\022\014\n\004port\030\005" +
-      " \001(\t\022\013\n\003mac\030\006 \001(\t\022\020\n\010hostname\030\007 \001(\t\022\023\n\013d" +
-      "escription\030\010 \001(\t\022\013\n\003key\030\t \001(\t\022,\n\010setting" +
-      "s\030\n \001(\0132\032.crawlab_grpc.NodeSettings\022\021\n\ti" +
-      "s_master\030\013 \001(\010\022\021\n\tupdate_ts\030\014 \001(\t\022\021\n\tcre" +
-      "ate_ts\030\r \001(\t\022\026\n\016update_ts_unix\030\016 \001(\003\"\"\n\003" +
-      "Env\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"#\n\014Node" +
-      "Settings\022\023\n\013max_runners\030\001 \001(\005B\020Z\016.;crawl" +
-      "ab_grpcb\006proto3"
+      "\030\027 \001(\t\"\373\001\n\004Node\022\013\n\003_id\030\001 \001(\t\022\014\n\004name\030\002 \001" +
+      "(\t\022\n\n\002ip\030\003 \001(\t\022\014\n\004port\030\005 \001(\t\022\013\n\003mac\030\006 \001(" +
+      "\t\022\020\n\010hostname\030\007 \001(\t\022\023\n\013description\030\010 \001(\t" +
+      "\022\013\n\003key\030\t \001(\t\022,\n\010settings\030\n \001(\0132\032.crawla" +
+      "b_grpc.NodeSettings\022\021\n\tis_master\030\013 \001(\010\022\021" +
+      "\n\tupdate_ts\030\014 \001(\t\022\021\n\tcreate_ts\030\r \001(\t\022\026\n\016" +
+      "update_ts_unix\030\016 \001(\003\"\"\n\003Env\022\014\n\004name\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t\"#\n\014NodeSettings\022\023\n\013max_" +
+      "runners\030\001 \001(\005B\020Z\016.;crawlab_grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10134,7 +9983,7 @@ public final class Model {
     internal_static_crawlab_grpc_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_crawlab_grpc_Node_descriptor,
-        new java.lang.String[] { "Id", "Name", "Status", "Ip", "Port", "Mac", "Hostname", "Description", "Key", "Settings", "IsMaster", "UpdateTs", "CreateTs", "UpdateTsUnix", });
+        new java.lang.String[] { "Id", "Name", "Ip", "Port", "Mac", "Hostname", "Description", "Key", "Settings", "IsMaster", "UpdateTs", "CreateTs", "UpdateTsUnix", });
     internal_static_crawlab_grpc_Env_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_crawlab_grpc_Env_fieldAccessorTable = new

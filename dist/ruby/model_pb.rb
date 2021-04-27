@@ -5,7 +5,7 @@ require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("model.proto", :syntax => :proto3) do
-    add_message "crawlab_grpc.Task" do
+    add_message "grpc.Task" do
       optional :_id, :string, 1
       optional :spider_id, :string, 2
       optional :start_ts, :string, 3
@@ -28,13 +28,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_ts, :string, 21
       optional :update_ts, :string, 22
     end
-    add_message "crawlab_grpc.Spider" do
+    add_message "grpc.Spider" do
       optional :_id, :string, 1
       optional :name, :string, 2
       optional :display_name, :string, 3
       optional :type, :string, 4
       optional :col, :string, 6
-      repeated :envs, :message, 8, "crawlab_grpc.Env"
+      repeated :envs, :message, 8, "grpc.Env"
       optional :remark, :string, 9
       optional :project_id, :string, 11
       optional :is_public, :bool, 12
@@ -50,36 +50,35 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_ts, :string, 22
       optional :update_ts, :string, 23
     end
-    add_message "crawlab_grpc.Node" do
+    add_message "grpc.Node" do
       optional :_id, :string, 1
       optional :name, :string, 2
-      optional :status, :string, 3
-      optional :ip, :string, 4
+      optional :ip, :string, 3
       optional :port, :string, 5
       optional :mac, :string, 6
       optional :hostname, :string, 7
       optional :description, :string, 8
       optional :key, :string, 9
-      optional :settings, :message, 10, "crawlab_grpc.NodeSettings"
+      optional :settings, :message, 10, "grpc.NodeSettings"
       optional :is_master, :bool, 11
       optional :update_ts, :string, 12
       optional :create_ts, :string, 13
       optional :update_ts_unix, :int64, 14
     end
-    add_message "crawlab_grpc.Env" do
+    add_message "grpc.Env" do
       optional :name, :string, 1
       optional :value, :string, 2
     end
-    add_message "crawlab_grpc.NodeSettings" do
+    add_message "grpc.NodeSettings" do
       optional :max_runners, :int32, 1
     end
   end
 end
 
-module CrawlabGrpc
-  Task = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.Task").msgclass
-  Spider = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.Spider").msgclass
-  Node = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.Node").msgclass
-  Env = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.Env").msgclass
-  NodeSettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("crawlab_grpc.NodeSettings").msgclass
+module Grpc
+  Task = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.Task").msgclass
+  Spider = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.Spider").msgclass
+  Node = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.Node").msgclass
+  Env = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.Env").msgclass
+  NodeSettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.NodeSettings").msgclass
 end

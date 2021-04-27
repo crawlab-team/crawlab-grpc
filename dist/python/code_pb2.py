@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='code.proto',
   package='',
   syntax='proto3',
-  serialized_options=b'Z\016.;crawlab_grpc',
+  serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ncode.proto*!\n\x0cResponseCode\x12\x06\n\x02OK\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x42\x10Z\x0e.;crawlab_grpcb\x06proto3'
+  serialized_pb=b'\n\ncode.proto*!\n\x0cResponseCode\x12\x06\n\x02OK\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x42\x08Z\x06.;grpcb\x06proto3'
 )
 
 _RESPONSECODE = _descriptor.EnumDescriptor(

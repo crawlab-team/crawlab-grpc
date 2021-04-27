@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "response.proto";
+
+package grpc;
+option go_package = ".;grpc";
+
+service NodeService {
+  rpc Register(Request) returns (Response){};
+}

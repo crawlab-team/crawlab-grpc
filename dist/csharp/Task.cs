@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace CrawlabGrpc {
+namespace Grpc {
 
   /// <summary>Holder for reflection information generated from task.proto</summary>
   public static partial class TaskReflection {
@@ -24,25 +24,23 @@ namespace CrawlabGrpc {
     static TaskReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgp0YXNrLnByb3RvEgxjcmF3bGFiX2dycGMaCmNvZGUucHJvdG8aC21vZGVs",
-            "LnByb3RvIjMKElRhc2tTZXJ2aWNlUmVxdWVzdBIPCgd0YXNrX2lkGAEgASgJ",
-            "EgwKBGRhdGEYAiABKAwiuwEKE1Rhc2tTZXJ2aWNlUmVzcG9uc2USGwoEY29k",
-            "ZRgBIAEoDjINLlJlc3BvbnNlQ29kZRIOCgZzdGF0dXMYAiABKAkSDQoFZXJy",
-            "b3IYAyABKAkSIAoEdGFzaxgEIAEoCzISLmNyYXdsYWJfZ3JwYy5UYXNrEiQK",
-            "BnNwaWRlchgFIAEoCzIULmNyYXdsYWJfZ3JwYy5TcGlkZXISIAoEbm9kZRgG",
-            "IAEoCzISLmNyYXdsYWJfZ3JwYy5Ob2RlMooCCgtUYXNrU2VydmljZRJUCgtH",
-            "ZXRUYXNrSW5mbxIgLmNyYXdsYWJfZ3JwYy5UYXNrU2VydmljZVJlcXVlc3Qa",
-            "IS5jcmF3bGFiX2dycGMuVGFza1NlcnZpY2VSZXNwb25zZSIAElEKCFNhdmVJ",
-            "dGVtEiAuY3Jhd2xhYl9ncnBjLlRhc2tTZXJ2aWNlUmVxdWVzdBohLmNyYXds",
-            "YWJfZ3JwYy5UYXNrU2VydmljZVJlc3BvbnNlIgASUgoJU2F2ZUl0ZW1zEiAu",
-            "Y3Jhd2xhYl9ncnBjLlRhc2tTZXJ2aWNlUmVxdWVzdBohLmNyYXdsYWJfZ3Jw",
-            "Yy5UYXNrU2VydmljZVJlc3BvbnNlIgBCEFoOLjtjcmF3bGFiX2dycGNiBnBy",
-            "b3RvMw=="));
+            "Cgp0YXNrLnByb3RvEgRncnBjGgpjb2RlLnByb3RvGgttb2RlbC5wcm90byIz",
+            "ChJUYXNrU2VydmljZVJlcXVlc3QSDwoHdGFza19pZBgBIAEoCRIMCgRkYXRh",
+            "GAIgASgMIqMBChNUYXNrU2VydmljZVJlc3BvbnNlEhsKBGNvZGUYASABKA4y",
+            "DS5SZXNwb25zZUNvZGUSDgoGc3RhdHVzGAIgASgJEg0KBWVycm9yGAMgASgJ",
+            "EhgKBHRhc2sYBCABKAsyCi5ncnBjLlRhc2sSHAoGc3BpZGVyGAUgASgLMgwu",
+            "Z3JwYy5TcGlkZXISGAoEbm9kZRgGIAEoCzIKLmdycGMuTm9kZTLaAQoLVGFz",
+            "a1NlcnZpY2USRAoLR2V0VGFza0luZm8SGC5ncnBjLlRhc2tTZXJ2aWNlUmVx",
+            "dWVzdBoZLmdycGMuVGFza1NlcnZpY2VSZXNwb25zZSIAEkEKCFNhdmVJdGVt",
+            "EhguZ3JwYy5UYXNrU2VydmljZVJlcXVlc3QaGS5ncnBjLlRhc2tTZXJ2aWNl",
+            "UmVzcG9uc2UiABJCCglTYXZlSXRlbXMSGC5ncnBjLlRhc2tTZXJ2aWNlUmVx",
+            "dWVzdBoZLmdycGMuVGFza1NlcnZpY2VSZXNwb25zZSIAQghaBi47Z3JwY2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::CodeReflection.Descriptor, global::CrawlabGrpc.ModelReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::CodeReflection.Descriptor, global::Grpc.ModelReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::CrawlabGrpc.TaskServiceRequest), global::CrawlabGrpc.TaskServiceRequest.Parser, new[]{ "TaskId", "Data" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CrawlabGrpc.TaskServiceResponse), global::CrawlabGrpc.TaskServiceResponse.Parser, new[]{ "Code", "Status", "Error", "Task", "Spider", "Node" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.TaskServiceRequest), global::Grpc.TaskServiceRequest.Parser, new[]{ "TaskId", "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.TaskServiceResponse), global::Grpc.TaskServiceResponse.Parser, new[]{ "Code", "Status", "Error", "Task", "Spider", "Node" }, null, null, null, null)
           }));
     }
     #endregion
@@ -61,7 +59,7 @@ namespace CrawlabGrpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CrawlabGrpc.TaskReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Grpc.TaskReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -269,7 +267,7 @@ namespace CrawlabGrpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CrawlabGrpc.TaskReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Grpc.TaskReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -335,9 +333,9 @@ namespace CrawlabGrpc {
 
     /// <summary>Field number for the "task" field.</summary>
     public const int TaskFieldNumber = 4;
-    private global::CrawlabGrpc.Task task_;
+    private global::Grpc.Task task_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CrawlabGrpc.Task Task {
+    public global::Grpc.Task Task {
       get { return task_; }
       set {
         task_ = value;
@@ -346,9 +344,9 @@ namespace CrawlabGrpc {
 
     /// <summary>Field number for the "spider" field.</summary>
     public const int SpiderFieldNumber = 5;
-    private global::CrawlabGrpc.Spider spider_;
+    private global::Grpc.Spider spider_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CrawlabGrpc.Spider Spider {
+    public global::Grpc.Spider Spider {
       get { return spider_; }
       set {
         spider_ = value;
@@ -357,9 +355,9 @@ namespace CrawlabGrpc {
 
     /// <summary>Field number for the "node" field.</summary>
     public const int NodeFieldNumber = 6;
-    private global::CrawlabGrpc.Node node_;
+    private global::Grpc.Node node_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::CrawlabGrpc.Node Node {
+    public global::Grpc.Node Node {
       get { return node_; }
       set {
         node_ = value;
@@ -519,19 +517,19 @@ namespace CrawlabGrpc {
       }
       if (other.task_ != null) {
         if (task_ == null) {
-          Task = new global::CrawlabGrpc.Task();
+          Task = new global::Grpc.Task();
         }
         Task.MergeFrom(other.Task);
       }
       if (other.spider_ != null) {
         if (spider_ == null) {
-          Spider = new global::CrawlabGrpc.Spider();
+          Spider = new global::Grpc.Spider();
         }
         Spider.MergeFrom(other.Spider);
       }
       if (other.node_ != null) {
         if (node_ == null) {
-          Node = new global::CrawlabGrpc.Node();
+          Node = new global::Grpc.Node();
         }
         Node.MergeFrom(other.Node);
       }
@@ -563,21 +561,21 @@ namespace CrawlabGrpc {
           }
           case 34: {
             if (task_ == null) {
-              Task = new global::CrawlabGrpc.Task();
+              Task = new global::Grpc.Task();
             }
             input.ReadMessage(Task);
             break;
           }
           case 42: {
             if (spider_ == null) {
-              Spider = new global::CrawlabGrpc.Spider();
+              Spider = new global::Grpc.Spider();
             }
             input.ReadMessage(Spider);
             break;
           }
           case 50: {
             if (node_ == null) {
-              Node = new global::CrawlabGrpc.Node();
+              Node = new global::Grpc.Node();
             }
             input.ReadMessage(Node);
             break;
@@ -610,21 +608,21 @@ namespace CrawlabGrpc {
           }
           case 34: {
             if (task_ == null) {
-              Task = new global::CrawlabGrpc.Task();
+              Task = new global::Grpc.Task();
             }
             input.ReadMessage(Task);
             break;
           }
           case 42: {
             if (spider_ == null) {
-              Spider = new global::CrawlabGrpc.Spider();
+              Spider = new global::Grpc.Spider();
             }
             input.ReadMessage(Spider);
             break;
           }
           case 50: {
             if (node_ == null) {
-              Node = new global::CrawlabGrpc.Node();
+              Node = new global::Grpc.Node();
             }
             input.ReadMessage(Node);
             break;

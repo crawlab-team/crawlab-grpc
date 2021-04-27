@@ -16,8 +16,8 @@ class Model
         }
         $pool->internalAddGeneratedFile(
             '
-—	
-model.protocrawlab_grpc"ˆ
+ç
+model.protogrpc"ˆ
 Task
 _id (	
 	spider_id (	
@@ -40,14 +40,14 @@ class Model
 type (	
 user_id (	
 	create_ts (	
-	update_ts (	"ý
+	update_ts (	"õ
 Spider
 _id (	
 name (	
 display_name (	
 type (	
-col (	
-envs (2.crawlab_grpc.Env
+col (	
+envs (2	.grpc.Env
 remark	 (	
 
 project_id (	
@@ -62,20 +62,19 @@ project_id (	
 web_hook_url (	
 user_id (	
 	create_ts (	
-	update_ts (	"‹
+	update_ts (	"ó
 Node
 _id (	
-name (	
-status (	
+name (	
 
-ip (	
+ip (	
 port (	
 mac (	
 hostname (	
 description (	
-key	 (	,
+key	 (	$
 settings
- (2.crawlab_grpc.NodeSettings
+ (2.grpc.NodeSettings
 	is_master (
 	update_ts (	
 	create_ts (	
@@ -84,7 +83,7 @@ project_id (	
 name (	
 value (	"#
 NodeSettings
-max_runners (BZ.;crawlab_grpcbproto3'
+max_runners (BZ.;grpcbproto3'
         , true);
 
         static::$is_initialized = true;

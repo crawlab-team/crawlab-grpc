@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "code.proto";
+
+package grpc;
+option go_package = ".;grpc";
+
+message Request {
+  string node_key = 1;
+  bytes data = 2;
+}
+
+message Response {
+  ResponseCode code = 1;
+  string message = 2;
+  bytes data = 3;
+  string error = 4;
+  int64 total = 5;
+}

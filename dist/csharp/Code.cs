@@ -23,7 +23,7 @@ public static partial class CodeReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "Cgpjb2RlLnByb3RvKiEKDFJlc3BvbnNlQ29kZRIGCgJPSxAAEgkKBUVSUk9S",
-          "EAFCEFoOLjtjcmF3bGFiX2dycGNiBnByb3RvMw=="));
+          "EAFCCFoGLjtncnBjYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ResponseCode), }, null, null));

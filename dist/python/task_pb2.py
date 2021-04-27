@@ -17,11 +17,11 @@ import model_pb2 as model__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='task.proto',
-  package='crawlab_grpc',
+  package='grpc',
   syntax='proto3',
-  serialized_options=b'Z\016.;crawlab_grpc',
+  serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\ntask.proto\x12\x0c\x63rawlab_grpc\x1a\ncode.proto\x1a\x0bmodel.proto\"3\n\x12TaskServiceRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"\xbb\x01\n\x13TaskServiceResponse\x12\x1b\n\x04\x63ode\x18\x01 \x01(\x0e\x32\r.ResponseCode\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\t\x12 \n\x04task\x18\x04 \x01(\x0b\x32\x12.crawlab_grpc.Task\x12$\n\x06spider\x18\x05 \x01(\x0b\x32\x14.crawlab_grpc.Spider\x12 \n\x04node\x18\x06 \x01(\x0b\x32\x12.crawlab_grpc.Node2\x8a\x02\n\x0bTaskService\x12T\n\x0bGetTaskInfo\x12 .crawlab_grpc.TaskServiceRequest\x1a!.crawlab_grpc.TaskServiceResponse\"\x00\x12Q\n\x08SaveItem\x12 .crawlab_grpc.TaskServiceRequest\x1a!.crawlab_grpc.TaskServiceResponse\"\x00\x12R\n\tSaveItems\x12 .crawlab_grpc.TaskServiceRequest\x1a!.crawlab_grpc.TaskServiceResponse\"\x00\x42\x10Z\x0e.;crawlab_grpcb\x06proto3'
+  serialized_pb=b'\n\ntask.proto\x12\x04grpc\x1a\ncode.proto\x1a\x0bmodel.proto\"3\n\x12TaskServiceRequest\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"\xa3\x01\n\x13TaskServiceResponse\x12\x1b\n\x04\x63ode\x18\x01 \x01(\x0e\x32\r.ResponseCode\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\t\x12\x18\n\x04task\x18\x04 \x01(\x0b\x32\n.grpc.Task\x12\x1c\n\x06spider\x18\x05 \x01(\x0b\x32\x0c.grpc.Spider\x12\x18\n\x04node\x18\x06 \x01(\x0b\x32\n.grpc.Node2\xda\x01\n\x0bTaskService\x12\x44\n\x0bGetTaskInfo\x12\x18.grpc.TaskServiceRequest\x1a\x19.grpc.TaskServiceResponse\"\x00\x12\x41\n\x08SaveItem\x12\x18.grpc.TaskServiceRequest\x1a\x19.grpc.TaskServiceResponse\"\x00\x12\x42\n\tSaveItems\x12\x18.grpc.TaskServiceRequest\x1a\x19.grpc.TaskServiceResponse\"\x00\x42\x08Z\x06.;grpcb\x06proto3'
   ,
   dependencies=[code__pb2.DESCRIPTOR,model__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _TASKSERVICEREQUEST = _descriptor.Descriptor(
   name='TaskServiceRequest',
-  full_name='crawlab_grpc.TaskServiceRequest',
+  full_name='grpc.TaskServiceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='task_id', full_name='crawlab_grpc.TaskServiceRequest.task_id', index=0,
+      name='task_id', full_name='grpc.TaskServiceRequest.task_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data', full_name='crawlab_grpc.TaskServiceRequest.data', index=1,
+      name='data', full_name='grpc.TaskServiceRequest.data', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -62,56 +62,56 @@ _TASKSERVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=53,
-  serialized_end=104,
+  serialized_start=45,
+  serialized_end=96,
 )
 
 
 _TASKSERVICERESPONSE = _descriptor.Descriptor(
   name='TaskServiceResponse',
-  full_name='crawlab_grpc.TaskServiceResponse',
+  full_name='grpc.TaskServiceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='crawlab_grpc.TaskServiceResponse.code', index=0,
+      name='code', full_name='grpc.TaskServiceResponse.code', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='crawlab_grpc.TaskServiceResponse.status', index=1,
+      name='status', full_name='grpc.TaskServiceResponse.status', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error', full_name='crawlab_grpc.TaskServiceResponse.error', index=2,
+      name='error', full_name='grpc.TaskServiceResponse.error', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='task', full_name='crawlab_grpc.TaskServiceResponse.task', index=3,
+      name='task', full_name='grpc.TaskServiceResponse.task', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spider', full_name='crawlab_grpc.TaskServiceResponse.spider', index=4,
+      name='spider', full_name='grpc.TaskServiceResponse.spider', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='node', full_name='crawlab_grpc.TaskServiceResponse.node', index=5,
+      name='node', full_name='grpc.TaskServiceResponse.node', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -129,8 +129,8 @@ _TASKSERVICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=107,
-  serialized_end=294,
+  serialized_start=99,
+  serialized_end=262,
 )
 
 _TASKSERVICERESPONSE.fields_by_name['code'].enum_type = code__pb2._RESPONSECODE
@@ -144,14 +144,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 TaskServiceRequest = _reflection.GeneratedProtocolMessageType('TaskServiceRequest', (_message.Message,), {
   'DESCRIPTOR' : _TASKSERVICEREQUEST,
   '__module__' : 'task_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.TaskServiceRequest)
+  # @@protoc_insertion_point(class_scope:grpc.TaskServiceRequest)
   })
 _sym_db.RegisterMessage(TaskServiceRequest)
 
 TaskServiceResponse = _reflection.GeneratedProtocolMessageType('TaskServiceResponse', (_message.Message,), {
   'DESCRIPTOR' : _TASKSERVICERESPONSE,
   '__module__' : 'task_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.TaskServiceResponse)
+  # @@protoc_insertion_point(class_scope:grpc.TaskServiceResponse)
   })
 _sym_db.RegisterMessage(TaskServiceResponse)
 
@@ -160,17 +160,17 @@ DESCRIPTOR._options = None
 
 _TASKSERVICE = _descriptor.ServiceDescriptor(
   name='TaskService',
-  full_name='crawlab_grpc.TaskService',
+  full_name='grpc.TaskService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=297,
-  serialized_end=563,
+  serialized_start=265,
+  serialized_end=483,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetTaskInfo',
-    full_name='crawlab_grpc.TaskService.GetTaskInfo',
+    full_name='grpc.TaskService.GetTaskInfo',
     index=0,
     containing_service=None,
     input_type=_TASKSERVICEREQUEST,
@@ -180,7 +180,7 @@ _TASKSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='SaveItem',
-    full_name='crawlab_grpc.TaskService.SaveItem',
+    full_name='grpc.TaskService.SaveItem',
     index=1,
     containing_service=None,
     input_type=_TASKSERVICEREQUEST,
@@ -190,7 +190,7 @@ _TASKSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='SaveItems',
-    full_name='crawlab_grpc.TaskService.SaveItems',
+    full_name='grpc.TaskService.SaveItems',
     index=2,
     containing_service=None,
     input_type=_TASKSERVICEREQUEST,

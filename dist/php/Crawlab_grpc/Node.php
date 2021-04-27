@@ -22,11 +22,7 @@ class Node extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string status = 3;</code>
-     */
-    protected $status = '';
-    /**
-     * Generated from protobuf field <code>string ip = 4;</code>
+     * Generated from protobuf field <code>string ip = 3;</code>
      */
     protected $ip = '';
     /**
@@ -78,7 +74,6 @@ class Node extends \Google\Protobuf\Internal\Message
      *
      *     @type string $_id
      *     @type string $name
-     *     @type string $status
      *     @type string $ip
      *     @type string $port
      *     @type string $mac
@@ -142,29 +137,7 @@ class Node extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 3;</code>
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Generated from protobuf field <code>string status = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ip = 4;</code>
+     * Generated from protobuf field <code>string ip = 3;</code>
      * @return string
      */
     public function getIp()
@@ -173,7 +146,7 @@ class Node extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ip = 4;</code>
+     * Generated from protobuf field <code>string ip = 3;</code>
      * @param string $var
      * @return $this
      */

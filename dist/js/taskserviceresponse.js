@@ -10,14 +10,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.crawlab_grpc.TaskServiceResponse');
+goog.provide('proto.grpc.TaskServiceResponse');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
 goog.require('jspb.Message');
-goog.require('proto.crawlab_grpc.Node');
-goog.require('proto.crawlab_grpc.Spider');
-goog.require('proto.crawlab_grpc.Task');
+goog.require('proto.grpc.Node');
+goog.require('proto.grpc.Spider');
+goog.require('proto.grpc.Task');
 
 goog.forwardDeclare('proto.ResponseCode');
 /**
@@ -30,16 +30,16 @@ goog.forwardDeclare('proto.ResponseCode');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.crawlab_grpc.TaskServiceResponse = function(opt_data) {
+proto.grpc.TaskServiceResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.crawlab_grpc.TaskServiceResponse, jspb.Message);
+goog.inherits(proto.grpc.TaskServiceResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.crawlab_grpc.TaskServiceResponse.displayName = 'proto.crawlab_grpc.TaskServiceResponse';
+  proto.grpc.TaskServiceResponse.displayName = 'proto.grpc.TaskServiceResponse';
 }
 
 
@@ -57,8 +57,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.crawlab_grpc.TaskServiceResponse.toObject(opt_includeInstance, this);
+proto.grpc.TaskServiceResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.grpc.TaskServiceResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -67,18 +67,18 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.toObject = function(opt_include
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.crawlab_grpc.TaskServiceResponse} msg The msg instance to transform.
+ * @param {!proto.grpc.TaskServiceResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.TaskServiceResponse.toObject = function(includeInstance, msg) {
+proto.grpc.TaskServiceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     code: jspb.Message.getFieldWithDefault(msg, 1, 0),
     status: jspb.Message.getFieldWithDefault(msg, 2, ""),
     error: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    task: (f = msg.getTask()) && proto.crawlab_grpc.Task.toObject(includeInstance, f),
-    spider: (f = msg.getSpider()) && proto.crawlab_grpc.Spider.toObject(includeInstance, f),
-    node: (f = msg.getNode()) && proto.crawlab_grpc.Node.toObject(includeInstance, f)
+    task: (f = msg.getTask()) && proto.grpc.Task.toObject(includeInstance, f),
+    spider: (f = msg.getSpider()) && proto.grpc.Spider.toObject(includeInstance, f),
+    node: (f = msg.getNode()) && proto.grpc.Node.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -92,23 +92,23 @@ proto.crawlab_grpc.TaskServiceResponse.toObject = function(includeInstance, msg)
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.crawlab_grpc.TaskServiceResponse}
+ * @return {!proto.grpc.TaskServiceResponse}
  */
-proto.crawlab_grpc.TaskServiceResponse.deserializeBinary = function(bytes) {
+proto.grpc.TaskServiceResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.crawlab_grpc.TaskServiceResponse;
-  return proto.crawlab_grpc.TaskServiceResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.grpc.TaskServiceResponse;
+  return proto.grpc.TaskServiceResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.crawlab_grpc.TaskServiceResponse} msg The message object to deserialize into.
+ * @param {!proto.grpc.TaskServiceResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.crawlab_grpc.TaskServiceResponse}
+ * @return {!proto.grpc.TaskServiceResponse}
  */
-proto.crawlab_grpc.TaskServiceResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.grpc.TaskServiceResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -128,18 +128,18 @@ proto.crawlab_grpc.TaskServiceResponse.deserializeBinaryFromReader = function(ms
       msg.setError(value);
       break;
     case 4:
-      var value = new proto.crawlab_grpc.Task;
-      reader.readMessage(value,proto.crawlab_grpc.Task.deserializeBinaryFromReader);
+      var value = new proto.grpc.Task;
+      reader.readMessage(value,proto.grpc.Task.deserializeBinaryFromReader);
       msg.setTask(value);
       break;
     case 5:
-      var value = new proto.crawlab_grpc.Spider;
-      reader.readMessage(value,proto.crawlab_grpc.Spider.deserializeBinaryFromReader);
+      var value = new proto.grpc.Spider;
+      reader.readMessage(value,proto.grpc.Spider.deserializeBinaryFromReader);
       msg.setSpider(value);
       break;
     case 6:
-      var value = new proto.crawlab_grpc.Node;
-      reader.readMessage(value,proto.crawlab_grpc.Node.deserializeBinaryFromReader);
+      var value = new proto.grpc.Node;
+      reader.readMessage(value,proto.grpc.Node.deserializeBinaryFromReader);
       msg.setNode(value);
       break;
     default:
@@ -155,9 +155,9 @@ proto.crawlab_grpc.TaskServiceResponse.deserializeBinaryFromReader = function(ms
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.serializeBinary = function() {
+proto.grpc.TaskServiceResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.crawlab_grpc.TaskServiceResponse.serializeBinaryToWriter(this, writer);
+  proto.grpc.TaskServiceResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -165,11 +165,11 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.crawlab_grpc.TaskServiceResponse} message
+ * @param {!proto.grpc.TaskServiceResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.TaskServiceResponse.serializeBinaryToWriter = function(message, writer) {
+proto.grpc.TaskServiceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCode();
   if (f !== 0.0) {
@@ -197,7 +197,7 @@ proto.crawlab_grpc.TaskServiceResponse.serializeBinaryToWriter = function(messag
     writer.writeMessage(
       4,
       f,
-      proto.crawlab_grpc.Task.serializeBinaryToWriter
+      proto.grpc.Task.serializeBinaryToWriter
     );
   }
   f = message.getSpider();
@@ -205,7 +205,7 @@ proto.crawlab_grpc.TaskServiceResponse.serializeBinaryToWriter = function(messag
     writer.writeMessage(
       5,
       f,
-      proto.crawlab_grpc.Spider.serializeBinaryToWriter
+      proto.grpc.Spider.serializeBinaryToWriter
     );
   }
   f = message.getNode();
@@ -213,7 +213,7 @@ proto.crawlab_grpc.TaskServiceResponse.serializeBinaryToWriter = function(messag
     writer.writeMessage(
       6,
       f,
-      proto.crawlab_grpc.Node.serializeBinaryToWriter
+      proto.grpc.Node.serializeBinaryToWriter
     );
   }
 };
@@ -223,16 +223,16 @@ proto.crawlab_grpc.TaskServiceResponse.serializeBinaryToWriter = function(messag
  * optional ResponseCode code = 1;
  * @return {!proto.ResponseCode}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.getCode = function() {
+proto.grpc.TaskServiceResponse.prototype.getCode = function() {
   return /** @type {!proto.ResponseCode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {!proto.ResponseCode} value
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @return {!proto.grpc.TaskServiceResponse} returns this
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.setCode = function(value) {
+proto.grpc.TaskServiceResponse.prototype.setCode = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
@@ -241,16 +241,16 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.setCode = function(value) {
  * optional string status = 2;
  * @return {string}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.getStatus = function() {
+proto.grpc.TaskServiceResponse.prototype.getStatus = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @return {!proto.grpc.TaskServiceResponse} returns this
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.setStatus = function(value) {
+proto.grpc.TaskServiceResponse.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -259,44 +259,44 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.setStatus = function(value) {
  * optional string error = 3;
  * @return {string}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.getError = function() {
+proto.grpc.TaskServiceResponse.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @return {!proto.grpc.TaskServiceResponse} returns this
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.setError = function(value) {
+proto.grpc.TaskServiceResponse.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
  * optional Task task = 4;
- * @return {?proto.crawlab_grpc.Task}
+ * @return {?proto.grpc.Task}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.getTask = function() {
-  return /** @type{?proto.crawlab_grpc.Task} */ (
-    jspb.Message.getWrapperField(this, proto.crawlab_grpc.Task, 4));
+proto.grpc.TaskServiceResponse.prototype.getTask = function() {
+  return /** @type{?proto.grpc.Task} */ (
+    jspb.Message.getWrapperField(this, proto.grpc.Task, 4));
 };
 
 
 /**
- * @param {?proto.crawlab_grpc.Task|undefined} value
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @param {?proto.grpc.Task|undefined} value
+ * @return {!proto.grpc.TaskServiceResponse} returns this
 */
-proto.crawlab_grpc.TaskServiceResponse.prototype.setTask = function(value) {
+proto.grpc.TaskServiceResponse.prototype.setTask = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @return {!proto.grpc.TaskServiceResponse} returns this
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.clearTask = function() {
+proto.grpc.TaskServiceResponse.prototype.clearTask = function() {
   return this.setTask(undefined);
 };
 
@@ -305,35 +305,35 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.clearTask = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.hasTask = function() {
+proto.grpc.TaskServiceResponse.prototype.hasTask = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
  * optional Spider spider = 5;
- * @return {?proto.crawlab_grpc.Spider}
+ * @return {?proto.grpc.Spider}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.getSpider = function() {
-  return /** @type{?proto.crawlab_grpc.Spider} */ (
-    jspb.Message.getWrapperField(this, proto.crawlab_grpc.Spider, 5));
+proto.grpc.TaskServiceResponse.prototype.getSpider = function() {
+  return /** @type{?proto.grpc.Spider} */ (
+    jspb.Message.getWrapperField(this, proto.grpc.Spider, 5));
 };
 
 
 /**
- * @param {?proto.crawlab_grpc.Spider|undefined} value
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @param {?proto.grpc.Spider|undefined} value
+ * @return {!proto.grpc.TaskServiceResponse} returns this
 */
-proto.crawlab_grpc.TaskServiceResponse.prototype.setSpider = function(value) {
+proto.grpc.TaskServiceResponse.prototype.setSpider = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @return {!proto.grpc.TaskServiceResponse} returns this
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.clearSpider = function() {
+proto.grpc.TaskServiceResponse.prototype.clearSpider = function() {
   return this.setSpider(undefined);
 };
 
@@ -342,35 +342,35 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.clearSpider = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.hasSpider = function() {
+proto.grpc.TaskServiceResponse.prototype.hasSpider = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
  * optional Node node = 6;
- * @return {?proto.crawlab_grpc.Node}
+ * @return {?proto.grpc.Node}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.getNode = function() {
-  return /** @type{?proto.crawlab_grpc.Node} */ (
-    jspb.Message.getWrapperField(this, proto.crawlab_grpc.Node, 6));
+proto.grpc.TaskServiceResponse.prototype.getNode = function() {
+  return /** @type{?proto.grpc.Node} */ (
+    jspb.Message.getWrapperField(this, proto.grpc.Node, 6));
 };
 
 
 /**
- * @param {?proto.crawlab_grpc.Node|undefined} value
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @param {?proto.grpc.Node|undefined} value
+ * @return {!proto.grpc.TaskServiceResponse} returns this
 */
-proto.crawlab_grpc.TaskServiceResponse.prototype.setNode = function(value) {
+proto.grpc.TaskServiceResponse.prototype.setNode = function(value) {
   return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.crawlab_grpc.TaskServiceResponse} returns this
+ * @return {!proto.grpc.TaskServiceResponse} returns this
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.clearNode = function() {
+proto.grpc.TaskServiceResponse.prototype.clearNode = function() {
   return this.setNode(undefined);
 };
 
@@ -379,7 +379,7 @@ proto.crawlab_grpc.TaskServiceResponse.prototype.clearNode = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.crawlab_grpc.TaskServiceResponse.prototype.hasNode = function() {
+proto.grpc.TaskServiceResponse.prototype.hasNode = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

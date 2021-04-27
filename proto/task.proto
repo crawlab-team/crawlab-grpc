@@ -3,8 +3,8 @@ syntax = "proto3";
 import "code.proto";
 import "model.proto";
 
-package crawlab_grpc;
-option go_package = ".;crawlab_grpc";
+package grpc;
+option go_package = ".;grpc";
 
 service TaskService {
   rpc GetTaskInfo(TaskServiceRequest) returns (TaskServiceResponse){};

@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='model.proto',
-  package='crawlab_grpc',
+  package='grpc',
   syntax='proto3',
-  serialized_options=b'Z\016.;crawlab_grpc',
+  serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bmodel.proto\x12\x0c\x63rawlab_grpc\"\x88\x03\n\x04Task\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x11\n\tspider_id\x18\x02 \x01(\t\x12\x10\n\x08start_ts\x18\x03 \x01(\t\x12\x11\n\tfinish_ts\x18\x04 \x01(\t\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x0f\n\x07node_id\x18\x06 \x01(\t\x12\x0b\n\x03\x63md\x18\x08 \x01(\t\x12\r\n\x05param\x18\t \x01(\t\x12\r\n\x05\x65rror\x18\n \x01(\t\x12\x14\n\x0cresult_count\x18\x0b \x01(\x05\x12\x17\n\x0f\x65rror_log_count\x18\x0c \x01(\x05\x12\x15\n\rwait_duration\x18\r \x01(\x05\x12\x18\n\x10runtime_duration\x18\x0e \x01(\x05\x12\x16\n\x0etotal_duration\x18\x0f \x01(\x05\x12\x0b\n\x03pid\x18\x10 \x01(\x05\x12\x10\n\x08run_type\x18\x11 \x01(\t\x12\x13\n\x0bschedule_id\x18\x12 \x01(\t\x12\x0c\n\x04type\x18\x13 \x01(\t\x12\x0f\n\x07user_id\x18\x14 \x01(\t\x12\x11\n\tcreate_ts\x18\x15 \x01(\t\x12\x11\n\tupdate_ts\x18\x16 \x01(\t\"\xfd\x02\n\x06Spider\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x0b\n\x03\x63ol\x18\x06 \x01(\t\x12\x1f\n\x04\x65nvs\x18\x08 \x03(\x0b\x32\x11.crawlab_grpc.Env\x12\x0e\n\x06remark\x18\t \x01(\t\x12\x12\n\nproject_id\x18\x0b \x01(\t\x12\x11\n\tis_public\x18\x0c \x01(\x08\x12\x0b\n\x03\x63md\x18\r \x01(\t\x12\x11\n\tis_scrapy\x18\x0e \x01(\x08\x12\x10\n\x08template\x18\x0f \x01(\t\x12\x10\n\x08is_dedup\x18\x10 \x01(\x08\x12\x13\n\x0b\x64\x65\x64up_field\x18\x11 \x01(\t\x12\x14\n\x0c\x64\x65\x64up_method\x18\x12 \x01(\t\x12\x13\n\x0bis_web_hook\x18\x13 \x01(\x08\x12\x14\n\x0cweb_hook_url\x18\x14 \x01(\t\x12\x0f\n\x07user_id\x18\x15 \x01(\t\x12\x11\n\tcreate_ts\x18\x16 \x01(\t\x12\x11\n\tupdate_ts\x18\x17 \x01(\t\"\x8b\x02\n\x04Node\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\n\n\x02ip\x18\x04 \x01(\t\x12\x0c\n\x04port\x18\x05 \x01(\t\x12\x0b\n\x03mac\x18\x06 \x01(\t\x12\x10\n\x08hostname\x18\x07 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x08 \x01(\t\x12\x0b\n\x03key\x18\t \x01(\t\x12,\n\x08settings\x18\n \x01(\x0b\x32\x1a.crawlab_grpc.NodeSettings\x12\x11\n\tis_master\x18\x0b \x01(\x08\x12\x11\n\tupdate_ts\x18\x0c \x01(\t\x12\x11\n\tcreate_ts\x18\r \x01(\t\x12\x16\n\x0eupdate_ts_unix\x18\x0e \x01(\x03\"\"\n\x03\x45nv\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"#\n\x0cNodeSettings\x12\x13\n\x0bmax_runners\x18\x01 \x01(\x05\x42\x10Z\x0e.;crawlab_grpcb\x06proto3'
+  serialized_pb=b'\n\x0bmodel.proto\x12\x04grpc\"\x88\x03\n\x04Task\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x11\n\tspider_id\x18\x02 \x01(\t\x12\x10\n\x08start_ts\x18\x03 \x01(\t\x12\x11\n\tfinish_ts\x18\x04 \x01(\t\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x0f\n\x07node_id\x18\x06 \x01(\t\x12\x0b\n\x03\x63md\x18\x08 \x01(\t\x12\r\n\x05param\x18\t \x01(\t\x12\r\n\x05\x65rror\x18\n \x01(\t\x12\x14\n\x0cresult_count\x18\x0b \x01(\x05\x12\x17\n\x0f\x65rror_log_count\x18\x0c \x01(\x05\x12\x15\n\rwait_duration\x18\r \x01(\x05\x12\x18\n\x10runtime_duration\x18\x0e \x01(\x05\x12\x16\n\x0etotal_duration\x18\x0f \x01(\x05\x12\x0b\n\x03pid\x18\x10 \x01(\x05\x12\x10\n\x08run_type\x18\x11 \x01(\t\x12\x13\n\x0bschedule_id\x18\x12 \x01(\t\x12\x0c\n\x04type\x18\x13 \x01(\t\x12\x0f\n\x07user_id\x18\x14 \x01(\t\x12\x11\n\tcreate_ts\x18\x15 \x01(\t\x12\x11\n\tupdate_ts\x18\x16 \x01(\t\"\xf5\x02\n\x06Spider\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x0b\n\x03\x63ol\x18\x06 \x01(\t\x12\x17\n\x04\x65nvs\x18\x08 \x03(\x0b\x32\t.grpc.Env\x12\x0e\n\x06remark\x18\t \x01(\t\x12\x12\n\nproject_id\x18\x0b \x01(\t\x12\x11\n\tis_public\x18\x0c \x01(\x08\x12\x0b\n\x03\x63md\x18\r \x01(\t\x12\x11\n\tis_scrapy\x18\x0e \x01(\x08\x12\x10\n\x08template\x18\x0f \x01(\t\x12\x10\n\x08is_dedup\x18\x10 \x01(\x08\x12\x13\n\x0b\x64\x65\x64up_field\x18\x11 \x01(\t\x12\x14\n\x0c\x64\x65\x64up_method\x18\x12 \x01(\t\x12\x13\n\x0bis_web_hook\x18\x13 \x01(\x08\x12\x14\n\x0cweb_hook_url\x18\x14 \x01(\t\x12\x0f\n\x07user_id\x18\x15 \x01(\t\x12\x11\n\tcreate_ts\x18\x16 \x01(\t\x12\x11\n\tupdate_ts\x18\x17 \x01(\t\"\xf3\x01\n\x04Node\x12\x0b\n\x03_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\n\n\x02ip\x18\x03 \x01(\t\x12\x0c\n\x04port\x18\x05 \x01(\t\x12\x0b\n\x03mac\x18\x06 \x01(\t\x12\x10\n\x08hostname\x18\x07 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x08 \x01(\t\x12\x0b\n\x03key\x18\t \x01(\t\x12$\n\x08settings\x18\n \x01(\x0b\x32\x12.grpc.NodeSettings\x12\x11\n\tis_master\x18\x0b \x01(\x08\x12\x11\n\tupdate_ts\x18\x0c \x01(\t\x12\x11\n\tcreate_ts\x18\r \x01(\t\x12\x16\n\x0eupdate_ts_unix\x18\x0e \x01(\x03\"\"\n\x03\x45nv\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"#\n\x0cNodeSettings\x12\x13\n\x0bmax_runners\x18\x01 \x01(\x05\x42\x08Z\x06.;grpcb\x06proto3'
 )
 
 
@@ -27,154 +27,154 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _TASK = _descriptor.Descriptor(
   name='Task',
-  full_name='crawlab_grpc.Task',
+  full_name='grpc.Task',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='_id', full_name='crawlab_grpc.Task._id', index=0,
+      name='_id', full_name='grpc.Task._id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='spider_id', full_name='crawlab_grpc.Task.spider_id', index=1,
+      name='spider_id', full_name='grpc.Task.spider_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='start_ts', full_name='crawlab_grpc.Task.start_ts', index=2,
+      name='start_ts', full_name='grpc.Task.start_ts', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='finish_ts', full_name='crawlab_grpc.Task.finish_ts', index=3,
+      name='finish_ts', full_name='grpc.Task.finish_ts', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='crawlab_grpc.Task.status', index=4,
+      name='status', full_name='grpc.Task.status', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='node_id', full_name='crawlab_grpc.Task.node_id', index=5,
+      name='node_id', full_name='grpc.Task.node_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cmd', full_name='crawlab_grpc.Task.cmd', index=6,
+      name='cmd', full_name='grpc.Task.cmd', index=6,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='param', full_name='crawlab_grpc.Task.param', index=7,
+      name='param', full_name='grpc.Task.param', index=7,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error', full_name='crawlab_grpc.Task.error', index=8,
+      name='error', full_name='grpc.Task.error', index=8,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='result_count', full_name='crawlab_grpc.Task.result_count', index=9,
+      name='result_count', full_name='grpc.Task.result_count', index=9,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='error_log_count', full_name='crawlab_grpc.Task.error_log_count', index=10,
+      name='error_log_count', full_name='grpc.Task.error_log_count', index=10,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='wait_duration', full_name='crawlab_grpc.Task.wait_duration', index=11,
+      name='wait_duration', full_name='grpc.Task.wait_duration', index=11,
       number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='runtime_duration', full_name='crawlab_grpc.Task.runtime_duration', index=12,
+      name='runtime_duration', full_name='grpc.Task.runtime_duration', index=12,
       number=14, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='total_duration', full_name='crawlab_grpc.Task.total_duration', index=13,
+      name='total_duration', full_name='grpc.Task.total_duration', index=13,
       number=15, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pid', full_name='crawlab_grpc.Task.pid', index=14,
+      name='pid', full_name='grpc.Task.pid', index=14,
       number=16, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='run_type', full_name='crawlab_grpc.Task.run_type', index=15,
+      name='run_type', full_name='grpc.Task.run_type', index=15,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='schedule_id', full_name='crawlab_grpc.Task.schedule_id', index=16,
+      name='schedule_id', full_name='grpc.Task.schedule_id', index=16,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='crawlab_grpc.Task.type', index=17,
+      name='type', full_name='grpc.Task.type', index=17,
       number=19, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='crawlab_grpc.Task.user_id', index=18,
+      name='user_id', full_name='grpc.Task.user_id', index=18,
       number=20, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='create_ts', full_name='crawlab_grpc.Task.create_ts', index=19,
+      name='create_ts', full_name='grpc.Task.create_ts', index=19,
       number=21, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update_ts', full_name='crawlab_grpc.Task.update_ts', index=20,
+      name='update_ts', full_name='grpc.Task.update_ts', index=20,
       number=22, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -192,154 +192,154 @@ _TASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30,
-  serialized_end=422,
+  serialized_start=22,
+  serialized_end=414,
 )
 
 
 _SPIDER = _descriptor.Descriptor(
   name='Spider',
-  full_name='crawlab_grpc.Spider',
+  full_name='grpc.Spider',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='_id', full_name='crawlab_grpc.Spider._id', index=0,
+      name='_id', full_name='grpc.Spider._id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='crawlab_grpc.Spider.name', index=1,
+      name='name', full_name='grpc.Spider.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='display_name', full_name='crawlab_grpc.Spider.display_name', index=2,
+      name='display_name', full_name='grpc.Spider.display_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='crawlab_grpc.Spider.type', index=3,
+      name='type', full_name='grpc.Spider.type', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='col', full_name='crawlab_grpc.Spider.col', index=4,
+      name='col', full_name='grpc.Spider.col', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='envs', full_name='crawlab_grpc.Spider.envs', index=5,
+      name='envs', full_name='grpc.Spider.envs', index=5,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='remark', full_name='crawlab_grpc.Spider.remark', index=6,
+      name='remark', full_name='grpc.Spider.remark', index=6,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='project_id', full_name='crawlab_grpc.Spider.project_id', index=7,
+      name='project_id', full_name='grpc.Spider.project_id', index=7,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_public', full_name='crawlab_grpc.Spider.is_public', index=8,
+      name='is_public', full_name='grpc.Spider.is_public', index=8,
       number=12, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cmd', full_name='crawlab_grpc.Spider.cmd', index=9,
+      name='cmd', full_name='grpc.Spider.cmd', index=9,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_scrapy', full_name='crawlab_grpc.Spider.is_scrapy', index=10,
+      name='is_scrapy', full_name='grpc.Spider.is_scrapy', index=10,
       number=14, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='template', full_name='crawlab_grpc.Spider.template', index=11,
+      name='template', full_name='grpc.Spider.template', index=11,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_dedup', full_name='crawlab_grpc.Spider.is_dedup', index=12,
+      name='is_dedup', full_name='grpc.Spider.is_dedup', index=12,
       number=16, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dedup_field', full_name='crawlab_grpc.Spider.dedup_field', index=13,
+      name='dedup_field', full_name='grpc.Spider.dedup_field', index=13,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dedup_method', full_name='crawlab_grpc.Spider.dedup_method', index=14,
+      name='dedup_method', full_name='grpc.Spider.dedup_method', index=14,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_web_hook', full_name='crawlab_grpc.Spider.is_web_hook', index=15,
+      name='is_web_hook', full_name='grpc.Spider.is_web_hook', index=15,
       number=19, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='web_hook_url', full_name='crawlab_grpc.Spider.web_hook_url', index=16,
+      name='web_hook_url', full_name='grpc.Spider.web_hook_url', index=16,
       number=20, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='crawlab_grpc.Spider.user_id', index=17,
+      name='user_id', full_name='grpc.Spider.user_id', index=17,
       number=21, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='create_ts', full_name='crawlab_grpc.Spider.create_ts', index=18,
+      name='create_ts', full_name='grpc.Spider.create_ts', index=18,
       number=22, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update_ts', full_name='crawlab_grpc.Spider.update_ts', index=19,
+      name='update_ts', full_name='grpc.Spider.update_ts', index=19,
       number=23, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -357,112 +357,105 @@ _SPIDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=425,
-  serialized_end=806,
+  serialized_start=417,
+  serialized_end=790,
 )
 
 
 _NODE = _descriptor.Descriptor(
   name='Node',
-  full_name='crawlab_grpc.Node',
+  full_name='grpc.Node',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='_id', full_name='crawlab_grpc.Node._id', index=0,
+      name='_id', full_name='grpc.Node._id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='crawlab_grpc.Node.name', index=1,
+      name='name', full_name='grpc.Node.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='crawlab_grpc.Node.status', index=2,
+      name='ip', full_name='grpc.Node.ip', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ip', full_name='crawlab_grpc.Node.ip', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='port', full_name='crawlab_grpc.Node.port', index=4,
+      name='port', full_name='grpc.Node.port', index=3,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mac', full_name='crawlab_grpc.Node.mac', index=5,
+      name='mac', full_name='grpc.Node.mac', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hostname', full_name='crawlab_grpc.Node.hostname', index=6,
+      name='hostname', full_name='grpc.Node.hostname', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='crawlab_grpc.Node.description', index=7,
+      name='description', full_name='grpc.Node.description', index=6,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='crawlab_grpc.Node.key', index=8,
+      name='key', full_name='grpc.Node.key', index=7,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='settings', full_name='crawlab_grpc.Node.settings', index=9,
+      name='settings', full_name='grpc.Node.settings', index=8,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='is_master', full_name='crawlab_grpc.Node.is_master', index=10,
+      name='is_master', full_name='grpc.Node.is_master', index=9,
       number=11, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update_ts', full_name='crawlab_grpc.Node.update_ts', index=11,
+      name='update_ts', full_name='grpc.Node.update_ts', index=10,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='create_ts', full_name='crawlab_grpc.Node.create_ts', index=12,
+      name='create_ts', full_name='grpc.Node.create_ts', index=11,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update_ts_unix', full_name='crawlab_grpc.Node.update_ts_unix', index=13,
+      name='update_ts_unix', full_name='grpc.Node.update_ts_unix', index=12,
       number=14, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -480,28 +473,28 @@ _NODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=809,
-  serialized_end=1076,
+  serialized_start=793,
+  serialized_end=1036,
 )
 
 
 _ENV = _descriptor.Descriptor(
   name='Env',
-  full_name='crawlab_grpc.Env',
+  full_name='grpc.Env',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='crawlab_grpc.Env.name', index=0,
+      name='name', full_name='grpc.Env.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='crawlab_grpc.Env.value', index=1,
+      name='value', full_name='grpc.Env.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -519,21 +512,21 @@ _ENV = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1078,
-  serialized_end=1112,
+  serialized_start=1038,
+  serialized_end=1072,
 )
 
 
 _NODESETTINGS = _descriptor.Descriptor(
   name='NodeSettings',
-  full_name='crawlab_grpc.NodeSettings',
+  full_name='grpc.NodeSettings',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='max_runners', full_name='crawlab_grpc.NodeSettings.max_runners', index=0,
+      name='max_runners', full_name='grpc.NodeSettings.max_runners', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -551,8 +544,8 @@ _NODESETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1114,
-  serialized_end=1149,
+  serialized_start=1074,
+  serialized_end=1109,
 )
 
 _SPIDER.fields_by_name['envs'].message_type = _ENV
@@ -567,35 +560,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Task = _reflection.GeneratedProtocolMessageType('Task', (_message.Message,), {
   'DESCRIPTOR' : _TASK,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.Task)
+  # @@protoc_insertion_point(class_scope:grpc.Task)
   })
 _sym_db.RegisterMessage(Task)
 
 Spider = _reflection.GeneratedProtocolMessageType('Spider', (_message.Message,), {
   'DESCRIPTOR' : _SPIDER,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.Spider)
+  # @@protoc_insertion_point(class_scope:grpc.Spider)
   })
 _sym_db.RegisterMessage(Spider)
 
 Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), {
   'DESCRIPTOR' : _NODE,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.Node)
+  # @@protoc_insertion_point(class_scope:grpc.Node)
   })
 _sym_db.RegisterMessage(Node)
 
 Env = _reflection.GeneratedProtocolMessageType('Env', (_message.Message,), {
   'DESCRIPTOR' : _ENV,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.Env)
+  # @@protoc_insertion_point(class_scope:grpc.Env)
   })
 _sym_db.RegisterMessage(Env)
 
 NodeSettings = _reflection.GeneratedProtocolMessageType('NodeSettings', (_message.Message,), {
   'DESCRIPTOR' : _NODESETTINGS,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:crawlab_grpc.NodeSettings)
+  # @@protoc_insertion_point(class_scope:grpc.NodeSettings)
   })
 _sym_db.RegisterMessage(NodeSettings)
 

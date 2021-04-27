@@ -130,7 +130,7 @@ public final class Code {
   static {
     java.lang.String[] descriptorData = {
       "\n\ncode.proto*!\n\014ResponseCode\022\006\n\002OK\020\000\022\t\n\005" +
-      "ERROR\020\001B\020Z\016.;crawlab_grpcb\006proto3"
+      "ERROR\020\001B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

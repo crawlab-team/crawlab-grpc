@@ -10,7 +10,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.crawlab_grpc.NodeSettings');
+goog.provide('proto.grpc.NodeSettings');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -26,16 +26,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.crawlab_grpc.NodeSettings = function(opt_data) {
+proto.grpc.NodeSettings = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.crawlab_grpc.NodeSettings, jspb.Message);
+goog.inherits(proto.grpc.NodeSettings, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.crawlab_grpc.NodeSettings.displayName = 'proto.crawlab_grpc.NodeSettings';
+  proto.grpc.NodeSettings.displayName = 'proto.grpc.NodeSettings';
 }
 
 
@@ -53,8 +53,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.crawlab_grpc.NodeSettings.prototype.toObject = function(opt_includeInstance) {
-  return proto.crawlab_grpc.NodeSettings.toObject(opt_includeInstance, this);
+proto.grpc.NodeSettings.prototype.toObject = function(opt_includeInstance) {
+  return proto.grpc.NodeSettings.toObject(opt_includeInstance, this);
 };
 
 
@@ -63,11 +63,11 @@ proto.crawlab_grpc.NodeSettings.prototype.toObject = function(opt_includeInstanc
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.crawlab_grpc.NodeSettings} msg The msg instance to transform.
+ * @param {!proto.grpc.NodeSettings} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.NodeSettings.toObject = function(includeInstance, msg) {
+proto.grpc.NodeSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
     maxRunners: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
@@ -83,23 +83,23 @@ proto.crawlab_grpc.NodeSettings.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.crawlab_grpc.NodeSettings}
+ * @return {!proto.grpc.NodeSettings}
  */
-proto.crawlab_grpc.NodeSettings.deserializeBinary = function(bytes) {
+proto.grpc.NodeSettings.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.crawlab_grpc.NodeSettings;
-  return proto.crawlab_grpc.NodeSettings.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.grpc.NodeSettings;
+  return proto.grpc.NodeSettings.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.crawlab_grpc.NodeSettings} msg The message object to deserialize into.
+ * @param {!proto.grpc.NodeSettings} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.crawlab_grpc.NodeSettings}
+ * @return {!proto.grpc.NodeSettings}
  */
-proto.crawlab_grpc.NodeSettings.deserializeBinaryFromReader = function(msg, reader) {
+proto.grpc.NodeSettings.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -123,9 +123,9 @@ proto.crawlab_grpc.NodeSettings.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.crawlab_grpc.NodeSettings.prototype.serializeBinary = function() {
+proto.grpc.NodeSettings.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.crawlab_grpc.NodeSettings.serializeBinaryToWriter(this, writer);
+  proto.grpc.NodeSettings.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -133,11 +133,11 @@ proto.crawlab_grpc.NodeSettings.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.crawlab_grpc.NodeSettings} message
+ * @param {!proto.grpc.NodeSettings} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.NodeSettings.serializeBinaryToWriter = function(message, writer) {
+proto.grpc.NodeSettings.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMaxRunners();
   if (f !== 0) {
@@ -153,16 +153,16 @@ proto.crawlab_grpc.NodeSettings.serializeBinaryToWriter = function(message, writ
  * optional int32 max_runners = 1;
  * @return {number}
  */
-proto.crawlab_grpc.NodeSettings.prototype.getMaxRunners = function() {
+proto.grpc.NodeSettings.prototype.getMaxRunners = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.NodeSettings} returns this
+ * @return {!proto.grpc.NodeSettings} returns this
  */
-proto.crawlab_grpc.NodeSettings.prototype.setMaxRunners = function(value) {
+proto.grpc.NodeSettings.prototype.setMaxRunners = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 

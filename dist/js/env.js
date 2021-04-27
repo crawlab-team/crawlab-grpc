@@ -10,7 +10,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.crawlab_grpc.Env');
+goog.provide('proto.grpc.Env');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -26,16 +26,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.crawlab_grpc.Env = function(opt_data) {
+proto.grpc.Env = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.crawlab_grpc.Env, jspb.Message);
+goog.inherits(proto.grpc.Env, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.crawlab_grpc.Env.displayName = 'proto.crawlab_grpc.Env';
+  proto.grpc.Env.displayName = 'proto.grpc.Env';
 }
 
 
@@ -53,8 +53,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.crawlab_grpc.Env.prototype.toObject = function(opt_includeInstance) {
-  return proto.crawlab_grpc.Env.toObject(opt_includeInstance, this);
+proto.grpc.Env.prototype.toObject = function(opt_includeInstance) {
+  return proto.grpc.Env.toObject(opt_includeInstance, this);
 };
 
 
@@ -63,11 +63,11 @@ proto.crawlab_grpc.Env.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.crawlab_grpc.Env} msg The msg instance to transform.
+ * @param {!proto.grpc.Env} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.Env.toObject = function(includeInstance, msg) {
+proto.grpc.Env.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -84,23 +84,23 @@ proto.crawlab_grpc.Env.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.crawlab_grpc.Env}
+ * @return {!proto.grpc.Env}
  */
-proto.crawlab_grpc.Env.deserializeBinary = function(bytes) {
+proto.grpc.Env.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.crawlab_grpc.Env;
-  return proto.crawlab_grpc.Env.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.grpc.Env;
+  return proto.grpc.Env.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.crawlab_grpc.Env} msg The message object to deserialize into.
+ * @param {!proto.grpc.Env} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.crawlab_grpc.Env}
+ * @return {!proto.grpc.Env}
  */
-proto.crawlab_grpc.Env.deserializeBinaryFromReader = function(msg, reader) {
+proto.grpc.Env.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -128,9 +128,9 @@ proto.crawlab_grpc.Env.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.crawlab_grpc.Env.prototype.serializeBinary = function() {
+proto.grpc.Env.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.crawlab_grpc.Env.serializeBinaryToWriter(this, writer);
+  proto.grpc.Env.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -138,11 +138,11 @@ proto.crawlab_grpc.Env.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.crawlab_grpc.Env} message
+ * @param {!proto.grpc.Env} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.Env.serializeBinaryToWriter = function(message, writer) {
+proto.grpc.Env.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName();
   if (f.length > 0) {
@@ -165,16 +165,16 @@ proto.crawlab_grpc.Env.serializeBinaryToWriter = function(message, writer) {
  * optional string name = 1;
  * @return {string}
  */
-proto.crawlab_grpc.Env.prototype.getName = function() {
+proto.grpc.Env.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Env} returns this
+ * @return {!proto.grpc.Env} returns this
  */
-proto.crawlab_grpc.Env.prototype.setName = function(value) {
+proto.grpc.Env.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -183,16 +183,16 @@ proto.crawlab_grpc.Env.prototype.setName = function(value) {
  * optional string value = 2;
  * @return {string}
  */
-proto.crawlab_grpc.Env.prototype.getValue = function() {
+proto.grpc.Env.prototype.getValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Env} returns this
+ * @return {!proto.grpc.Env} returns this
  */
-proto.crawlab_grpc.Env.prototype.setValue = function(value) {
+proto.grpc.Env.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

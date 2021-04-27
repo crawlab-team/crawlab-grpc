@@ -10,7 +10,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-goog.provide('proto.crawlab_grpc.Task');
+goog.provide('proto.grpc.Task');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -26,16 +26,16 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.crawlab_grpc.Task = function(opt_data) {
+proto.grpc.Task = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.crawlab_grpc.Task, jspb.Message);
+goog.inherits(proto.grpc.Task, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.crawlab_grpc.Task.displayName = 'proto.crawlab_grpc.Task';
+  proto.grpc.Task.displayName = 'proto.grpc.Task';
 }
 
 
@@ -53,8 +53,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.crawlab_grpc.Task.prototype.toObject = function(opt_includeInstance) {
-  return proto.crawlab_grpc.Task.toObject(opt_includeInstance, this);
+proto.grpc.Task.prototype.toObject = function(opt_includeInstance) {
+  return proto.grpc.Task.toObject(opt_includeInstance, this);
 };
 
 
@@ -63,11 +63,11 @@ proto.crawlab_grpc.Task.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.crawlab_grpc.Task} msg The msg instance to transform.
+ * @param {!proto.grpc.Task} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.Task.toObject = function(includeInstance, msg) {
+proto.grpc.Task.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     spiderId: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -103,23 +103,23 @@ proto.crawlab_grpc.Task.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.crawlab_grpc.Task}
+ * @return {!proto.grpc.Task}
  */
-proto.crawlab_grpc.Task.deserializeBinary = function(bytes) {
+proto.grpc.Task.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.crawlab_grpc.Task;
-  return proto.crawlab_grpc.Task.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.grpc.Task;
+  return proto.grpc.Task.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.crawlab_grpc.Task} msg The message object to deserialize into.
+ * @param {!proto.grpc.Task} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.crawlab_grpc.Task}
+ * @return {!proto.grpc.Task}
  */
-proto.crawlab_grpc.Task.deserializeBinaryFromReader = function(msg, reader) {
+proto.grpc.Task.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -223,9 +223,9 @@ proto.crawlab_grpc.Task.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.crawlab_grpc.Task.prototype.serializeBinary = function() {
+proto.grpc.Task.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.crawlab_grpc.Task.serializeBinaryToWriter(this, writer);
+  proto.grpc.Task.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -233,11 +233,11 @@ proto.crawlab_grpc.Task.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.crawlab_grpc.Task} message
+ * @param {!proto.grpc.Task} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.crawlab_grpc.Task.serializeBinaryToWriter = function(message, writer) {
+proto.grpc.Task.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -393,16 +393,16 @@ proto.crawlab_grpc.Task.serializeBinaryToWriter = function(message, writer) {
  * optional string _id = 1;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getId = function() {
+proto.grpc.Task.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setId = function(value) {
+proto.grpc.Task.prototype.setId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -411,16 +411,16 @@ proto.crawlab_grpc.Task.prototype.setId = function(value) {
  * optional string spider_id = 2;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getSpiderId = function() {
+proto.grpc.Task.prototype.getSpiderId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setSpiderId = function(value) {
+proto.grpc.Task.prototype.setSpiderId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -429,16 +429,16 @@ proto.crawlab_grpc.Task.prototype.setSpiderId = function(value) {
  * optional string start_ts = 3;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getStartTs = function() {
+proto.grpc.Task.prototype.getStartTs = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setStartTs = function(value) {
+proto.grpc.Task.prototype.setStartTs = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -447,16 +447,16 @@ proto.crawlab_grpc.Task.prototype.setStartTs = function(value) {
  * optional string finish_ts = 4;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getFinishTs = function() {
+proto.grpc.Task.prototype.getFinishTs = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setFinishTs = function(value) {
+proto.grpc.Task.prototype.setFinishTs = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -465,16 +465,16 @@ proto.crawlab_grpc.Task.prototype.setFinishTs = function(value) {
  * optional string status = 5;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getStatus = function() {
+proto.grpc.Task.prototype.getStatus = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setStatus = function(value) {
+proto.grpc.Task.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -483,16 +483,16 @@ proto.crawlab_grpc.Task.prototype.setStatus = function(value) {
  * optional string node_id = 6;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getNodeId = function() {
+proto.grpc.Task.prototype.getNodeId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setNodeId = function(value) {
+proto.grpc.Task.prototype.setNodeId = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -501,16 +501,16 @@ proto.crawlab_grpc.Task.prototype.setNodeId = function(value) {
  * optional string cmd = 8;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getCmd = function() {
+proto.grpc.Task.prototype.getCmd = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setCmd = function(value) {
+proto.grpc.Task.prototype.setCmd = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
@@ -519,16 +519,16 @@ proto.crawlab_grpc.Task.prototype.setCmd = function(value) {
  * optional string param = 9;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getParam = function() {
+proto.grpc.Task.prototype.getParam = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setParam = function(value) {
+proto.grpc.Task.prototype.setParam = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
@@ -537,16 +537,16 @@ proto.crawlab_grpc.Task.prototype.setParam = function(value) {
  * optional string error = 10;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getError = function() {
+proto.grpc.Task.prototype.getError = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setError = function(value) {
+proto.grpc.Task.prototype.setError = function(value) {
   return jspb.Message.setProto3StringField(this, 10, value);
 };
 
@@ -555,16 +555,16 @@ proto.crawlab_grpc.Task.prototype.setError = function(value) {
  * optional int32 result_count = 11;
  * @return {number}
  */
-proto.crawlab_grpc.Task.prototype.getResultCount = function() {
+proto.grpc.Task.prototype.getResultCount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setResultCount = function(value) {
+proto.grpc.Task.prototype.setResultCount = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
@@ -573,16 +573,16 @@ proto.crawlab_grpc.Task.prototype.setResultCount = function(value) {
  * optional int32 error_log_count = 12;
  * @return {number}
  */
-proto.crawlab_grpc.Task.prototype.getErrorLogCount = function() {
+proto.grpc.Task.prototype.getErrorLogCount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setErrorLogCount = function(value) {
+proto.grpc.Task.prototype.setErrorLogCount = function(value) {
   return jspb.Message.setProto3IntField(this, 12, value);
 };
 
@@ -591,16 +591,16 @@ proto.crawlab_grpc.Task.prototype.setErrorLogCount = function(value) {
  * optional int32 wait_duration = 13;
  * @return {number}
  */
-proto.crawlab_grpc.Task.prototype.getWaitDuration = function() {
+proto.grpc.Task.prototype.getWaitDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setWaitDuration = function(value) {
+proto.grpc.Task.prototype.setWaitDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 13, value);
 };
 
@@ -609,16 +609,16 @@ proto.crawlab_grpc.Task.prototype.setWaitDuration = function(value) {
  * optional int32 runtime_duration = 14;
  * @return {number}
  */
-proto.crawlab_grpc.Task.prototype.getRuntimeDuration = function() {
+proto.grpc.Task.prototype.getRuntimeDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setRuntimeDuration = function(value) {
+proto.grpc.Task.prototype.setRuntimeDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 14, value);
 };
 
@@ -627,16 +627,16 @@ proto.crawlab_grpc.Task.prototype.setRuntimeDuration = function(value) {
  * optional int32 total_duration = 15;
  * @return {number}
  */
-proto.crawlab_grpc.Task.prototype.getTotalDuration = function() {
+proto.grpc.Task.prototype.getTotalDuration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setTotalDuration = function(value) {
+proto.grpc.Task.prototype.setTotalDuration = function(value) {
   return jspb.Message.setProto3IntField(this, 15, value);
 };
 
@@ -645,16 +645,16 @@ proto.crawlab_grpc.Task.prototype.setTotalDuration = function(value) {
  * optional int32 pid = 16;
  * @return {number}
  */
-proto.crawlab_grpc.Task.prototype.getPid = function() {
+proto.grpc.Task.prototype.getPid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setPid = function(value) {
+proto.grpc.Task.prototype.setPid = function(value) {
   return jspb.Message.setProto3IntField(this, 16, value);
 };
 
@@ -663,16 +663,16 @@ proto.crawlab_grpc.Task.prototype.setPid = function(value) {
  * optional string run_type = 17;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getRunType = function() {
+proto.grpc.Task.prototype.getRunType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setRunType = function(value) {
+proto.grpc.Task.prototype.setRunType = function(value) {
   return jspb.Message.setProto3StringField(this, 17, value);
 };
 
@@ -681,16 +681,16 @@ proto.crawlab_grpc.Task.prototype.setRunType = function(value) {
  * optional string schedule_id = 18;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getScheduleId = function() {
+proto.grpc.Task.prototype.getScheduleId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setScheduleId = function(value) {
+proto.grpc.Task.prototype.setScheduleId = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
 };
 
@@ -699,16 +699,16 @@ proto.crawlab_grpc.Task.prototype.setScheduleId = function(value) {
  * optional string type = 19;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getType = function() {
+proto.grpc.Task.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setType = function(value) {
+proto.grpc.Task.prototype.setType = function(value) {
   return jspb.Message.setProto3StringField(this, 19, value);
 };
 
@@ -717,16 +717,16 @@ proto.crawlab_grpc.Task.prototype.setType = function(value) {
  * optional string user_id = 20;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getUserId = function() {
+proto.grpc.Task.prototype.getUserId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setUserId = function(value) {
+proto.grpc.Task.prototype.setUserId = function(value) {
   return jspb.Message.setProto3StringField(this, 20, value);
 };
 
@@ -735,16 +735,16 @@ proto.crawlab_grpc.Task.prototype.setUserId = function(value) {
  * optional string create_ts = 21;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getCreateTs = function() {
+proto.grpc.Task.prototype.getCreateTs = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setCreateTs = function(value) {
+proto.grpc.Task.prototype.setCreateTs = function(value) {
   return jspb.Message.setProto3StringField(this, 21, value);
 };
 
@@ -753,16 +753,16 @@ proto.crawlab_grpc.Task.prototype.setCreateTs = function(value) {
  * optional string update_ts = 22;
  * @return {string}
  */
-proto.crawlab_grpc.Task.prototype.getUpdateTs = function() {
+proto.grpc.Task.prototype.getUpdateTs = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.crawlab_grpc.Task} returns this
+ * @return {!proto.grpc.Task} returns this
  */
-proto.crawlab_grpc.Task.prototype.setUpdateTs = function(value) {
+proto.grpc.Task.prototype.setUpdateTs = function(value) {
   return jspb.Message.setProto3StringField(this, 22, value);
 };
 
