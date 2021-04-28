@@ -31,3 +31,6 @@ cd $base_path && \
   --php_out=dist/php \
   --ruby_out=dist/ruby \
   ./proto/**/*.proto
+
+cd $base_path && \
+  cp go.mod go.sum dist/go

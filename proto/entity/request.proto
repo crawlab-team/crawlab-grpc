@@ -1,11 +1,9 @@
 syntax = "proto3";
 
-import "entity/node_info.proto";
-
 package grpc;
 option go_package = ".;grpc";
 
 message Request {
-  NodeInfo node = 1;
+  string node_key = 1;
   bytes data = 2;
 }

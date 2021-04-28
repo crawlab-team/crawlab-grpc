@@ -24,13 +24,12 @@ namespace Grpc {
     static RequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRlbnRpdHkvcmVxdWVzdC5wcm90bxIEZ3JwYxoWZW50aXR5L25vZGVfaW5m",
-            "by5wcm90byI1CgdSZXF1ZXN0EhwKBG5vZGUYASABKAsyDi5ncnBjLk5vZGVJ",
-            "bmZvEgwKBGRhdGEYAiABKAxCCFoGLjtncnBjYgZwcm90bzM="));
+            "ChRlbnRpdHkvcmVxdWVzdC5wcm90bxIEZ3JwYyIpCgdSZXF1ZXN0EhAKCG5v",
+            "ZGVfa2V5GAEgASgJEgwKBGRhdGEYAiABKAxCCFoGLjtncnBjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Grpc.NodeInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Request), global::Grpc.Request.Parser, new[]{ "Node", "Data" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Request), global::Grpc.Request.Parser, new[]{ "NodeKey", "Data" }, null, null, null, null)
           }));
     }
     #endregion
@@ -66,7 +65,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Request(Request other) : this() {
-      node_ = other.node_ != null ? other.node_.Clone() : null;
+      nodeKey_ = other.nodeKey_;
       data_ = other.data_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -76,14 +75,14 @@ namespace Grpc {
       return new Request(this);
     }
 
-    /// <summary>Field number for the "node" field.</summary>
-    public const int NodeFieldNumber = 1;
-    private global::Grpc.NodeInfo node_;
+    /// <summary>Field number for the "node_key" field.</summary>
+    public const int NodeKeyFieldNumber = 1;
+    private string nodeKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Grpc.NodeInfo Node {
-      get { return node_; }
+    public string NodeKey {
+      get { return nodeKey_; }
       set {
-        node_ = value;
+        nodeKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -111,7 +110,7 @@ namespace Grpc {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Node, other.Node)) return false;
+      if (NodeKey != other.NodeKey) return false;
       if (Data != other.Data) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -119,7 +118,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (node_ != null) hash ^= Node.GetHashCode();
+      if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
       if (Data.Length != 0) hash ^= Data.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -137,9 +136,9 @@ namespace Grpc {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (node_ != null) {
+      if (NodeKey.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteMessage(Node);
+        output.WriteString(NodeKey);
       }
       if (Data.Length != 0) {
         output.WriteRawTag(18);
@@ -154,9 +153,9 @@ namespace Grpc {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (node_ != null) {
+      if (NodeKey.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteMessage(Node);
+        output.WriteString(NodeKey);
       }
       if (Data.Length != 0) {
         output.WriteRawTag(18);
@@ -171,8 +170,8 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (node_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Node);
+      if (NodeKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
       }
       if (Data.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
@@ -188,11 +187,8 @@ namespace Grpc {
       if (other == null) {
         return;
       }
-      if (other.node_ != null) {
-        if (node_ == null) {
-          Node = new global::Grpc.NodeInfo();
-        }
-        Node.MergeFrom(other.Node);
+      if (other.NodeKey.Length != 0) {
+        NodeKey = other.NodeKey;
       }
       if (other.Data.Length != 0) {
         Data = other.Data;
@@ -212,10 +208,7 @@ namespace Grpc {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (node_ == null) {
-              Node = new global::Grpc.NodeInfo();
-            }
-            input.ReadMessage(Node);
+            NodeKey = input.ReadString();
             break;
           }
           case 18: {
@@ -237,10 +230,7 @@ namespace Grpc {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (node_ == null) {
-              Node = new global::Grpc.NodeInfo();
-            }
-            input.ReadMessage(Node);
+            NodeKey = input.ReadString();
             break;
           }
           case 18: {

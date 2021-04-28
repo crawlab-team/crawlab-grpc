@@ -14,13 +14,12 @@ class Request
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Entity\NodeInfo::initOnce();
         $pool->internalAddGeneratedFile(
             '
-e
-entity/request.protogrpc"5
-Request
-node (2.grpc.NodeInfo
+Y
+entity/request.protogrpc")
+Request
+node_key (	
 data (BZ.;grpcbproto3'
         , true);
 

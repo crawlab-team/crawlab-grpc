@@ -6,7 +6,8 @@ import "entity/response.proto";
 package grpc;
 option go_package = ".;grpc";
 
-service MasterNodeService {
+service NodeService {
   rpc Register(Request) returns (Response){};
+  rpc SendHeartbeat(Request) returns (Response){};
   rpc Ping(Request) returns (Response){};
 }

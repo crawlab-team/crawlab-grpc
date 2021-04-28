@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from entity import node_info_pb2 as entity_dot_node__info__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x65ntity/request.proto\x12\x04grpc\x1a\x16\x65ntity/node_info.proto\"5\n\x07Request\x12\x1c\n\x04node\x18\x01 \x01(\x0b\x32\x0e.grpc.NodeInfo\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x08Z\x06.;grpcb\x06proto3'
-  ,
-  dependencies=[entity_dot_node__info__pb2.DESCRIPTOR,])
+  serialized_pb=b'\n\x14\x65ntity/request.proto\x12\x04grpc\")\n\x07Request\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x08Z\x06.;grpcb\x06proto3'
+)
 
 
 
@@ -36,9 +34,9 @@ _REQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='node', full_name='grpc.Request.node', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='node_key', full_name='grpc.Request.node_key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -61,11 +59,10 @@ _REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=54,
-  serialized_end=107,
+  serialized_start=30,
+  serialized_end=71,
 )
 
-_REQUEST.fields_by_name['node'].message_type = entity_dot_node__info__pb2._NODEINFO
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

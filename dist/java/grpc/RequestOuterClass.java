@@ -19,19 +19,16 @@ public final class RequestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.grpc.NodeInfo node = 1;</code>
-     * @return Whether the node field is set.
+     * <code>string node_key = 1;</code>
+     * @return The nodeKey.
      */
-    boolean hasNode();
+    java.lang.String getNodeKey();
     /**
-     * <code>.grpc.NodeInfo node = 1;</code>
-     * @return The node.
+     * <code>string node_key = 1;</code>
+     * @return The bytes for nodeKey.
      */
-    grpc.NodeInfoOuterClass.NodeInfo getNode();
-    /**
-     * <code>.grpc.NodeInfo node = 1;</code>
-     */
-    grpc.NodeInfoOuterClass.NodeInfoOrBuilder getNodeOrBuilder();
+    com.google.protobuf.ByteString
+        getNodeKeyBytes();
 
     /**
      * <code>bytes data = 2;</code>
@@ -52,6 +49,7 @@ public final class RequestOuterClass {
       super(builder);
     }
     private Request() {
+      nodeKey_ = "";
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -86,16 +84,9 @@ public final class RequestOuterClass {
               done = true;
               break;
             case 10: {
-              grpc.NodeInfoOuterClass.NodeInfo.Builder subBuilder = null;
-              if (node_ != null) {
-                subBuilder = node_.toBuilder();
-              }
-              node_ = input.readMessage(grpc.NodeInfoOuterClass.NodeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(node_);
-                node_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              nodeKey_ = s;
               break;
             }
             case 18: {
@@ -135,30 +126,42 @@ public final class RequestOuterClass {
               grpc.RequestOuterClass.Request.class, grpc.RequestOuterClass.Request.Builder.class);
     }
 
-    public static final int NODE_FIELD_NUMBER = 1;
-    private grpc.NodeInfoOuterClass.NodeInfo node_;
+    public static final int NODE_KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nodeKey_;
     /**
-     * <code>.grpc.NodeInfo node = 1;</code>
-     * @return Whether the node field is set.
+     * <code>string node_key = 1;</code>
+     * @return The nodeKey.
      */
     @java.lang.Override
-    public boolean hasNode() {
-      return node_ != null;
+    public java.lang.String getNodeKey() {
+      java.lang.Object ref = nodeKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeKey_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.grpc.NodeInfo node = 1;</code>
-     * @return The node.
+     * <code>string node_key = 1;</code>
+     * @return The bytes for nodeKey.
      */
     @java.lang.Override
-    public grpc.NodeInfoOuterClass.NodeInfo getNode() {
-      return node_ == null ? grpc.NodeInfoOuterClass.NodeInfo.getDefaultInstance() : node_;
-    }
-    /**
-     * <code>.grpc.NodeInfo node = 1;</code>
-     */
-    @java.lang.Override
-    public grpc.NodeInfoOuterClass.NodeInfoOrBuilder getNodeOrBuilder() {
-      return getNode();
+    public com.google.protobuf.ByteString
+        getNodeKeyBytes() {
+      java.lang.Object ref = nodeKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int DATA_FIELD_NUMBER = 2;
@@ -186,8 +189,8 @@ public final class RequestOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (node_ != null) {
-        output.writeMessage(1, getNode());
+      if (!getNodeKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
       if (!data_.isEmpty()) {
         output.writeBytes(2, data_);
@@ -201,9 +204,8 @@ public final class RequestOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (node_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getNode());
+      if (!getNodeKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
@@ -224,11 +226,8 @@ public final class RequestOuterClass {
       }
       grpc.RequestOuterClass.Request other = (grpc.RequestOuterClass.Request) obj;
 
-      if (hasNode() != other.hasNode()) return false;
-      if (hasNode()) {
-        if (!getNode()
-            .equals(other.getNode())) return false;
-      }
+      if (!getNodeKey()
+          .equals(other.getNodeKey())) return false;
       if (!getData()
           .equals(other.getData())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +241,8 @@ public final class RequestOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasNode()) {
-        hash = (37 * hash) + NODE_FIELD_NUMBER;
-        hash = (53 * hash) + getNode().hashCode();
-      }
+      hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeKey().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -381,12 +378,8 @@ public final class RequestOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (nodeBuilder_ == null) {
-          node_ = null;
-        } else {
-          node_ = null;
-          nodeBuilder_ = null;
-        }
+        nodeKey_ = "";
+
         data_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -415,11 +408,7 @@ public final class RequestOuterClass {
       @java.lang.Override
       public grpc.RequestOuterClass.Request buildPartial() {
         grpc.RequestOuterClass.Request result = new grpc.RequestOuterClass.Request(this);
-        if (nodeBuilder_ == null) {
-          result.node_ = node_;
-        } else {
-          result.node_ = nodeBuilder_.build();
-        }
+        result.nodeKey_ = nodeKey_;
         result.data_ = data_;
         onBuilt();
         return result;
@@ -469,8 +458,9 @@ public final class RequestOuterClass {
 
       public Builder mergeFrom(grpc.RequestOuterClass.Request other) {
         if (other == grpc.RequestOuterClass.Request.getDefaultInstance()) return this;
-        if (other.hasNode()) {
-          mergeNode(other.getNode());
+        if (!other.getNodeKey().isEmpty()) {
+          nodeKey_ = other.nodeKey_;
+          onChanged();
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
@@ -504,123 +494,80 @@ public final class RequestOuterClass {
         return this;
       }
 
-      private grpc.NodeInfoOuterClass.NodeInfo node_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.NodeInfoOuterClass.NodeInfo, grpc.NodeInfoOuterClass.NodeInfo.Builder, grpc.NodeInfoOuterClass.NodeInfoOrBuilder> nodeBuilder_;
+      private java.lang.Object nodeKey_ = "";
       /**
-       * <code>.grpc.NodeInfo node = 1;</code>
-       * @return Whether the node field is set.
+       * <code>string node_key = 1;</code>
+       * @return The nodeKey.
        */
-      public boolean hasNode() {
-        return nodeBuilder_ != null || node_ != null;
-      }
-      /**
-       * <code>.grpc.NodeInfo node = 1;</code>
-       * @return The node.
-       */
-      public grpc.NodeInfoOuterClass.NodeInfo getNode() {
-        if (nodeBuilder_ == null) {
-          return node_ == null ? grpc.NodeInfoOuterClass.NodeInfo.getDefaultInstance() : node_;
+      public java.lang.String getNodeKey() {
+        java.lang.Object ref = nodeKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeKey_ = s;
+          return s;
         } else {
-          return nodeBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.grpc.NodeInfo node = 1;</code>
+       * <code>string node_key = 1;</code>
+       * @return The bytes for nodeKey.
        */
-      public Builder setNode(grpc.NodeInfoOuterClass.NodeInfo value) {
-        if (nodeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          node_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getNodeKeyBytes() {
+        java.lang.Object ref = nodeKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeKey_ = b;
+          return b;
         } else {
-          nodeBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.grpc.NodeInfo node = 1;</code>
+       * <code>string node_key = 1;</code>
+       * @param value The nodeKey to set.
+       * @return This builder for chaining.
        */
-      public Builder setNode(
-          grpc.NodeInfoOuterClass.NodeInfo.Builder builderForValue) {
-        if (nodeBuilder_ == null) {
-          node_ = builderForValue.build();
-          onChanged();
-        } else {
-          nodeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.grpc.NodeInfo node = 1;</code>
-       */
-      public Builder mergeNode(grpc.NodeInfoOuterClass.NodeInfo value) {
-        if (nodeBuilder_ == null) {
-          if (node_ != null) {
-            node_ =
-              grpc.NodeInfoOuterClass.NodeInfo.newBuilder(node_).mergeFrom(value).buildPartial();
-          } else {
-            node_ = value;
-          }
-          onChanged();
-        } else {
-          nodeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.grpc.NodeInfo node = 1;</code>
-       */
-      public Builder clearNode() {
-        if (nodeBuilder_ == null) {
-          node_ = null;
-          onChanged();
-        } else {
-          node_ = null;
-          nodeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.grpc.NodeInfo node = 1;</code>
-       */
-      public grpc.NodeInfoOuterClass.NodeInfo.Builder getNodeBuilder() {
-        
+      public Builder setNodeKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nodeKey_ = value;
         onChanged();
-        return getNodeFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.grpc.NodeInfo node = 1;</code>
+       * <code>string node_key = 1;</code>
+       * @return This builder for chaining.
        */
-      public grpc.NodeInfoOuterClass.NodeInfoOrBuilder getNodeOrBuilder() {
-        if (nodeBuilder_ != null) {
-          return nodeBuilder_.getMessageOrBuilder();
-        } else {
-          return node_ == null ?
-              grpc.NodeInfoOuterClass.NodeInfo.getDefaultInstance() : node_;
-        }
+      public Builder clearNodeKey() {
+        
+        nodeKey_ = getDefaultInstance().getNodeKey();
+        onChanged();
+        return this;
       }
       /**
-       * <code>.grpc.NodeInfo node = 1;</code>
+       * <code>string node_key = 1;</code>
+       * @param value The bytes for nodeKey to set.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          grpc.NodeInfoOuterClass.NodeInfo, grpc.NodeInfoOuterClass.NodeInfo.Builder, grpc.NodeInfoOuterClass.NodeInfoOrBuilder> 
-          getNodeFieldBuilder() {
-        if (nodeBuilder_ == null) {
-          nodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              grpc.NodeInfoOuterClass.NodeInfo, grpc.NodeInfoOuterClass.NodeInfo.Builder, grpc.NodeInfoOuterClass.NodeInfoOrBuilder>(
-                  getNode(),
-                  getParentForChildren(),
-                  isClean());
-          node_ = null;
-        }
-        return nodeBuilder_;
+      public Builder setNodeKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nodeKey_ = value;
+        onChanged();
+        return this;
       }
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
@@ -723,23 +670,20 @@ public final class RequestOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024entity/request.proto\022\004grpc\032\026entity/nod" +
-      "e_info.proto\"5\n\007Request\022\034\n\004node\030\001 \001(\0132\016." +
-      "grpc.NodeInfo\022\014\n\004data\030\002 \001(\014B\010Z\006.;grpcb\006p" +
-      "roto3"
+      "\n\024entity/request.proto\022\004grpc\")\n\007Request\022" +
+      "\020\n\010node_key\030\001 \001(\t\022\014\n\004data\030\002 \001(\014B\010Z\006.;grp" +
+      "cb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          grpc.NodeInfoOuterClass.getDescriptor(),
         });
     internal_static_grpc_Request_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_grpc_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_Request_descriptor,
-        new java.lang.String[] { "Node", "Data", });
-    grpc.NodeInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "NodeKey", "Data", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
