@@ -9,6 +9,18 @@ fi
 base_path=$(cd $BASE_DIR/..; pwd)
 
 cd $base_path && \
+  rm -rf dist | true
+
+cd $base_path && \
+  mkdir -p dist/go | true && \
+  mkdir -p dist/python | true && \
+  mkdir -p dist/js | true && \
+  mkdir -p dist/java | true && \
+  mkdir -p dist/csharp | true && \
+  mkdir -p dist/php | true && \
+  mkdir -p dist/ruby | true
+
+cd $base_path && \
   protoc -I ./proto \
   --go_out=dist/go \
   --go-grpc_out=dist/go \

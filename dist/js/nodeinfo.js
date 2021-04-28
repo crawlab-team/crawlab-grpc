@@ -1,4 +1,4 @@
-// source: services/node_service.proto
+// source: entity/node_info.proto
 /**
  * @fileoverview
  * @enhanceable

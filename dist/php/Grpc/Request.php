@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Request extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string node_key = 1;</code>
+     * Generated from protobuf field <code>.grpc.NodeInfo node = 1;</code>
      */
-    protected $node_key = '';
+    protected $node = null;
     /**
      * Generated from protobuf field <code>bytes data = 2;</code>
      */
@@ -28,7 +28,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $node_key
+     *     @type \Grpc\NodeInfo $node
      *     @type string $data
      * }
      */
@@ -38,23 +38,33 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string node_key = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.grpc.NodeInfo node = 1;</code>
+     * @return \Grpc\NodeInfo
      */
-    public function getNodeKey()
+    public function getNode()
     {
-        return $this->node_key;
+        return isset($this->node) ? $this->node : null;
+    }
+
+    public function hasNode()
+    {
+        return isset($this->node);
+    }
+
+    public function clearNode()
+    {
+        unset($this->node);
     }
 
     /**
-     * Generated from protobuf field <code>string node_key = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.grpc.NodeInfo node = 1;</code>
+     * @param \Grpc\NodeInfo $var
      * @return $this
      */
-    public function setNodeKey($var)
+    public function setNode($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->node_key = $var;
+        GPBUtil::checkMessage($var, \Grpc\NodeInfo::class);
+        $this->node = $var;
 
         return $this;
     }

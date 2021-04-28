@@ -3,10 +3,11 @@
 
 require 'google/protobuf'
 
+require 'entity/node_info_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("entity/request.proto", :syntax => :proto3) do
     add_message "grpc.Request" do
-      optional :node_key, :string, 1
+      optional :node, :message, 1, "grpc.NodeInfo"
       optional :data, :bytes, 2
     end
   end
