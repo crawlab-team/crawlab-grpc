@@ -18,4 +18,4 @@ cd $base_path && \
   --csharp_out=dist/csharp \
   --php_out=dist/php \
   --ruby_out=dist/ruby \
-  ./proto/*.proto
+  ./proto/**/*.proto

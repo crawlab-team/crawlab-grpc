@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nnode.proto\x12\x04grpc\x1a\x0eresponse.proto2:\n\x0bNodeService\x12+\n\x08Register\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n\nnode.proto\x12\x04grpc\x1a\x0eresponse.proto2c\n\x0bNodeService\x12+\n\x08Register\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12\'\n\x04Ping\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x42\x08Z\x06.;grpcb\x06proto3'
   ,
   dependencies=[response__pb2.DESCRIPTOR,])
 
@@ -39,12 +39,22 @@ _NODESERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=36,
-  serialized_end=94,
+  serialized_end=135,
   methods=[
   _descriptor.MethodDescriptor(
     name='Register',
     full_name='grpc.NodeService.Register',
     index=0,
+    containing_service=None,
+    input_type=response__pb2._REQUEST,
+    output_type=response__pb2._RESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Ping',
+    full_name='grpc.NodeService.Ping',
+    index=1,
     containing_service=None,
     input_type=response__pb2._REQUEST,
     output_type=response__pb2._RESPONSE,

@@ -6,10 +6,6 @@ require 'google/protobuf'
 require 'code_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("response.proto", :syntax => :proto3) do
-    add_message "grpc.Request" do
-      optional :node_key, :string, 1
-      optional :data, :bytes, 2
-    end
     add_message "grpc.Response" do
       optional :code, :enum, 1, "ResponseCode"
       optional :message, :string, 2
@@ -21,6 +17,5 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Grpc
-  Request = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.Request").msgclass
   Response = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("grpc.Response").msgclass
 end

@@ -17,11 +17,8 @@ class Response
         \GPBMetadata\Code::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¹
-response.protogrpc")
-Request
-node_key (	
-data ("d
+Ž
+response.protogrpc"d
 Response
 code (2.ResponseCode
 message (	

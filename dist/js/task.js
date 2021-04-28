@@ -1,4 +1,4 @@
-// source: model.proto
+// source: models/task.proto
 /**
  * @fileoverview
  * @enhanceable

@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-import "response.proto";
+import "entity/request.proto";
+import "entity/response.proto";
 
 package grpc;
 option go_package = ".;grpc";
@@ -8,4 +9,12 @@ option go_package = ".;grpc";
 service NodeService {
   rpc Register(Request) returns (Response){};
   rpc Ping(Request) returns (Response){};
+}
+
+message NodeResponse {
+}
+
+message NodeInfo {
+  string key = 1;
+  bool is_master = 2;
 }

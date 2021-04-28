@@ -23,9 +23,10 @@ public final class Node {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nnode.proto\022\004grpc\032\016response.proto2:\n\013No" +
+      "\n\nnode.proto\022\004grpc\032\016response.proto2c\n\013No" +
       "deService\022+\n\010Register\022\r.grpc.Request\032\016.g" +
-      "rpc.Response\"\000B\010Z\006.;grpcb\006proto3"
+      "rpc.Response\"\000\022\'\n\004Ping\022\r.grpc.Request\032\016." +
+      "grpc.Response\"\000B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

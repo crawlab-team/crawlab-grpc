@@ -1,4 +1,4 @@
-// source: code.proto
+// source: entity/code.proto
 /**
  * @fileoverview
  * @enhanceable

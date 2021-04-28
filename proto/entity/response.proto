@@ -1,14 +1,9 @@
 syntax = "proto3";
 
-import "code.proto";
+import "entity/code.proto";
 
 package grpc;
 option go_package = ".;grpc";
-
-message Request {
-  string node_key = 1;
-  bytes data = 2;
-}
 
 message Response {
   ResponseCode code = 1;

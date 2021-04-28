@@ -1,4 +1,4 @@
-// source: response.proto
+// source: entity/request.proto
 /**
  * @fileoverview
  * @enhanceable

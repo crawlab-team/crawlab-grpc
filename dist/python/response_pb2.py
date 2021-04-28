@@ -20,50 +20,11 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0eresponse.proto\x12\x04grpc\x1a\ncode.proto\")\n\x07Request\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"d\n\x08Response\x12\x1b\n\x04\x63ode\x18\x01 \x01(\x0e\x32\r.ResponseCode\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12\r\n\x05total\x18\x05 \x01(\x03\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n\x0eresponse.proto\x12\x04grpc\x1a\ncode.proto\"d\n\x08Response\x12\x1b\n\x04\x63ode\x18\x01 \x01(\x0e\x32\r.ResponseCode\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12\r\n\x05total\x18\x05 \x01(\x03\x42\x08Z\x06.;grpcb\x06proto3'
   ,
   dependencies=[code__pb2.DESCRIPTOR,])
 
 
-
-
-_REQUEST = _descriptor.Descriptor(
-  name='Request',
-  full_name='grpc.Request',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='node_key', full_name='grpc.Request.node_key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='grpc.Request.data', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=36,
-  serialized_end=77,
-)
 
 
 _RESPONSE = _descriptor.Descriptor(
@@ -121,21 +82,13 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=79,
-  serialized_end=179,
+  serialized_start=36,
+  serialized_end=136,
 )
 
 _RESPONSE.fields_by_name['code'].enum_type = code__pb2._RESPONSECODE
-DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), {
-  'DESCRIPTOR' : _REQUEST,
-  '__module__' : 'response_pb2'
-  # @@protoc_insertion_point(class_scope:grpc.Request)
-  })
-_sym_db.RegisterMessage(Request)
 
 Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSE,

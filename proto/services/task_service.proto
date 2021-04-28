@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "entity/request.proto";
+import "entity/response.proto";
+
+package grpc;
+option go_package = ".;grpc";
+
+service TaskService {
+  rpc GetTaskInfo(Request) returns (Response){};
+  rpc SaveItem(Request) returns (Response){};
+  rpc SaveItems(Request) returns (Response){};
+}
