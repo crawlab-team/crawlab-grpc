@@ -7,4 +7,5 @@ option go_package = ".;grpc";
 
 service NodeService {
   rpc Register(Request) returns (Response){};
+  rpc Ping(Request) returns (Response){};
 }
