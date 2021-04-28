@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "entity/request.proto";
+import "entity/response.proto";
+
+package grpc;
+option go_package = ".;grpc";
+
+service WorkerNodeService {
+  rpc Ping(Request) returns (Response){};
+}
