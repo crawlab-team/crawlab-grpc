@@ -20,6 +20,8 @@ type NodeServiceClient interface {
 	Register(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	SendHeartbeat(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	Subscribe(ctx context.Context, in *Request, opts ...grpc.CallOption) (NodeService_SubscribeClient, error)
+	Unsubscribe(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 }
 
 type nodeServiceClient struct {
@@ -57,6 +59,47 @@ func (c *nodeServiceClient) Ping(ctx context.Context, in *Request, opts ...grpc.
 	return out, nil
 }
 
+func (c *nodeServiceClient) Subscribe(ctx context.Context, in *Request, opts ...grpc.CallOption) (NodeService_SubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_NodeService_serviceDesc.Streams[0], "/grpc.NodeService/Subscribe", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &nodeServiceSubscribeClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type NodeService_SubscribeClient interface {
+	Recv() (*StreamMessage, error)
+	grpc.ClientStream
+}
+
+type nodeServiceSubscribeClient struct {
+	grpc.ClientStream
+}
+
+func (x *nodeServiceSubscribeClient) Recv() (*StreamMessage, error) {
+	m := new(StreamMessage)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *nodeServiceClient) Unsubscribe(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/grpc.NodeService/Unsubscribe", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NodeServiceServer is the server API for NodeService service.
 // All implementations must embed UnimplementedNodeServiceServer
 // for forward compatibility
@@ -64,6 +107,8 @@ type NodeServiceServer interface {
 	Register(context.Context, *Request) (*Response, error)
 	SendHeartbeat(context.Context, *Request) (*Response, error)
 	Ping(context.Context, *Request) (*Response, error)
+	Subscribe(*Request, NodeService_SubscribeServer) error
+	Unsubscribe(context.Context, *Request) (*Response, error)
 	mustEmbedUnimplementedNodeServiceServer()
 }
 
@@ -79,6 +124,12 @@ func (UnimplementedNodeServiceServer) SendHeartbeat(context.Context, *Request) (
 }
 func (UnimplementedNodeServiceServer) Ping(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
+}
+func (UnimplementedNodeServiceServer) Subscribe(*Request, NodeService_SubscribeServer) error {
+	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
+}
+func (UnimplementedNodeServiceServer) Unsubscribe(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Unsubscribe not implemented")
 }
 func (UnimplementedNodeServiceServer) mustEmbedUnimplementedNodeServiceServer() {}
 
@@ -147,6 +198,45 @@ func _NodeService_Ping_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NodeService_Subscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(Request)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(NodeServiceServer).Subscribe(m, &nodeServiceSubscribeServer{stream})
+}
+
+type NodeService_SubscribeServer interface {
+	Send(*StreamMessage) error
+	grpc.ServerStream
+}
+
+type nodeServiceSubscribeServer struct {
+	grpc.ServerStream
+}
+
+func (x *nodeServiceSubscribeServer) Send(m *StreamMessage) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _NodeService_Unsubscribe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NodeServiceServer).Unsubscribe(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/grpc.NodeService/Unsubscribe",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NodeServiceServer).Unsubscribe(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _NodeService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "grpc.NodeService",
 	HandlerType: (*NodeServiceServer)(nil),
@@ -163,7 +253,17 @@ var _NodeService_serviceDesc = grpc.ServiceDesc{
 			MethodName: "Ping",
 			Handler:    _NodeService_Ping_Handler,
 		},
+		{
+			MethodName: "Unsubscribe",
+			Handler:    _NodeService_Unsubscribe_Handler,
+		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "Subscribe",
+			Handler:       _NodeService_Subscribe_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "services/node_service.proto",
 }

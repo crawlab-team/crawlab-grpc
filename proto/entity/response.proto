@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "entity/code.proto";
+import "entity/response_code.proto";
 
 package grpc;
 option go_package = ".;grpc";

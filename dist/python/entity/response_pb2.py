@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from entity import code_pb2 as entity_dot_code__pb2
+from entity import response_code_pb2 as entity_dot_response__code__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15\x65ntity/response.proto\x12\x04grpc\x1a\x11\x65ntity/code.proto\"d\n\x08Response\x12\x1b\n\x04\x63ode\x18\x01 \x01(\x0e\x32\r.ResponseCode\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12\r\n\x05total\x18\x05 \x01(\x03\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n\x15\x65ntity/response.proto\x12\x04grpc\x1a\x1a\x65ntity/response_code.proto\"d\n\x08Response\x12\x1b\n\x04\x63ode\x18\x01 \x01(\x0e\x32\r.ResponseCode\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12\r\n\x05\x65rror\x18\x04 \x01(\t\x12\r\n\x05total\x18\x05 \x01(\x03\x42\x08Z\x06.;grpcb\x06proto3'
   ,
-  dependencies=[entity_dot_code__pb2.DESCRIPTOR,])
+  dependencies=[entity_dot_response__code__pb2.DESCRIPTOR,])
 
 
 
@@ -82,11 +82,11 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=50,
-  serialized_end=150,
+  serialized_start=59,
+  serialized_end=159,
 )
 
-_RESPONSE.fields_by_name['code'].enum_type = entity_dot_code__pb2._RESPONSECODE
+_RESPONSE.fields_by_name['code'].enum_type = entity_dot_response__code__pb2._RESPONSECODE
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

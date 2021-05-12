@@ -1,4 +1,4 @@
-// source: entity/code.proto
+// source: entity/response_code.proto
 /**
  * @fileoverview
  * @enhanceable

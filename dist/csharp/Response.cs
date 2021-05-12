@@ -24,12 +24,12 @@ namespace Grpc {
     static ResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVlbnRpdHkvcmVzcG9uc2UucHJvdG8SBGdycGMaEWVudGl0eS9jb2RlLnBy",
-            "b3RvImQKCFJlc3BvbnNlEhsKBGNvZGUYASABKA4yDS5SZXNwb25zZUNvZGUS",
-            "DwoHbWVzc2FnZRgCIAEoCRIMCgRkYXRhGAMgASgMEg0KBWVycm9yGAQgASgJ",
-            "Eg0KBXRvdGFsGAUgASgDQghaBi47Z3JwY2IGcHJvdG8z"));
+            "ChVlbnRpdHkvcmVzcG9uc2UucHJvdG8SBGdycGMaGmVudGl0eS9yZXNwb25z",
+            "ZV9jb2RlLnByb3RvImQKCFJlc3BvbnNlEhsKBGNvZGUYASABKA4yDS5SZXNw",
+            "b25zZUNvZGUSDwoHbWVzc2FnZRgCIAEoCRIMCgRkYXRhGAMgASgMEg0KBWVy",
+            "cm9yGAQgASgJEg0KBXRvdGFsGAUgASgDQghaBi47Z3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::CodeReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ResponseCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Response), global::Grpc.Response.Parser, new[]{ "Code", "Message", "Data", "Error", "Total" }, null, null, null, null)
           }));

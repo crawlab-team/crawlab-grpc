@@ -14,7 +14,7 @@ class Response
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Entity\Code::initOnce();
+        \GPBMetadata\Entity\ResponseCode::initOnce();
         $pool->internalAddGeneratedFile(
             '
 •

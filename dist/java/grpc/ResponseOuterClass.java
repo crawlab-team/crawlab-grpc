@@ -27,7 +27,7 @@ public final class ResponseOuterClass {
      * <code>.ResponseCode code = 1;</code>
      * @return The code.
      */
-    Code.ResponseCode getCode();
+    ResponseCodeOuterClass.ResponseCode getCode();
 
     /**
      * <code>string message = 2;</code>
@@ -187,10 +187,10 @@ public final class ResponseOuterClass {
      * <code>.ResponseCode code = 1;</code>
      * @return The code.
      */
-    @java.lang.Override public Code.ResponseCode getCode() {
+    @java.lang.Override public ResponseCodeOuterClass.ResponseCode getCode() {
       @SuppressWarnings("deprecation")
-      Code.ResponseCode result = Code.ResponseCode.valueOf(code_);
-      return result == null ? Code.ResponseCode.UNRECOGNIZED : result;
+      ResponseCodeOuterClass.ResponseCode result = ResponseCodeOuterClass.ResponseCode.valueOf(code_);
+      return result == null ? ResponseCodeOuterClass.ResponseCode.UNRECOGNIZED : result;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -305,7 +305,7 @@ public final class ResponseOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (code_ != Code.ResponseCode.OK.getNumber()) {
+      if (code_ != ResponseCodeOuterClass.ResponseCode.OK.getNumber()) {
         output.writeEnum(1, code_);
       }
       if (!getMessageBytes().isEmpty()) {
@@ -329,7 +329,7 @@ public final class ResponseOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (code_ != Code.ResponseCode.OK.getNumber()) {
+      if (code_ != ResponseCodeOuterClass.ResponseCode.OK.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
@@ -685,17 +685,17 @@ public final class ResponseOuterClass {
        * @return The code.
        */
       @java.lang.Override
-      public Code.ResponseCode getCode() {
+      public ResponseCodeOuterClass.ResponseCode getCode() {
         @SuppressWarnings("deprecation")
-        Code.ResponseCode result = Code.ResponseCode.valueOf(code_);
-        return result == null ? Code.ResponseCode.UNRECOGNIZED : result;
+        ResponseCodeOuterClass.ResponseCode result = ResponseCodeOuterClass.ResponseCode.valueOf(code_);
+        return result == null ? ResponseCodeOuterClass.ResponseCode.UNRECOGNIZED : result;
       }
       /**
        * <code>.ResponseCode code = 1;</code>
        * @param value The code to set.
        * @return This builder for chaining.
        */
-      public Builder setCode(Code.ResponseCode value) {
+      public Builder setCode(ResponseCodeOuterClass.ResponseCode value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -998,16 +998,16 @@ public final class ResponseOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025entity/response.proto\022\004grpc\032\021entity/co" +
-      "de.proto\"d\n\010Response\022\033\n\004code\030\001 \001(\0162\r.Res" +
-      "ponseCode\022\017\n\007message\030\002 \001(\t\022\014\n\004data\030\003 \001(\014" +
-      "\022\r\n\005error\030\004 \001(\t\022\r\n\005total\030\005 \001(\003B\010Z\006.;grpc" +
-      "b\006proto3"
+      "\n\025entity/response.proto\022\004grpc\032\032entity/re" +
+      "sponse_code.proto\"d\n\010Response\022\033\n\004code\030\001 " +
+      "\001(\0162\r.ResponseCode\022\017\n\007message\030\002 \001(\t\022\014\n\004d" +
+      "ata\030\003 \001(\014\022\r\n\005error\030\004 \001(\t\022\r\n\005total\030\005 \001(\003B" +
+      "\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          Code.getDescriptor(),
+          ResponseCodeOuterClass.getDescriptor(),
         });
     internal_static_grpc_Response_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1015,7 +1015,7 @@ public final class ResponseOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_Response_descriptor,
         new java.lang.String[] { "Code", "Message", "Data", "Error", "Total", });
-    Code.getDescriptor();
+    ResponseCodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

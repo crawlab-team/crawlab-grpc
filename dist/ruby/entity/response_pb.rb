@@ -3,7 +3,7 @@
 
 require 'google/protobuf'
 
-require 'entity/code_pb'
+require 'entity/response_code_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("entity/response.proto", :syntax => :proto3) do
     add_message "grpc.Response" do
