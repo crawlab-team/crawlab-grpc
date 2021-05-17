@@ -4,5 +4,8 @@ package grpc;
 option go_package = ".;grpc";
 
 enum StreamMessageCode {
+  // ping worker nodes to check their health
   PING = 0;
+  // assign task to worker nodes to execute tasks
+  ASSIGN_TASK = 1;
 }
