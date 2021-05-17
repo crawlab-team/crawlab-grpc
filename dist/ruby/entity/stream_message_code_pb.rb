@@ -7,6 +7,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("entity/stream_message_code.proto", :syntax => :proto3) do
     add_enum "grpc.StreamMessageCode" do
       value :PING, 0
+      value :ASSIGN_TASK, 1
     end
   end
 end

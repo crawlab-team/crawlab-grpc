@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n entity/stream_message_code.proto\x12\x04grpc*\x1d\n\x11StreamMessageCode\x12\x08\n\x04PING\x10\x00\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n entity/stream_message_code.proto\x12\x04grpc*.\n\x11StreamMessageCode\x12\x08\n\x04PING\x10\x00\x12\x0f\n\x0b\x41SSIGN_TASK\x10\x01\x42\x08Z\x06.;grpcb\x06proto3'
 )
 
 _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
@@ -35,16 +35,22 @@ _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ASSIGN_TASK', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=42,
-  serialized_end=71,
+  serialized_end=88,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMMESSAGECODE)
 
 StreamMessageCode = enum_type_wrapper.EnumTypeWrapper(_STREAMMESSAGECODE)
 PING = 0
+ASSIGN_TASK = 1
 
 
 DESCRIPTOR.enum_types_by_name['StreamMessageCode'] = _STREAMMESSAGECODE

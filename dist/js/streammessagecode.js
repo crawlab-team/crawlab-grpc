@@ -16,6 +16,7 @@ goog.provide('proto.grpc.StreamMessageCode');
  * @enum {number}
  */
 proto.grpc.StreamMessageCode = {
-  PING: 0
+  PING: 0,
+  ASSIGN_TASK: 1
 };
 

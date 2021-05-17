@@ -20,16 +20,40 @@ public final class StreamMessageCodeOuterClass {
   public enum StreamMessageCode
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * ping worker nodes to check their health
+     * </pre>
+     *
      * <code>PING = 0;</code>
      */
     PING(0),
+    /**
+     * <pre>
+     * assign task to worker nodes to execute tasks
+     * </pre>
+     *
+     * <code>ASSIGN_TASK = 1;</code>
+     */
+    ASSIGN_TASK(1),
     UNRECOGNIZED(-1),
     ;
 
     /**
+     * <pre>
+     * ping worker nodes to check their health
+     * </pre>
+     *
      * <code>PING = 0;</code>
      */
     public static final int PING_VALUE = 0;
+    /**
+     * <pre>
+     * assign task to worker nodes to execute tasks
+     * </pre>
+     *
+     * <code>ASSIGN_TASK = 1;</code>
+     */
+    public static final int ASSIGN_TASK_VALUE = 1;
 
 
     public final int getNumber() {
@@ -57,6 +81,7 @@ public final class StreamMessageCodeOuterClass {
     public static StreamMessageCode forNumber(int value) {
       switch (value) {
         case 0: return PING;
+        case 1: return ASSIGN_TASK;
         default: return null;
       }
     }
@@ -123,8 +148,8 @@ public final class StreamMessageCodeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n entity/stream_message_code.proto\022\004grpc" +
-      "*\035\n\021StreamMessageCode\022\010\n\004PING\020\000B\010Z\006.;grp" +
-      "cb\006proto3"
+      "*.\n\021StreamMessageCode\022\010\n\004PING\020\000\022\017\n\013ASSIG" +
+      "N_TASK\020\001B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

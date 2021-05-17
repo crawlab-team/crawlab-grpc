@@ -24,8 +24,9 @@ namespace Grpc {
     static StreamMessageCodeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYyodChFT",
-            "dHJlYW1NZXNzYWdlQ29kZRIICgRQSU5HEABCCFoGLjtncnBjYgZwcm90bzM="));
+            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYyouChFT",
+            "dHJlYW1NZXNzYWdlQ29kZRIICgRQSU5HEAASDwoLQVNTSUdOX1RBU0sQAUII",
+            "WgYuO2dycGNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.StreamMessageCode), }, null, null));
@@ -35,7 +36,14 @@ namespace Grpc {
   }
   #region Enums
   public enum StreamMessageCode {
+    /// <summary>
+    /// ping worker nodes to check their health
+    /// </summary>
     [pbr::OriginalName("PING")] Ping = 0,
+    /// <summary>
+    /// assign task to worker nodes to execute tasks
+    /// </summary>
+    [pbr::OriginalName("ASSIGN_TASK")] AssignTask = 1,
   }
 
   #endregion

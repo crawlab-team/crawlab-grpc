@@ -12,12 +12,21 @@ use UnexpectedValueException;
 class StreamMessageCode
 {
     /**
+     * ping worker nodes to check their health
+     *
      * Generated from protobuf enum <code>PING = 0;</code>
      */
     const PING = 0;
+    /**
+     * assign task to worker nodes to execute tasks
+     *
+     * Generated from protobuf enum <code>ASSIGN_TASK = 1;</code>
+     */
+    const ASSIGN_TASK = 1;
 
     private static $valueToName = [
         self::PING => 'PING',
+        self::ASSIGN_TASK => 'ASSIGN_TASK',
     ];
 
     public static function name($value)
