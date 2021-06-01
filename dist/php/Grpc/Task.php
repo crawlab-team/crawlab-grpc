@@ -22,14 +22,6 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $spider_id = '';
     /**
-     * Generated from protobuf field <code>string start_ts = 3;</code>
-     */
-    protected $start_ts = '';
-    /**
-     * Generated from protobuf field <code>string finish_ts = 4;</code>
-     */
-    protected $finish_ts = '';
-    /**
      * Generated from protobuf field <code>string status = 5;</code>
      */
     protected $status = '';
@@ -50,26 +42,6 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $error = '';
     /**
-     * Generated from protobuf field <code>int32 result_count = 11;</code>
-     */
-    protected $result_count = 0;
-    /**
-     * Generated from protobuf field <code>int32 error_log_count = 12;</code>
-     */
-    protected $error_log_count = 0;
-    /**
-     * Generated from protobuf field <code>int32 wait_duration = 13;</code>
-     */
-    protected $wait_duration = 0;
-    /**
-     * Generated from protobuf field <code>int32 runtime_duration = 14;</code>
-     */
-    protected $runtime_duration = 0;
-    /**
-     * Generated from protobuf field <code>int32 total_duration = 15;</code>
-     */
-    protected $total_duration = 0;
-    /**
      * Generated from protobuf field <code>int32 pid = 16;</code>
      */
     protected $pid = 0;
@@ -85,18 +57,6 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string type = 19;</code>
      */
     protected $type = '';
-    /**
-     * Generated from protobuf field <code>string user_id = 20;</code>
-     */
-    protected $user_id = '';
-    /**
-     * Generated from protobuf field <code>string create_ts = 21;</code>
-     */
-    protected $create_ts = '';
-    /**
-     * Generated from protobuf field <code>string update_ts = 22;</code>
-     */
-    protected $update_ts = '';
 
     /**
      * Constructor.
@@ -106,25 +66,15 @@ class Task extends \Google\Protobuf\Internal\Message
      *
      *     @type string $_id
      *     @type string $spider_id
-     *     @type string $start_ts
-     *     @type string $finish_ts
      *     @type string $status
      *     @type string $node_id
      *     @type string $cmd
      *     @type string $param
      *     @type string $error
-     *     @type int $result_count
-     *     @type int $error_log_count
-     *     @type int $wait_duration
-     *     @type int $runtime_duration
-     *     @type int $total_duration
      *     @type int $pid
      *     @type string $run_type
      *     @type string $schedule_id
      *     @type string $type
-     *     @type string $user_id
-     *     @type string $create_ts
-     *     @type string $update_ts
      * }
      */
     public function __construct($data = NULL) {
@@ -172,50 +122,6 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->spider_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string start_ts = 3;</code>
-     * @return string
-     */
-    public function getStartTs()
-    {
-        return $this->start_ts;
-    }
-
-    /**
-     * Generated from protobuf field <code>string start_ts = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStartTs($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->start_ts = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string finish_ts = 4;</code>
-     * @return string
-     */
-    public function getFinishTs()
-    {
-        return $this->finish_ts;
-    }
-
-    /**
-     * Generated from protobuf field <code>string finish_ts = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFinishTs($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->finish_ts = $var;
 
         return $this;
     }
@@ -331,116 +237,6 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 result_count = 11;</code>
-     * @return int
-     */
-    public function getResultCount()
-    {
-        return $this->result_count;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 result_count = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setResultCount($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->result_count = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 error_log_count = 12;</code>
-     * @return int
-     */
-    public function getErrorLogCount()
-    {
-        return $this->error_log_count;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 error_log_count = 12;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setErrorLogCount($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->error_log_count = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 wait_duration = 13;</code>
-     * @return int
-     */
-    public function getWaitDuration()
-    {
-        return $this->wait_duration;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 wait_duration = 13;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setWaitDuration($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->wait_duration = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 runtime_duration = 14;</code>
-     * @return int
-     */
-    public function getRuntimeDuration()
-    {
-        return $this->runtime_duration;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 runtime_duration = 14;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setRuntimeDuration($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->runtime_duration = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 total_duration = 15;</code>
-     * @return int
-     */
-    public function getTotalDuration()
-    {
-        return $this->total_duration;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 total_duration = 15;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTotalDuration($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->total_duration = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>int32 pid = 16;</code>
      * @return int
      */
@@ -524,72 +320,6 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_id = 20;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_id = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string create_ts = 21;</code>
-     * @return string
-     */
-    public function getCreateTs()
-    {
-        return $this->create_ts;
-    }
-
-    /**
-     * Generated from protobuf field <code>string create_ts = 21;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCreateTs($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->create_ts = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string update_ts = 22;</code>
-     * @return string
-     */
-    public function getUpdateTs()
-    {
-        return $this->update_ts;
-    }
-
-    /**
-     * Generated from protobuf field <code>string update_ts = 22;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUpdateTs($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->update_ts = $var;
 
         return $this;
     }

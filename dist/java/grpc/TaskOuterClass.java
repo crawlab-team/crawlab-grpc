@@ -43,30 +43,6 @@ public final class TaskOuterClass {
         getSpiderIdBytes();
 
     /**
-     * <code>string start_ts = 3;</code>
-     * @return The startTs.
-     */
-    java.lang.String getStartTs();
-    /**
-     * <code>string start_ts = 3;</code>
-     * @return The bytes for startTs.
-     */
-    com.google.protobuf.ByteString
-        getStartTsBytes();
-
-    /**
-     * <code>string finish_ts = 4;</code>
-     * @return The finishTs.
-     */
-    java.lang.String getFinishTs();
-    /**
-     * <code>string finish_ts = 4;</code>
-     * @return The bytes for finishTs.
-     */
-    com.google.protobuf.ByteString
-        getFinishTsBytes();
-
-    /**
      * <code>string status = 5;</code>
      * @return The status.
      */
@@ -127,36 +103,6 @@ public final class TaskOuterClass {
         getErrorBytes();
 
     /**
-     * <code>int32 result_count = 11;</code>
-     * @return The resultCount.
-     */
-    int getResultCount();
-
-    /**
-     * <code>int32 error_log_count = 12;</code>
-     * @return The errorLogCount.
-     */
-    int getErrorLogCount();
-
-    /**
-     * <code>int32 wait_duration = 13;</code>
-     * @return The waitDuration.
-     */
-    int getWaitDuration();
-
-    /**
-     * <code>int32 runtime_duration = 14;</code>
-     * @return The runtimeDuration.
-     */
-    int getRuntimeDuration();
-
-    /**
-     * <code>int32 total_duration = 15;</code>
-     * @return The totalDuration.
-     */
-    int getTotalDuration();
-
-    /**
      * <code>int32 pid = 16;</code>
      * @return The pid.
      */
@@ -197,42 +143,6 @@ public final class TaskOuterClass {
      */
     com.google.protobuf.ByteString
         getTypeBytes();
-
-    /**
-     * <code>string user_id = 20;</code>
-     * @return The userId.
-     */
-    java.lang.String getUserId();
-    /**
-     * <code>string user_id = 20;</code>
-     * @return The bytes for userId.
-     */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
-
-    /**
-     * <code>string create_ts = 21;</code>
-     * @return The createTs.
-     */
-    java.lang.String getCreateTs();
-    /**
-     * <code>string create_ts = 21;</code>
-     * @return The bytes for createTs.
-     */
-    com.google.protobuf.ByteString
-        getCreateTsBytes();
-
-    /**
-     * <code>string update_ts = 22;</code>
-     * @return The updateTs.
-     */
-    java.lang.String getUpdateTs();
-    /**
-     * <code>string update_ts = 22;</code>
-     * @return The bytes for updateTs.
-     */
-    com.google.protobuf.ByteString
-        getUpdateTsBytes();
   }
   /**
    * Protobuf type {@code grpc.Task}
@@ -249,8 +159,6 @@ public final class TaskOuterClass {
     private Task() {
       Id_ = "";
       spiderId_ = "";
-      startTs_ = "";
-      finishTs_ = "";
       status_ = "";
       nodeId_ = "";
       cmd_ = "";
@@ -259,9 +167,6 @@ public final class TaskOuterClass {
       runType_ = "";
       scheduleId_ = "";
       type_ = "";
-      userId_ = "";
-      createTs_ = "";
-      updateTs_ = "";
     }
 
     @java.lang.Override
@@ -306,18 +211,6 @@ public final class TaskOuterClass {
               spiderId_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              startTs_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              finishTs_ = s;
-              break;
-            }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -348,31 +241,6 @@ public final class TaskOuterClass {
               error_ = s;
               break;
             }
-            case 88: {
-
-              resultCount_ = input.readInt32();
-              break;
-            }
-            case 96: {
-
-              errorLogCount_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              waitDuration_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              runtimeDuration_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              totalDuration_ = input.readInt32();
-              break;
-            }
             case 128: {
 
               pid_ = input.readInt32();
@@ -394,24 +262,6 @@ public final class TaskOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               type_ = s;
-              break;
-            }
-            case 162: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userId_ = s;
-              break;
-            }
-            case 170: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createTs_ = s;
-              break;
-            }
-            case 178: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              updateTs_ = s;
               break;
             }
             default: {
@@ -516,82 +366,6 @@ public final class TaskOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         spiderId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int START_TS_FIELD_NUMBER = 3;
-    private volatile java.lang.Object startTs_;
-    /**
-     * <code>string start_ts = 3;</code>
-     * @return The startTs.
-     */
-    @java.lang.Override
-    public java.lang.String getStartTs() {
-      java.lang.Object ref = startTs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        startTs_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string start_ts = 3;</code>
-     * @return The bytes for startTs.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStartTsBytes() {
-      java.lang.Object ref = startTs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        startTs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FINISH_TS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object finishTs_;
-    /**
-     * <code>string finish_ts = 4;</code>
-     * @return The finishTs.
-     */
-    @java.lang.Override
-    public java.lang.String getFinishTs() {
-      java.lang.Object ref = finishTs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        finishTs_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string finish_ts = 4;</code>
-     * @return The bytes for finishTs.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFinishTsBytes() {
-      java.lang.Object ref = finishTs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        finishTs_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -788,61 +562,6 @@ public final class TaskOuterClass {
       }
     }
 
-    public static final int RESULT_COUNT_FIELD_NUMBER = 11;
-    private int resultCount_;
-    /**
-     * <code>int32 result_count = 11;</code>
-     * @return The resultCount.
-     */
-    @java.lang.Override
-    public int getResultCount() {
-      return resultCount_;
-    }
-
-    public static final int ERROR_LOG_COUNT_FIELD_NUMBER = 12;
-    private int errorLogCount_;
-    /**
-     * <code>int32 error_log_count = 12;</code>
-     * @return The errorLogCount.
-     */
-    @java.lang.Override
-    public int getErrorLogCount() {
-      return errorLogCount_;
-    }
-
-    public static final int WAIT_DURATION_FIELD_NUMBER = 13;
-    private int waitDuration_;
-    /**
-     * <code>int32 wait_duration = 13;</code>
-     * @return The waitDuration.
-     */
-    @java.lang.Override
-    public int getWaitDuration() {
-      return waitDuration_;
-    }
-
-    public static final int RUNTIME_DURATION_FIELD_NUMBER = 14;
-    private int runtimeDuration_;
-    /**
-     * <code>int32 runtime_duration = 14;</code>
-     * @return The runtimeDuration.
-     */
-    @java.lang.Override
-    public int getRuntimeDuration() {
-      return runtimeDuration_;
-    }
-
-    public static final int TOTAL_DURATION_FIELD_NUMBER = 15;
-    private int totalDuration_;
-    /**
-     * <code>int32 total_duration = 15;</code>
-     * @return The totalDuration.
-     */
-    @java.lang.Override
-    public int getTotalDuration() {
-      return totalDuration_;
-    }
-
     public static final int PID_FIELD_NUMBER = 16;
     private int pid_;
     /**
@@ -968,120 +687,6 @@ public final class TaskOuterClass {
       }
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 20;
-    private volatile java.lang.Object userId_;
-    /**
-     * <code>string user_id = 20;</code>
-     * @return The userId.
-     */
-    @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string user_id = 20;</code>
-     * @return The bytes for userId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREATE_TS_FIELD_NUMBER = 21;
-    private volatile java.lang.Object createTs_;
-    /**
-     * <code>string create_ts = 21;</code>
-     * @return The createTs.
-     */
-    @java.lang.Override
-    public java.lang.String getCreateTs() {
-      java.lang.Object ref = createTs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createTs_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string create_ts = 21;</code>
-     * @return The bytes for createTs.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreateTsBytes() {
-      java.lang.Object ref = createTs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createTs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UPDATE_TS_FIELD_NUMBER = 22;
-    private volatile java.lang.Object updateTs_;
-    /**
-     * <code>string update_ts = 22;</code>
-     * @return The updateTs.
-     */
-    @java.lang.Override
-    public java.lang.String getUpdateTs() {
-      java.lang.Object ref = updateTs_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updateTs_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string update_ts = 22;</code>
-     * @return The bytes for updateTs.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUpdateTsBytes() {
-      java.lang.Object ref = updateTs_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updateTs_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1102,12 +707,6 @@ public final class TaskOuterClass {
       if (!getSpiderIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spiderId_);
       }
-      if (!getStartTsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, startTs_);
-      }
-      if (!getFinishTsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, finishTs_);
-      }
       if (!getStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
       }
@@ -1123,21 +722,6 @@ public final class TaskOuterClass {
       if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, error_);
       }
-      if (resultCount_ != 0) {
-        output.writeInt32(11, resultCount_);
-      }
-      if (errorLogCount_ != 0) {
-        output.writeInt32(12, errorLogCount_);
-      }
-      if (waitDuration_ != 0) {
-        output.writeInt32(13, waitDuration_);
-      }
-      if (runtimeDuration_ != 0) {
-        output.writeInt32(14, runtimeDuration_);
-      }
-      if (totalDuration_ != 0) {
-        output.writeInt32(15, totalDuration_);
-      }
       if (pid_ != 0) {
         output.writeInt32(16, pid_);
       }
@@ -1149,15 +733,6 @@ public final class TaskOuterClass {
       }
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 19, type_);
-      }
-      if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, userId_);
-      }
-      if (!getCreateTsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, createTs_);
-      }
-      if (!getUpdateTsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, updateTs_);
       }
       unknownFields.writeTo(output);
     }
@@ -1174,12 +749,6 @@ public final class TaskOuterClass {
       if (!getSpiderIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spiderId_);
       }
-      if (!getStartTsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, startTs_);
-      }
-      if (!getFinishTsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, finishTs_);
-      }
       if (!getStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
       }
@@ -1195,26 +764,6 @@ public final class TaskOuterClass {
       if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, error_);
       }
-      if (resultCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, resultCount_);
-      }
-      if (errorLogCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, errorLogCount_);
-      }
-      if (waitDuration_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, waitDuration_);
-      }
-      if (runtimeDuration_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, runtimeDuration_);
-      }
-      if (totalDuration_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, totalDuration_);
-      }
       if (pid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(16, pid_);
@@ -1227,15 +776,6 @@ public final class TaskOuterClass {
       }
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, type_);
-      }
-      if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, userId_);
-      }
-      if (!getCreateTsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, createTs_);
-      }
-      if (!getUpdateTsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, updateTs_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1256,10 +796,6 @@ public final class TaskOuterClass {
           .equals(other.getId())) return false;
       if (!getSpiderId()
           .equals(other.getSpiderId())) return false;
-      if (!getStartTs()
-          .equals(other.getStartTs())) return false;
-      if (!getFinishTs()
-          .equals(other.getFinishTs())) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
       if (!getNodeId()
@@ -1270,16 +806,6 @@ public final class TaskOuterClass {
           .equals(other.getParam())) return false;
       if (!getError()
           .equals(other.getError())) return false;
-      if (getResultCount()
-          != other.getResultCount()) return false;
-      if (getErrorLogCount()
-          != other.getErrorLogCount()) return false;
-      if (getWaitDuration()
-          != other.getWaitDuration()) return false;
-      if (getRuntimeDuration()
-          != other.getRuntimeDuration()) return false;
-      if (getTotalDuration()
-          != other.getTotalDuration()) return false;
       if (getPid()
           != other.getPid()) return false;
       if (!getRunType()
@@ -1288,12 +814,6 @@ public final class TaskOuterClass {
           .equals(other.getScheduleId())) return false;
       if (!getType()
           .equals(other.getType())) return false;
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
-      if (!getCreateTs()
-          .equals(other.getCreateTs())) return false;
-      if (!getUpdateTs()
-          .equals(other.getUpdateTs())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1309,10 +829,6 @@ public final class TaskOuterClass {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + SPIDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpiderId().hashCode();
-      hash = (37 * hash) + START_TS_FIELD_NUMBER;
-      hash = (53 * hash) + getStartTs().hashCode();
-      hash = (37 * hash) + FINISH_TS_FIELD_NUMBER;
-      hash = (53 * hash) + getFinishTs().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
@@ -1323,16 +839,6 @@ public final class TaskOuterClass {
       hash = (53 * hash) + getParam().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
-      hash = (37 * hash) + RESULT_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getResultCount();
-      hash = (37 * hash) + ERROR_LOG_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getErrorLogCount();
-      hash = (37 * hash) + WAIT_DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getWaitDuration();
-      hash = (37 * hash) + RUNTIME_DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getRuntimeDuration();
-      hash = (37 * hash) + TOTAL_DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalDuration();
       hash = (37 * hash) + PID_FIELD_NUMBER;
       hash = (53 * hash) + getPid();
       hash = (37 * hash) + RUN_TYPE_FIELD_NUMBER;
@@ -1341,12 +847,6 @@ public final class TaskOuterClass {
       hash = (53 * hash) + getScheduleId().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + CREATE_TS_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateTs().hashCode();
-      hash = (37 * hash) + UPDATE_TS_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdateTs().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1484,10 +984,6 @@ public final class TaskOuterClass {
 
         spiderId_ = "";
 
-        startTs_ = "";
-
-        finishTs_ = "";
-
         status_ = "";
 
         nodeId_ = "";
@@ -1498,16 +994,6 @@ public final class TaskOuterClass {
 
         error_ = "";
 
-        resultCount_ = 0;
-
-        errorLogCount_ = 0;
-
-        waitDuration_ = 0;
-
-        runtimeDuration_ = 0;
-
-        totalDuration_ = 0;
-
         pid_ = 0;
 
         runType_ = "";
@@ -1515,12 +1001,6 @@ public final class TaskOuterClass {
         scheduleId_ = "";
 
         type_ = "";
-
-        userId_ = "";
-
-        createTs_ = "";
-
-        updateTs_ = "";
 
         return this;
       }
@@ -1550,25 +1030,15 @@ public final class TaskOuterClass {
         grpc.TaskOuterClass.Task result = new grpc.TaskOuterClass.Task(this);
         result.Id_ = Id_;
         result.spiderId_ = spiderId_;
-        result.startTs_ = startTs_;
-        result.finishTs_ = finishTs_;
         result.status_ = status_;
         result.nodeId_ = nodeId_;
         result.cmd_ = cmd_;
         result.param_ = param_;
         result.error_ = error_;
-        result.resultCount_ = resultCount_;
-        result.errorLogCount_ = errorLogCount_;
-        result.waitDuration_ = waitDuration_;
-        result.runtimeDuration_ = runtimeDuration_;
-        result.totalDuration_ = totalDuration_;
         result.pid_ = pid_;
         result.runType_ = runType_;
         result.scheduleId_ = scheduleId_;
         result.type_ = type_;
-        result.userId_ = userId_;
-        result.createTs_ = createTs_;
-        result.updateTs_ = updateTs_;
         onBuilt();
         return result;
       }
@@ -1625,14 +1095,6 @@ public final class TaskOuterClass {
           spiderId_ = other.spiderId_;
           onChanged();
         }
-        if (!other.getStartTs().isEmpty()) {
-          startTs_ = other.startTs_;
-          onChanged();
-        }
-        if (!other.getFinishTs().isEmpty()) {
-          finishTs_ = other.finishTs_;
-          onChanged();
-        }
         if (!other.getStatus().isEmpty()) {
           status_ = other.status_;
           onChanged();
@@ -1653,21 +1115,6 @@ public final class TaskOuterClass {
           error_ = other.error_;
           onChanged();
         }
-        if (other.getResultCount() != 0) {
-          setResultCount(other.getResultCount());
-        }
-        if (other.getErrorLogCount() != 0) {
-          setErrorLogCount(other.getErrorLogCount());
-        }
-        if (other.getWaitDuration() != 0) {
-          setWaitDuration(other.getWaitDuration());
-        }
-        if (other.getRuntimeDuration() != 0) {
-          setRuntimeDuration(other.getRuntimeDuration());
-        }
-        if (other.getTotalDuration() != 0) {
-          setTotalDuration(other.getTotalDuration());
-        }
         if (other.getPid() != 0) {
           setPid(other.getPid());
         }
@@ -1681,18 +1128,6 @@ public final class TaskOuterClass {
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
-          onChanged();
-        }
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
-          onChanged();
-        }
-        if (!other.getCreateTs().isEmpty()) {
-          createTs_ = other.createTs_;
-          onChanged();
-        }
-        if (!other.getUpdateTs().isEmpty()) {
-          updateTs_ = other.updateTs_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1872,158 +1307,6 @@ public final class TaskOuterClass {
   checkByteStringIsUtf8(value);
         
         spiderId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object startTs_ = "";
-      /**
-       * <code>string start_ts = 3;</code>
-       * @return The startTs.
-       */
-      public java.lang.String getStartTs() {
-        java.lang.Object ref = startTs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          startTs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string start_ts = 3;</code>
-       * @return The bytes for startTs.
-       */
-      public com.google.protobuf.ByteString
-          getStartTsBytes() {
-        java.lang.Object ref = startTs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          startTs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string start_ts = 3;</code>
-       * @param value The startTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        startTs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string start_ts = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartTs() {
-        
-        startTs_ = getDefaultInstance().getStartTs();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string start_ts = 3;</code>
-       * @param value The bytes for startTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        startTs_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object finishTs_ = "";
-      /**
-       * <code>string finish_ts = 4;</code>
-       * @return The finishTs.
-       */
-      public java.lang.String getFinishTs() {
-        java.lang.Object ref = finishTs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          finishTs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string finish_ts = 4;</code>
-       * @return The bytes for finishTs.
-       */
-      public com.google.protobuf.ByteString
-          getFinishTsBytes() {
-        java.lang.Object ref = finishTs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          finishTs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string finish_ts = 4;</code>
-       * @param value The finishTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishTs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        finishTs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string finish_ts = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinishTs() {
-        
-        finishTs_ = getDefaultInstance().getFinishTs();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string finish_ts = 4;</code>
-       * @param value The bytes for finishTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishTsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        finishTs_ = value;
         onChanged();
         return this;
       }
@@ -2408,161 +1691,6 @@ public final class TaskOuterClass {
         return this;
       }
 
-      private int resultCount_ ;
-      /**
-       * <code>int32 result_count = 11;</code>
-       * @return The resultCount.
-       */
-      @java.lang.Override
-      public int getResultCount() {
-        return resultCount_;
-      }
-      /**
-       * <code>int32 result_count = 11;</code>
-       * @param value The resultCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResultCount(int value) {
-        
-        resultCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 result_count = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResultCount() {
-        
-        resultCount_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int errorLogCount_ ;
-      /**
-       * <code>int32 error_log_count = 12;</code>
-       * @return The errorLogCount.
-       */
-      @java.lang.Override
-      public int getErrorLogCount() {
-        return errorLogCount_;
-      }
-      /**
-       * <code>int32 error_log_count = 12;</code>
-       * @param value The errorLogCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorLogCount(int value) {
-        
-        errorLogCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 error_log_count = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearErrorLogCount() {
-        
-        errorLogCount_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int waitDuration_ ;
-      /**
-       * <code>int32 wait_duration = 13;</code>
-       * @return The waitDuration.
-       */
-      @java.lang.Override
-      public int getWaitDuration() {
-        return waitDuration_;
-      }
-      /**
-       * <code>int32 wait_duration = 13;</code>
-       * @param value The waitDuration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWaitDuration(int value) {
-        
-        waitDuration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 wait_duration = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWaitDuration() {
-        
-        waitDuration_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int runtimeDuration_ ;
-      /**
-       * <code>int32 runtime_duration = 14;</code>
-       * @return The runtimeDuration.
-       */
-      @java.lang.Override
-      public int getRuntimeDuration() {
-        return runtimeDuration_;
-      }
-      /**
-       * <code>int32 runtime_duration = 14;</code>
-       * @param value The runtimeDuration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRuntimeDuration(int value) {
-        
-        runtimeDuration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 runtime_duration = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRuntimeDuration() {
-        
-        runtimeDuration_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int totalDuration_ ;
-      /**
-       * <code>int32 total_duration = 15;</code>
-       * @return The totalDuration.
-       */
-      @java.lang.Override
-      public int getTotalDuration() {
-        return totalDuration_;
-      }
-      /**
-       * <code>int32 total_duration = 15;</code>
-       * @param value The totalDuration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalDuration(int value) {
-        
-        totalDuration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 total_duration = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalDuration() {
-        
-        totalDuration_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pid_ ;
       /**
        * <code>int32 pid = 16;</code>
@@ -2821,234 +1949,6 @@ public final class TaskOuterClass {
         onChanged();
         return this;
       }
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <code>string user_id = 20;</code>
-       * @return The userId.
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 20;</code>
-       * @return The bytes for userId.
-       */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 20;</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 20;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 20;</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object createTs_ = "";
-      /**
-       * <code>string create_ts = 21;</code>
-       * @return The createTs.
-       */
-      public java.lang.String getCreateTs() {
-        java.lang.Object ref = createTs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          createTs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string create_ts = 21;</code>
-       * @return The bytes for createTs.
-       */
-      public com.google.protobuf.ByteString
-          getCreateTsBytes() {
-        java.lang.Object ref = createTs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          createTs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string create_ts = 21;</code>
-       * @param value The createTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateTs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        createTs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string create_ts = 21;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreateTs() {
-        
-        createTs_ = getDefaultInstance().getCreateTs();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string create_ts = 21;</code>
-       * @param value The bytes for createTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreateTsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        createTs_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object updateTs_ = "";
-      /**
-       * <code>string update_ts = 22;</code>
-       * @return The updateTs.
-       */
-      public java.lang.String getUpdateTs() {
-        java.lang.Object ref = updateTs_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          updateTs_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string update_ts = 22;</code>
-       * @return The bytes for updateTs.
-       */
-      public com.google.protobuf.ByteString
-          getUpdateTsBytes() {
-        java.lang.Object ref = updateTs_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          updateTs_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string update_ts = 22;</code>
-       * @param value The updateTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdateTs(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        updateTs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string update_ts = 22;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdateTs() {
-        
-        updateTs_ = getDefaultInstance().getUpdateTs();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string update_ts = 22;</code>
-       * @param value The bytes for updateTs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdateTsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        updateTs_ = value;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3116,17 +2016,12 @@ public final class TaskOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021models/task.proto\022\004grpc\"\210\003\n\004Task\022\013\n\003_i" +
-      "d\030\001 \001(\t\022\021\n\tspider_id\030\002 \001(\t\022\020\n\010start_ts\030\003" +
-      " \001(\t\022\021\n\tfinish_ts\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022" +
-      "\017\n\007node_id\030\006 \001(\t\022\013\n\003cmd\030\010 \001(\t\022\r\n\005param\030\t" +
-      " \001(\t\022\r\n\005error\030\n \001(\t\022\024\n\014result_count\030\013 \001(" +
-      "\005\022\027\n\017error_log_count\030\014 \001(\005\022\025\n\rwait_durat" +
-      "ion\030\r \001(\005\022\030\n\020runtime_duration\030\016 \001(\005\022\026\n\016t" +
-      "otal_duration\030\017 \001(\005\022\013\n\003pid\030\020 \001(\005\022\020\n\010run_" +
-      "type\030\021 \001(\t\022\023\n\013schedule_id\030\022 \001(\t\022\014\n\004type\030" +
-      "\023 \001(\t\022\017\n\007user_id\030\024 \001(\t\022\021\n\tcreate_ts\030\025 \001(" +
-      "\t\022\021\n\tupdate_ts\030\026 \001(\tB\010Z\006.;grpcb\006proto3"
+      "\n\021models/task.proto\022\004grpc\"\264\001\n\004Task\022\013\n\003_i" +
+      "d\030\001 \001(\t\022\021\n\tspider_id\030\002 \001(\t\022\016\n\006status\030\005 \001" +
+      "(\t\022\017\n\007node_id\030\006 \001(\t\022\013\n\003cmd\030\010 \001(\t\022\r\n\005para" +
+      "m\030\t \001(\t\022\r\n\005error\030\n \001(\t\022\013\n\003pid\030\020 \001(\005\022\020\n\010r" +
+      "un_type\030\021 \001(\t\022\023\n\013schedule_id\030\022 \001(\t\022\014\n\004ty" +
+      "pe\030\023 \001(\tB\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3137,7 +2032,7 @@ public final class TaskOuterClass {
     internal_static_grpc_Task_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_Task_descriptor,
-        new java.lang.String[] { "Id", "SpiderId", "StartTs", "FinishTs", "Status", "NodeId", "Cmd", "Param", "Error", "ResultCount", "ErrorLogCount", "WaitDuration", "RuntimeDuration", "TotalDuration", "Pid", "RunType", "ScheduleId", "Type", "UserId", "CreateTs", "UpdateTs", });
+        new java.lang.String[] { "Id", "SpiderId", "Status", "NodeId", "Cmd", "Param", "Error", "Pid", "RunType", "ScheduleId", "Type", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

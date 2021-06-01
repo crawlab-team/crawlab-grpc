@@ -16,31 +16,21 @@ class Task
         }
         $pool->internalAddGeneratedFile(
             '
-¶
-models/task.protogrpc"ˆ
+â
+models/task.protogrpc"´
 Task
 _id (	
-	spider_id (	
-start_ts (	
-	finish_ts (	
+	spider_id (	
 status (	
 node_id (	
 cmd (	
 param	 (	
 error
- (	
-result_count (
-error_log_count (
-wait_duration (
-runtime_duration (
-total_duration (
+ (	
 pid (
 run_type (	
 schedule_id (	
-type (	
-user_id (	
-	create_ts (	
-	update_ts (	BZ.;grpcbproto3'
+type (	BZ.;grpcbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -71,25 +71,15 @@ proto.grpc.Task.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     spiderId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    startTs: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    finishTs: jspb.Message.getFieldWithDefault(msg, 4, ""),
     status: jspb.Message.getFieldWithDefault(msg, 5, ""),
     nodeId: jspb.Message.getFieldWithDefault(msg, 6, ""),
     cmd: jspb.Message.getFieldWithDefault(msg, 8, ""),
     param: jspb.Message.getFieldWithDefault(msg, 9, ""),
     error: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    resultCount: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    errorLogCount: jspb.Message.getFieldWithDefault(msg, 12, 0),
-    waitDuration: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    runtimeDuration: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    totalDuration: jspb.Message.getFieldWithDefault(msg, 15, 0),
     pid: jspb.Message.getFieldWithDefault(msg, 16, 0),
     runType: jspb.Message.getFieldWithDefault(msg, 17, ""),
     scheduleId: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    createTs: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    updateTs: jspb.Message.getFieldWithDefault(msg, 22, "")
+    type: jspb.Message.getFieldWithDefault(msg, 19, "")
   };
 
   if (includeInstance) {
@@ -134,14 +124,6 @@ proto.grpc.Task.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setSpiderId(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStartTs(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFinishTs(value);
-      break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
@@ -162,26 +144,6 @@ proto.grpc.Task.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
       break;
-    case 11:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setResultCount(value);
-      break;
-    case 12:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setErrorLogCount(value);
-      break;
-    case 13:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setWaitDuration(value);
-      break;
-    case 14:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRuntimeDuration(value);
-      break;
-    case 15:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalDuration(value);
-      break;
     case 16:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPid(value);
@@ -197,18 +159,6 @@ proto.grpc.Task.deserializeBinaryFromReader = function(msg, reader) {
     case 19:
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
-      break;
-    case 20:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
-      break;
-    case 21:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCreateTs(value);
-      break;
-    case 22:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUpdateTs(value);
       break;
     default:
       reader.skipField();
@@ -253,20 +203,6 @@ proto.grpc.Task.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getStartTs();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getFinishTs();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
@@ -302,41 +238,6 @@ proto.grpc.Task.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getResultCount();
-  if (f !== 0) {
-    writer.writeInt32(
-      11,
-      f
-    );
-  }
-  f = message.getErrorLogCount();
-  if (f !== 0) {
-    writer.writeInt32(
-      12,
-      f
-    );
-  }
-  f = message.getWaitDuration();
-  if (f !== 0) {
-    writer.writeInt32(
-      13,
-      f
-    );
-  }
-  f = message.getRuntimeDuration();
-  if (f !== 0) {
-    writer.writeInt32(
-      14,
-      f
-    );
-  }
-  f = message.getTotalDuration();
-  if (f !== 0) {
-    writer.writeInt32(
-      15,
-      f
-    );
-  }
   f = message.getPid();
   if (f !== 0) {
     writer.writeInt32(
@@ -362,27 +263,6 @@ proto.grpc.Task.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       19,
-      f
-    );
-  }
-  f = message.getUserId();
-  if (f.length > 0) {
-    writer.writeString(
-      20,
-      f
-    );
-  }
-  f = message.getCreateTs();
-  if (f.length > 0) {
-    writer.writeString(
-      21,
-      f
-    );
-  }
-  f = message.getUpdateTs();
-  if (f.length > 0) {
-    writer.writeString(
-      22,
       f
     );
   }
@@ -422,42 +302,6 @@ proto.grpc.Task.prototype.getSpiderId = function() {
  */
 proto.grpc.Task.prototype.setSpiderId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string start_ts = 3;
- * @return {string}
- */
-proto.grpc.Task.prototype.getStartTs = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setStartTs = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string finish_ts = 4;
- * @return {string}
- */
-proto.grpc.Task.prototype.getFinishTs = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setFinishTs = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -552,96 +396,6 @@ proto.grpc.Task.prototype.setError = function(value) {
 
 
 /**
- * optional int32 result_count = 11;
- * @return {number}
- */
-proto.grpc.Task.prototype.getResultCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setResultCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
-};
-
-
-/**
- * optional int32 error_log_count = 12;
- * @return {number}
- */
-proto.grpc.Task.prototype.getErrorLogCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setErrorLogCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
-};
-
-
-/**
- * optional int32 wait_duration = 13;
- * @return {number}
- */
-proto.grpc.Task.prototype.getWaitDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setWaitDuration = function(value) {
-  return jspb.Message.setProto3IntField(this, 13, value);
-};
-
-
-/**
- * optional int32 runtime_duration = 14;
- * @return {number}
- */
-proto.grpc.Task.prototype.getRuntimeDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setRuntimeDuration = function(value) {
-  return jspb.Message.setProto3IntField(this, 14, value);
-};
-
-
-/**
- * optional int32 total_duration = 15;
- * @return {number}
- */
-proto.grpc.Task.prototype.getTotalDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setTotalDuration = function(value) {
-  return jspb.Message.setProto3IntField(this, 15, value);
-};
-
-
-/**
  * optional int32 pid = 16;
  * @return {number}
  */
@@ -710,60 +464,6 @@ proto.grpc.Task.prototype.getType = function() {
  */
 proto.grpc.Task.prototype.setType = function(value) {
   return jspb.Message.setProto3StringField(this, 19, value);
-};
-
-
-/**
- * optional string user_id = 20;
- * @return {string}
- */
-proto.grpc.Task.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setUserId = function(value) {
-  return jspb.Message.setProto3StringField(this, 20, value);
-};
-
-
-/**
- * optional string create_ts = 21;
- * @return {string}
- */
-proto.grpc.Task.prototype.getCreateTs = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setCreateTs = function(value) {
-  return jspb.Message.setProto3StringField(this, 21, value);
-};
-
-
-/**
- * optional string update_ts = 22;
- * @return {string}
- */
-proto.grpc.Task.prototype.getUpdateTs = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.grpc.Task} returns this
- */
-proto.grpc.Task.prototype.setUpdateTs = function(value) {
-  return jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
