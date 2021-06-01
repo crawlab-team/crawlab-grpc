@@ -5,5 +5,5 @@ option go_package = ".;grpc";
 
 message StreamMessageDataTask {
   string task_id = 1;
-  bytes data = 2;
+  string data = 2;
 }

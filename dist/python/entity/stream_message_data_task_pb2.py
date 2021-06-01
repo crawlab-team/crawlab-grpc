@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%entity/stream_message_data_task.proto\x12\x04grpc\"6\n\x15StreamMessageDataTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n%entity/stream_message_data_task.proto\x12\x04grpc\"6\n\x15StreamMessageDataTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\tB\x08Z\x06.;grpcb\x06proto3'
 )
 
 
@@ -42,8 +42,8 @@ _STREAMMESSAGEDATATASK = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='grpc.StreamMessageDataTask.data', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),

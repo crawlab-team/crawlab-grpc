@@ -20,7 +20,7 @@ w
 %entity/stream_message_data_task.protogrpc"6
 StreamMessageDataTask
 task_id (	
-data (BZ.;grpcbproto3'
+data (	BZ.;grpcbproto3'
         , true);
 
         static::$is_initialized = true;

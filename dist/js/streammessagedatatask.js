@@ -70,7 +70,7 @@ proto.grpc.StreamMessageDataTask.prototype.toObject = function(opt_includeInstan
 proto.grpc.StreamMessageDataTask.toObject = function(includeInstance, msg) {
   var f, obj = {
     taskId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    data: msg.getData_asB64()
+    data: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -112,7 +112,7 @@ proto.grpc.StreamMessageDataTask.deserializeBinaryFromReader = function(msg, rea
       msg.setTaskId(value);
       break;
     case 2:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setData(value);
       break;
     default:
@@ -151,9 +151,9 @@ proto.grpc.StreamMessageDataTask.serializeBinaryToWriter = function(message, wri
       f
     );
   }
-  f = message.getData_asU8();
+  f = message.getData();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       2,
       f
     );
@@ -180,7 +180,7 @@ proto.grpc.StreamMessageDataTask.prototype.setTaskId = function(value) {
 
 
 /**
- * optional bytes data = 2;
+ * optional string data = 2;
  * @return {string}
  */
 proto.grpc.StreamMessageDataTask.prototype.getData = function() {
@@ -189,35 +189,11 @@ proto.grpc.StreamMessageDataTask.prototype.getData = function() {
 
 
 /**
- * optional bytes data = 2;
- * This is a type-conversion wrapper around `getData()`
- * @return {string}
- */
-proto.grpc.StreamMessageDataTask.prototype.getData_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getData()));
-};
-
-
-/**
- * optional bytes data = 2;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getData()`
- * @return {!Uint8Array}
- */
-proto.grpc.StreamMessageDataTask.prototype.getData_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getData()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.grpc.StreamMessageDataTask} returns this
  */
 proto.grpc.StreamMessageDataTask.prototype.setData = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

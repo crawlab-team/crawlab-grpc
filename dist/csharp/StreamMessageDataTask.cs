@@ -26,7 +26,7 @@ namespace Grpc {
           string.Concat(
             "CiVlbnRpdHkvc3RyZWFtX21lc3NhZ2VfZGF0YV90YXNrLnByb3RvEgRncnBj",
             "IjYKFVN0cmVhbU1lc3NhZ2VEYXRhVGFzaxIPCgd0YXNrX2lkGAEgASgJEgwK",
-            "BGRhdGEYAiABKAxCCFoGLjtncnBjYgZwcm90bzM="));
+            "BGRhdGEYAiABKAlCCFoGLjtncnBjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,9 +89,9 @@ namespace Grpc {
 
     /// <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 2;
-    private pb::ByteString data_ = pb::ByteString.Empty;
+    private string data_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString Data {
+    public string Data {
       get { return data_; }
       set {
         data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -143,7 +143,7 @@ namespace Grpc {
       }
       if (Data.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteBytes(Data);
+        output.WriteString(Data);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -160,7 +160,7 @@ namespace Grpc {
       }
       if (Data.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteBytes(Data);
+        output.WriteString(Data);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -175,7 +175,7 @@ namespace Grpc {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TaskId);
       }
       if (Data.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Data);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -213,7 +213,7 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Data = input.ReadBytes();
+            Data = input.ReadString();
             break;
           }
         }
@@ -235,7 +235,7 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Data = input.ReadBytes();
+            Data = input.ReadString();
             break;
           }
         }

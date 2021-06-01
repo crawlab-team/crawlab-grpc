@@ -18,7 +18,7 @@ class StreamMessageDataTask extends \Google\Protobuf\Internal\Message
      */
     protected $task_id = '';
     /**
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>string data = 2;</code>
      */
     protected $data = '';
 
@@ -60,7 +60,7 @@ class StreamMessageDataTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>string data = 2;</code>
      * @return string
      */
     public function getData()
@@ -69,13 +69,13 @@ class StreamMessageDataTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>string data = 2;</code>
      * @param string $var
      * @return $this
      */
     public function setData($var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, True);
         $this->data = $var;
 
         return $this;

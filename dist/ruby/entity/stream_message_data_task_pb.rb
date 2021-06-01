@@ -7,7 +7,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("entity/stream_message_data_task.proto", :syntax => :proto3) do
     add_message "grpc.StreamMessageDataTask" do
       optional :task_id, :string, 1
-      optional :data, :bytes, 2
+      optional :data, :string, 2
     end
   end
 end
