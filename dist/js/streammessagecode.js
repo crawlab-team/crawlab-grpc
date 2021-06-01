@@ -17,6 +17,9 @@ goog.provide('proto.grpc.StreamMessageCode');
  */
 proto.grpc.StreamMessageCode = {
   PING: 0,
-  ASSIGN_TASK: 1
+  RUN_TASK: 1,
+  CANCEL_TASK: 2,
+  INSERT_DATA: 3,
+  INSERT_LOGS: 4
 };
 

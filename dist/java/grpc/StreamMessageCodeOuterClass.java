@@ -29,12 +29,36 @@ public final class StreamMessageCodeOuterClass {
     PING(0),
     /**
      * <pre>
-     * assign task to worker nodes to execute tasks
+     * ask worker node(s) to run task with given id
      * </pre>
      *
-     * <code>ASSIGN_TASK = 1;</code>
+     * <code>RUN_TASK = 1;</code>
      */
-    ASSIGN_TASK(1),
+    RUN_TASK(1),
+    /**
+     * <pre>
+     * ask worker node(s) to cancel task with given id
+     * </pre>
+     *
+     * <code>CANCEL_TASK = 2;</code>
+     */
+    CANCEL_TASK(2),
+    /**
+     * <pre>
+     * insert data
+     * </pre>
+     *
+     * <code>INSERT_DATA = 3;</code>
+     */
+    INSERT_DATA(3),
+    /**
+     * <pre>
+     * insert logs
+     * </pre>
+     *
+     * <code>INSERT_LOGS = 4;</code>
+     */
+    INSERT_LOGS(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -48,12 +72,36 @@ public final class StreamMessageCodeOuterClass {
     public static final int PING_VALUE = 0;
     /**
      * <pre>
-     * assign task to worker nodes to execute tasks
+     * ask worker node(s) to run task with given id
      * </pre>
      *
-     * <code>ASSIGN_TASK = 1;</code>
+     * <code>RUN_TASK = 1;</code>
      */
-    public static final int ASSIGN_TASK_VALUE = 1;
+    public static final int RUN_TASK_VALUE = 1;
+    /**
+     * <pre>
+     * ask worker node(s) to cancel task with given id
+     * </pre>
+     *
+     * <code>CANCEL_TASK = 2;</code>
+     */
+    public static final int CANCEL_TASK_VALUE = 2;
+    /**
+     * <pre>
+     * insert data
+     * </pre>
+     *
+     * <code>INSERT_DATA = 3;</code>
+     */
+    public static final int INSERT_DATA_VALUE = 3;
+    /**
+     * <pre>
+     * insert logs
+     * </pre>
+     *
+     * <code>INSERT_LOGS = 4;</code>
+     */
+    public static final int INSERT_LOGS_VALUE = 4;
 
 
     public final int getNumber() {
@@ -81,7 +129,10 @@ public final class StreamMessageCodeOuterClass {
     public static StreamMessageCode forNumber(int value) {
       switch (value) {
         case 0: return PING;
-        case 1: return ASSIGN_TASK;
+        case 1: return RUN_TASK;
+        case 2: return CANCEL_TASK;
+        case 3: return INSERT_DATA;
+        case 4: return INSERT_LOGS;
         default: return null;
       }
     }
@@ -148,8 +199,9 @@ public final class StreamMessageCodeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n entity/stream_message_code.proto\022\004grpc" +
-      "*.\n\021StreamMessageCode\022\010\n\004PING\020\000\022\017\n\013ASSIG" +
-      "N_TASK\020\001B\010Z\006.;grpcb\006proto3"
+      "*^\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_T" +
+      "ASK\020\001\022\017\n\013CANCEL_TASK\020\002\022\017\n\013INSERT_DATA\020\003\022" +
+      "\017\n\013INSERT_LOGS\020\004B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

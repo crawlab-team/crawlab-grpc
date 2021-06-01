@@ -16,6 +16,7 @@ service ModelBaseService {
   rpc ForceDeleteList(Request) returns (Response){};
   rpc UpdateById(Request) returns (Response){};
   rpc Update(Request) returns (Response){};
+  rpc UpdateDoc(Request) returns (Response){};
   rpc Insert(Request) returns (Response){};
   rpc Count(Request) returns (Response){};
 }

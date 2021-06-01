@@ -25,20 +25,25 @@ public final class TaskServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033services/task_service.proto\022\004grpc\032\024ent" +
       "ity/request.proto\032\025entity/response.proto" +
-      "2\230\001\n\013TaskService\022.\n\013GetTaskInfo\022\r.grpc.R" +
-      "equest\032\016.grpc.Response\"\000\022+\n\010SaveItem\022\r.g" +
-      "rpc.Request\032\016.grpc.Response\"\000\022,\n\tSaveIte" +
-      "ms\022\r.grpc.Request\032\016.grpc.Response\"\000B\010Z\006." +
-      ";grpcb\006proto3"
+      "\032\033entity/stream_message.proto2\374\001\n\013TaskSe" +
+      "rvice\022.\n\013GetTaskInfo\022\r.grpc.Request\032\016.gr" +
+      "pc.Response\"\000\022+\n\010SaveItem\022\r.grpc.Request" +
+      "\032\016.grpc.Response\"\000\022,\n\tSaveItems\022\r.grpc.R" +
+      "equest\032\016.grpc.Response\"\000\022,\n\tFetchTask\022\r." +
+      "grpc.Request\032\016.grpc.Response\"\000\0224\n\tSubscr" +
+      "ibe\022\023.grpc.StreamMessage\032\016.grpc.Response" +
+      "\"\000(\001B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           grpc.RequestOuterClass.getDescriptor(),
           grpc.ResponseOuterClass.getDescriptor(),
+          grpc.StreamMessageOuterClass.getDescriptor(),
         });
     grpc.RequestOuterClass.getDescriptor();
     grpc.ResponseOuterClass.getDescriptor();
+    grpc.StreamMessageOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

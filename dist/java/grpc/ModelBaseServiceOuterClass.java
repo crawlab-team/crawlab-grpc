@@ -25,7 +25,7 @@ public final class ModelBaseServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n!services/model_base_service.proto\022\004grp" +
       "c\032\024entity/request.proto\032\025entity/response" +
-      ".proto2\376\003\n\020ModelBaseService\022*\n\007GetById\022\r" +
+      ".proto2\254\004\n\020ModelBaseService\022*\n\007GetById\022\r" +
       ".grpc.Request\032\016.grpc.Response\"\000\022&\n\003Get\022\r" +
       ".grpc.Request\032\016.grpc.Response\"\000\022*\n\007GetLi" +
       "st\022\r.grpc.Request\032\016.grpc.Response\"\000\022-\n\nD" +
@@ -35,10 +35,11 @@ public final class ModelBaseServiceOuterClass {
       "c.Response\"\000\0222\n\017ForceDeleteList\022\r.grpc.R" +
       "equest\032\016.grpc.Response\"\000\022-\n\nUpdateById\022\r" +
       ".grpc.Request\032\016.grpc.Response\"\000\022)\n\006Updat" +
-      "e\022\r.grpc.Request\032\016.grpc.Response\"\000\022)\n\006In" +
-      "sert\022\r.grpc.Request\032\016.grpc.Response\"\000\022(\n" +
-      "\005Count\022\r.grpc.Request\032\016.grpc.Response\"\000B" +
-      "\010Z\006.;grpcb\006proto3"
+      "e\022\r.grpc.Request\032\016.grpc.Response\"\000\022,\n\tUp" +
+      "dateDoc\022\r.grpc.Request\032\016.grpc.Response\"\000" +
+      "\022)\n\006Insert\022\r.grpc.Request\032\016.grpc.Respons" +
+      "e\"\000\022(\n\005Count\022\r.grpc.Request\032\016.grpc.Respo" +
+      "nse\"\000B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

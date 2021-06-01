@@ -20,6 +20,8 @@ type TaskServiceClient interface {
 	GetTaskInfo(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	SaveItem(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	SaveItems(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	FetchTask(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	Subscribe(ctx context.Context, opts ...grpc.CallOption) (TaskService_SubscribeClient, error)
 }
 
 type taskServiceClient struct {
@@ -57,6 +59,49 @@ func (c *taskServiceClient) SaveItems(ctx context.Context, in *Request, opts ...
 	return out, nil
 }
 
+func (c *taskServiceClient) FetchTask(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/grpc.TaskService/FetchTask", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *taskServiceClient) Subscribe(ctx context.Context, opts ...grpc.CallOption) (TaskService_SubscribeClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_TaskService_serviceDesc.Streams[0], "/grpc.TaskService/Subscribe", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &taskServiceSubscribeClient{stream}
+	return x, nil
+}
+
+type TaskService_SubscribeClient interface {
+	Send(*StreamMessage) error
+	CloseAndRecv() (*Response, error)
+	grpc.ClientStream
+}
+
+type taskServiceSubscribeClient struct {
+	grpc.ClientStream
+}
+
+func (x *taskServiceSubscribeClient) Send(m *StreamMessage) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *taskServiceSubscribeClient) CloseAndRecv() (*Response, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(Response)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // TaskServiceServer is the server API for TaskService service.
 // All implementations must embed UnimplementedTaskServiceServer
 // for forward compatibility
@@ -64,6 +109,8 @@ type TaskServiceServer interface {
 	GetTaskInfo(context.Context, *Request) (*Response, error)
 	SaveItem(context.Context, *Request) (*Response, error)
 	SaveItems(context.Context, *Request) (*Response, error)
+	FetchTask(context.Context, *Request) (*Response, error)
+	Subscribe(TaskService_SubscribeServer) error
 	mustEmbedUnimplementedTaskServiceServer()
 }
 
@@ -79,6 +126,12 @@ func (UnimplementedTaskServiceServer) SaveItem(context.Context, *Request) (*Resp
 }
 func (UnimplementedTaskServiceServer) SaveItems(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SaveItems not implemented")
+}
+func (UnimplementedTaskServiceServer) FetchTask(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchTask not implemented")
+}
+func (UnimplementedTaskServiceServer) Subscribe(TaskService_SubscribeServer) error {
+	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
 }
 func (UnimplementedTaskServiceServer) mustEmbedUnimplementedTaskServiceServer() {}
 
@@ -147,6 +200,50 @@ func _TaskService_SaveItems_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TaskService_FetchTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TaskServiceServer).FetchTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/grpc.TaskService/FetchTask",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TaskServiceServer).FetchTask(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TaskService_Subscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(TaskServiceServer).Subscribe(&taskServiceSubscribeServer{stream})
+}
+
+type TaskService_SubscribeServer interface {
+	SendAndClose(*Response) error
+	Recv() (*StreamMessage, error)
+	grpc.ServerStream
+}
+
+type taskServiceSubscribeServer struct {
+	grpc.ServerStream
+}
+
+func (x *taskServiceSubscribeServer) SendAndClose(m *Response) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *taskServiceSubscribeServer) Recv() (*StreamMessage, error) {
+	m := new(StreamMessage)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _TaskService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "grpc.TaskService",
 	HandlerType: (*TaskServiceServer)(nil),
@@ -163,7 +260,17 @@ var _TaskService_serviceDesc = grpc.ServiceDesc{
 			MethodName: "SaveItems",
 			Handler:    _TaskService_SaveItems_Handler,
 		},
+		{
+			MethodName: "FetchTask",
+			Handler:    _TaskService_FetchTask_Handler,
+		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "Subscribe",
+			Handler:       _TaskService_Subscribe_Handler,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "services/task_service.proto",
 }

@@ -18,15 +18,36 @@ class StreamMessageCode
      */
     const PING = 0;
     /**
-     * assign task to worker nodes to execute tasks
+     * ask worker node(s) to run task with given id
      *
-     * Generated from protobuf enum <code>ASSIGN_TASK = 1;</code>
+     * Generated from protobuf enum <code>RUN_TASK = 1;</code>
      */
-    const ASSIGN_TASK = 1;
+    const RUN_TASK = 1;
+    /**
+     * ask worker node(s) to cancel task with given id
+     *
+     * Generated from protobuf enum <code>CANCEL_TASK = 2;</code>
+     */
+    const CANCEL_TASK = 2;
+    /**
+     * insert data
+     *
+     * Generated from protobuf enum <code>INSERT_DATA = 3;</code>
+     */
+    const INSERT_DATA = 3;
+    /**
+     * insert logs
+     *
+     * Generated from protobuf enum <code>INSERT_LOGS = 4;</code>
+     */
+    const INSERT_LOGS = 4;
 
     private static $valueToName = [
         self::PING => 'PING',
-        self::ASSIGN_TASK => 'ASSIGN_TASK',
+        self::RUN_TASK => 'RUN_TASK',
+        self::CANCEL_TASK => 'CANCEL_TASK',
+        self::INSERT_DATA => 'INSERT_DATA',
+        self::INSERT_LOGS => 'INSERT_LOGS',
     ];
 
     public static function name($value)

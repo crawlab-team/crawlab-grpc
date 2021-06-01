@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n entity/stream_message_code.proto\x12\x04grpc*.\n\x11StreamMessageCode\x12\x08\n\x04PING\x10\x00\x12\x0f\n\x0b\x41SSIGN_TASK\x10\x01\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n entity/stream_message_code.proto\x12\x04grpc*^\n\x11StreamMessageCode\x12\x08\n\x04PING\x10\x00\x12\x0c\n\x08RUN_TASK\x10\x01\x12\x0f\n\x0b\x43\x41NCEL_TASK\x10\x02\x12\x0f\n\x0bINSERT_DATA\x10\x03\x12\x0f\n\x0bINSERT_LOGS\x10\x04\x42\x08Z\x06.;grpcb\x06proto3'
 )
 
 _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
@@ -36,7 +36,22 @@ _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='ASSIGN_TASK', index=1, number=1,
+      name='RUN_TASK', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCEL_TASK', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INSERT_DATA', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INSERT_LOGS', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -44,13 +59,16 @@ _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=42,
-  serialized_end=88,
+  serialized_end=136,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMMESSAGECODE)
 
 StreamMessageCode = enum_type_wrapper.EnumTypeWrapper(_STREAMMESSAGECODE)
 PING = 0
-ASSIGN_TASK = 1
+RUN_TASK = 1
+CANCEL_TASK = 2
+INSERT_DATA = 3
+INSERT_LOGS = 4
 
 
 DESCRIPTOR.enum_types_by_name['StreamMessageCode'] = _STREAMMESSAGECODE

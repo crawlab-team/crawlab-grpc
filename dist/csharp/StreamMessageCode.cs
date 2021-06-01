@@ -24,9 +24,10 @@ namespace Grpc {
     static StreamMessageCodeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYyouChFT",
-            "dHJlYW1NZXNzYWdlQ29kZRIICgRQSU5HEAASDwoLQVNTSUdOX1RBU0sQAUII",
-            "WgYuO2dycGNiBnByb3RvMw=="));
+            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYypeChFT",
+            "dHJlYW1NZXNzYWdlQ29kZRIICgRQSU5HEAASDAoIUlVOX1RBU0sQARIPCgtD",
+            "QU5DRUxfVEFTSxACEg8KC0lOU0VSVF9EQVRBEAMSDwoLSU5TRVJUX0xPR1MQ",
+            "BEIIWgYuO2dycGNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.StreamMessageCode), }, null, null));
@@ -41,9 +42,21 @@ namespace Grpc {
     /// </summary>
     [pbr::OriginalName("PING")] Ping = 0,
     /// <summary>
-    /// assign task to worker nodes to execute tasks
+    /// ask worker node(s) to run task with given id
     /// </summary>
-    [pbr::OriginalName("ASSIGN_TASK")] AssignTask = 1,
+    [pbr::OriginalName("RUN_TASK")] RunTask = 1,
+    /// <summary>
+    /// ask worker node(s) to cancel task with given id
+    /// </summary>
+    [pbr::OriginalName("CANCEL_TASK")] CancelTask = 2,
+    /// <summary>
+    /// insert data
+    /// </summary>
+    [pbr::OriginalName("INSERT_DATA")] InsertData = 3,
+    /// <summary>
+    /// insert logs
+    /// </summary>
+    [pbr::OriginalName("INSERT_LOGS")] InsertLogs = 4,
   }
 
   #endregion

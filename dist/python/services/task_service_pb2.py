@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from entity import request_pb2 as entity_dot_request__pb2
 from entity import response_pb2 as entity_dot_response__pb2
+from entity import stream_message_pb2 as entity_dot_stream__message__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1bservices/task_service.proto\x12\x04grpc\x1a\x14\x65ntity/request.proto\x1a\x15\x65ntity/response.proto2\x98\x01\n\x0bTaskService\x12.\n\x0bGetTaskInfo\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12+\n\x08SaveItem\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12,\n\tSaveItems\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n\x1bservices/task_service.proto\x12\x04grpc\x1a\x14\x65ntity/request.proto\x1a\x15\x65ntity/response.proto\x1a\x1b\x65ntity/stream_message.proto2\xfc\x01\n\x0bTaskService\x12.\n\x0bGetTaskInfo\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12+\n\x08SaveItem\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12,\n\tSaveItems\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12,\n\tFetchTask\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12\x34\n\tSubscribe\x12\x13.grpc.StreamMessage\x1a\x0e.grpc.Response\"\x00(\x01\x42\x08Z\x06.;grpcb\x06proto3'
   ,
-  dependencies=[entity_dot_request__pb2.DESCRIPTOR,entity_dot_response__pb2.DESCRIPTOR,])
+  dependencies=[entity_dot_request__pb2.DESCRIPTOR,entity_dot_response__pb2.DESCRIPTOR,entity_dot_stream__message__pb2.DESCRIPTOR,])
 
 
 
@@ -39,8 +40,8 @@ _TASKSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=83,
-  serialized_end=235,
+  serialized_start=112,
+  serialized_end=364,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetTaskInfo',
@@ -68,6 +69,26 @@ _TASKSERVICE = _descriptor.ServiceDescriptor(
     index=2,
     containing_service=None,
     input_type=entity_dot_request__pb2._REQUEST,
+    output_type=entity_dot_response__pb2._RESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='FetchTask',
+    full_name='grpc.TaskService.FetchTask',
+    index=3,
+    containing_service=None,
+    input_type=entity_dot_request__pb2._REQUEST,
+    output_type=entity_dot_response__pb2._RESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Subscribe',
+    full_name='grpc.TaskService.Subscribe',
+    index=4,
+    containing_service=None,
+    input_type=entity_dot_stream__message__pb2._STREAMMESSAGE,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,

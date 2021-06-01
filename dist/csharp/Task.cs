@@ -24,20 +24,16 @@ namespace Grpc {
     static TaskReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFtb2RlbHMvdGFzay5wcm90bxIEZ3JwYyKIAwoEVGFzaxILCgNfaWQYASAB",
-            "KAkSEQoJc3BpZGVyX2lkGAIgASgJEhAKCHN0YXJ0X3RzGAMgASgJEhEKCWZp",
-            "bmlzaF90cxgEIAEoCRIOCgZzdGF0dXMYBSABKAkSDwoHbm9kZV9pZBgGIAEo",
-            "CRILCgNjbWQYCCABKAkSDQoFcGFyYW0YCSABKAkSDQoFZXJyb3IYCiABKAkS",
-            "FAoMcmVzdWx0X2NvdW50GAsgASgFEhcKD2Vycm9yX2xvZ19jb3VudBgMIAEo",
-            "BRIVCg13YWl0X2R1cmF0aW9uGA0gASgFEhgKEHJ1bnRpbWVfZHVyYXRpb24Y",
-            "DiABKAUSFgoOdG90YWxfZHVyYXRpb24YDyABKAUSCwoDcGlkGBAgASgFEhAK",
-            "CHJ1bl90eXBlGBEgASgJEhMKC3NjaGVkdWxlX2lkGBIgASgJEgwKBHR5cGUY",
-            "EyABKAkSDwoHdXNlcl9pZBgUIAEoCRIRCgljcmVhdGVfdHMYFSABKAkSEQoJ",
-            "dXBkYXRlX3RzGBYgASgJQghaBi47Z3JwY2IGcHJvdG8z"));
+            "ChFtb2RlbHMvdGFzay5wcm90bxIEZ3JwYyK0AQoEVGFzaxILCgNfaWQYASAB",
+            "KAkSEQoJc3BpZGVyX2lkGAIgASgJEg4KBnN0YXR1cxgFIAEoCRIPCgdub2Rl",
+            "X2lkGAYgASgJEgsKA2NtZBgIIAEoCRINCgVwYXJhbRgJIAEoCRINCgVlcnJv",
+            "chgKIAEoCRILCgNwaWQYECABKAUSEAoIcnVuX3R5cGUYESABKAkSEwoLc2No",
+            "ZWR1bGVfaWQYEiABKAkSDAoEdHlwZRgTIAEoCUIIWgYuO2dycGNiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Task), global::Grpc.Task.Parser, new[]{ "Id", "SpiderId", "StartTs", "FinishTs", "Status", "NodeId", "Cmd", "Param", "Error", "ResultCount", "ErrorLogCount", "WaitDuration", "RuntimeDuration", "TotalDuration", "Pid", "RunType", "ScheduleId", "Type", "UserId", "CreateTs", "UpdateTs" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Task), global::Grpc.Task.Parser, new[]{ "Id", "SpiderId", "Status", "NodeId", "Cmd", "Param", "Error", "Pid", "RunType", "ScheduleId", "Type" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,25 +71,15 @@ namespace Grpc {
     public Task(Task other) : this() {
       Id_ = other.Id_;
       spiderId_ = other.spiderId_;
-      startTs_ = other.startTs_;
-      finishTs_ = other.finishTs_;
       status_ = other.status_;
       nodeId_ = other.nodeId_;
       cmd_ = other.cmd_;
       param_ = other.param_;
       error_ = other.error_;
-      resultCount_ = other.resultCount_;
-      errorLogCount_ = other.errorLogCount_;
-      waitDuration_ = other.waitDuration_;
-      runtimeDuration_ = other.runtimeDuration_;
-      totalDuration_ = other.totalDuration_;
       pid_ = other.pid_;
       runType_ = other.runType_;
       scheduleId_ = other.scheduleId_;
       type_ = other.type_;
-      userId_ = other.userId_;
-      createTs_ = other.createTs_;
-      updateTs_ = other.updateTs_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -121,28 +107,6 @@ namespace Grpc {
       get { return spiderId_; }
       set {
         spiderId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "start_ts" field.</summary>
-    public const int StartTsFieldNumber = 3;
-    private string startTs_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string StartTs {
-      get { return startTs_; }
-      set {
-        startTs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "finish_ts" field.</summary>
-    public const int FinishTsFieldNumber = 4;
-    private string finishTs_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FinishTs {
-      get { return finishTs_; }
-      set {
-        finishTs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -201,61 +165,6 @@ namespace Grpc {
       }
     }
 
-    /// <summary>Field number for the "result_count" field.</summary>
-    public const int ResultCountFieldNumber = 11;
-    private int resultCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ResultCount {
-      get { return resultCount_; }
-      set {
-        resultCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "error_log_count" field.</summary>
-    public const int ErrorLogCountFieldNumber = 12;
-    private int errorLogCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ErrorLogCount {
-      get { return errorLogCount_; }
-      set {
-        errorLogCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wait_duration" field.</summary>
-    public const int WaitDurationFieldNumber = 13;
-    private int waitDuration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int WaitDuration {
-      get { return waitDuration_; }
-      set {
-        waitDuration_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "runtime_duration" field.</summary>
-    public const int RuntimeDurationFieldNumber = 14;
-    private int runtimeDuration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int RuntimeDuration {
-      get { return runtimeDuration_; }
-      set {
-        runtimeDuration_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "total_duration" field.</summary>
-    public const int TotalDurationFieldNumber = 15;
-    private int totalDuration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int TotalDuration {
-      get { return totalDuration_; }
-      set {
-        totalDuration_ = value;
-      }
-    }
-
     /// <summary>Field number for the "pid" field.</summary>
     public const int PidFieldNumber = 16;
     private int pid_;
@@ -300,39 +209,6 @@ namespace Grpc {
       }
     }
 
-    /// <summary>Field number for the "user_id" field.</summary>
-    public const int UserIdFieldNumber = 20;
-    private string userId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UserId {
-      get { return userId_; }
-      set {
-        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "create_ts" field.</summary>
-    public const int CreateTsFieldNumber = 21;
-    private string createTs_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string CreateTs {
-      get { return createTs_; }
-      set {
-        createTs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "update_ts" field.</summary>
-    public const int UpdateTsFieldNumber = 22;
-    private string updateTs_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UpdateTs {
-      get { return updateTs_; }
-      set {
-        updateTs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Task);
@@ -348,25 +224,15 @@ namespace Grpc {
       }
       if (Id != other.Id) return false;
       if (SpiderId != other.SpiderId) return false;
-      if (StartTs != other.StartTs) return false;
-      if (FinishTs != other.FinishTs) return false;
       if (Status != other.Status) return false;
       if (NodeId != other.NodeId) return false;
       if (Cmd != other.Cmd) return false;
       if (Param != other.Param) return false;
       if (Error != other.Error) return false;
-      if (ResultCount != other.ResultCount) return false;
-      if (ErrorLogCount != other.ErrorLogCount) return false;
-      if (WaitDuration != other.WaitDuration) return false;
-      if (RuntimeDuration != other.RuntimeDuration) return false;
-      if (TotalDuration != other.TotalDuration) return false;
       if (Pid != other.Pid) return false;
       if (RunType != other.RunType) return false;
       if (ScheduleId != other.ScheduleId) return false;
       if (Type != other.Type) return false;
-      if (UserId != other.UserId) return false;
-      if (CreateTs != other.CreateTs) return false;
-      if (UpdateTs != other.UpdateTs) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -375,25 +241,15 @@ namespace Grpc {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (SpiderId.Length != 0) hash ^= SpiderId.GetHashCode();
-      if (StartTs.Length != 0) hash ^= StartTs.GetHashCode();
-      if (FinishTs.Length != 0) hash ^= FinishTs.GetHashCode();
       if (Status.Length != 0) hash ^= Status.GetHashCode();
       if (NodeId.Length != 0) hash ^= NodeId.GetHashCode();
       if (Cmd.Length != 0) hash ^= Cmd.GetHashCode();
       if (Param.Length != 0) hash ^= Param.GetHashCode();
       if (Error.Length != 0) hash ^= Error.GetHashCode();
-      if (ResultCount != 0) hash ^= ResultCount.GetHashCode();
-      if (ErrorLogCount != 0) hash ^= ErrorLogCount.GetHashCode();
-      if (WaitDuration != 0) hash ^= WaitDuration.GetHashCode();
-      if (RuntimeDuration != 0) hash ^= RuntimeDuration.GetHashCode();
-      if (TotalDuration != 0) hash ^= TotalDuration.GetHashCode();
       if (Pid != 0) hash ^= Pid.GetHashCode();
       if (RunType.Length != 0) hash ^= RunType.GetHashCode();
       if (ScheduleId.Length != 0) hash ^= ScheduleId.GetHashCode();
       if (Type.Length != 0) hash ^= Type.GetHashCode();
-      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
-      if (CreateTs.Length != 0) hash ^= CreateTs.GetHashCode();
-      if (UpdateTs.Length != 0) hash ^= UpdateTs.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -418,14 +274,6 @@ namespace Grpc {
         output.WriteRawTag(18);
         output.WriteString(SpiderId);
       }
-      if (StartTs.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(StartTs);
-      }
-      if (FinishTs.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(FinishTs);
-      }
       if (Status.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(Status);
@@ -446,26 +294,6 @@ namespace Grpc {
         output.WriteRawTag(82);
         output.WriteString(Error);
       }
-      if (ResultCount != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(ResultCount);
-      }
-      if (ErrorLogCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(ErrorLogCount);
-      }
-      if (WaitDuration != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(WaitDuration);
-      }
-      if (RuntimeDuration != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(RuntimeDuration);
-      }
-      if (TotalDuration != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(TotalDuration);
-      }
       if (Pid != 0) {
         output.WriteRawTag(128, 1);
         output.WriteInt32(Pid);
@@ -481,18 +309,6 @@ namespace Grpc {
       if (Type.Length != 0) {
         output.WriteRawTag(154, 1);
         output.WriteString(Type);
-      }
-      if (UserId.Length != 0) {
-        output.WriteRawTag(162, 1);
-        output.WriteString(UserId);
-      }
-      if (CreateTs.Length != 0) {
-        output.WriteRawTag(170, 1);
-        output.WriteString(CreateTs);
-      }
-      if (UpdateTs.Length != 0) {
-        output.WriteRawTag(178, 1);
-        output.WriteString(UpdateTs);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -511,14 +327,6 @@ namespace Grpc {
         output.WriteRawTag(18);
         output.WriteString(SpiderId);
       }
-      if (StartTs.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(StartTs);
-      }
-      if (FinishTs.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(FinishTs);
-      }
       if (Status.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(Status);
@@ -539,26 +347,6 @@ namespace Grpc {
         output.WriteRawTag(82);
         output.WriteString(Error);
       }
-      if (ResultCount != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(ResultCount);
-      }
-      if (ErrorLogCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(ErrorLogCount);
-      }
-      if (WaitDuration != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(WaitDuration);
-      }
-      if (RuntimeDuration != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(RuntimeDuration);
-      }
-      if (TotalDuration != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(TotalDuration);
-      }
       if (Pid != 0) {
         output.WriteRawTag(128, 1);
         output.WriteInt32(Pid);
@@ -575,18 +363,6 @@ namespace Grpc {
         output.WriteRawTag(154, 1);
         output.WriteString(Type);
       }
-      if (UserId.Length != 0) {
-        output.WriteRawTag(162, 1);
-        output.WriteString(UserId);
-      }
-      if (CreateTs.Length != 0) {
-        output.WriteRawTag(170, 1);
-        output.WriteString(CreateTs);
-      }
-      if (UpdateTs.Length != 0) {
-        output.WriteRawTag(178, 1);
-        output.WriteString(UpdateTs);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -601,12 +377,6 @@ namespace Grpc {
       }
       if (SpiderId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SpiderId);
-      }
-      if (StartTs.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(StartTs);
-      }
-      if (FinishTs.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FinishTs);
       }
       if (Status.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
@@ -623,21 +393,6 @@ namespace Grpc {
       if (Error.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Error);
       }
-      if (ResultCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ResultCount);
-      }
-      if (ErrorLogCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ErrorLogCount);
-      }
-      if (WaitDuration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WaitDuration);
-      }
-      if (RuntimeDuration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RuntimeDuration);
-      }
-      if (TotalDuration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalDuration);
-      }
       if (Pid != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Pid);
       }
@@ -649,15 +404,6 @@ namespace Grpc {
       }
       if (Type.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Type);
-      }
-      if (UserId.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(UserId);
-      }
-      if (CreateTs.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(CreateTs);
-      }
-      if (UpdateTs.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(UpdateTs);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -676,12 +422,6 @@ namespace Grpc {
       if (other.SpiderId.Length != 0) {
         SpiderId = other.SpiderId;
       }
-      if (other.StartTs.Length != 0) {
-        StartTs = other.StartTs;
-      }
-      if (other.FinishTs.Length != 0) {
-        FinishTs = other.FinishTs;
-      }
       if (other.Status.Length != 0) {
         Status = other.Status;
       }
@@ -697,21 +437,6 @@ namespace Grpc {
       if (other.Error.Length != 0) {
         Error = other.Error;
       }
-      if (other.ResultCount != 0) {
-        ResultCount = other.ResultCount;
-      }
-      if (other.ErrorLogCount != 0) {
-        ErrorLogCount = other.ErrorLogCount;
-      }
-      if (other.WaitDuration != 0) {
-        WaitDuration = other.WaitDuration;
-      }
-      if (other.RuntimeDuration != 0) {
-        RuntimeDuration = other.RuntimeDuration;
-      }
-      if (other.TotalDuration != 0) {
-        TotalDuration = other.TotalDuration;
-      }
       if (other.Pid != 0) {
         Pid = other.Pid;
       }
@@ -723,15 +448,6 @@ namespace Grpc {
       }
       if (other.Type.Length != 0) {
         Type = other.Type;
-      }
-      if (other.UserId.Length != 0) {
-        UserId = other.UserId;
-      }
-      if (other.CreateTs.Length != 0) {
-        CreateTs = other.CreateTs;
-      }
-      if (other.UpdateTs.Length != 0) {
-        UpdateTs = other.UpdateTs;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -755,14 +471,6 @@ namespace Grpc {
             SpiderId = input.ReadString();
             break;
           }
-          case 26: {
-            StartTs = input.ReadString();
-            break;
-          }
-          case 34: {
-            FinishTs = input.ReadString();
-            break;
-          }
           case 42: {
             Status = input.ReadString();
             break;
@@ -783,26 +491,6 @@ namespace Grpc {
             Error = input.ReadString();
             break;
           }
-          case 88: {
-            ResultCount = input.ReadInt32();
-            break;
-          }
-          case 96: {
-            ErrorLogCount = input.ReadInt32();
-            break;
-          }
-          case 104: {
-            WaitDuration = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            RuntimeDuration = input.ReadInt32();
-            break;
-          }
-          case 120: {
-            TotalDuration = input.ReadInt32();
-            break;
-          }
           case 128: {
             Pid = input.ReadInt32();
             break;
@@ -817,18 +505,6 @@ namespace Grpc {
           }
           case 154: {
             Type = input.ReadString();
-            break;
-          }
-          case 162: {
-            UserId = input.ReadString();
-            break;
-          }
-          case 170: {
-            CreateTs = input.ReadString();
-            break;
-          }
-          case 178: {
-            UpdateTs = input.ReadString();
             break;
           }
         }
@@ -853,14 +529,6 @@ namespace Grpc {
             SpiderId = input.ReadString();
             break;
           }
-          case 26: {
-            StartTs = input.ReadString();
-            break;
-          }
-          case 34: {
-            FinishTs = input.ReadString();
-            break;
-          }
           case 42: {
             Status = input.ReadString();
             break;
@@ -881,26 +549,6 @@ namespace Grpc {
             Error = input.ReadString();
             break;
           }
-          case 88: {
-            ResultCount = input.ReadInt32();
-            break;
-          }
-          case 96: {
-            ErrorLogCount = input.ReadInt32();
-            break;
-          }
-          case 104: {
-            WaitDuration = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            RuntimeDuration = input.ReadInt32();
-            break;
-          }
-          case 120: {
-            TotalDuration = input.ReadInt32();
-            break;
-          }
           case 128: {
             Pid = input.ReadInt32();
             break;
@@ -915,18 +563,6 @@ namespace Grpc {
           }
           case 154: {
             Type = input.ReadString();
-            break;
-          }
-          case 162: {
-            UserId = input.ReadString();
-            break;
-          }
-          case 170: {
-            CreateTs = input.ReadString();
-            break;
-          }
-          case 178: {
-            UpdateTs = input.ReadString();
             break;
           }
         }

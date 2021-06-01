@@ -26,6 +26,7 @@ type ModelBaseServiceClient interface {
 	ForceDeleteList(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	UpdateById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Update(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	UpdateDoc(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Insert(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Count(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 }
@@ -119,6 +120,15 @@ func (c *modelBaseServiceClient) Update(ctx context.Context, in *Request, opts .
 	return out, nil
 }
 
+func (c *modelBaseServiceClient) UpdateDoc(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/grpc.ModelBaseService/UpdateDoc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *modelBaseServiceClient) Insert(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
 	err := c.cc.Invoke(ctx, "/grpc.ModelBaseService/Insert", in, out, opts...)
@@ -150,6 +160,7 @@ type ModelBaseServiceServer interface {
 	ForceDeleteList(context.Context, *Request) (*Response, error)
 	UpdateById(context.Context, *Request) (*Response, error)
 	Update(context.Context, *Request) (*Response, error)
+	UpdateDoc(context.Context, *Request) (*Response, error)
 	Insert(context.Context, *Request) (*Response, error)
 	Count(context.Context, *Request) (*Response, error)
 	mustEmbedUnimplementedModelBaseServiceServer()
@@ -185,6 +196,9 @@ func (UnimplementedModelBaseServiceServer) UpdateById(context.Context, *Request)
 }
 func (UnimplementedModelBaseServiceServer) Update(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
+}
+func (UnimplementedModelBaseServiceServer) UpdateDoc(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateDoc not implemented")
 }
 func (UnimplementedModelBaseServiceServer) Insert(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Insert not implemented")
@@ -367,6 +381,24 @@ func _ModelBaseService_Update_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ModelBaseService_UpdateDoc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelBaseServiceServer).UpdateDoc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/grpc.ModelBaseService/UpdateDoc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelBaseServiceServer).UpdateDoc(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ModelBaseService_Insert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Request)
 	if err := dec(in); err != nil {
@@ -442,6 +474,10 @@ var _ModelBaseService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Update",
 			Handler:    _ModelBaseService_Update_Handler,
+		},
+		{
+			MethodName: "UpdateDoc",
+			Handler:    _ModelBaseService_UpdateDoc_Handler,
 		},
 		{
 			MethodName: "Insert",
