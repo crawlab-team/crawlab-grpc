@@ -32,5 +32,11 @@ cd $base_path && \
   --ruby_out=dist/ruby \
   ./proto/**/*.proto
 
+# python
+cd $base_path && \
+  python -m grpc_tools.protoc -I ./proto \
+  --grpc_python_out=dist/python \
+  ./proto/**/*.proto
+
 cd $base_path && \
   cp go.mod go.sum dist/go
