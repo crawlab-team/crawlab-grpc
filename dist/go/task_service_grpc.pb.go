@@ -17,10 +17,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TaskServiceClient interface {
-	GetTaskInfo(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	SaveItem(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	SaveItems(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	FetchTask(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Subscribe(ctx context.Context, opts ...grpc.CallOption) (TaskService_SubscribeClient, error)
 }
 
@@ -30,42 +26,6 @@ type taskServiceClient struct {
 
 func NewTaskServiceClient(cc grpc.ClientConnInterface) TaskServiceClient {
 	return &taskServiceClient{cc}
-}
-
-func (c *taskServiceClient) GetTaskInfo(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
-	out := new(Response)
-	err := c.cc.Invoke(ctx, "/grpc.TaskService/GetTaskInfo", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *taskServiceClient) SaveItem(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
-	out := new(Response)
-	err := c.cc.Invoke(ctx, "/grpc.TaskService/SaveItem", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *taskServiceClient) SaveItems(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
-	out := new(Response)
-	err := c.cc.Invoke(ctx, "/grpc.TaskService/SaveItems", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *taskServiceClient) FetchTask(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
-	out := new(Response)
-	err := c.cc.Invoke(ctx, "/grpc.TaskService/FetchTask", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *taskServiceClient) Subscribe(ctx context.Context, opts ...grpc.CallOption) (TaskService_SubscribeClient, error) {
@@ -106,10 +66,6 @@ func (x *taskServiceSubscribeClient) CloseAndRecv() (*Response, error) {
 // All implementations must embed UnimplementedTaskServiceServer
 // for forward compatibility
 type TaskServiceServer interface {
-	GetTaskInfo(context.Context, *Request) (*Response, error)
-	SaveItem(context.Context, *Request) (*Response, error)
-	SaveItems(context.Context, *Request) (*Response, error)
-	FetchTask(context.Context, *Request) (*Response, error)
 	Subscribe(TaskService_SubscribeServer) error
 	mustEmbedUnimplementedTaskServiceServer()
 }
@@ -118,18 +74,6 @@ type TaskServiceServer interface {
 type UnimplementedTaskServiceServer struct {
 }
 
-func (UnimplementedTaskServiceServer) GetTaskInfo(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTaskInfo not implemented")
-}
-func (UnimplementedTaskServiceServer) SaveItem(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SaveItem not implemented")
-}
-func (UnimplementedTaskServiceServer) SaveItems(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SaveItems not implemented")
-}
-func (UnimplementedTaskServiceServer) FetchTask(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FetchTask not implemented")
-}
 func (UnimplementedTaskServiceServer) Subscribe(TaskService_SubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
 }
@@ -144,78 +88,6 @@ type UnsafeTaskServiceServer interface {
 
 func RegisterTaskServiceServer(s grpc.ServiceRegistrar, srv TaskServiceServer) {
 	s.RegisterService(&_TaskService_serviceDesc, srv)
-}
-
-func _TaskService_GetTaskInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TaskServiceServer).GetTaskInfo(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/grpc.TaskService/GetTaskInfo",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).GetTaskInfo(ctx, req.(*Request))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _TaskService_SaveItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TaskServiceServer).SaveItem(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/grpc.TaskService/SaveItem",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).SaveItem(ctx, req.(*Request))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _TaskService_SaveItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TaskServiceServer).SaveItems(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/grpc.TaskService/SaveItems",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).SaveItems(ctx, req.(*Request))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _TaskService_FetchTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(TaskServiceServer).FetchTask(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/grpc.TaskService/FetchTask",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).FetchTask(ctx, req.(*Request))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _TaskService_Subscribe_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -247,24 +119,7 @@ func (x *taskServiceSubscribeServer) Recv() (*StreamMessage, error) {
 var _TaskService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "grpc.TaskService",
 	HandlerType: (*TaskServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetTaskInfo",
-			Handler:    _TaskService_GetTaskInfo_Handler,
-		},
-		{
-			MethodName: "SaveItem",
-			Handler:    _TaskService_SaveItem_Handler,
-		},
-		{
-			MethodName: "SaveItems",
-			Handler:    _TaskService_SaveItems_Handler,
-		},
-		{
-			MethodName: "FetchTask",
-			Handler:    _TaskService_FetchTask_Handler,
-		},
-	},
+	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "Subscribe",

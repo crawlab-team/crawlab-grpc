@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "entity/request.proto";
 import "entity/response.proto";
 import "entity/stream_message.proto";
 
@@ -8,9 +7,5 @@ package grpc;
 option go_package = ".;grpc";
 
 service TaskService {
-  rpc GetTaskInfo(Request) returns (Response){};
-  rpc SaveItem(Request) returns (Response){};
-  rpc SaveItems(Request) returns (Response){};
-  rpc FetchTask(Request) returns (Response){};
   rpc Subscribe(stream StreamMessage) returns (Response){};
 }
