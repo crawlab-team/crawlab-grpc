@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "entity/request.proto";
 import "entity/response.proto";
 import "entity/stream_message.proto";
 
@@ -8,4 +9,5 @@ option go_package = ".;grpc";
 
 service TaskService {
   rpc Subscribe(stream StreamMessage) returns (Response){};
+  rpc GetDataSource(Request) returns (Response){};
 }

@@ -18,6 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TaskServiceClient interface {
 	Subscribe(ctx context.Context, opts ...grpc.CallOption) (TaskService_SubscribeClient, error)
+	GetDataSource(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 }
 
 type taskServiceClient struct {
@@ -62,11 +63,21 @@ func (x *taskServiceSubscribeClient) CloseAndRecv() (*Response, error) {
 	return m, nil
 }
 
+func (c *taskServiceClient) GetDataSource(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+	out := new(Response)
+	err := c.cc.Invoke(ctx, "/grpc.TaskService/GetDataSource", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TaskServiceServer is the server API for TaskService service.
 // All implementations must embed UnimplementedTaskServiceServer
 // for forward compatibility
 type TaskServiceServer interface {
 	Subscribe(TaskService_SubscribeServer) error
+	GetDataSource(context.Context, *Request) (*Response, error)
 	mustEmbedUnimplementedTaskServiceServer()
 }
 
@@ -76,6 +87,9 @@ type UnimplementedTaskServiceServer struct {
 
 func (UnimplementedTaskServiceServer) Subscribe(TaskService_SubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
+}
+func (UnimplementedTaskServiceServer) GetDataSource(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDataSource not implemented")
 }
 func (UnimplementedTaskServiceServer) mustEmbedUnimplementedTaskServiceServer() {}
 
@@ -116,10 +130,33 @@ func (x *taskServiceSubscribeServer) Recv() (*StreamMessage, error) {
 	return m, nil
 }
 
+func _TaskService_GetDataSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TaskServiceServer).GetDataSource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/grpc.TaskService/GetDataSource",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TaskServiceServer).GetDataSource(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _TaskService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "grpc.TaskService",
 	HandlerType: (*TaskServiceServer)(nil),
-	Methods:     []grpc.MethodDesc{},
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetDataSource",
+			Handler:    _TaskService_GetDataSource_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "Subscribe",
