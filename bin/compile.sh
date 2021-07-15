@@ -12,7 +12,6 @@ cd $base_path && \
   rm -rf dist | true
 
 cd $base_path && \
-  mkdir -p dist/go | true && \
   mkdir -p dist/python | true && \
   mkdir -p dist/js | true && \
   mkdir -p dist/java | true && \
@@ -22,8 +21,8 @@ cd $base_path && \
 
 cd $base_path && \
   protoc -I ./proto \
-  --go_out=dist/go \
-  --go-grpc_out=dist/go \
+  --go_out=. \
+  --go-grpc_out=. \
   --python_out=dist/python \
   --js_out=dist/js \
   --java_out=dist/java \
@@ -37,6 +36,3 @@ cd $base_path && \
   python -m grpc_tools.protoc -I ./proto \
   --grpc_python_out=dist/python \
   ./proto/**/*.proto
-
-cd $base_path && \
-  cp go.mod go.sum dist/go
