@@ -23,22 +23,22 @@ public final class PluginServiceOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035services/plugin_service.proto\022\004grpc\032\024e" +
-      "ntity/request.proto\032\025entity/response.pro" +
-      "to\032\033entity/stream_message.proto2y\n\rPlugi" +
-      "nService\022+\n\010Register\022\r.grpc.Request\032\016.gr" +
-      "pc.Response\"\000\022;\n\tSubscribe\022\023.grpc.Stream" +
-      "Message\032\023.grpc.StreamMessage\"\000(\0010\001B\010Z\006.;" +
-      "grpcb\006proto3"
+      "\n\035services/plugin_service.proto\022\004grpc\032\033e" +
+      "ntity/plugin_request.proto\032\025entity/respo" +
+      "nse.proto\032\033entity/stream_message.proto2}" +
+      "\n\rPluginService\0221\n\010Register\022\023.grpc.Plugi" +
+      "nRequest\032\016.grpc.Response\"\000\0229\n\tSubscribe\022" +
+      "\023.grpc.PluginRequest\032\023.grpc.StreamMessag" +
+      "e\"\0000\001B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          grpc.RequestOuterClass.getDescriptor(),
+          grpc.PluginRequestOuterClass.getDescriptor(),
           grpc.ResponseOuterClass.getDescriptor(),
           grpc.StreamMessageOuterClass.getDescriptor(),
         });
-    grpc.RequestOuterClass.getDescriptor();
+    grpc.PluginRequestOuterClass.getDescriptor();
     grpc.ResponseOuterClass.getDescriptor();
     grpc.StreamMessageOuterClass.getDescriptor();
   }

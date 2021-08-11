@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "entity/request.proto";
+import "entity/plugin_request.proto";
 import "entity/response.proto";
 import "entity/stream_message.proto";
 
@@ -8,6 +8,7 @@ package grpc;
 option go_package = ".;grpc";
 
 service PluginService {
-  rpc Register(Request) returns (Response){};
-  rpc Subscribe(stream StreamMessage) returns (stream StreamMessage){};
+  rpc Register(PluginRequest) returns (Response){};
+  rpc Subscribe(PluginRequest) returns (stream StreamMessage){};
+  rpc Request(stream StreamMessage) returns (PluginRequest){};
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package grpc;
+option go_package = ".;grpc";
+
+message PluginRequest {
+  string name = 1;
+  bytes data = 2;
+}

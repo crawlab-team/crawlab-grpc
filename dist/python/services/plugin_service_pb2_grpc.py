@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from entity import request_pb2 as entity_dot_request__pb2
+from entity import plugin_request_pb2 as entity_dot_plugin__request__pb2
 from entity import response_pb2 as entity_dot_response__pb2
 from entity import stream_message_pb2 as entity_dot_stream__message__pb2
 
@@ -18,12 +18,12 @@ class PluginServiceStub(object):
         """
         self.Register = channel.unary_unary(
                 '/grpc.PluginService/Register',
-                request_serializer=entity_dot_request__pb2.Request.SerializeToString,
+                request_serializer=entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
                 response_deserializer=entity_dot_response__pb2.Response.FromString,
                 )
-        self.Subscribe = channel.stream_stream(
+        self.Subscribe = channel.unary_stream(
                 '/grpc.PluginService/Subscribe',
-                request_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
+                request_serializer=entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
                 response_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
                 )
 
@@ -37,7 +37,7 @@ class PluginServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Subscribe(self, request_iterator, context):
+    def Subscribe(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -48,12 +48,12 @@ def add_PluginServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Register': grpc.unary_unary_rpc_method_handler(
                     servicer.Register,
-                    request_deserializer=entity_dot_request__pb2.Request.FromString,
+                    request_deserializer=entity_dot_plugin__request__pb2.PluginRequest.FromString,
                     response_serializer=entity_dot_response__pb2.Response.SerializeToString,
             ),
-            'Subscribe': grpc.stream_stream_rpc_method_handler(
+            'Subscribe': grpc.unary_stream_rpc_method_handler(
                     servicer.Subscribe,
-                    request_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
+                    request_deserializer=entity_dot_plugin__request__pb2.PluginRequest.FromString,
                     response_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
             ),
     }
@@ -78,13 +78,13 @@ class PluginService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/grpc.PluginService/Register',
-            entity_dot_request__pb2.Request.SerializeToString,
+            entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
             entity_dot_response__pb2.Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Subscribe(request_iterator,
+    def Subscribe(request,
             target,
             options=(),
             channel_credentials=None,
@@ -94,8 +94,8 @@ class PluginService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(request_iterator, target, '/grpc.PluginService/Subscribe',
-            entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
+        return grpc.experimental.unary_stream(request, target, '/grpc.PluginService/Subscribe',
+            entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
             entity_dot_stream__message__pb2.StreamMessage.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

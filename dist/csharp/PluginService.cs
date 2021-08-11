@@ -24,14 +24,14 @@ namespace Grpc {
     static PluginServiceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1zZXJ2aWNlcy9wbHVnaW5fc2VydmljZS5wcm90bxIEZ3JwYxoUZW50aXR5",
-            "L3JlcXVlc3QucHJvdG8aFWVudGl0eS9yZXNwb25zZS5wcm90bxobZW50aXR5",
-            "L3N0cmVhbV9tZXNzYWdlLnByb3RvMnkKDVBsdWdpblNlcnZpY2USKwoIUmVn",
-            "aXN0ZXISDS5ncnBjLlJlcXVlc3QaDi5ncnBjLlJlc3BvbnNlIgASOwoJU3Vi",
-            "c2NyaWJlEhMuZ3JwYy5TdHJlYW1NZXNzYWdlGhMuZ3JwYy5TdHJlYW1NZXNz",
-            "YWdlIgAoATABQghaBi47Z3JwY2IGcHJvdG8z"));
+            "Ch1zZXJ2aWNlcy9wbHVnaW5fc2VydmljZS5wcm90bxIEZ3JwYxobZW50aXR5",
+            "L3BsdWdpbl9yZXF1ZXN0LnByb3RvGhVlbnRpdHkvcmVzcG9uc2UucHJvdG8a",
+            "G2VudGl0eS9zdHJlYW1fbWVzc2FnZS5wcm90bzJ9Cg1QbHVnaW5TZXJ2aWNl",
+            "EjEKCFJlZ2lzdGVyEhMuZ3JwYy5QbHVnaW5SZXF1ZXN0Gg4uZ3JwYy5SZXNw",
+            "b25zZSIAEjkKCVN1YnNjcmliZRITLmdycGMuUGx1Z2luUmVxdWVzdBoTLmdy",
+            "cGMuU3RyZWFtTWVzc2FnZSIAMAFCCFoGLjtncnBjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Grpc.RequestReflection.Descriptor, global::Grpc.ResponseReflection.Descriptor, global::Grpc.StreamMessageReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Grpc.PluginRequestReflection.Descriptor, global::Grpc.ResponseReflection.Descriptor, global::Grpc.StreamMessageReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, null));
     }
     #endregion
