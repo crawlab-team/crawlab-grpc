@@ -26,6 +26,11 @@ class PluginServiceStub(object):
                 request_serializer=entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
                 response_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
                 )
+        self.Request = channel.stream_unary(
+                '/grpc.PluginService/Request',
+                request_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
+                response_deserializer=entity_dot_plugin__request__pb2.PluginRequest.FromString,
+                )
 
 
 class PluginServiceServicer(object):
@@ -43,6 +48,12 @@ class PluginServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Request(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PluginServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -55,6 +66,11 @@ def add_PluginServiceServicer_to_server(servicer, server):
                     servicer.Subscribe,
                     request_deserializer=entity_dot_plugin__request__pb2.PluginRequest.FromString,
                     response_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
+            ),
+            'Request': grpc.stream_unary_rpc_method_handler(
+                    servicer.Request,
+                    request_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
+                    response_serializer=entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -97,5 +113,22 @@ class PluginService(object):
         return grpc.experimental.unary_stream(request, target, '/grpc.PluginService/Subscribe',
             entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
             entity_dot_stream__message__pb2.StreamMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Request(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/grpc.PluginService/Request',
+            entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
+            entity_dot_plugin__request__pb2.PluginRequest.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

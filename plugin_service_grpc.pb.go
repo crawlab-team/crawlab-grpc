@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 type PluginServiceClient interface {
 	Register(ctx context.Context, in *PluginRequest, opts ...grpc.CallOption) (*Response, error)
 	Subscribe(ctx context.Context, in *PluginRequest, opts ...grpc.CallOption) (PluginService_SubscribeClient, error)
+	Request(ctx context.Context, opts ...grpc.CallOption) (PluginService_RequestClient, error)
 }
 
 type pluginServiceClient struct {
@@ -70,12 +71,47 @@ func (x *pluginServiceSubscribeClient) Recv() (*StreamMessage, error) {
 	return m, nil
 }
 
+func (c *pluginServiceClient) Request(ctx context.Context, opts ...grpc.CallOption) (PluginService_RequestClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_PluginService_serviceDesc.Streams[1], "/grpc.PluginService/Request", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &pluginServiceRequestClient{stream}
+	return x, nil
+}
+
+type PluginService_RequestClient interface {
+	Send(*StreamMessage) error
+	CloseAndRecv() (*PluginRequest, error)
+	grpc.ClientStream
+}
+
+type pluginServiceRequestClient struct {
+	grpc.ClientStream
+}
+
+func (x *pluginServiceRequestClient) Send(m *StreamMessage) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *pluginServiceRequestClient) CloseAndRecv() (*PluginRequest, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(PluginRequest)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // PluginServiceServer is the server API for PluginService service.
 // All implementations must embed UnimplementedPluginServiceServer
 // for forward compatibility
 type PluginServiceServer interface {
 	Register(context.Context, *PluginRequest) (*Response, error)
 	Subscribe(*PluginRequest, PluginService_SubscribeServer) error
+	Request(PluginService_RequestServer) error
 	mustEmbedUnimplementedPluginServiceServer()
 }
 
@@ -88,6 +124,9 @@ func (UnimplementedPluginServiceServer) Register(context.Context, *PluginRequest
 }
 func (UnimplementedPluginServiceServer) Subscribe(*PluginRequest, PluginService_SubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
+}
+func (UnimplementedPluginServiceServer) Request(PluginService_RequestServer) error {
+	return status.Errorf(codes.Unimplemented, "method Request not implemented")
 }
 func (UnimplementedPluginServiceServer) mustEmbedUnimplementedPluginServiceServer() {}
 
@@ -141,6 +180,32 @@ func (x *pluginServiceSubscribeServer) Send(m *StreamMessage) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _PluginService_Request_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(PluginServiceServer).Request(&pluginServiceRequestServer{stream})
+}
+
+type PluginService_RequestServer interface {
+	SendAndClose(*PluginRequest) error
+	Recv() (*StreamMessage, error)
+	grpc.ServerStream
+}
+
+type pluginServiceRequestServer struct {
+	grpc.ServerStream
+}
+
+func (x *pluginServiceRequestServer) SendAndClose(m *PluginRequest) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *pluginServiceRequestServer) Recv() (*StreamMessage, error) {
+	m := new(StreamMessage)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _PluginService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "grpc.PluginService",
 	HandlerType: (*PluginServiceServer)(nil),
@@ -155,6 +220,11 @@ var _PluginService_serviceDesc = grpc.ServiceDesc{
 			StreamName:    "Subscribe",
 			Handler:       _PluginService_Subscribe_Handler,
 			ServerStreams: true,
+		},
+		{
+			StreamName:    "Request",
+			Handler:       _PluginService_Request_Handler,
+			ClientStreams: true,
 		},
 	},
 	Metadata: "services/plugin_service.proto",

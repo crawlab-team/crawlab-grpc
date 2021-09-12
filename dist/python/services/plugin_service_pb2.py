@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dservices/plugin_service.proto\x12\x04grpc\x1a\x1b\x65ntity/plugin_request.proto\x1a\x15\x65ntity/response.proto\x1a\x1b\x65ntity/stream_message.proto2}\n\rPluginService\x12\x31\n\x08Register\x12\x13.grpc.PluginRequest\x1a\x0e.grpc.Response\"\x00\x12\x39\n\tSubscribe\x12\x13.grpc.PluginRequest\x1a\x13.grpc.StreamMessage\"\x00\x30\x01\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n\x1dservices/plugin_service.proto\x12\x04grpc\x1a\x1b\x65ntity/plugin_request.proto\x1a\x15\x65ntity/response.proto\x1a\x1b\x65ntity/stream_message.proto2\xb6\x01\n\rPluginService\x12\x31\n\x08Register\x12\x13.grpc.PluginRequest\x1a\x0e.grpc.Response\"\x00\x12\x39\n\tSubscribe\x12\x13.grpc.PluginRequest\x1a\x13.grpc.StreamMessage\"\x00\x30\x01\x12\x37\n\x07Request\x12\x13.grpc.StreamMessage\x1a\x13.grpc.PluginRequest\"\x00(\x01\x42\x08Z\x06.;grpcb\x06proto3'
   ,
   dependencies=[entity_dot_plugin__request__pb2.DESCRIPTOR,entity_dot_response__pb2.DESCRIPTOR,entity_dot_stream__message__pb2.DESCRIPTOR,])
 
@@ -40,8 +40,8 @@ _PLUGINSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=120,
-  serialized_end=245,
+  serialized_start=121,
+  serialized_end=303,
   methods=[
   _descriptor.MethodDescriptor(
     name='Register',
@@ -60,6 +60,16 @@ _PLUGINSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=entity_dot_plugin__request__pb2._PLUGINREQUEST,
     output_type=entity_dot_stream__message__pb2._STREAMMESSAGE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Request',
+    full_name='grpc.PluginService.Request',
+    index=2,
+    containing_service=None,
+    input_type=entity_dot_stream__message__pb2._STREAMMESSAGE,
+    output_type=entity_dot_plugin__request__pb2._PLUGINREQUEST,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

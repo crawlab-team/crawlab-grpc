@@ -25,11 +25,13 @@ public final class PluginServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035services/plugin_service.proto\022\004grpc\032\033e" +
       "ntity/plugin_request.proto\032\025entity/respo" +
-      "nse.proto\032\033entity/stream_message.proto2}" +
-      "\n\rPluginService\0221\n\010Register\022\023.grpc.Plugi" +
-      "nRequest\032\016.grpc.Response\"\000\0229\n\tSubscribe\022" +
-      "\023.grpc.PluginRequest\032\023.grpc.StreamMessag" +
-      "e\"\0000\001B\010Z\006.;grpcb\006proto3"
+      "nse.proto\032\033entity/stream_message.proto2\266" +
+      "\001\n\rPluginService\0221\n\010Register\022\023.grpc.Plug" +
+      "inRequest\032\016.grpc.Response\"\000\0229\n\tSubscribe" +
+      "\022\023.grpc.PluginRequest\032\023.grpc.StreamMessa" +
+      "ge\"\0000\001\0227\n\007Request\022\023.grpc.StreamMessage\032\023" +
+      ".grpc.PluginRequest\"\000(\001B\010Z\006.;grpcb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
