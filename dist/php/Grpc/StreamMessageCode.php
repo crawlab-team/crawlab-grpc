@@ -44,9 +44,9 @@ class StreamMessageCode
     /**
      * send event
      *
-     * Generated from protobuf enum <code>INSERT_EVENT = 5;</code>
+     * Generated from protobuf enum <code>SEND_EVENT = 5;</code>
      */
-    const INSERT_EVENT = 5;
+    const SEND_EVENT = 5;
 
     private static $valueToName = [
         self::PING => 'PING',
@@ -54,7 +54,7 @@ class StreamMessageCode
         self::CANCEL_TASK => 'CANCEL_TASK',
         self::INSERT_DATA => 'INSERT_DATA',
         self::INSERT_LOGS => 'INSERT_LOGS',
-        self::INSERT_EVENT => 'INSERT_EVENT',
+        self::SEND_EVENT => 'SEND_EVENT',
     ];
 
     public static function name($value)

@@ -64,9 +64,9 @@ public final class StreamMessageCodeOuterClass {
      * send event
      * </pre>
      *
-     * <code>INSERT_EVENT = 5;</code>
+     * <code>SEND_EVENT = 5;</code>
      */
-    INSERT_EVENT(5),
+    SEND_EVENT(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -115,9 +115,9 @@ public final class StreamMessageCodeOuterClass {
      * send event
      * </pre>
      *
-     * <code>INSERT_EVENT = 5;</code>
+     * <code>SEND_EVENT = 5;</code>
      */
-    public static final int INSERT_EVENT_VALUE = 5;
+    public static final int SEND_EVENT_VALUE = 5;
 
 
     public final int getNumber() {
@@ -149,7 +149,7 @@ public final class StreamMessageCodeOuterClass {
         case 2: return CANCEL_TASK;
         case 3: return INSERT_DATA;
         case 4: return INSERT_LOGS;
-        case 5: return INSERT_EVENT;
+        case 5: return SEND_EVENT;
         default: return null;
       }
     }
@@ -216,10 +216,10 @@ public final class StreamMessageCodeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n entity/stream_message_code.proto\022\004grpc" +
-      "*p\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_T" +
+      "*n\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_T" +
       "ASK\020\001\022\017\n\013CANCEL_TASK\020\002\022\017\n\013INSERT_DATA\020\003\022" +
-      "\017\n\013INSERT_LOGS\020\004\022\020\n\014INSERT_EVENT\020\005B\010Z\006.;" +
-      "grpcb\006proto3"
+      "\017\n\013INSERT_LOGS\020\004\022\016\n\nSEND_EVENT\020\005B\010Z\006.;gr" +
+      "pcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
