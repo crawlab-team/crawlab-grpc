@@ -14,4 +14,6 @@ enum StreamMessageCode {
   INSERT_DATA = 3;
   // insert logs
   INSERT_LOGS = 4;
+  // send event
+  INSERT_EVENT = 5;
 }

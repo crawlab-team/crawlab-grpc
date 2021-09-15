@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n entity/stream_message_code.proto\x12\x04grpc*^\n\x11StreamMessageCode\x12\x08\n\x04PING\x10\x00\x12\x0c\n\x08RUN_TASK\x10\x01\x12\x0f\n\x0b\x43\x41NCEL_TASK\x10\x02\x12\x0f\n\x0bINSERT_DATA\x10\x03\x12\x0f\n\x0bINSERT_LOGS\x10\x04\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n entity/stream_message_code.proto\x12\x04grpc*p\n\x11StreamMessageCode\x12\x08\n\x04PING\x10\x00\x12\x0c\n\x08RUN_TASK\x10\x01\x12\x0f\n\x0b\x43\x41NCEL_TASK\x10\x02\x12\x0f\n\x0bINSERT_DATA\x10\x03\x12\x0f\n\x0bINSERT_LOGS\x10\x04\x12\x10\n\x0cINSERT_EVENT\x10\x05\x42\x08Z\x06.;grpcb\x06proto3'
 )
 
 _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
@@ -55,11 +55,16 @@ _STREAMMESSAGECODE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INSERT_EVENT', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=42,
-  serialized_end=136,
+  serialized_end=154,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMMESSAGECODE)
 
@@ -69,6 +74,7 @@ RUN_TASK = 1
 CANCEL_TASK = 2
 INSERT_DATA = 3
 INSERT_LOGS = 4
+INSERT_EVENT = 5
 
 
 DESCRIPTOR.enum_types_by_name['StreamMessageCode'] = _STREAMMESSAGECODE

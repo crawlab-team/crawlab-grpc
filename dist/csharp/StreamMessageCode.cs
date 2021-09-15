@@ -24,10 +24,10 @@ namespace Grpc {
     static StreamMessageCodeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYypeChFT",
+            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYypwChFT",
             "dHJlYW1NZXNzYWdlQ29kZRIICgRQSU5HEAASDAoIUlVOX1RBU0sQARIPCgtD",
             "QU5DRUxfVEFTSxACEg8KC0lOU0VSVF9EQVRBEAMSDwoLSU5TRVJUX0xPR1MQ",
-            "BEIIWgYuO2dycGNiBnByb3RvMw=="));
+            "BBIQCgxJTlNFUlRfRVZFTlQQBUIIWgYuO2dycGNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.StreamMessageCode), }, null, null));
@@ -57,6 +57,10 @@ namespace Grpc {
     /// insert logs
     /// </summary>
     [pbr::OriginalName("INSERT_LOGS")] InsertLogs = 4,
+    /// <summary>
+    /// send event
+    /// </summary>
+    [pbr::OriginalName("INSERT_EVENT")] InsertEvent = 5,
   }
 
   #endregion

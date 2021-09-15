@@ -20,6 +20,7 @@ proto.grpc.StreamMessageCode = {
   RUN_TASK: 1,
   CANCEL_TASK: 2,
   INSERT_DATA: 3,
-  INSERT_LOGS: 4
+  INSERT_LOGS: 4,
+  INSERT_EVENT: 5
 };
 

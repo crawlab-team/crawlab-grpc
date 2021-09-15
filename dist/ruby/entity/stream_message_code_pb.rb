@@ -11,6 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :CANCEL_TASK, 2
       value :INSERT_DATA, 3
       value :INSERT_LOGS, 4
+      value :INSERT_EVENT, 5
     end
   end
 end
