@@ -16,4 +16,8 @@ enum StreamMessageCode {
   INSERT_LOGS = 4;
   // send event
   SEND_EVENT = 5;
+  // install plugin
+  INSTALL_PLUGIN = 6;
+  // uninstall plugin
+  UNINSTALL_PLUGIN = 7;
 }

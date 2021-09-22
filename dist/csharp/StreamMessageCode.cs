@@ -24,10 +24,11 @@ namespace Grpc {
     static StreamMessageCodeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYypuChFT",
-            "dHJlYW1NZXNzYWdlQ29kZRIICgRQSU5HEAASDAoIUlVOX1RBU0sQARIPCgtD",
-            "QU5DRUxfVEFTSxACEg8KC0lOU0VSVF9EQVRBEAMSDwoLSU5TRVJUX0xPR1MQ",
-            "BBIOCgpTRU5EX0VWRU5UEAVCCFoGLjtncnBjYgZwcm90bzM="));
+            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYyqYAQoR",
+            "U3RyZWFtTWVzc2FnZUNvZGUSCAoEUElORxAAEgwKCFJVTl9UQVNLEAESDwoL",
+            "Q0FOQ0VMX1RBU0sQAhIPCgtJTlNFUlRfREFUQRADEg8KC0lOU0VSVF9MT0dT",
+            "EAQSDgoKU0VORF9FVkVOVBAFEhIKDklOU1RBTExfUExVR0lOEAYSFAoQVU5J",
+            "TlNUQUxMX1BMVUdJThAHQghaBi47Z3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.StreamMessageCode), }, null, null));
@@ -61,6 +62,14 @@ namespace Grpc {
     /// send event
     /// </summary>
     [pbr::OriginalName("SEND_EVENT")] SendEvent = 5,
+    /// <summary>
+    /// install plugin
+    /// </summary>
+    [pbr::OriginalName("INSTALL_PLUGIN")] InstallPlugin = 6,
+    /// <summary>
+    /// uninstall plugin
+    /// </summary>
+    [pbr::OriginalName("UNINSTALL_PLUGIN")] UninstallPlugin = 7,
   }
 
   #endregion

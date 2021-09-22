@@ -67,6 +67,22 @@ public final class StreamMessageCodeOuterClass {
      * <code>SEND_EVENT = 5;</code>
      */
     SEND_EVENT(5),
+    /**
+     * <pre>
+     * install plugin
+     * </pre>
+     *
+     * <code>INSTALL_PLUGIN = 6;</code>
+     */
+    INSTALL_PLUGIN(6),
+    /**
+     * <pre>
+     * uninstall plugin
+     * </pre>
+     *
+     * <code>UNINSTALL_PLUGIN = 7;</code>
+     */
+    UNINSTALL_PLUGIN(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -118,6 +134,22 @@ public final class StreamMessageCodeOuterClass {
      * <code>SEND_EVENT = 5;</code>
      */
     public static final int SEND_EVENT_VALUE = 5;
+    /**
+     * <pre>
+     * install plugin
+     * </pre>
+     *
+     * <code>INSTALL_PLUGIN = 6;</code>
+     */
+    public static final int INSTALL_PLUGIN_VALUE = 6;
+    /**
+     * <pre>
+     * uninstall plugin
+     * </pre>
+     *
+     * <code>UNINSTALL_PLUGIN = 7;</code>
+     */
+    public static final int UNINSTALL_PLUGIN_VALUE = 7;
 
 
     public final int getNumber() {
@@ -150,6 +182,8 @@ public final class StreamMessageCodeOuterClass {
         case 3: return INSERT_DATA;
         case 4: return INSERT_LOGS;
         case 5: return SEND_EVENT;
+        case 6: return INSTALL_PLUGIN;
+        case 7: return UNINSTALL_PLUGIN;
         default: return null;
       }
     }
@@ -216,10 +250,11 @@ public final class StreamMessageCodeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n entity/stream_message_code.proto\022\004grpc" +
-      "*n\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_T" +
-      "ASK\020\001\022\017\n\013CANCEL_TASK\020\002\022\017\n\013INSERT_DATA\020\003\022" +
-      "\017\n\013INSERT_LOGS\020\004\022\016\n\nSEND_EVENT\020\005B\010Z\006.;gr" +
-      "pcb\006proto3"
+      "*\230\001\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_" +
+      "TASK\020\001\022\017\n\013CANCEL_TASK\020\002\022\017\n\013INSERT_DATA\020\003" +
+      "\022\017\n\013INSERT_LOGS\020\004\022\016\n\nSEND_EVENT\020\005\022\022\n\016INS" +
+      "TALL_PLUGIN\020\006\022\024\n\020UNINSTALL_PLUGIN\020\007B\010Z\006." +
+      ";grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

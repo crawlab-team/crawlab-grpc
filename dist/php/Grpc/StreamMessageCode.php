@@ -47,6 +47,18 @@ class StreamMessageCode
      * Generated from protobuf enum <code>SEND_EVENT = 5;</code>
      */
     const SEND_EVENT = 5;
+    /**
+     * install plugin
+     *
+     * Generated from protobuf enum <code>INSTALL_PLUGIN = 6;</code>
+     */
+    const INSTALL_PLUGIN = 6;
+    /**
+     * uninstall plugin
+     *
+     * Generated from protobuf enum <code>UNINSTALL_PLUGIN = 7;</code>
+     */
+    const UNINSTALL_PLUGIN = 7;
 
     private static $valueToName = [
         self::PING => 'PING',
@@ -55,6 +67,8 @@ class StreamMessageCode
         self::INSERT_DATA => 'INSERT_DATA',
         self::INSERT_LOGS => 'INSERT_LOGS',
         self::SEND_EVENT => 'SEND_EVENT',
+        self::INSTALL_PLUGIN => 'INSTALL_PLUGIN',
+        self::UNINSTALL_PLUGIN => 'UNINSTALL_PLUGIN',
     ];
 
     public static function name($value)

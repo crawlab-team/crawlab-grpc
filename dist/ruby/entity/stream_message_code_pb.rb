@@ -12,6 +12,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :INSERT_DATA, 3
       value :INSERT_LOGS, 4
       value :SEND_EVENT, 5
+      value :INSTALL_PLUGIN, 6
+      value :UNINSTALL_PLUGIN, 7
     end
   end
 end
