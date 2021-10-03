@@ -8,6 +8,9 @@ option go_package = ".;grpc";
 message StreamMessage {
   StreamMessageCode code = 1;
   string node_key = 2;
-  bytes data = 3;
-  string error = 4;
+  string key = 3;
+  string from = 4;
+  string to = 5;
+  bytes data = 6;
+  string error = 7;
 }

@@ -59,6 +59,36 @@ class StreamMessageCode
      * Generated from protobuf enum <code>UNINSTALL_PLUGIN = 7;</code>
      */
     const UNINSTALL_PLUGIN = 7;
+    /**
+     * start plugin
+     *
+     * Generated from protobuf enum <code>START_PLUGIN = 8;</code>
+     */
+    const START_PLUGIN = 8;
+    /**
+     * stop plugin
+     *
+     * Generated from protobuf enum <code>STOP_PLUGIN = 9;</code>
+     */
+    const STOP_PLUGIN = 9;
+    /**
+     * connect
+     *
+     * Generated from protobuf enum <code>CONNECT = 10;</code>
+     */
+    const CONNECT = 10;
+    /**
+     * disconnect
+     *
+     * Generated from protobuf enum <code>DISCONNECT = 11;</code>
+     */
+    const DISCONNECT = 11;
+    /**
+     * send
+     *
+     * Generated from protobuf enum <code>SEND = 12;</code>
+     */
+    const SEND = 12;
 
     private static $valueToName = [
         self::PING => 'PING',
@@ -69,6 +99,11 @@ class StreamMessageCode
         self::SEND_EVENT => 'SEND_EVENT',
         self::INSTALL_PLUGIN => 'INSTALL_PLUGIN',
         self::UNINSTALL_PLUGIN => 'UNINSTALL_PLUGIN',
+        self::START_PLUGIN => 'START_PLUGIN',
+        self::STOP_PLUGIN => 'STOP_PLUGIN',
+        self::CONNECT => 'CONNECT',
+        self::DISCONNECT => 'DISCONNECT',
+        self::SEND => 'SEND',
     ];
 
     public static function name($value)

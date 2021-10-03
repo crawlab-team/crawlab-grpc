@@ -72,8 +72,11 @@ proto.grpc.StreamMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
     code: jspb.Message.getFieldWithDefault(msg, 1, 0),
     nodeKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    key: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    from: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    to: jspb.Message.getFieldWithDefault(msg, 5, ""),
     data: msg.getData_asB64(),
-    error: jspb.Message.getFieldWithDefault(msg, 4, "")
+    error: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -119,10 +122,22 @@ proto.grpc.StreamMessage.deserializeBinaryFromReader = function(msg, reader) {
       msg.setNodeKey(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKey(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFrom(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTo(value);
+      break;
+    case 6:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setData(value);
       break;
-    case 4:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setError(value);
       break;
@@ -169,17 +184,38 @@ proto.grpc.StreamMessage.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getKey();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getFrom();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTo();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getData_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      3,
+      6,
       f
     );
   }
   f = message.getError();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      7,
       f
     );
   }
@@ -223,16 +259,70 @@ proto.grpc.StreamMessage.prototype.setNodeKey = function(value) {
 
 
 /**
- * optional bytes data = 3;
+ * optional string key = 3;
  * @return {string}
  */
-proto.grpc.StreamMessage.prototype.getData = function() {
+proto.grpc.StreamMessage.prototype.getKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * optional bytes data = 3;
+ * @param {string} value
+ * @return {!proto.grpc.StreamMessage} returns this
+ */
+proto.grpc.StreamMessage.prototype.setKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string from = 4;
+ * @return {string}
+ */
+proto.grpc.StreamMessage.prototype.getFrom = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.grpc.StreamMessage} returns this
+ */
+proto.grpc.StreamMessage.prototype.setFrom = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string to = 5;
+ * @return {string}
+ */
+proto.grpc.StreamMessage.prototype.getTo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.grpc.StreamMessage} returns this
+ */
+proto.grpc.StreamMessage.prototype.setTo = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bytes data = 6;
+ * @return {string}
+ */
+proto.grpc.StreamMessage.prototype.getData = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * optional bytes data = 6;
  * This is a type-conversion wrapper around `getData()`
  * @return {string}
  */
@@ -243,7 +333,7 @@ proto.grpc.StreamMessage.prototype.getData_asB64 = function() {
 
 
 /**
- * optional bytes data = 3;
+ * optional bytes data = 6;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getData()`
@@ -260,16 +350,16 @@ proto.grpc.StreamMessage.prototype.getData_asU8 = function() {
  * @return {!proto.grpc.StreamMessage} returns this
  */
 proto.grpc.StreamMessage.prototype.setData = function(value) {
-  return jspb.Message.setProto3BytesField(this, 3, value);
+  return jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
 /**
- * optional string error = 4;
+ * optional string error = 7;
  * @return {string}
  */
 proto.grpc.StreamMessage.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -278,7 +368,7 @@ proto.grpc.StreamMessage.prototype.getError = function() {
  * @return {!proto.grpc.StreamMessage} returns this
  */
 proto.grpc.StreamMessage.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

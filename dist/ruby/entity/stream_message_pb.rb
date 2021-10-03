@@ -9,8 +9,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "grpc.StreamMessage" do
       optional :code, :enum, 1, "grpc.StreamMessageCode"
       optional :node_key, :string, 2
-      optional :data, :bytes, 3
-      optional :error, :string, 4
+      optional :key, :string, 3
+      optional :from, :string, 4
+      optional :to, :string, 5
+      optional :data, :bytes, 6
+      optional :error, :string, 7
     end
   end
 end

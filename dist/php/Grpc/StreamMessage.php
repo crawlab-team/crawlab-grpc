@@ -22,11 +22,23 @@ class StreamMessage extends \Google\Protobuf\Internal\Message
      */
     protected $node_key = '';
     /**
-     * Generated from protobuf field <code>bytes data = 3;</code>
+     * Generated from protobuf field <code>string key = 3;</code>
+     */
+    protected $key = '';
+    /**
+     * Generated from protobuf field <code>string from = 4;</code>
+     */
+    protected $from = '';
+    /**
+     * Generated from protobuf field <code>string to = 5;</code>
+     */
+    protected $to = '';
+    /**
+     * Generated from protobuf field <code>bytes data = 6;</code>
      */
     protected $data = '';
     /**
-     * Generated from protobuf field <code>string error = 4;</code>
+     * Generated from protobuf field <code>string error = 7;</code>
      */
     protected $error = '';
 
@@ -38,6 +50,9 @@ class StreamMessage extends \Google\Protobuf\Internal\Message
      *
      *     @type int $code
      *     @type string $node_key
+     *     @type string $key
+     *     @type string $from
+     *     @type string $to
      *     @type string $data
      *     @type string $error
      * }
@@ -92,7 +107,73 @@ class StreamMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 3;</code>
+     * Generated from protobuf field <code>string key = 3;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string key = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string from = 4;</code>
+     * @return string
+     */
+    public function getFrom()
+    {
+        return $this->from;
+    }
+
+    /**
+     * Generated from protobuf field <code>string from = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFrom($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->from = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string to = 5;</code>
+     * @return string
+     */
+    public function getTo()
+    {
+        return $this->to;
+    }
+
+    /**
+     * Generated from protobuf field <code>string to = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTo($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->to = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes data = 6;</code>
      * @return string
      */
     public function getData()
@@ -101,7 +182,7 @@ class StreamMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 3;</code>
+     * Generated from protobuf field <code>bytes data = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -114,7 +195,7 @@ class StreamMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 4;</code>
+     * Generated from protobuf field <code>string error = 7;</code>
      * @return string
      */
     public function getError()
@@ -123,7 +204,7 @@ class StreamMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 4;</code>
+     * Generated from protobuf field <code>string error = 7;</code>
      * @param string $var
      * @return $this
      */

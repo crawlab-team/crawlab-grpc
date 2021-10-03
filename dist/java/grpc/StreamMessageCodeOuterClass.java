@@ -83,6 +83,46 @@ public final class StreamMessageCodeOuterClass {
      * <code>UNINSTALL_PLUGIN = 7;</code>
      */
     UNINSTALL_PLUGIN(7),
+    /**
+     * <pre>
+     * start plugin
+     * </pre>
+     *
+     * <code>START_PLUGIN = 8;</code>
+     */
+    START_PLUGIN(8),
+    /**
+     * <pre>
+     * stop plugin
+     * </pre>
+     *
+     * <code>STOP_PLUGIN = 9;</code>
+     */
+    STOP_PLUGIN(9),
+    /**
+     * <pre>
+     * connect
+     * </pre>
+     *
+     * <code>CONNECT = 10;</code>
+     */
+    CONNECT(10),
+    /**
+     * <pre>
+     * disconnect
+     * </pre>
+     *
+     * <code>DISCONNECT = 11;</code>
+     */
+    DISCONNECT(11),
+    /**
+     * <pre>
+     * send
+     * </pre>
+     *
+     * <code>SEND = 12;</code>
+     */
+    SEND(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -150,6 +190,46 @@ public final class StreamMessageCodeOuterClass {
      * <code>UNINSTALL_PLUGIN = 7;</code>
      */
     public static final int UNINSTALL_PLUGIN_VALUE = 7;
+    /**
+     * <pre>
+     * start plugin
+     * </pre>
+     *
+     * <code>START_PLUGIN = 8;</code>
+     */
+    public static final int START_PLUGIN_VALUE = 8;
+    /**
+     * <pre>
+     * stop plugin
+     * </pre>
+     *
+     * <code>STOP_PLUGIN = 9;</code>
+     */
+    public static final int STOP_PLUGIN_VALUE = 9;
+    /**
+     * <pre>
+     * connect
+     * </pre>
+     *
+     * <code>CONNECT = 10;</code>
+     */
+    public static final int CONNECT_VALUE = 10;
+    /**
+     * <pre>
+     * disconnect
+     * </pre>
+     *
+     * <code>DISCONNECT = 11;</code>
+     */
+    public static final int DISCONNECT_VALUE = 11;
+    /**
+     * <pre>
+     * send
+     * </pre>
+     *
+     * <code>SEND = 12;</code>
+     */
+    public static final int SEND_VALUE = 12;
 
 
     public final int getNumber() {
@@ -184,6 +264,11 @@ public final class StreamMessageCodeOuterClass {
         case 5: return SEND_EVENT;
         case 6: return INSTALL_PLUGIN;
         case 7: return UNINSTALL_PLUGIN;
+        case 8: return START_PLUGIN;
+        case 9: return STOP_PLUGIN;
+        case 10: return CONNECT;
+        case 11: return DISCONNECT;
+        case 12: return SEND;
         default: return null;
       }
     }
@@ -250,11 +335,13 @@ public final class StreamMessageCodeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n entity/stream_message_code.proto\022\004grpc" +
-      "*\230\001\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_" +
+      "*\342\001\n\021StreamMessageCode\022\010\n\004PING\020\000\022\014\n\010RUN_" +
       "TASK\020\001\022\017\n\013CANCEL_TASK\020\002\022\017\n\013INSERT_DATA\020\003" +
       "\022\017\n\013INSERT_LOGS\020\004\022\016\n\nSEND_EVENT\020\005\022\022\n\016INS" +
-      "TALL_PLUGIN\020\006\022\024\n\020UNINSTALL_PLUGIN\020\007B\010Z\006." +
-      ";grpcb\006proto3"
+      "TALL_PLUGIN\020\006\022\024\n\020UNINSTALL_PLUGIN\020\007\022\020\n\014S" +
+      "TART_PLUGIN\020\010\022\017\n\013STOP_PLUGIN\020\t\022\013\n\007CONNEC" +
+      "T\020\n\022\016\n\nDISCONNECT\020\013\022\010\n\004SEND\020\014B\010Z\006.;grpcb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

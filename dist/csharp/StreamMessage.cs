@@ -25,14 +25,15 @@ namespace Grpc {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtlbnRpdHkvc3RyZWFtX21lc3NhZ2UucHJvdG8SBGdycGMaIGVudGl0eS9z",
-            "dHJlYW1fbWVzc2FnZV9jb2RlLnByb3RvImUKDVN0cmVhbU1lc3NhZ2USJQoE",
-            "Y29kZRgBIAEoDjIXLmdycGMuU3RyZWFtTWVzc2FnZUNvZGUSEAoIbm9kZV9r",
-            "ZXkYAiABKAkSDAoEZGF0YRgDIAEoDBINCgVlcnJvchgEIAEoCUIIWgYuO2dy",
-            "cGNiBnByb3RvMw=="));
+            "dHJlYW1fbWVzc2FnZV9jb2RlLnByb3RvIowBCg1TdHJlYW1NZXNzYWdlEiUK",
+            "BGNvZGUYASABKA4yFy5ncnBjLlN0cmVhbU1lc3NhZ2VDb2RlEhAKCG5vZGVf",
+            "a2V5GAIgASgJEgsKA2tleRgDIAEoCRIMCgRmcm9tGAQgASgJEgoKAnRvGAUg",
+            "ASgJEgwKBGRhdGEYBiABKAwSDQoFZXJyb3IYByABKAlCCFoGLjtncnBjYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grpc.StreamMessageCodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.StreamMessage), global::Grpc.StreamMessage.Parser, new[]{ "Code", "NodeKey", "Data", "Error" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.StreamMessage), global::Grpc.StreamMessage.Parser, new[]{ "Code", "NodeKey", "Key", "From", "To", "Data", "Error" }, null, null, null, null)
           }));
     }
     #endregion
@@ -70,6 +71,9 @@ namespace Grpc {
     public StreamMessage(StreamMessage other) : this() {
       code_ = other.code_;
       nodeKey_ = other.nodeKey_;
+      key_ = other.key_;
+      from_ = other.from_;
+      to_ = other.to_;
       data_ = other.data_;
       error_ = other.error_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -102,8 +106,41 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "key" field.</summary>
+    public const int KeyFieldNumber = 3;
+    private string key_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Key {
+      get { return key_; }
+      set {
+        key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "from" field.</summary>
+    public const int FromFieldNumber = 4;
+    private string from_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string From {
+      get { return from_; }
+      set {
+        from_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "to" field.</summary>
+    public const int ToFieldNumber = 5;
+    private string to_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string To {
+      get { return to_; }
+      set {
+        to_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 3;
+    public const int DataFieldNumber = 6;
     private pb::ByteString data_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Data {
@@ -114,7 +151,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "error" field.</summary>
-    public const int ErrorFieldNumber = 4;
+    public const int ErrorFieldNumber = 7;
     private string error_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Error {
@@ -139,6 +176,9 @@ namespace Grpc {
       }
       if (Code != other.Code) return false;
       if (NodeKey != other.NodeKey) return false;
+      if (Key != other.Key) return false;
+      if (From != other.From) return false;
+      if (To != other.To) return false;
       if (Data != other.Data) return false;
       if (Error != other.Error) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -149,6 +189,9 @@ namespace Grpc {
       int hash = 1;
       if (Code != global::Grpc.StreamMessageCode.Ping) hash ^= Code.GetHashCode();
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (Key.Length != 0) hash ^= Key.GetHashCode();
+      if (From.Length != 0) hash ^= From.GetHashCode();
+      if (To.Length != 0) hash ^= To.GetHashCode();
       if (Data.Length != 0) hash ^= Data.GetHashCode();
       if (Error.Length != 0) hash ^= Error.GetHashCode();
       if (_unknownFields != null) {
@@ -175,12 +218,24 @@ namespace Grpc {
         output.WriteRawTag(18);
         output.WriteString(NodeKey);
       }
-      if (Data.Length != 0) {
+      if (Key.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Key);
+      }
+      if (From.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(From);
+      }
+      if (To.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(To);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(50);
         output.WriteBytes(Data);
       }
       if (Error.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(Error);
       }
       if (_unknownFields != null) {
@@ -200,12 +255,24 @@ namespace Grpc {
         output.WriteRawTag(18);
         output.WriteString(NodeKey);
       }
-      if (Data.Length != 0) {
+      if (Key.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(Key);
+      }
+      if (From.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(From);
+      }
+      if (To.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(To);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(50);
         output.WriteBytes(Data);
       }
       if (Error.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(Error);
       }
       if (_unknownFields != null) {
@@ -222,6 +289,15 @@ namespace Grpc {
       }
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (Key.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
+      }
+      if (From.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(From);
+      }
+      if (To.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(To);
       }
       if (Data.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
@@ -245,6 +321,15 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.Key.Length != 0) {
+        Key = other.Key;
+      }
+      if (other.From.Length != 0) {
+        From = other.From;
+      }
+      if (other.To.Length != 0) {
+        To = other.To;
       }
       if (other.Data.Length != 0) {
         Data = other.Data;
@@ -275,10 +360,22 @@ namespace Grpc {
             break;
           }
           case 26: {
-            Data = input.ReadBytes();
+            Key = input.ReadString();
             break;
           }
           case 34: {
+            From = input.ReadString();
+            break;
+          }
+          case 42: {
+            To = input.ReadString();
+            break;
+          }
+          case 50: {
+            Data = input.ReadBytes();
+            break;
+          }
+          case 58: {
             Error = input.ReadString();
             break;
           }
@@ -305,10 +402,22 @@ namespace Grpc {
             break;
           }
           case 26: {
-            Data = input.ReadBytes();
+            Key = input.ReadString();
             break;
           }
           case 34: {
+            From = input.ReadString();
+            break;
+          }
+          case 42: {
+            To = input.ReadString();
+            break;
+          }
+          case 50: {
+            Data = input.ReadBytes();
+            break;
+          }
+          case 58: {
             Error = input.ReadString();
             break;
           }

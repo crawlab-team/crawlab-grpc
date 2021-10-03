@@ -10,5 +10,5 @@ option go_package = ".;grpc";
 service PluginService {
   rpc Register(PluginRequest) returns (Response){};
   rpc Subscribe(PluginRequest) returns (stream StreamMessage){};
-  rpc Request(stream StreamMessage) returns (PluginRequest){};
+  rpc Poll(stream StreamMessage) returns (stream StreamMessage){};
 }

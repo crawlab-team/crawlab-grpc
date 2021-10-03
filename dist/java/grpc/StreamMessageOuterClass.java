@@ -42,18 +42,54 @@ public final class StreamMessageOuterClass {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes data = 3;</code>
+     * <code>string key = 3;</code>
+     * @return The key.
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 3;</code>
+     * @return The bytes for key.
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>string from = 4;</code>
+     * @return The from.
+     */
+    java.lang.String getFrom();
+    /**
+     * <code>string from = 4;</code>
+     * @return The bytes for from.
+     */
+    com.google.protobuf.ByteString
+        getFromBytes();
+
+    /**
+     * <code>string to = 5;</code>
+     * @return The to.
+     */
+    java.lang.String getTo();
+    /**
+     * <code>string to = 5;</code>
+     * @return The bytes for to.
+     */
+    com.google.protobuf.ByteString
+        getToBytes();
+
+    /**
+     * <code>bytes data = 6;</code>
      * @return The data.
      */
     com.google.protobuf.ByteString getData();
 
     /**
-     * <code>string error = 4;</code>
+     * <code>string error = 7;</code>
      * @return The error.
      */
     java.lang.String getError();
     /**
-     * <code>string error = 4;</code>
+     * <code>string error = 7;</code>
      * @return The bytes for error.
      */
     com.google.protobuf.ByteString
@@ -74,6 +110,9 @@ public final class StreamMessageOuterClass {
     private StreamMessage() {
       code_ = 0;
       nodeKey_ = "";
+      key_ = "";
+      from_ = "";
+      to_ = "";
       data_ = com.google.protobuf.ByteString.EMPTY;
       error_ = "";
     }
@@ -121,11 +160,29 @@ public final class StreamMessageOuterClass {
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              from_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              to_ = s;
+              break;
+            }
+            case 50: {
 
               data_ = input.readBytes();
               break;
             }
-            case 34: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               error_ = s;
@@ -220,10 +277,124 @@ public final class StreamMessageOuterClass {
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 3;
+    public static final int KEY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 3;</code>
+     * @return The key.
+     */
+    @java.lang.Override
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 3;</code>
+     * @return The bytes for key.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FROM_FIELD_NUMBER = 4;
+    private volatile java.lang.Object from_;
+    /**
+     * <code>string from = 4;</code>
+     * @return The from.
+     */
+    @java.lang.Override
+    public java.lang.String getFrom() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        from_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string from = 4;</code>
+     * @return The bytes for from.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFromBytes() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        from_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TO_FIELD_NUMBER = 5;
+    private volatile java.lang.Object to_;
+    /**
+     * <code>string to = 5;</code>
+     * @return The to.
+     */
+    @java.lang.Override
+    public java.lang.String getTo() {
+      java.lang.Object ref = to_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        to_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string to = 5;</code>
+     * @return The bytes for to.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getToBytes() {
+      java.lang.Object ref = to_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        to_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>bytes data = 3;</code>
+     * <code>bytes data = 6;</code>
      * @return The data.
      */
     @java.lang.Override
@@ -231,10 +402,10 @@ public final class StreamMessageOuterClass {
       return data_;
     }
 
-    public static final int ERROR_FIELD_NUMBER = 4;
+    public static final int ERROR_FIELD_NUMBER = 7;
     private volatile java.lang.Object error_;
     /**
-     * <code>string error = 4;</code>
+     * <code>string error = 7;</code>
      * @return The error.
      */
     @java.lang.Override
@@ -251,7 +422,7 @@ public final class StreamMessageOuterClass {
       }
     }
     /**
-     * <code>string error = 4;</code>
+     * <code>string error = 7;</code>
      * @return The bytes for error.
      */
     @java.lang.Override
@@ -289,11 +460,20 @@ public final class StreamMessageOuterClass {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeKey_);
       }
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, key_);
+      }
+      if (!getFromBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, from_);
+      }
+      if (!getToBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, to_);
+      }
       if (!data_.isEmpty()) {
-        output.writeBytes(3, data_);
+        output.writeBytes(6, data_);
       }
       if (!getErrorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, error_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, error_);
       }
       unknownFields.writeTo(output);
     }
@@ -311,12 +491,21 @@ public final class StreamMessageOuterClass {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeKey_);
       }
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, key_);
+      }
+      if (!getFromBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, from_);
+      }
+      if (!getToBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, to_);
+      }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, data_);
+          .computeBytesSize(6, data_);
       }
       if (!getErrorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, error_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, error_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,6 +525,12 @@ public final class StreamMessageOuterClass {
       if (code_ != other.code_) return false;
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (!getFrom()
+          .equals(other.getFrom())) return false;
+      if (!getTo()
+          .equals(other.getTo())) return false;
       if (!getData()
           .equals(other.getData())) return false;
       if (!getError()
@@ -355,6 +550,12 @@ public final class StreamMessageOuterClass {
       hash = (53 * hash) + code_;
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + getFrom().hashCode();
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + getTo().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -496,6 +697,12 @@ public final class StreamMessageOuterClass {
 
         nodeKey_ = "";
 
+        key_ = "";
+
+        from_ = "";
+
+        to_ = "";
+
         data_ = com.google.protobuf.ByteString.EMPTY;
 
         error_ = "";
@@ -528,6 +735,9 @@ public final class StreamMessageOuterClass {
         grpc.StreamMessageOuterClass.StreamMessage result = new grpc.StreamMessageOuterClass.StreamMessage(this);
         result.code_ = code_;
         result.nodeKey_ = nodeKey_;
+        result.key_ = key_;
+        result.from_ = from_;
+        result.to_ = to_;
         result.data_ = data_;
         result.error_ = error_;
         onBuilt();
@@ -583,6 +793,18 @@ public final class StreamMessageOuterClass {
         }
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (!other.getFrom().isEmpty()) {
+          from_ = other.from_;
+          onChanged();
+        }
+        if (!other.getTo().isEmpty()) {
+          to_ = other.to_;
           onChanged();
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
@@ -751,9 +973,237 @@ public final class StreamMessageOuterClass {
         return this;
       }
 
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 3;</code>
+       * @return The key.
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 3;</code>
+       * @return The bytes for key.
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 3;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 3;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object from_ = "";
+      /**
+       * <code>string from = 4;</code>
+       * @return The from.
+       */
+      public java.lang.String getFrom() {
+        java.lang.Object ref = from_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          from_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string from = 4;</code>
+       * @return The bytes for from.
+       */
+      public com.google.protobuf.ByteString
+          getFromBytes() {
+        java.lang.Object ref = from_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          from_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string from = 4;</code>
+       * @param value The from to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrom(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        from_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string from = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFrom() {
+        
+        from_ = getDefaultInstance().getFrom();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string from = 4;</code>
+       * @param value The bytes for from to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        from_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object to_ = "";
+      /**
+       * <code>string to = 5;</code>
+       * @return The to.
+       */
+      public java.lang.String getTo() {
+        java.lang.Object ref = to_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          to_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string to = 5;</code>
+       * @return The bytes for to.
+       */
+      public com.google.protobuf.ByteString
+          getToBytes() {
+        java.lang.Object ref = to_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          to_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string to = 5;</code>
+       * @param value The to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        to_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string to = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTo() {
+        
+        to_ = getDefaultInstance().getTo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string to = 5;</code>
+       * @param value The bytes for to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        to_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes data = 3;</code>
+       * <code>bytes data = 6;</code>
        * @return The data.
        */
       @java.lang.Override
@@ -761,7 +1211,7 @@ public final class StreamMessageOuterClass {
         return data_;
       }
       /**
-       * <code>bytes data = 3;</code>
+       * <code>bytes data = 6;</code>
        * @param value The data to set.
        * @return This builder for chaining.
        */
@@ -775,7 +1225,7 @@ public final class StreamMessageOuterClass {
         return this;
       }
       /**
-       * <code>bytes data = 3;</code>
+       * <code>bytes data = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearData() {
@@ -787,7 +1237,7 @@ public final class StreamMessageOuterClass {
 
       private java.lang.Object error_ = "";
       /**
-       * <code>string error = 4;</code>
+       * <code>string error = 7;</code>
        * @return The error.
        */
       public java.lang.String getError() {
@@ -803,7 +1253,7 @@ public final class StreamMessageOuterClass {
         }
       }
       /**
-       * <code>string error = 4;</code>
+       * <code>string error = 7;</code>
        * @return The bytes for error.
        */
       public com.google.protobuf.ByteString
@@ -820,7 +1270,7 @@ public final class StreamMessageOuterClass {
         }
       }
       /**
-       * <code>string error = 4;</code>
+       * <code>string error = 7;</code>
        * @param value The error to set.
        * @return This builder for chaining.
        */
@@ -835,7 +1285,7 @@ public final class StreamMessageOuterClass {
         return this;
       }
       /**
-       * <code>string error = 4;</code>
+       * <code>string error = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearError() {
@@ -845,7 +1295,7 @@ public final class StreamMessageOuterClass {
         return this;
       }
       /**
-       * <code>string error = 4;</code>
+       * <code>string error = 7;</code>
        * @param value The bytes for error to set.
        * @return This builder for chaining.
        */
@@ -928,10 +1378,11 @@ public final class StreamMessageOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033entity/stream_message.proto\022\004grpc\032 ent" +
-      "ity/stream_message_code.proto\"e\n\rStreamM" +
-      "essage\022%\n\004code\030\001 \001(\0162\027.grpc.StreamMessag" +
-      "eCode\022\020\n\010node_key\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\022\r\n" +
-      "\005error\030\004 \001(\tB\010Z\006.;grpcb\006proto3"
+      "ity/stream_message_code.proto\"\214\001\n\rStream" +
+      "Message\022%\n\004code\030\001 \001(\0162\027.grpc.StreamMessa" +
+      "geCode\022\020\n\010node_key\030\002 \001(\t\022\013\n\003key\030\003 \001(\t\022\014\n" +
+      "\004from\030\004 \001(\t\022\n\n\002to\030\005 \001(\t\022\014\n\004data\030\006 \001(\014\022\r\n" +
+      "\005error\030\007 \001(\tB\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -943,7 +1394,7 @@ public final class StreamMessageOuterClass {
     internal_static_grpc_StreamMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_StreamMessage_descriptor,
-        new java.lang.String[] { "Code", "NodeKey", "Data", "Error", });
+        new java.lang.String[] { "Code", "NodeKey", "Key", "From", "To", "Data", "Error", });
     grpc.StreamMessageCodeOuterClass.getDescriptor();
   }
 

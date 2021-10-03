@@ -19,7 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 type PluginServiceClient interface {
 	Register(ctx context.Context, in *PluginRequest, opts ...grpc.CallOption) (*Response, error)
 	Subscribe(ctx context.Context, in *PluginRequest, opts ...grpc.CallOption) (PluginService_SubscribeClient, error)
-	Request(ctx context.Context, opts ...grpc.CallOption) (PluginService_RequestClient, error)
+	Poll(ctx context.Context, opts ...grpc.CallOption) (PluginService_PollClient, error)
 }
 
 type pluginServiceClient struct {
@@ -71,34 +71,31 @@ func (x *pluginServiceSubscribeClient) Recv() (*StreamMessage, error) {
 	return m, nil
 }
 
-func (c *pluginServiceClient) Request(ctx context.Context, opts ...grpc.CallOption) (PluginService_RequestClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_PluginService_serviceDesc.Streams[1], "/grpc.PluginService/Request", opts...)
+func (c *pluginServiceClient) Poll(ctx context.Context, opts ...grpc.CallOption) (PluginService_PollClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_PluginService_serviceDesc.Streams[1], "/grpc.PluginService/Poll", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &pluginServiceRequestClient{stream}
+	x := &pluginServicePollClient{stream}
 	return x, nil
 }
 
-type PluginService_RequestClient interface {
+type PluginService_PollClient interface {
 	Send(*StreamMessage) error
-	CloseAndRecv() (*PluginRequest, error)
+	Recv() (*StreamMessage, error)
 	grpc.ClientStream
 }
 
-type pluginServiceRequestClient struct {
+type pluginServicePollClient struct {
 	grpc.ClientStream
 }
 
-func (x *pluginServiceRequestClient) Send(m *StreamMessage) error {
+func (x *pluginServicePollClient) Send(m *StreamMessage) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *pluginServiceRequestClient) CloseAndRecv() (*PluginRequest, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(PluginRequest)
+func (x *pluginServicePollClient) Recv() (*StreamMessage, error) {
+	m := new(StreamMessage)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -111,7 +108,7 @@ func (x *pluginServiceRequestClient) CloseAndRecv() (*PluginRequest, error) {
 type PluginServiceServer interface {
 	Register(context.Context, *PluginRequest) (*Response, error)
 	Subscribe(*PluginRequest, PluginService_SubscribeServer) error
-	Request(PluginService_RequestServer) error
+	Poll(PluginService_PollServer) error
 	mustEmbedUnimplementedPluginServiceServer()
 }
 
@@ -125,8 +122,8 @@ func (UnimplementedPluginServiceServer) Register(context.Context, *PluginRequest
 func (UnimplementedPluginServiceServer) Subscribe(*PluginRequest, PluginService_SubscribeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Subscribe not implemented")
 }
-func (UnimplementedPluginServiceServer) Request(PluginService_RequestServer) error {
-	return status.Errorf(codes.Unimplemented, "method Request not implemented")
+func (UnimplementedPluginServiceServer) Poll(PluginService_PollServer) error {
+	return status.Errorf(codes.Unimplemented, "method Poll not implemented")
 }
 func (UnimplementedPluginServiceServer) mustEmbedUnimplementedPluginServiceServer() {}
 
@@ -180,25 +177,25 @@ func (x *pluginServiceSubscribeServer) Send(m *StreamMessage) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _PluginService_Request_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(PluginServiceServer).Request(&pluginServiceRequestServer{stream})
+func _PluginService_Poll_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(PluginServiceServer).Poll(&pluginServicePollServer{stream})
 }
 
-type PluginService_RequestServer interface {
-	SendAndClose(*PluginRequest) error
+type PluginService_PollServer interface {
+	Send(*StreamMessage) error
 	Recv() (*StreamMessage, error)
 	grpc.ServerStream
 }
 
-type pluginServiceRequestServer struct {
+type pluginServicePollServer struct {
 	grpc.ServerStream
 }
 
-func (x *pluginServiceRequestServer) SendAndClose(m *PluginRequest) error {
+func (x *pluginServicePollServer) Send(m *StreamMessage) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *pluginServiceRequestServer) Recv() (*StreamMessage, error) {
+func (x *pluginServicePollServer) Recv() (*StreamMessage, error) {
 	m := new(StreamMessage)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -222,8 +219,9 @@ var _PluginService_serviceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 		{
-			StreamName:    "Request",
-			Handler:       _PluginService_Request_Handler,
+			StreamName:    "Poll",
+			Handler:       _PluginService_Poll_Handler,
+			ServerStreams: true,
 			ClientStreams: true,
 		},
 	},

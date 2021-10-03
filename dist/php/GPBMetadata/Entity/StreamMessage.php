@@ -17,13 +17,17 @@ class StreamMessage
         \GPBMetadata\Entity\StreamMessageCode::initOnce();
         $pool->internalAddGeneratedFile(
             '
-œ
-entity/stream_message.protogrpc"e
+Ä
+entity/stream_message.protogrpc"Œ
 StreamMessage%
 code (2.grpc.StreamMessageCode
-node_key (	
-data (
-error (	BZ.;grpcbproto3'
+node_key (	
+key (	
+from (	
+
+to (	
+data (
+error (	BZ.;grpcbproto3'
         , true);
 
         static::$is_initialized = true;

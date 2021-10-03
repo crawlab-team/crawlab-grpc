@@ -26,10 +26,10 @@ class PluginServiceStub(object):
                 request_serializer=entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
                 response_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
                 )
-        self.Request = channel.stream_unary(
-                '/grpc.PluginService/Request',
+        self.Poll = channel.stream_stream(
+                '/grpc.PluginService/Poll',
                 request_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
-                response_deserializer=entity_dot_plugin__request__pb2.PluginRequest.FromString,
+                response_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
                 )
 
 
@@ -48,7 +48,7 @@ class PluginServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Request(self, request_iterator, context):
+    def Poll(self, request_iterator, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -67,10 +67,10 @@ def add_PluginServiceServicer_to_server(servicer, server):
                     request_deserializer=entity_dot_plugin__request__pb2.PluginRequest.FromString,
                     response_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
             ),
-            'Request': grpc.stream_unary_rpc_method_handler(
-                    servicer.Request,
+            'Poll': grpc.stream_stream_rpc_method_handler(
+                    servicer.Poll,
                     request_deserializer=entity_dot_stream__message__pb2.StreamMessage.FromString,
-                    response_serializer=entity_dot_plugin__request__pb2.PluginRequest.SerializeToString,
+                    response_serializer=entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -117,7 +117,7 @@ class PluginService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Request(request_iterator,
+    def Poll(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -127,8 +127,8 @@ class PluginService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/grpc.PluginService/Request',
+        return grpc.experimental.stream_stream(request_iterator, target, '/grpc.PluginService/Poll',
             entity_dot_stream__message__pb2.StreamMessage.SerializeToString,
-            entity_dot_plugin__request__pb2.PluginRequest.FromString,
+            entity_dot_stream__message__pb2.StreamMessage.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

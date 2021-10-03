@@ -18,7 +18,11 @@ class PluginRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>string node_key = 2;</code>
+     */
+    protected $node_key = '';
+    /**
+     * Generated from protobuf field <code>bytes data = 3;</code>
      */
     protected $data = '';
 
@@ -29,6 +33,7 @@ class PluginRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
+     *     @type string $node_key
      *     @type string $data
      * }
      */
@@ -60,7 +65,29 @@ class PluginRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>string node_key = 2;</code>
+     * @return string
+     */
+    public function getNodeKey()
+    {
+        return $this->node_key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string node_key = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNodeKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->node_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes data = 3;</code>
      * @return string
      */
     public function getData()
@@ -69,7 +96,7 @@ class PluginRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 2;</code>
+     * Generated from protobuf field <code>bytes data = 3;</code>
      * @param string $var
      * @return $this
      */

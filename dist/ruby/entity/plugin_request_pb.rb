@@ -7,7 +7,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("entity/plugin_request.proto", :syntax => :proto3) do
     add_message "grpc.PluginRequest" do
       optional :name, :string, 1
-      optional :data, :bytes, 2
+      optional :node_key, :string, 2
+      optional :data, :bytes, 3
     end
   end
 end

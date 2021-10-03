@@ -24,13 +24,13 @@ namespace Grpc {
     static PluginRequestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtlbnRpdHkvcGx1Z2luX3JlcXVlc3QucHJvdG8SBGdycGMiKwoNUGx1Z2lu",
-            "UmVxdWVzdBIMCgRuYW1lGAEgASgJEgwKBGRhdGEYAiABKAxCCFoGLjtncnBj",
-            "YgZwcm90bzM="));
+            "ChtlbnRpdHkvcGx1Z2luX3JlcXVlc3QucHJvdG8SBGdycGMiPQoNUGx1Z2lu",
+            "UmVxdWVzdBIMCgRuYW1lGAEgASgJEhAKCG5vZGVfa2V5GAIgASgJEgwKBGRh",
+            "dGEYAyABKAxCCFoGLjtncnBjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.PluginRequest), global::Grpc.PluginRequest.Parser, new[]{ "Name", "Data" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.PluginRequest), global::Grpc.PluginRequest.Parser, new[]{ "Name", "NodeKey", "Data" }, null, null, null, null)
           }));
     }
     #endregion
@@ -67,6 +67,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PluginRequest(PluginRequest other) : this() {
       name_ = other.name_;
+      nodeKey_ = other.nodeKey_;
       data_ = other.data_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,8 +88,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "node_key" field.</summary>
+    public const int NodeKeyFieldNumber = 2;
+    private string nodeKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string NodeKey {
+      get { return nodeKey_; }
+      set {
+        nodeKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 2;
+    public const int DataFieldNumber = 3;
     private pb::ByteString data_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Data {
@@ -112,6 +124,7 @@ namespace Grpc {
         return true;
       }
       if (Name != other.Name) return false;
+      if (NodeKey != other.NodeKey) return false;
       if (Data != other.Data) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -120,6 +133,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
       if (Data.Length != 0) hash ^= Data.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -141,8 +155,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Data.Length != 0) {
+      if (NodeKey.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(NodeKey);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Data);
       }
       if (_unknownFields != null) {
@@ -158,8 +176,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Data.Length != 0) {
+      if (NodeKey.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(NodeKey);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Data);
       }
       if (_unknownFields != null) {
@@ -173,6 +195,9 @@ namespace Grpc {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (NodeKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
       }
       if (Data.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
@@ -190,6 +215,9 @@ namespace Grpc {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.NodeKey.Length != 0) {
+        NodeKey = other.NodeKey;
       }
       if (other.Data.Length != 0) {
         Data = other.Data;
@@ -213,6 +241,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            NodeKey = input.ReadString();
+            break;
+          }
+          case 26: {
             Data = input.ReadBytes();
             break;
           }
@@ -235,6 +267,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            NodeKey = input.ReadString();
+            break;
+          }
+          case 26: {
             Data = input.ReadBytes();
             break;
           }

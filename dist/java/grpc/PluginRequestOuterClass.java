@@ -31,7 +31,19 @@ public final class PluginRequestOuterClass {
         getNameBytes();
 
     /**
-     * <code>bytes data = 2;</code>
+     * <code>string node_key = 2;</code>
+     * @return The nodeKey.
+     */
+    java.lang.String getNodeKey();
+    /**
+     * <code>string node_key = 2;</code>
+     * @return The bytes for nodeKey.
+     */
+    com.google.protobuf.ByteString
+        getNodeKeyBytes();
+
+    /**
+     * <code>bytes data = 3;</code>
      * @return The data.
      */
     com.google.protobuf.ByteString getData();
@@ -50,6 +62,7 @@ public final class PluginRequestOuterClass {
     }
     private PluginRequest() {
       name_ = "";
+      nodeKey_ = "";
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -90,6 +103,12 @@ public final class PluginRequestOuterClass {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeKey_ = s;
+              break;
+            }
+            case 26: {
 
               data_ = input.readBytes();
               break;
@@ -164,10 +183,48 @@ public final class PluginRequestOuterClass {
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 2;
+    public static final int NODE_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nodeKey_;
+    /**
+     * <code>string node_key = 2;</code>
+     * @return The nodeKey.
+     */
+    @java.lang.Override
+    public java.lang.String getNodeKey() {
+      java.lang.Object ref = nodeKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string node_key = 2;</code>
+     * @return The bytes for nodeKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNodeKeyBytes() {
+      java.lang.Object ref = nodeKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>bytes data = 2;</code>
+     * <code>bytes data = 3;</code>
      * @return The data.
      */
     @java.lang.Override
@@ -192,8 +249,11 @@ public final class PluginRequestOuterClass {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
+      if (!getNodeKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeKey_);
+      }
       if (!data_.isEmpty()) {
-        output.writeBytes(2, data_);
+        output.writeBytes(3, data_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,9 +267,12 @@ public final class PluginRequestOuterClass {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
+      if (!getNodeKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeKey_);
+      }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, data_);
+          .computeBytesSize(3, data_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -228,6 +291,8 @@ public final class PluginRequestOuterClass {
 
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getNodeKey()
+          .equals(other.getNodeKey())) return false;
       if (!getData()
           .equals(other.getData())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -243,6 +308,8 @@ public final class PluginRequestOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeKey().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -380,6 +447,8 @@ public final class PluginRequestOuterClass {
         super.clear();
         name_ = "";
 
+        nodeKey_ = "";
+
         data_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -409,6 +478,7 @@ public final class PluginRequestOuterClass {
       public grpc.PluginRequestOuterClass.PluginRequest buildPartial() {
         grpc.PluginRequestOuterClass.PluginRequest result = new grpc.PluginRequestOuterClass.PluginRequest(this);
         result.name_ = name_;
+        result.nodeKey_ = nodeKey_;
         result.data_ = data_;
         onBuilt();
         return result;
@@ -460,6 +530,10 @@ public final class PluginRequestOuterClass {
         if (other == grpc.PluginRequestOuterClass.PluginRequest.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getNodeKey().isEmpty()) {
+          nodeKey_ = other.nodeKey_;
           onChanged();
         }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
@@ -570,9 +644,85 @@ public final class PluginRequestOuterClass {
         return this;
       }
 
+      private java.lang.Object nodeKey_ = "";
+      /**
+       * <code>string node_key = 2;</code>
+       * @return The nodeKey.
+       */
+      public java.lang.String getNodeKey() {
+        java.lang.Object ref = nodeKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string node_key = 2;</code>
+       * @return The bytes for nodeKey.
+       */
+      public com.google.protobuf.ByteString
+          getNodeKeyBytes() {
+        java.lang.Object ref = nodeKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string node_key = 2;</code>
+       * @param value The nodeKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nodeKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string node_key = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNodeKey() {
+        
+        nodeKey_ = getDefaultInstance().getNodeKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string node_key = 2;</code>
+       * @param value The bytes for nodeKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nodeKey_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes data = 2;</code>
+       * <code>bytes data = 3;</code>
        * @return The data.
        */
       @java.lang.Override
@@ -580,7 +730,7 @@ public final class PluginRequestOuterClass {
         return data_;
       }
       /**
-       * <code>bytes data = 2;</code>
+       * <code>bytes data = 3;</code>
        * @param value The data to set.
        * @return This builder for chaining.
        */
@@ -594,7 +744,7 @@ public final class PluginRequestOuterClass {
         return this;
       }
       /**
-       * <code>bytes data = 2;</code>
+       * <code>bytes data = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearData() {
@@ -670,9 +820,9 @@ public final class PluginRequestOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033entity/plugin_request.proto\022\004grpc\"+\n\rP" +
-      "luginRequest\022\014\n\004name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014" +
-      "B\010Z\006.;grpcb\006proto3"
+      "\n\033entity/plugin_request.proto\022\004grpc\"=\n\rP" +
+      "luginRequest\022\014\n\004name\030\001 \001(\t\022\020\n\010node_key\030\002" +
+      " \001(\t\022\014\n\004data\030\003 \001(\014B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -683,7 +833,7 @@ public final class PluginRequestOuterClass {
     internal_static_grpc_PluginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_PluginRequest_descriptor,
-        new java.lang.String[] { "Name", "Data", });
+        new java.lang.String[] { "Name", "NodeKey", "Data", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -70,6 +70,7 @@ proto.grpc.PluginRequest.prototype.toObject = function(opt_includeInstance) {
 proto.grpc.PluginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    nodeKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     data: msg.getData_asB64()
   };
 
@@ -112,6 +113,10 @@ proto.grpc.PluginRequest.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNodeKey(value);
+      break;
+    case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setData(value);
       break;
@@ -151,10 +156,17 @@ proto.grpc.PluginRequest.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getNodeKey();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getData_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      2,
+      3,
       f
     );
   }
@@ -180,16 +192,34 @@ proto.grpc.PluginRequest.prototype.setName = function(value) {
 
 
 /**
- * optional bytes data = 2;
+ * optional string node_key = 2;
  * @return {string}
  */
-proto.grpc.PluginRequest.prototype.getData = function() {
+proto.grpc.PluginRequest.prototype.getNodeKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes data = 2;
+ * @param {string} value
+ * @return {!proto.grpc.PluginRequest} returns this
+ */
+proto.grpc.PluginRequest.prototype.setNodeKey = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bytes data = 3;
+ * @return {string}
+ */
+proto.grpc.PluginRequest.prototype.getData = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * optional bytes data = 3;
  * This is a type-conversion wrapper around `getData()`
  * @return {string}
  */
@@ -200,7 +230,7 @@ proto.grpc.PluginRequest.prototype.getData_asB64 = function() {
 
 
 /**
- * optional bytes data = 2;
+ * optional bytes data = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getData()`
@@ -217,7 +247,7 @@ proto.grpc.PluginRequest.prototype.getData_asU8 = function() {
  * @return {!proto.grpc.PluginRequest} returns this
  */
 proto.grpc.PluginRequest.prototype.setData = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 

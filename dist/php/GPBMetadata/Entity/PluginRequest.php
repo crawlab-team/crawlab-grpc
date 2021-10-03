@@ -16,11 +16,12 @@ class PluginRequest
         }
         $pool->internalAddGeneratedFile(
             '
-b
-entity/plugin_request.protogrpc"+
+t
+entity/plugin_request.protogrpc"=
 PluginRequest
-name (	
-data (BZ.;grpcbproto3'
+name (	
+node_key (	
+data (BZ.;grpcbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -24,11 +24,13 @@ namespace Grpc {
     static StreamMessageCodeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYyqYAQoR",
+            "CiBlbnRpdHkvc3RyZWFtX21lc3NhZ2VfY29kZS5wcm90bxIEZ3JwYyriAQoR",
             "U3RyZWFtTWVzc2FnZUNvZGUSCAoEUElORxAAEgwKCFJVTl9UQVNLEAESDwoL",
             "Q0FOQ0VMX1RBU0sQAhIPCgtJTlNFUlRfREFUQRADEg8KC0lOU0VSVF9MT0dT",
             "EAQSDgoKU0VORF9FVkVOVBAFEhIKDklOU1RBTExfUExVR0lOEAYSFAoQVU5J",
-            "TlNUQUxMX1BMVUdJThAHQghaBi47Z3JwY2IGcHJvdG8z"));
+            "TlNUQUxMX1BMVUdJThAHEhAKDFNUQVJUX1BMVUdJThAIEg8KC1NUT1BfUExV",
+            "R0lOEAkSCwoHQ09OTkVDVBAKEg4KCkRJU0NPTk5FQ1QQCxIICgRTRU5EEAxC",
+            "CFoGLjtncnBjYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Grpc.StreamMessageCode), }, null, null));
@@ -70,6 +72,26 @@ namespace Grpc {
     /// uninstall plugin
     /// </summary>
     [pbr::OriginalName("UNINSTALL_PLUGIN")] UninstallPlugin = 7,
+    /// <summary>
+    /// start plugin
+    /// </summary>
+    [pbr::OriginalName("START_PLUGIN")] StartPlugin = 8,
+    /// <summary>
+    /// stop plugin
+    /// </summary>
+    [pbr::OriginalName("STOP_PLUGIN")] StopPlugin = 9,
+    /// <summary>
+    /// connect
+    /// </summary>
+    [pbr::OriginalName("CONNECT")] Connect = 10,
+    /// <summary>
+    /// disconnect
+    /// </summary>
+    [pbr::OriginalName("DISCONNECT")] Disconnect = 11,
+    /// <summary>
+    /// send
+    /// </summary>
+    [pbr::OriginalName("SEND")] Send = 12,
   }
 
   #endregion

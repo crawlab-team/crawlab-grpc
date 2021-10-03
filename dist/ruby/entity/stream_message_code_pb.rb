@@ -14,6 +14,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :SEND_EVENT, 5
       value :INSTALL_PLUGIN, 6
       value :UNINSTALL_PLUGIN, 7
+      value :START_PLUGIN, 8
+      value :STOP_PLUGIN, 9
+      value :CONNECT, 10
+      value :DISCONNECT, 11
+      value :SEND, 12
     end
   end
 end
