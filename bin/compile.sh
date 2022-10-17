@@ -14,6 +14,7 @@ cd $base_path && \
 cd $base_path && \
   mkdir -p dist/python | true && \
   mkdir -p dist/js | true && \
+  mkdir -p dist/ts | true && \
   mkdir -p dist/java | true && \
   mkdir -p dist/csharp | true && \
   mkdir -p dist/php | true && \
@@ -24,12 +25,23 @@ cd $base_path && \
   --go_out=. \
   --go-grpc_out=. \
   --python_out=dist/python \
-  --js_out=dist/js \
+  --ts_out=dist/ts \
   --java_out=dist/java \
   --csharp_out=dist/csharp \
   --php_out=dist/php \
   --ruby_out=dist/ruby \
   ./proto/**/*.proto
+
+# node.js
+protoc-gen-grpc -I ./proto \
+  --js_out=import_style=commonjs,binary:dist/js \
+  ./proto/entity/*.proto
+protoc-gen-grpc -I ./proto \
+  --js_out=import_style=commonjs,binary:dist/js \
+  ./proto/models/*.proto
+protoc-gen-grpc -I ./proto \
+  --grpc_out=grpc_js:dist/js \
+  ./proto/services/*.proto
 
 # python
 cd $base_path && \
