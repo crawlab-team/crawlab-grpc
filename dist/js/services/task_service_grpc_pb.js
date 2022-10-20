@@ -52,8 +52,8 @@ var TaskServiceService = exports.TaskServiceService = {
     responseSerialize: serialize_grpc_Response,
     responseDeserialize: deserialize_grpc_Response,
   },
-  getDataSource: {
-    path: '/grpc.TaskService/GetDataSource',
+  fetch: {
+    path: '/grpc.TaskService/Fetch',
     requestStream: false,
     responseStream: false,
     requestType: entity_request_pb.Request,

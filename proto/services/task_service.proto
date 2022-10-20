@@ -9,5 +9,5 @@ option go_package = ".;grpc";
 
 service TaskService {
   rpc Subscribe(stream StreamMessage) returns (Response){};
-  rpc GetDataSource(Request) returns (Response){};
+  rpc Fetch(Request) returns (Response){};
 }
