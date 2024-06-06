@@ -11,7 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from entity import request_pb2 as entity_dot_request__pb2
+from entity import model_service_v2_request_pb2 as entity_dot_model__service__v2__request__pb2
 from entity import response_pb2 as entity_dot_response__pb2
 
 
@@ -21,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$services/model_base_service_v2.proto\x12\x04grpc\x1a\x14\x65ntity/request.proto\x1a\x15\x65ntity/response.proto2\xe1\x04\n\x12ModelBaseServiceV2\x12*\n\x07GetById\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12&\n\x03Get\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12*\n\x07GetList\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12-\n\nDeleteById\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12-\n\nDeleteList\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12-\n\nUpdateById\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12,\n\tUpdateOne\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12-\n\nUpdateMany\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12.\n\x0bReplaceById\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12*\n\x07Replace\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12,\n\tInsertOne\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12-\n\nInsertMany\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x12(\n\x05\x43ount\x12\r.grpc.Request\x1a\x0e.grpc.Response\"\x00\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n$services/model_base_service_v2.proto\x12\x04grpc\x1a%entity/model_service_v2_request.proto\x1a\x15\x65ntity/response.proto2\xd4\x07\n\x12ModelBaseServiceV2\x12?\n\x07GetById\x12\".grpc.ModelServiceV2GetByIdRequest\x1a\x0e.grpc.Response\"\x00\x12=\n\x06GetOne\x12!.grpc.ModelServiceV2GetOneRequest\x1a\x0e.grpc.Response\"\x00\x12?\n\x07GetMany\x12\".grpc.ModelServiceV2GetManyRequest\x1a\x0e.grpc.Response\"\x00\x12\x45\n\nDeleteById\x12%.grpc.ModelServiceV2DeleteByIdRequest\x1a\x0e.grpc.Response\"\x00\x12\x43\n\tDeleteOne\x12$.grpc.ModelServiceV2DeleteOneRequest\x1a\x0e.grpc.Response\"\x00\x12\x45\n\nDeleteMany\x12%.grpc.ModelServiceV2DeleteManyRequest\x1a\x0e.grpc.Response\"\x00\x12\x45\n\nUpdateById\x12%.grpc.ModelServiceV2UpdateByIdRequest\x1a\x0e.grpc.Response\"\x00\x12\x43\n\tUpdateOne\x12$.grpc.ModelServiceV2UpdateOneRequest\x1a\x0e.grpc.Response\"\x00\x12\x45\n\nUpdateMany\x12%.grpc.ModelServiceV2UpdateManyRequest\x1a\x0e.grpc.Response\"\x00\x12G\n\x0bReplaceById\x12&.grpc.ModelServiceV2ReplaceByIdRequest\x1a\x0e.grpc.Response\"\x00\x12\x45\n\nReplaceOne\x12%.grpc.ModelServiceV2ReplaceOneRequest\x1a\x0e.grpc.Response\"\x00\x12\x43\n\tInsertOne\x12$.grpc.ModelServiceV2InsertOneRequest\x1a\x0e.grpc.Response\"\x00\x12\x45\n\nInsertMany\x12%.grpc.ModelServiceV2InsertManyRequest\x1a\x0e.grpc.Response\"\x00\x12;\n\x05\x43ount\x12 .grpc.ModelServiceV2CountRequest\x1a\x0e.grpc.Response\"\x00\x42\x08Z\x06.;grpcb\x06proto3'
   ,
-  dependencies=[entity_dot_request__pb2.DESCRIPTOR,entity_dot_response__pb2.DESCRIPTOR,])
+  dependencies=[entity_dot_model__service__v2__request__pb2.DESCRIPTOR,entity_dot_response__pb2.DESCRIPTOR,])
 
 
 
@@ -39,35 +39,35 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=92,
-  serialized_end=701,
+  serialized_start=109,
+  serialized_end=1089,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetById',
     full_name='grpc.ModelBaseServiceV2.GetById',
     index=0,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2GETBYIDREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='grpc.ModelBaseServiceV2.Get',
+    name='GetOne',
+    full_name='grpc.ModelBaseServiceV2.GetOne',
     index=1,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2GETONEREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='GetList',
-    full_name='grpc.ModelBaseServiceV2.GetList',
+    name='GetMany',
+    full_name='grpc.ModelBaseServiceV2.GetMany',
     index=2,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2GETMANYREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -77,17 +77,27 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
     full_name='grpc.ModelBaseServiceV2.DeleteById',
     index=3,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2DELETEBYIDREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='DeleteList',
-    full_name='grpc.ModelBaseServiceV2.DeleteList',
+    name='DeleteOne',
+    full_name='grpc.ModelBaseServiceV2.DeleteOne',
     index=4,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2DELETEONEREQUEST,
+    output_type=entity_dot_response__pb2._RESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteMany',
+    full_name='grpc.ModelBaseServiceV2.DeleteMany',
+    index=5,
+    containing_service=None,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2DELETEMANYREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -95,9 +105,9 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateById',
     full_name='grpc.ModelBaseServiceV2.UpdateById',
-    index=5,
+    index=6,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2UPDATEBYIDREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -105,9 +115,9 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateOne',
     full_name='grpc.ModelBaseServiceV2.UpdateOne',
-    index=6,
+    index=7,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2UPDATEONEREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -115,9 +125,9 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateMany',
     full_name='grpc.ModelBaseServiceV2.UpdateMany',
-    index=7,
+    index=8,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2UPDATEMANYREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -125,19 +135,19 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ReplaceById',
     full_name='grpc.ModelBaseServiceV2.ReplaceById',
-    index=8,
+    index=9,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2REPLACEBYIDREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='Replace',
-    full_name='grpc.ModelBaseServiceV2.Replace',
-    index=9,
+    name='ReplaceOne',
+    full_name='grpc.ModelBaseServiceV2.ReplaceOne',
+    index=10,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2REPLACEONEREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -145,9 +155,9 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='InsertOne',
     full_name='grpc.ModelBaseServiceV2.InsertOne',
-    index=10,
+    index=11,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2INSERTONEREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -155,9 +165,9 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='InsertMany',
     full_name='grpc.ModelBaseServiceV2.InsertMany',
-    index=11,
+    index=12,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2INSERTMANYREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -165,9 +175,9 @@ _MODELBASESERVICEV2 = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Count',
     full_name='grpc.ModelBaseServiceV2.Count',
-    index=12,
+    index=13,
     containing_service=None,
-    input_type=entity_dot_request__pb2._REQUEST,
+    input_type=entity_dot_model__service__v2__request__pb2._MODELSERVICEV2COUNTREQUEST,
     output_type=entity_dot_response__pb2._RESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,

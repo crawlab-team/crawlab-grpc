@@ -20,15 +20,16 @@ const _ = grpc.SupportPackageIsVersion8
 
 const (
 	ModelBaseServiceV2_GetById_FullMethodName     = "/grpc.ModelBaseServiceV2/GetById"
-	ModelBaseServiceV2_Get_FullMethodName         = "/grpc.ModelBaseServiceV2/Get"
-	ModelBaseServiceV2_GetList_FullMethodName     = "/grpc.ModelBaseServiceV2/GetList"
+	ModelBaseServiceV2_GetOne_FullMethodName      = "/grpc.ModelBaseServiceV2/GetOne"
+	ModelBaseServiceV2_GetMany_FullMethodName     = "/grpc.ModelBaseServiceV2/GetMany"
 	ModelBaseServiceV2_DeleteById_FullMethodName  = "/grpc.ModelBaseServiceV2/DeleteById"
-	ModelBaseServiceV2_DeleteList_FullMethodName  = "/grpc.ModelBaseServiceV2/DeleteList"
+	ModelBaseServiceV2_DeleteOne_FullMethodName   = "/grpc.ModelBaseServiceV2/DeleteOne"
+	ModelBaseServiceV2_DeleteMany_FullMethodName  = "/grpc.ModelBaseServiceV2/DeleteMany"
 	ModelBaseServiceV2_UpdateById_FullMethodName  = "/grpc.ModelBaseServiceV2/UpdateById"
 	ModelBaseServiceV2_UpdateOne_FullMethodName   = "/grpc.ModelBaseServiceV2/UpdateOne"
 	ModelBaseServiceV2_UpdateMany_FullMethodName  = "/grpc.ModelBaseServiceV2/UpdateMany"
 	ModelBaseServiceV2_ReplaceById_FullMethodName = "/grpc.ModelBaseServiceV2/ReplaceById"
-	ModelBaseServiceV2_Replace_FullMethodName     = "/grpc.ModelBaseServiceV2/Replace"
+	ModelBaseServiceV2_ReplaceOne_FullMethodName  = "/grpc.ModelBaseServiceV2/ReplaceOne"
 	ModelBaseServiceV2_InsertOne_FullMethodName   = "/grpc.ModelBaseServiceV2/InsertOne"
 	ModelBaseServiceV2_InsertMany_FullMethodName  = "/grpc.ModelBaseServiceV2/InsertMany"
 	ModelBaseServiceV2_Count_FullMethodName       = "/grpc.ModelBaseServiceV2/Count"
@@ -38,19 +39,20 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ModelBaseServiceV2Client interface {
-	GetById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	Get(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	GetList(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	DeleteById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	DeleteList(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	UpdateById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	UpdateOne(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	UpdateMany(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	ReplaceById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	Replace(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	InsertOne(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	InsertMany(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
-	Count(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	GetById(ctx context.Context, in *ModelServiceV2GetByIdRequest, opts ...grpc.CallOption) (*Response, error)
+	GetOne(ctx context.Context, in *ModelServiceV2GetOneRequest, opts ...grpc.CallOption) (*Response, error)
+	GetMany(ctx context.Context, in *ModelServiceV2GetManyRequest, opts ...grpc.CallOption) (*Response, error)
+	DeleteById(ctx context.Context, in *ModelServiceV2DeleteByIdRequest, opts ...grpc.CallOption) (*Response, error)
+	DeleteOne(ctx context.Context, in *ModelServiceV2DeleteOneRequest, opts ...grpc.CallOption) (*Response, error)
+	DeleteMany(ctx context.Context, in *ModelServiceV2DeleteManyRequest, opts ...grpc.CallOption) (*Response, error)
+	UpdateById(ctx context.Context, in *ModelServiceV2UpdateByIdRequest, opts ...grpc.CallOption) (*Response, error)
+	UpdateOne(ctx context.Context, in *ModelServiceV2UpdateOneRequest, opts ...grpc.CallOption) (*Response, error)
+	UpdateMany(ctx context.Context, in *ModelServiceV2UpdateManyRequest, opts ...grpc.CallOption) (*Response, error)
+	ReplaceById(ctx context.Context, in *ModelServiceV2ReplaceByIdRequest, opts ...grpc.CallOption) (*Response, error)
+	ReplaceOne(ctx context.Context, in *ModelServiceV2ReplaceOneRequest, opts ...grpc.CallOption) (*Response, error)
+	InsertOne(ctx context.Context, in *ModelServiceV2InsertOneRequest, opts ...grpc.CallOption) (*Response, error)
+	InsertMany(ctx context.Context, in *ModelServiceV2InsertManyRequest, opts ...grpc.CallOption) (*Response, error)
+	Count(ctx context.Context, in *ModelServiceV2CountRequest, opts ...grpc.CallOption) (*Response, error)
 }
 
 type modelBaseServiceV2Client struct {
@@ -61,7 +63,7 @@ func NewModelBaseServiceV2Client(cc grpc.ClientConnInterface) ModelBaseServiceV2
 	return &modelBaseServiceV2Client{cc}
 }
 
-func (c *modelBaseServiceV2Client) GetById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) GetById(ctx context.Context, in *ModelServiceV2GetByIdRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_GetById_FullMethodName, in, out, cOpts...)
@@ -71,27 +73,27 @@ func (c *modelBaseServiceV2Client) GetById(ctx context.Context, in *Request, opt
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) Get(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) GetOne(ctx context.Context, in *ModelServiceV2GetOneRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
-	err := c.cc.Invoke(ctx, ModelBaseServiceV2_Get_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, ModelBaseServiceV2_GetOne_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) GetList(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) GetMany(ctx context.Context, in *ModelServiceV2GetManyRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
-	err := c.cc.Invoke(ctx, ModelBaseServiceV2_GetList_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, ModelBaseServiceV2_GetMany_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) DeleteById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) DeleteById(ctx context.Context, in *ModelServiceV2DeleteByIdRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_DeleteById_FullMethodName, in, out, cOpts...)
@@ -101,17 +103,27 @@ func (c *modelBaseServiceV2Client) DeleteById(ctx context.Context, in *Request, 
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) DeleteList(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) DeleteOne(ctx context.Context, in *ModelServiceV2DeleteOneRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
-	err := c.cc.Invoke(ctx, ModelBaseServiceV2_DeleteList_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, ModelBaseServiceV2_DeleteOne_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) UpdateById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) DeleteMany(ctx context.Context, in *ModelServiceV2DeleteManyRequest, opts ...grpc.CallOption) (*Response, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Response)
+	err := c.cc.Invoke(ctx, ModelBaseServiceV2_DeleteMany_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *modelBaseServiceV2Client) UpdateById(ctx context.Context, in *ModelServiceV2UpdateByIdRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_UpdateById_FullMethodName, in, out, cOpts...)
@@ -121,7 +133,7 @@ func (c *modelBaseServiceV2Client) UpdateById(ctx context.Context, in *Request, 
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) UpdateOne(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) UpdateOne(ctx context.Context, in *ModelServiceV2UpdateOneRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_UpdateOne_FullMethodName, in, out, cOpts...)
@@ -131,7 +143,7 @@ func (c *modelBaseServiceV2Client) UpdateOne(ctx context.Context, in *Request, o
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) UpdateMany(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) UpdateMany(ctx context.Context, in *ModelServiceV2UpdateManyRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_UpdateMany_FullMethodName, in, out, cOpts...)
@@ -141,7 +153,7 @@ func (c *modelBaseServiceV2Client) UpdateMany(ctx context.Context, in *Request, 
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) ReplaceById(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) ReplaceById(ctx context.Context, in *ModelServiceV2ReplaceByIdRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_ReplaceById_FullMethodName, in, out, cOpts...)
@@ -151,17 +163,17 @@ func (c *modelBaseServiceV2Client) ReplaceById(ctx context.Context, in *Request,
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) Replace(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) ReplaceOne(ctx context.Context, in *ModelServiceV2ReplaceOneRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
-	err := c.cc.Invoke(ctx, ModelBaseServiceV2_Replace_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, ModelBaseServiceV2_ReplaceOne_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) InsertOne(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) InsertOne(ctx context.Context, in *ModelServiceV2InsertOneRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_InsertOne_FullMethodName, in, out, cOpts...)
@@ -171,7 +183,7 @@ func (c *modelBaseServiceV2Client) InsertOne(ctx context.Context, in *Request, o
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) InsertMany(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) InsertMany(ctx context.Context, in *ModelServiceV2InsertManyRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_InsertMany_FullMethodName, in, out, cOpts...)
@@ -181,7 +193,7 @@ func (c *modelBaseServiceV2Client) InsertMany(ctx context.Context, in *Request, 
 	return out, nil
 }
 
-func (c *modelBaseServiceV2Client) Count(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *modelBaseServiceV2Client) Count(ctx context.Context, in *ModelServiceV2CountRequest, opts ...grpc.CallOption) (*Response, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Response)
 	err := c.cc.Invoke(ctx, ModelBaseServiceV2_Count_FullMethodName, in, out, cOpts...)
@@ -195,19 +207,20 @@ func (c *modelBaseServiceV2Client) Count(ctx context.Context, in *Request, opts 
 // All implementations must embed UnimplementedModelBaseServiceV2Server
 // for forward compatibility
 type ModelBaseServiceV2Server interface {
-	GetById(context.Context, *Request) (*Response, error)
-	Get(context.Context, *Request) (*Response, error)
-	GetList(context.Context, *Request) (*Response, error)
-	DeleteById(context.Context, *Request) (*Response, error)
-	DeleteList(context.Context, *Request) (*Response, error)
-	UpdateById(context.Context, *Request) (*Response, error)
-	UpdateOne(context.Context, *Request) (*Response, error)
-	UpdateMany(context.Context, *Request) (*Response, error)
-	ReplaceById(context.Context, *Request) (*Response, error)
-	Replace(context.Context, *Request) (*Response, error)
-	InsertOne(context.Context, *Request) (*Response, error)
-	InsertMany(context.Context, *Request) (*Response, error)
-	Count(context.Context, *Request) (*Response, error)
+	GetById(context.Context, *ModelServiceV2GetByIdRequest) (*Response, error)
+	GetOne(context.Context, *ModelServiceV2GetOneRequest) (*Response, error)
+	GetMany(context.Context, *ModelServiceV2GetManyRequest) (*Response, error)
+	DeleteById(context.Context, *ModelServiceV2DeleteByIdRequest) (*Response, error)
+	DeleteOne(context.Context, *ModelServiceV2DeleteOneRequest) (*Response, error)
+	DeleteMany(context.Context, *ModelServiceV2DeleteManyRequest) (*Response, error)
+	UpdateById(context.Context, *ModelServiceV2UpdateByIdRequest) (*Response, error)
+	UpdateOne(context.Context, *ModelServiceV2UpdateOneRequest) (*Response, error)
+	UpdateMany(context.Context, *ModelServiceV2UpdateManyRequest) (*Response, error)
+	ReplaceById(context.Context, *ModelServiceV2ReplaceByIdRequest) (*Response, error)
+	ReplaceOne(context.Context, *ModelServiceV2ReplaceOneRequest) (*Response, error)
+	InsertOne(context.Context, *ModelServiceV2InsertOneRequest) (*Response, error)
+	InsertMany(context.Context, *ModelServiceV2InsertManyRequest) (*Response, error)
+	Count(context.Context, *ModelServiceV2CountRequest) (*Response, error)
 	mustEmbedUnimplementedModelBaseServiceV2Server()
 }
 
@@ -215,43 +228,46 @@ type ModelBaseServiceV2Server interface {
 type UnimplementedModelBaseServiceV2Server struct {
 }
 
-func (UnimplementedModelBaseServiceV2Server) GetById(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) GetById(context.Context, *ModelServiceV2GetByIdRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetById not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) Get(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+func (UnimplementedModelBaseServiceV2Server) GetOne(context.Context, *ModelServiceV2GetOneRequest) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOne not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) GetList(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetList not implemented")
+func (UnimplementedModelBaseServiceV2Server) GetMany(context.Context, *ModelServiceV2GetManyRequest) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMany not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) DeleteById(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) DeleteById(context.Context, *ModelServiceV2DeleteByIdRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteById not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) DeleteList(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteList not implemented")
+func (UnimplementedModelBaseServiceV2Server) DeleteOne(context.Context, *ModelServiceV2DeleteOneRequest) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteOne not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) UpdateById(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) DeleteMany(context.Context, *ModelServiceV2DeleteManyRequest) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteMany not implemented")
+}
+func (UnimplementedModelBaseServiceV2Server) UpdateById(context.Context, *ModelServiceV2UpdateByIdRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateById not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) UpdateOne(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) UpdateOne(context.Context, *ModelServiceV2UpdateOneRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOne not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) UpdateMany(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) UpdateMany(context.Context, *ModelServiceV2UpdateManyRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMany not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) ReplaceById(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) ReplaceById(context.Context, *ModelServiceV2ReplaceByIdRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReplaceById not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) Replace(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Replace not implemented")
+func (UnimplementedModelBaseServiceV2Server) ReplaceOne(context.Context, *ModelServiceV2ReplaceOneRequest) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReplaceOne not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) InsertOne(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) InsertOne(context.Context, *ModelServiceV2InsertOneRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InsertOne not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) InsertMany(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) InsertMany(context.Context, *ModelServiceV2InsertManyRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method InsertMany not implemented")
 }
-func (UnimplementedModelBaseServiceV2Server) Count(context.Context, *Request) (*Response, error) {
+func (UnimplementedModelBaseServiceV2Server) Count(context.Context, *ModelServiceV2CountRequest) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Count not implemented")
 }
 func (UnimplementedModelBaseServiceV2Server) mustEmbedUnimplementedModelBaseServiceV2Server() {}
@@ -268,7 +284,7 @@ func RegisterModelBaseServiceV2Server(s grpc.ServiceRegistrar, srv ModelBaseServ
 }
 
 func _ModelBaseServiceV2_GetById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2GetByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -280,49 +296,49 @@ func _ModelBaseServiceV2_GetById_Handler(srv interface{}, ctx context.Context, d
 		FullMethod: ModelBaseServiceV2_GetById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).GetById(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).GetById(ctx, req.(*ModelServiceV2GetByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModelBaseServiceV2_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+func _ModelBaseServiceV2_GetOne_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelServiceV2GetOneRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModelBaseServiceV2Server).Get(ctx, in)
+		return srv.(ModelBaseServiceV2Server).GetOne(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ModelBaseServiceV2_Get_FullMethodName,
+		FullMethod: ModelBaseServiceV2_GetOne_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).Get(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).GetOne(ctx, req.(*ModelServiceV2GetOneRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModelBaseServiceV2_GetList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+func _ModelBaseServiceV2_GetMany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelServiceV2GetManyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModelBaseServiceV2Server).GetList(ctx, in)
+		return srv.(ModelBaseServiceV2Server).GetMany(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ModelBaseServiceV2_GetList_FullMethodName,
+		FullMethod: ModelBaseServiceV2_GetMany_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).GetList(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).GetMany(ctx, req.(*ModelServiceV2GetManyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_DeleteById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2DeleteByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -334,31 +350,49 @@ func _ModelBaseServiceV2_DeleteById_Handler(srv interface{}, ctx context.Context
 		FullMethod: ModelBaseServiceV2_DeleteById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).DeleteById(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).DeleteById(ctx, req.(*ModelServiceV2DeleteByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModelBaseServiceV2_DeleteList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+func _ModelBaseServiceV2_DeleteOne_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelServiceV2DeleteOneRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModelBaseServiceV2Server).DeleteList(ctx, in)
+		return srv.(ModelBaseServiceV2Server).DeleteOne(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ModelBaseServiceV2_DeleteList_FullMethodName,
+		FullMethod: ModelBaseServiceV2_DeleteOne_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).DeleteList(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).DeleteOne(ctx, req.(*ModelServiceV2DeleteOneRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ModelBaseServiceV2_DeleteMany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelServiceV2DeleteManyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ModelBaseServiceV2Server).DeleteMany(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ModelBaseServiceV2_DeleteMany_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ModelBaseServiceV2Server).DeleteMany(ctx, req.(*ModelServiceV2DeleteManyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_UpdateById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2UpdateByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -370,13 +404,13 @@ func _ModelBaseServiceV2_UpdateById_Handler(srv interface{}, ctx context.Context
 		FullMethod: ModelBaseServiceV2_UpdateById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).UpdateById(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).UpdateById(ctx, req.(*ModelServiceV2UpdateByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_UpdateOne_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2UpdateOneRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -388,13 +422,13 @@ func _ModelBaseServiceV2_UpdateOne_Handler(srv interface{}, ctx context.Context,
 		FullMethod: ModelBaseServiceV2_UpdateOne_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).UpdateOne(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).UpdateOne(ctx, req.(*ModelServiceV2UpdateOneRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_UpdateMany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2UpdateManyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -406,13 +440,13 @@ func _ModelBaseServiceV2_UpdateMany_Handler(srv interface{}, ctx context.Context
 		FullMethod: ModelBaseServiceV2_UpdateMany_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).UpdateMany(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).UpdateMany(ctx, req.(*ModelServiceV2UpdateManyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_ReplaceById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2ReplaceByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -424,31 +458,31 @@ func _ModelBaseServiceV2_ReplaceById_Handler(srv interface{}, ctx context.Contex
 		FullMethod: ModelBaseServiceV2_ReplaceById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).ReplaceById(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).ReplaceById(ctx, req.(*ModelServiceV2ReplaceByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ModelBaseServiceV2_Replace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+func _ModelBaseServiceV2_ReplaceOne_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ModelServiceV2ReplaceOneRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ModelBaseServiceV2Server).Replace(ctx, in)
+		return srv.(ModelBaseServiceV2Server).ReplaceOne(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ModelBaseServiceV2_Replace_FullMethodName,
+		FullMethod: ModelBaseServiceV2_ReplaceOne_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).Replace(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).ReplaceOne(ctx, req.(*ModelServiceV2ReplaceOneRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_InsertOne_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2InsertOneRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -460,13 +494,13 @@ func _ModelBaseServiceV2_InsertOne_Handler(srv interface{}, ctx context.Context,
 		FullMethod: ModelBaseServiceV2_InsertOne_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).InsertOne(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).InsertOne(ctx, req.(*ModelServiceV2InsertOneRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_InsertMany_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2InsertManyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -478,13 +512,13 @@ func _ModelBaseServiceV2_InsertMany_Handler(srv interface{}, ctx context.Context
 		FullMethod: ModelBaseServiceV2_InsertMany_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).InsertMany(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).InsertMany(ctx, req.(*ModelServiceV2InsertManyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelBaseServiceV2_Count_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
+	in := new(ModelServiceV2CountRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -496,7 +530,7 @@ func _ModelBaseServiceV2_Count_Handler(srv interface{}, ctx context.Context, dec
 		FullMethod: ModelBaseServiceV2_Count_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelBaseServiceV2Server).Count(ctx, req.(*Request))
+		return srv.(ModelBaseServiceV2Server).Count(ctx, req.(*ModelServiceV2CountRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -513,20 +547,24 @@ var ModelBaseServiceV2_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ModelBaseServiceV2_GetById_Handler,
 		},
 		{
-			MethodName: "Get",
-			Handler:    _ModelBaseServiceV2_Get_Handler,
+			MethodName: "GetOne",
+			Handler:    _ModelBaseServiceV2_GetOne_Handler,
 		},
 		{
-			MethodName: "GetList",
-			Handler:    _ModelBaseServiceV2_GetList_Handler,
+			MethodName: "GetMany",
+			Handler:    _ModelBaseServiceV2_GetMany_Handler,
 		},
 		{
 			MethodName: "DeleteById",
 			Handler:    _ModelBaseServiceV2_DeleteById_Handler,
 		},
 		{
-			MethodName: "DeleteList",
-			Handler:    _ModelBaseServiceV2_DeleteList_Handler,
+			MethodName: "DeleteOne",
+			Handler:    _ModelBaseServiceV2_DeleteOne_Handler,
+		},
+		{
+			MethodName: "DeleteMany",
+			Handler:    _ModelBaseServiceV2_DeleteMany_Handler,
 		},
 		{
 			MethodName: "UpdateById",
@@ -545,8 +583,8 @@ var ModelBaseServiceV2_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ModelBaseServiceV2_ReplaceById_Handler,
 		},
 		{
-			MethodName: "Replace",
-			Handler:    _ModelBaseServiceV2_Replace_Handler,
+			MethodName: "ReplaceOne",
+			Handler:    _ModelBaseServiceV2_ReplaceOne_Handler,
 		},
 		{
 			MethodName: "InsertOne",

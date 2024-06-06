@@ -1,23 +1,24 @@
 syntax = "proto3";
 
-import "entity/request.proto";
+import "entity/model_service_v2_request.proto";
 import "entity/response.proto";
 
 package grpc;
 option go_package = ".;grpc";
 
 service ModelBaseServiceV2 {
-  rpc GetById(Request) returns (Response){};
-  rpc Get(Request) returns (Response){};
-  rpc GetList(Request) returns (Response){};
-  rpc DeleteById(Request) returns (Response){};
-  rpc DeleteList(Request) returns (Response){};
-  rpc UpdateById(Request) returns (Response){};
-  rpc UpdateOne(Request) returns (Response){};
-  rpc UpdateMany(Request) returns (Response){};
-  rpc ReplaceById(Request) returns (Response){};
-  rpc Replace(Request) returns (Response){};
-  rpc InsertOne(Request) returns (Response){};
-  rpc InsertMany(Request) returns (Response){};
-  rpc Count(Request) returns (Response){};
+  rpc GetById(ModelServiceV2GetByIdRequest) returns (Response){};
+  rpc GetOne(ModelServiceV2GetOneRequest) returns (Response){};
+  rpc GetMany(ModelServiceV2GetManyRequest) returns (Response){};
+  rpc DeleteById(ModelServiceV2DeleteByIdRequest) returns (Response){};
+  rpc DeleteOne(ModelServiceV2DeleteOneRequest) returns (Response){};
+  rpc DeleteMany(ModelServiceV2DeleteManyRequest) returns (Response){};
+  rpc UpdateById(ModelServiceV2UpdateByIdRequest) returns (Response){};
+  rpc UpdateOne(ModelServiceV2UpdateOneRequest) returns (Response){};
+  rpc UpdateMany(ModelServiceV2UpdateManyRequest) returns (Response){};
+  rpc ReplaceById(ModelServiceV2ReplaceByIdRequest) returns (Response){};
+  rpc ReplaceOne(ModelServiceV2ReplaceOneRequest) returns (Response){};
+  rpc InsertOne(ModelServiceV2InsertOneRequest) returns (Response){};
+  rpc InsertMany(ModelServiceV2InsertManyRequest) returns (Response){};
+  rpc Count(ModelServiceV2CountRequest) returns (Response){};
 }
