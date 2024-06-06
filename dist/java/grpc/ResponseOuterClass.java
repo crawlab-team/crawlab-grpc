@@ -153,8 +153,6 @@ public final class ResponseOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -310,13 +308,13 @@ public final class ResponseOuterClass {
       if (code_ != ResponseCodeOuterClass.ResponseCode.OK.getNumber()) {
         output.writeEnum(1, code_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
       if (!data_.isEmpty()) {
         output.writeBytes(3, data_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
+      if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, error_);
       }
       if (total_ != 0L) {
@@ -335,14 +333,14 @@ public final class ResponseOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, data_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
+      if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, error_);
       }
       if (total_ != 0L) {

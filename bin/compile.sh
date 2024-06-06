@@ -25,23 +25,10 @@ cd $base_path && \
   --go_out=. \
   --go-grpc_out=. \
   --python_out=dist/python \
-  --ts_out=dist/ts \
+  --js_out=dist/js \
   --java_out=dist/java \
   --csharp_out=dist/csharp \
-  --php_out=dist/php \
-  --ruby_out=dist/ruby \
   ./proto/**/*.proto
-
-# node.js
-protoc-gen-grpc -I ./proto \
-  --js_out=import_style=commonjs,binary:dist/js \
-  ./proto/entity/*.proto
-protoc-gen-grpc -I ./proto \
-  --js_out=import_style=commonjs,binary:dist/js \
-  ./proto/models/*.proto
-protoc-gen-grpc -I ./proto \
-  --grpc_out=grpc_js:dist/js \
-  ./proto/services/*.proto
 
 # python
 cd $base_path && \

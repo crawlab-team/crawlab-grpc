@@ -199,8 +199,6 @@ public final class StreamMessageOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -459,22 +457,22 @@ public final class StreamMessageOuterClass {
       if (code_ != grpc.StreamMessageCodeOuterClass.StreamMessageCode.PING.getNumber()) {
         output.writeEnum(1, code_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
+      if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+      if (!getKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
+      if (!getFromBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, from_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, to_);
       }
       if (!data_.isEmpty()) {
         output.writeBytes(6, data_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
+      if (!getErrorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, error_);
       }
       unknownFields.writeTo(output);
@@ -490,23 +488,23 @@ public final class StreamMessageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, code_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
+      if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeKey_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+      if (!getKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, key_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
+      if (!getFromBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, from_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
+      if (!getToBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, to_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, data_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
+      if (!getErrorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, error_);
       }
       size += unknownFields.getSerializedSize();
