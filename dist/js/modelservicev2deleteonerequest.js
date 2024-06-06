@@ -68,6 +68,7 @@ proto.grpc.ModelServiceV2DeleteOneRequest.prototype.toObject = function(opt_incl
 proto.grpc.ModelServiceV2DeleteOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    modelType: jspb.Message.getFieldWithDefault(msg, 2, ""),
     query: msg.getQuery_asB64()
   };
 
@@ -110,6 +111,10 @@ proto.grpc.ModelServiceV2DeleteOneRequest.deserializeBinaryFromReader = function
       msg.setNodeKey(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelType(value);
+      break;
+    case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setQuery(value);
       break;
@@ -149,10 +154,17 @@ proto.grpc.ModelServiceV2DeleteOneRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getModelType();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getQuery_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      2,
+      3,
       f
     );
   }
@@ -178,16 +190,34 @@ proto.grpc.ModelServiceV2DeleteOneRequest.prototype.setNodeKey = function(value)
 
 
 /**
- * optional bytes query = 2;
+ * optional string model_type = 2;
  * @return {string}
  */
-proto.grpc.ModelServiceV2DeleteOneRequest.prototype.getQuery = function() {
+proto.grpc.ModelServiceV2DeleteOneRequest.prototype.getModelType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes query = 2;
+ * @param {string} value
+ * @return {!proto.grpc.ModelServiceV2DeleteOneRequest} returns this
+ */
+proto.grpc.ModelServiceV2DeleteOneRequest.prototype.setModelType = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bytes query = 3;
+ * @return {string}
+ */
+proto.grpc.ModelServiceV2DeleteOneRequest.prototype.getQuery = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * optional bytes query = 3;
  * This is a type-conversion wrapper around `getQuery()`
  * @return {string}
  */
@@ -198,7 +228,7 @@ proto.grpc.ModelServiceV2DeleteOneRequest.prototype.getQuery_asB64 = function() 
 
 
 /**
- * optional bytes query = 2;
+ * optional bytes query = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getQuery()`
@@ -215,7 +245,7 @@ proto.grpc.ModelServiceV2DeleteOneRequest.prototype.getQuery_asU8 = function() {
  * @return {!proto.grpc.ModelServiceV2DeleteOneRequest} returns this
  */
 proto.grpc.ModelServiceV2DeleteOneRequest.prototype.setQuery = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 

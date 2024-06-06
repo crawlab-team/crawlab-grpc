@@ -68,7 +68,8 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.toObject = function(opt_in
 proto.grpc.ModelServiceV2ReplaceByIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    modelType: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 3, ""),
     model: msg.getModel_asB64()
   };
 
@@ -112,9 +113,13 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.deserializeBinaryFromReader = functi
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
+      msg.setModelType(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setModel(value);
       break;
@@ -154,17 +159,24 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getId();
+  f = message.getModelType();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getModel_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      3,
+      4,
       f
     );
   }
@@ -190,10 +202,10 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.setNodeKey = function(valu
 
 
 /**
- * optional string id = 2;
+ * optional string model_type = 2;
  * @return {string}
  */
-proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getId = function() {
+proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getModelType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -202,22 +214,40 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getId = function() {
  * @param {string} value
  * @return {!proto.grpc.ModelServiceV2ReplaceByIdRequest} returns this
  */
-proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.setId = function(value) {
+proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.setModelType = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional bytes model = 3;
+ * optional string id = 3;
  * @return {string}
  */
-proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getModel = function() {
+proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * optional bytes model = 3;
+ * @param {string} value
+ * @return {!proto.grpc.ModelServiceV2ReplaceByIdRequest} returns this
+ */
+proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bytes model = 4;
+ * @return {string}
+ */
+proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getModel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * optional bytes model = 4;
  * This is a type-conversion wrapper around `getModel()`
  * @return {string}
  */
@@ -228,7 +258,7 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getModel_asB64 = function(
 
 
 /**
- * optional bytes model = 3;
+ * optional bytes model = 4;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getModel()`
@@ -245,7 +275,7 @@ proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.getModel_asU8 = function()
  * @return {!proto.grpc.ModelServiceV2ReplaceByIdRequest} returns this
  */
 proto.grpc.ModelServiceV2ReplaceByIdRequest.prototype.setModel = function(value) {
-  return jspb.Message.setProto3BytesField(this, 3, value);
+  return jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 

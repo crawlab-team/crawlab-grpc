@@ -68,6 +68,7 @@ proto.grpc.ModelServiceV2InsertManyRequest.prototype.toObject = function(opt_inc
 proto.grpc.ModelServiceV2InsertManyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    modelType: jspb.Message.getFieldWithDefault(msg, 2, ""),
     models: msg.getModels_asB64()
   };
 
@@ -110,6 +111,10 @@ proto.grpc.ModelServiceV2InsertManyRequest.deserializeBinaryFromReader = functio
       msg.setNodeKey(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelType(value);
+      break;
+    case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setModels(value);
       break;
@@ -149,10 +154,17 @@ proto.grpc.ModelServiceV2InsertManyRequest.serializeBinaryToWriter = function(me
       f
     );
   }
+  f = message.getModelType();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getModels_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      2,
+      3,
       f
     );
   }
@@ -178,16 +190,34 @@ proto.grpc.ModelServiceV2InsertManyRequest.prototype.setNodeKey = function(value
 
 
 /**
- * optional bytes models = 2;
+ * optional string model_type = 2;
  * @return {string}
  */
-proto.grpc.ModelServiceV2InsertManyRequest.prototype.getModels = function() {
+proto.grpc.ModelServiceV2InsertManyRequest.prototype.getModelType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes models = 2;
+ * @param {string} value
+ * @return {!proto.grpc.ModelServiceV2InsertManyRequest} returns this
+ */
+proto.grpc.ModelServiceV2InsertManyRequest.prototype.setModelType = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bytes models = 3;
+ * @return {string}
+ */
+proto.grpc.ModelServiceV2InsertManyRequest.prototype.getModels = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * optional bytes models = 3;
  * This is a type-conversion wrapper around `getModels()`
  * @return {string}
  */
@@ -198,7 +228,7 @@ proto.grpc.ModelServiceV2InsertManyRequest.prototype.getModels_asB64 = function(
 
 
 /**
- * optional bytes models = 2;
+ * optional bytes models = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getModels()`
@@ -215,7 +245,7 @@ proto.grpc.ModelServiceV2InsertManyRequest.prototype.getModels_asU8 = function()
  * @return {!proto.grpc.ModelServiceV2InsertManyRequest} returns this
  */
 proto.grpc.ModelServiceV2InsertManyRequest.prototype.setModels = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 

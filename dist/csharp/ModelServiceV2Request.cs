@@ -25,155 +25,59 @@ namespace Grpc {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiVlbnRpdHkvbW9kZWxfc2VydmljZV92Ml9yZXF1ZXN0LnByb3RvEgRncnBj",
-            "IgQKAklkIjwKHE1vZGVsU2VydmljZVYyR2V0QnlJZFJlcXVlc3QSEAoIbm9k",
-            "ZV9rZXkYASABKAkSCgoCaWQYAiABKAkiVAobTW9kZWxTZXJ2aWNlVjJHZXRP",
-            "bmVSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEg0KBXF1ZXJ5GAIgASgMEhQK",
-            "DGZpbmRfb3B0aW9ucxgDIAEoDCJVChxNb2RlbFNlcnZpY2VWMkdldE1hbnlS",
-            "ZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEg0KBXF1ZXJ5GAIgASgMEhQKDGZp",
-            "bmRfb3B0aW9ucxgDIAEoDCI/Ch9Nb2RlbFNlcnZpY2VWMkRlbGV0ZUJ5SWRS",
-            "ZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEgoKAmlkGAIgASgJIkEKHk1vZGVs",
-            "U2VydmljZVYyRGVsZXRlT25lUmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRIN",
-            "CgVxdWVyeRgCIAEoDCJCCh9Nb2RlbFNlcnZpY2VWMkRlbGV0ZU1hbnlSZXF1",
-            "ZXN0EhAKCG5vZGVfa2V5GAEgASgJEg0KBXF1ZXJ5GAIgASgMIk8KH01vZGVs",
-            "U2VydmljZVYyVXBkYXRlQnlJZFJlcXVlc3QSEAoIbm9kZV9rZXkYASABKAkS",
-            "CgoCaWQYAiABKAkSDgoGdXBkYXRlGAMgASgMIlEKHk1vZGVsU2VydmljZVYy",
-            "VXBkYXRlT25lUmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRINCgVxdWVyeRgC",
-            "IAEoDBIOCgZ1cGRhdGUYAyABKAwiUgofTW9kZWxTZXJ2aWNlVjJVcGRhdGVN",
-            "YW55UmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRINCgVxdWVyeRgCIAEoDBIO",
-            "CgZ1cGRhdGUYAyABKAwiTwogTW9kZWxTZXJ2aWNlVjJSZXBsYWNlQnlJZFJl",
-            "cXVlc3QSEAoIbm9kZV9rZXkYASABKAkSCgoCaWQYAiABKAkSDQoFbW9kZWwY",
-            "AyABKAwiUQofTW9kZWxTZXJ2aWNlVjJSZXBsYWNlT25lUmVxdWVzdBIQCghu",
-            "b2RlX2tleRgBIAEoCRINCgVxdWVyeRgCIAEoDBINCgVtb2RlbBgDIAEoDCJB",
-            "Ch5Nb2RlbFNlcnZpY2VWMkluc2VydE9uZVJlcXVlc3QSEAoIbm9kZV9rZXkY",
-            "ASABKAkSDQoFbW9kZWwYAiABKAwiQwofTW9kZWxTZXJ2aWNlVjJJbnNlcnRN",
-            "YW55UmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRIOCgZtb2RlbHMYAiABKAwi",
-            "PQoaTW9kZWxTZXJ2aWNlVjJDb3VudFJlcXVlc3QSEAoIbm9kZV9rZXkYASAB",
-            "KAkSDQoFcXVlcnkYAiABKAxCCFoGLjtncnBjYgZwcm90bzM="));
+            "IlAKHE1vZGVsU2VydmljZVYyR2V0QnlJZFJlcXVlc3QSEAoIbm9kZV9rZXkY",
+            "ASABKAkSEgoKbW9kZWxfdHlwZRgCIAEoCRIKCgJpZBgDIAEoCSJoChtNb2Rl",
+            "bFNlcnZpY2VWMkdldE9uZVJlcXVlc3QSEAoIbm9kZV9rZXkYASABKAkSEgoK",
+            "bW9kZWxfdHlwZRgCIAEoCRINCgVxdWVyeRgDIAEoDBIUCgxmaW5kX29wdGlv",
+            "bnMYBCABKAwiaQocTW9kZWxTZXJ2aWNlVjJHZXRNYW55UmVxdWVzdBIQCghu",
+            "b2RlX2tleRgBIAEoCRISCgptb2RlbF90eXBlGAIgASgJEg0KBXF1ZXJ5GAMg",
+            "ASgMEhQKDGZpbmRfb3B0aW9ucxgEIAEoDCJTCh9Nb2RlbFNlcnZpY2VWMkRl",
+            "bGV0ZUJ5SWRSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEhIKCm1vZGVsX3R5",
+            "cGUYAiABKAkSCgoCaWQYAyABKAkiVQoeTW9kZWxTZXJ2aWNlVjJEZWxldGVP",
+            "bmVSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEhIKCm1vZGVsX3R5cGUYAiAB",
+            "KAkSDQoFcXVlcnkYAyABKAwiVgofTW9kZWxTZXJ2aWNlVjJEZWxldGVNYW55",
+            "UmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRISCgptb2RlbF90eXBlGAIgASgJ",
+            "Eg0KBXF1ZXJ5GAMgASgMImMKH01vZGVsU2VydmljZVYyVXBkYXRlQnlJZFJl",
+            "cXVlc3QSEAoIbm9kZV9rZXkYASABKAkSEgoKbW9kZWxfdHlwZRgCIAEoCRIK",
+            "CgJpZBgDIAEoCRIOCgZ1cGRhdGUYBCABKAwiZQoeTW9kZWxTZXJ2aWNlVjJV",
+            "cGRhdGVPbmVSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEhIKCm1vZGVsX3R5",
+            "cGUYAiABKAkSDQoFcXVlcnkYAyABKAwSDgoGdXBkYXRlGAQgASgMImYKH01v",
+            "ZGVsU2VydmljZVYyVXBkYXRlTWFueVJlcXVlc3QSEAoIbm9kZV9rZXkYASAB",
+            "KAkSEgoKbW9kZWxfdHlwZRgCIAEoCRINCgVxdWVyeRgDIAEoDBIOCgZ1cGRh",
+            "dGUYBCABKAwiYwogTW9kZWxTZXJ2aWNlVjJSZXBsYWNlQnlJZFJlcXVlc3QS",
+            "EAoIbm9kZV9rZXkYASABKAkSEgoKbW9kZWxfdHlwZRgCIAEoCRIKCgJpZBgD",
+            "IAEoCRINCgVtb2RlbBgEIAEoDCJlCh9Nb2RlbFNlcnZpY2VWMlJlcGxhY2VP",
+            "bmVSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEhIKCm1vZGVsX3R5cGUYAiAB",
+            "KAkSDQoFcXVlcnkYAyABKAwSDQoFbW9kZWwYBCABKAwiVQoeTW9kZWxTZXJ2",
+            "aWNlVjJJbnNlcnRPbmVSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEhIKCm1v",
+            "ZGVsX3R5cGUYAiABKAkSDQoFbW9kZWwYAyABKAwiVwofTW9kZWxTZXJ2aWNl",
+            "VjJJbnNlcnRNYW55UmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRISCgptb2Rl",
+            "bF90eXBlGAIgASgJEg4KBm1vZGVscxgDIAEoDCJRChpNb2RlbFNlcnZpY2VW",
+            "MkNvdW50UmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRISCgptb2RlbF90eXBl",
+            "GAIgASgJEg0KBXF1ZXJ5GAMgASgMQghaBi47Z3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Id), global::Grpc.Id.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2GetByIdRequest), global::Grpc.ModelServiceV2GetByIdRequest.Parser, new[]{ "NodeKey", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2GetOneRequest), global::Grpc.ModelServiceV2GetOneRequest.Parser, new[]{ "NodeKey", "Query", "FindOptions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2GetManyRequest), global::Grpc.ModelServiceV2GetManyRequest.Parser, new[]{ "NodeKey", "Query", "FindOptions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2DeleteByIdRequest), global::Grpc.ModelServiceV2DeleteByIdRequest.Parser, new[]{ "NodeKey", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2DeleteOneRequest), global::Grpc.ModelServiceV2DeleteOneRequest.Parser, new[]{ "NodeKey", "Query" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2DeleteManyRequest), global::Grpc.ModelServiceV2DeleteManyRequest.Parser, new[]{ "NodeKey", "Query" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2UpdateByIdRequest), global::Grpc.ModelServiceV2UpdateByIdRequest.Parser, new[]{ "NodeKey", "Id", "Update" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2UpdateOneRequest), global::Grpc.ModelServiceV2UpdateOneRequest.Parser, new[]{ "NodeKey", "Query", "Update" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2UpdateManyRequest), global::Grpc.ModelServiceV2UpdateManyRequest.Parser, new[]{ "NodeKey", "Query", "Update" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2ReplaceByIdRequest), global::Grpc.ModelServiceV2ReplaceByIdRequest.Parser, new[]{ "NodeKey", "Id", "Model" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2ReplaceOneRequest), global::Grpc.ModelServiceV2ReplaceOneRequest.Parser, new[]{ "NodeKey", "Query", "Model" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2InsertOneRequest), global::Grpc.ModelServiceV2InsertOneRequest.Parser, new[]{ "NodeKey", "Model" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2InsertManyRequest), global::Grpc.ModelServiceV2InsertManyRequest.Parser, new[]{ "NodeKey", "Models" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2CountRequest), global::Grpc.ModelServiceV2CountRequest.Parser, new[]{ "NodeKey", "Query" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2GetByIdRequest), global::Grpc.ModelServiceV2GetByIdRequest.Parser, new[]{ "NodeKey", "ModelType", "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2GetOneRequest), global::Grpc.ModelServiceV2GetOneRequest.Parser, new[]{ "NodeKey", "ModelType", "Query", "FindOptions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2GetManyRequest), global::Grpc.ModelServiceV2GetManyRequest.Parser, new[]{ "NodeKey", "ModelType", "Query", "FindOptions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2DeleteByIdRequest), global::Grpc.ModelServiceV2DeleteByIdRequest.Parser, new[]{ "NodeKey", "ModelType", "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2DeleteOneRequest), global::Grpc.ModelServiceV2DeleteOneRequest.Parser, new[]{ "NodeKey", "ModelType", "Query" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2DeleteManyRequest), global::Grpc.ModelServiceV2DeleteManyRequest.Parser, new[]{ "NodeKey", "ModelType", "Query" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2UpdateByIdRequest), global::Grpc.ModelServiceV2UpdateByIdRequest.Parser, new[]{ "NodeKey", "ModelType", "Id", "Update" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2UpdateOneRequest), global::Grpc.ModelServiceV2UpdateOneRequest.Parser, new[]{ "NodeKey", "ModelType", "Query", "Update" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2UpdateManyRequest), global::Grpc.ModelServiceV2UpdateManyRequest.Parser, new[]{ "NodeKey", "ModelType", "Query", "Update" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2ReplaceByIdRequest), global::Grpc.ModelServiceV2ReplaceByIdRequest.Parser, new[]{ "NodeKey", "ModelType", "Id", "Model" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2ReplaceOneRequest), global::Grpc.ModelServiceV2ReplaceOneRequest.Parser, new[]{ "NodeKey", "ModelType", "Query", "Model" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2InsertOneRequest), global::Grpc.ModelServiceV2InsertOneRequest.Parser, new[]{ "NodeKey", "ModelType", "Model" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2InsertManyRequest), global::Grpc.ModelServiceV2InsertManyRequest.Parser, new[]{ "NodeKey", "ModelType", "Models" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.ModelServiceV2CountRequest), global::Grpc.ModelServiceV2CountRequest.Parser, new[]{ "NodeKey", "ModelType", "Query" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class Id : pb::IMessage<Id> {
-    private static readonly pb::MessageParser<Id> _parser = new pb::MessageParser<Id>(() => new Id());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Id> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[0]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Id() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Id(Id other) : this() {
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Id Clone() {
-      return new Id(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Id);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Id other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Id other) {
-      if (other == null) {
-        return;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-        }
-      }
-    }
-
-  }
-
   public sealed partial class ModelServiceV2GetByIdRequest : pb::IMessage<ModelServiceV2GetByIdRequest> {
     private static readonly pb::MessageParser<ModelServiceV2GetByIdRequest> _parser = new pb::MessageParser<ModelServiceV2GetByIdRequest>(() => new ModelServiceV2GetByIdRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -182,7 +86,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -200,6 +104,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2GetByIdRequest(ModelServiceV2GetByIdRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -220,8 +125,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 2;
+    public const int IdFieldNumber = 3;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
@@ -245,6 +161,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -253,6 +170,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -271,8 +189,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Id.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Id);
       }
       if (_unknownFields != null) {
@@ -285,6 +207,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
@@ -302,6 +227,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
@@ -322,6 +250,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Id = input.ReadString();
             break;
           }
@@ -339,7 +271,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -357,6 +289,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2GetOneRequest(ModelServiceV2GetOneRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       findOptions_ = other.findOptions_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -378,8 +311,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -390,7 +334,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "find_options" field.</summary>
-    public const int FindOptionsFieldNumber = 3;
+    public const int FindOptionsFieldNumber = 4;
     private pb::ByteString findOptions_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString FindOptions {
@@ -414,6 +358,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       if (FindOptions != other.FindOptions) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -423,6 +368,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (FindOptions.Length != 0) hash ^= FindOptions.GetHashCode();
       if (_unknownFields != null) {
@@ -442,12 +388,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (FindOptions.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(FindOptions);
       }
       if (_unknownFields != null) {
@@ -460,6 +410,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -480,6 +433,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -503,10 +459,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Query = input.ReadBytes();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Query = input.ReadBytes();
+            break;
+          }
+          case 34: {
             FindOptions = input.ReadBytes();
             break;
           }
@@ -524,7 +484,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -542,6 +502,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2GetManyRequest(ModelServiceV2GetManyRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       findOptions_ = other.findOptions_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -563,8 +524,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -575,7 +547,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "find_options" field.</summary>
-    public const int FindOptionsFieldNumber = 3;
+    public const int FindOptionsFieldNumber = 4;
     private pb::ByteString findOptions_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString FindOptions {
@@ -599,6 +571,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       if (FindOptions != other.FindOptions) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -608,6 +581,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (FindOptions.Length != 0) hash ^= FindOptions.GetHashCode();
       if (_unknownFields != null) {
@@ -627,12 +601,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (FindOptions.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(FindOptions);
       }
       if (_unknownFields != null) {
@@ -645,6 +623,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -665,6 +646,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -688,10 +672,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Query = input.ReadBytes();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Query = input.ReadBytes();
+            break;
+          }
+          case 34: {
             FindOptions = input.ReadBytes();
             break;
           }
@@ -709,7 +697,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -727,6 +715,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2DeleteByIdRequest(ModelServiceV2DeleteByIdRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -747,8 +736,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 2;
+    public const int IdFieldNumber = 3;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
@@ -772,6 +772,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -780,6 +781,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -798,8 +800,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Id.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Id);
       }
       if (_unknownFields != null) {
@@ -812,6 +818,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
@@ -829,6 +838,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
@@ -849,6 +861,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Id = input.ReadString();
             break;
           }
@@ -866,7 +882,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -884,6 +900,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2DeleteOneRequest(ModelServiceV2DeleteOneRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -904,8 +921,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -929,6 +957,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -937,6 +966,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -955,8 +985,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (_unknownFields != null) {
@@ -969,6 +1003,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -986,6 +1023,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -1006,6 +1046,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Query = input.ReadBytes();
             break;
           }
@@ -1023,7 +1067,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1041,6 +1085,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2DeleteManyRequest(ModelServiceV2DeleteManyRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1061,8 +1106,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -1086,6 +1142,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1094,6 +1151,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1112,8 +1170,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (_unknownFields != null) {
@@ -1126,6 +1188,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -1143,6 +1208,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -1163,6 +1231,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Query = input.ReadBytes();
             break;
           }
@@ -1180,7 +1252,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1198,6 +1270,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2UpdateByIdRequest(ModelServiceV2UpdateByIdRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       id_ = other.id_;
       update_ = other.update_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1219,8 +1292,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 2;
+    public const int IdFieldNumber = 3;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
@@ -1231,7 +1315,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "update" field.</summary>
-    public const int UpdateFieldNumber = 3;
+    public const int UpdateFieldNumber = 4;
     private pb::ByteString update_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Update {
@@ -1255,6 +1339,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Id != other.Id) return false;
       if (Update != other.Update) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1264,6 +1349,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Update.Length != 0) hash ^= Update.GetHashCode();
       if (_unknownFields != null) {
@@ -1283,12 +1369,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Id.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Id);
       }
       if (Update.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(Update);
       }
       if (_unknownFields != null) {
@@ -1301,6 +1391,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
@@ -1321,6 +1414,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
@@ -1344,10 +1440,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Id = input.ReadString();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Id = input.ReadString();
+            break;
+          }
+          case 34: {
             Update = input.ReadBytes();
             break;
           }
@@ -1365,7 +1465,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1383,6 +1483,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2UpdateOneRequest(ModelServiceV2UpdateOneRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       update_ = other.update_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1404,8 +1505,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -1416,7 +1528,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "update" field.</summary>
-    public const int UpdateFieldNumber = 3;
+    public const int UpdateFieldNumber = 4;
     private pb::ByteString update_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Update {
@@ -1440,6 +1552,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       if (Update != other.Update) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1449,6 +1562,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (Update.Length != 0) hash ^= Update.GetHashCode();
       if (_unknownFields != null) {
@@ -1468,12 +1582,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (Update.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(Update);
       }
       if (_unknownFields != null) {
@@ -1486,6 +1604,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -1506,6 +1627,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -1529,10 +1653,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Query = input.ReadBytes();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Query = input.ReadBytes();
+            break;
+          }
+          case 34: {
             Update = input.ReadBytes();
             break;
           }
@@ -1550,7 +1678,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1568,6 +1696,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2UpdateManyRequest(ModelServiceV2UpdateManyRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       update_ = other.update_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1589,8 +1718,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -1601,7 +1741,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "update" field.</summary>
-    public const int UpdateFieldNumber = 3;
+    public const int UpdateFieldNumber = 4;
     private pb::ByteString update_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Update {
@@ -1625,6 +1765,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       if (Update != other.Update) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1634,6 +1775,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (Update.Length != 0) hash ^= Update.GetHashCode();
       if (_unknownFields != null) {
@@ -1653,12 +1795,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (Update.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(Update);
       }
       if (_unknownFields != null) {
@@ -1671,6 +1817,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -1691,6 +1840,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -1714,10 +1866,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Query = input.ReadBytes();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Query = input.ReadBytes();
+            break;
+          }
+          case 34: {
             Update = input.ReadBytes();
             break;
           }
@@ -1735,7 +1891,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1753,6 +1909,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2ReplaceByIdRequest(ModelServiceV2ReplaceByIdRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       id_ = other.id_;
       model_ = other.model_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1774,8 +1931,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 2;
+    public const int IdFieldNumber = 3;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
@@ -1786,7 +1954,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "model" field.</summary>
-    public const int ModelFieldNumber = 3;
+    public const int ModelFieldNumber = 4;
     private pb::ByteString model_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Model {
@@ -1810,6 +1978,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Id != other.Id) return false;
       if (Model != other.Model) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1819,6 +1988,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Model.Length != 0) hash ^= Model.GetHashCode();
       if (_unknownFields != null) {
@@ -1838,12 +2008,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Id.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Id);
       }
       if (Model.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(Model);
       }
       if (_unknownFields != null) {
@@ -1856,6 +2030,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
@@ -1876,6 +2053,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
@@ -1899,10 +2079,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Id = input.ReadString();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Id = input.ReadString();
+            break;
+          }
+          case 34: {
             Model = input.ReadBytes();
             break;
           }
@@ -1920,7 +2104,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1938,6 +2122,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2ReplaceOneRequest(ModelServiceV2ReplaceOneRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       model_ = other.model_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -1959,8 +2144,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -1971,7 +2167,7 @@ namespace Grpc {
     }
 
     /// <summary>Field number for the "model" field.</summary>
-    public const int ModelFieldNumber = 3;
+    public const int ModelFieldNumber = 4;
     private pb::ByteString model_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Model {
@@ -1995,6 +2191,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       if (Model != other.Model) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -2004,6 +2201,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (Model.Length != 0) hash ^= Model.GetHashCode();
       if (_unknownFields != null) {
@@ -2023,12 +2221,16 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (Model.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteBytes(Model);
       }
       if (_unknownFields != null) {
@@ -2041,6 +2243,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -2061,6 +2266,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -2084,10 +2292,14 @@ namespace Grpc {
             break;
           }
           case 18: {
-            Query = input.ReadBytes();
+            ModelType = input.ReadString();
             break;
           }
           case 26: {
+            Query = input.ReadBytes();
+            break;
+          }
+          case 34: {
             Model = input.ReadBytes();
             break;
           }
@@ -2105,7 +2317,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2123,6 +2335,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2InsertOneRequest(ModelServiceV2InsertOneRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       model_ = other.model_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2143,8 +2356,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "model" field.</summary>
-    public const int ModelFieldNumber = 2;
+    public const int ModelFieldNumber = 3;
     private pb::ByteString model_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Model {
@@ -2168,6 +2392,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Model != other.Model) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2176,6 +2401,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Model.Length != 0) hash ^= Model.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2194,8 +2420,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Model.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Model.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Model);
       }
       if (_unknownFields != null) {
@@ -2208,6 +2438,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Model.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Model);
@@ -2225,6 +2458,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Model.Length != 0) {
         Model = other.Model;
@@ -2245,6 +2481,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Model = input.ReadBytes();
             break;
           }
@@ -2262,7 +2502,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2280,6 +2520,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2InsertManyRequest(ModelServiceV2InsertManyRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       models_ = other.models_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2300,8 +2541,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "models" field.</summary>
-    public const int ModelsFieldNumber = 2;
+    public const int ModelsFieldNumber = 3;
     private pb::ByteString models_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Models {
@@ -2325,6 +2577,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Models != other.Models) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2333,6 +2586,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Models.Length != 0) hash ^= Models.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2351,8 +2605,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Models.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Models.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Models);
       }
       if (_unknownFields != null) {
@@ -2365,6 +2623,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Models.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Models);
@@ -2382,6 +2643,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Models.Length != 0) {
         Models = other.Models;
@@ -2402,6 +2666,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Models = input.ReadBytes();
             break;
           }
@@ -2419,7 +2687,7 @@ namespace Grpc {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Grpc.ModelServiceV2RequestReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2437,6 +2705,7 @@ namespace Grpc {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ModelServiceV2CountRequest(ModelServiceV2CountRequest other) : this() {
       nodeKey_ = other.nodeKey_;
+      modelType_ = other.modelType_;
       query_ = other.query_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2457,8 +2726,19 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "model_type" field.</summary>
+    public const int ModelTypeFieldNumber = 2;
+    private string modelType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ModelType {
+      get { return modelType_; }
+      set {
+        modelType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "query" field.</summary>
-    public const int QueryFieldNumber = 2;
+    public const int QueryFieldNumber = 3;
     private pb::ByteString query_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Query {
@@ -2482,6 +2762,7 @@ namespace Grpc {
         return true;
       }
       if (NodeKey != other.NodeKey) return false;
+      if (ModelType != other.ModelType) return false;
       if (Query != other.Query) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2490,6 +2771,7 @@ namespace Grpc {
     public override int GetHashCode() {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
+      if (ModelType.Length != 0) hash ^= ModelType.GetHashCode();
       if (Query.Length != 0) hash ^= Query.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2508,8 +2790,12 @@ namespace Grpc {
         output.WriteRawTag(10);
         output.WriteString(NodeKey);
       }
-      if (Query.Length != 0) {
+      if (ModelType.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(ModelType);
+      }
+      if (Query.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteBytes(Query);
       }
       if (_unknownFields != null) {
@@ -2522,6 +2808,9 @@ namespace Grpc {
       int size = 0;
       if (NodeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NodeKey);
+      }
+      if (ModelType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ModelType);
       }
       if (Query.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Query);
@@ -2539,6 +2828,9 @@ namespace Grpc {
       }
       if (other.NodeKey.Length != 0) {
         NodeKey = other.NodeKey;
+      }
+      if (other.ModelType.Length != 0) {
+        ModelType = other.ModelType;
       }
       if (other.Query.Length != 0) {
         Query = other.Query;
@@ -2559,6 +2851,10 @@ namespace Grpc {
             break;
           }
           case 18: {
+            ModelType = input.ReadString();
+            break;
+          }
+          case 26: {
             Query = input.ReadBytes();
             break;
           }

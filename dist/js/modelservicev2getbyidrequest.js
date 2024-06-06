@@ -68,7 +68,8 @@ proto.grpc.ModelServiceV2GetByIdRequest.prototype.toObject = function(opt_includ
 proto.grpc.ModelServiceV2GetByIdRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 2, "")
+    modelType: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    id: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -111,6 +112,10 @@ proto.grpc.ModelServiceV2GetByIdRequest.deserializeBinaryFromReader = function(m
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
+      msg.setModelType(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
     default:
@@ -149,10 +154,17 @@ proto.grpc.ModelServiceV2GetByIdRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getId();
+  f = message.getModelType();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -178,10 +190,10 @@ proto.grpc.ModelServiceV2GetByIdRequest.prototype.setNodeKey = function(value) {
 
 
 /**
- * optional string id = 2;
+ * optional string model_type = 2;
  * @return {string}
  */
-proto.grpc.ModelServiceV2GetByIdRequest.prototype.getId = function() {
+proto.grpc.ModelServiceV2GetByIdRequest.prototype.getModelType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -190,8 +202,26 @@ proto.grpc.ModelServiceV2GetByIdRequest.prototype.getId = function() {
  * @param {string} value
  * @return {!proto.grpc.ModelServiceV2GetByIdRequest} returns this
  */
-proto.grpc.ModelServiceV2GetByIdRequest.prototype.setId = function(value) {
+proto.grpc.ModelServiceV2GetByIdRequest.prototype.setModelType = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string id = 3;
+ * @return {string}
+ */
+proto.grpc.ModelServiceV2GetByIdRequest.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.grpc.ModelServiceV2GetByIdRequest} returns this
+ */
+proto.grpc.ModelServiceV2GetByIdRequest.prototype.setId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

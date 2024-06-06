@@ -19,35 +19,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\006.;grpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%entity/model_service_v2_request.proto\x12\x04grpc\"\x04\n\x02Id\"<\n\x1cModelServiceV2GetByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"T\n\x1bModelServiceV2GetOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\x12\x14\n\x0c\x66ind_options\x18\x03 \x01(\x0c\"U\n\x1cModelServiceV2GetManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\x12\x14\n\x0c\x66ind_options\x18\x03 \x01(\x0c\"?\n\x1fModelServiceV2DeleteByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"A\n\x1eModelServiceV2DeleteOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\"B\n\x1fModelServiceV2DeleteManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\"O\n\x1fModelServiceV2UpdateByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0e\n\x06update\x18\x03 \x01(\x0c\"Q\n\x1eModelServiceV2UpdateOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\x12\x0e\n\x06update\x18\x03 \x01(\x0c\"R\n\x1fModelServiceV2UpdateManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\x12\x0e\n\x06update\x18\x03 \x01(\x0c\"O\n ModelServiceV2ReplaceByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05model\x18\x03 \x01(\x0c\"Q\n\x1fModelServiceV2ReplaceOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\x12\r\n\x05model\x18\x03 \x01(\x0c\"A\n\x1eModelServiceV2InsertOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05model\x18\x02 \x01(\x0c\"C\n\x1fModelServiceV2InsertManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x0e\n\x06models\x18\x02 \x01(\x0c\"=\n\x1aModelServiceV2CountRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\x0c\x42\x08Z\x06.;grpcb\x06proto3'
+  serialized_pb=b'\n%entity/model_service_v2_request.proto\x12\x04grpc\"P\n\x1cModelServiceV2GetByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"h\n\x1bModelServiceV2GetOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\x12\x14\n\x0c\x66ind_options\x18\x04 \x01(\x0c\"i\n\x1cModelServiceV2GetManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\x12\x14\n\x0c\x66ind_options\x18\x04 \x01(\x0c\"S\n\x1fModelServiceV2DeleteByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\"U\n\x1eModelServiceV2DeleteOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\"V\n\x1fModelServiceV2DeleteManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\"c\n\x1fModelServiceV2UpdateByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0e\n\x06update\x18\x04 \x01(\x0c\"e\n\x1eModelServiceV2UpdateOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\x12\x0e\n\x06update\x18\x04 \x01(\x0c\"f\n\x1fModelServiceV2UpdateManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\x12\x0e\n\x06update\x18\x04 \x01(\x0c\"c\n ModelServiceV2ReplaceByIdRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\r\n\x05model\x18\x04 \x01(\x0c\"e\n\x1fModelServiceV2ReplaceOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\x12\r\n\x05model\x18\x04 \x01(\x0c\"U\n\x1eModelServiceV2InsertOneRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05model\x18\x03 \x01(\x0c\"W\n\x1fModelServiceV2InsertManyRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\x0e\n\x06models\x18\x03 \x01(\x0c\"Q\n\x1aModelServiceV2CountRequest\x12\x10\n\x08node_key\x18\x01 \x01(\t\x12\x12\n\nmodel_type\x18\x02 \x01(\t\x12\r\n\x05query\x18\x03 \x01(\x0c\x42\x08Z\x06.;grpcb\x06proto3'
 )
 
 
-
-
-_ID = _descriptor.Descriptor(
-  name='Id',
-  full_name='grpc.Id',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=47,
-  serialized_end=51,
-)
 
 
 _MODELSERVICEV2GETBYIDREQUEST = _descriptor.Descriptor(
@@ -66,8 +41,15 @@ _MODELSERVICEV2GETBYIDREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='grpc.ModelServiceV2GetByIdRequest.id', index=1,
+      name='model_type', full_name='grpc.ModelServiceV2GetByIdRequest.model_type', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='grpc.ModelServiceV2GetByIdRequest.id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -84,8 +66,8 @@ _MODELSERVICEV2GETBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=53,
-  serialized_end=113,
+  serialized_start=47,
+  serialized_end=127,
 )
 
 
@@ -105,15 +87,22 @@ _MODELSERVICEV2GETONEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2GetOneRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2GetOneRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2GetOneRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='find_options', full_name='grpc.ModelServiceV2GetOneRequest.find_options', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='find_options', full_name='grpc.ModelServiceV2GetOneRequest.find_options', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -130,8 +119,8 @@ _MODELSERVICEV2GETONEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=115,
-  serialized_end=199,
+  serialized_start=129,
+  serialized_end=233,
 )
 
 
@@ -151,15 +140,22 @@ _MODELSERVICEV2GETMANYREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2GetManyRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2GetManyRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2GetManyRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='find_options', full_name='grpc.ModelServiceV2GetManyRequest.find_options', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='find_options', full_name='grpc.ModelServiceV2GetManyRequest.find_options', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -176,8 +172,8 @@ _MODELSERVICEV2GETMANYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=201,
-  serialized_end=286,
+  serialized_start=235,
+  serialized_end=340,
 )
 
 
@@ -197,8 +193,15 @@ _MODELSERVICEV2DELETEBYIDREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='grpc.ModelServiceV2DeleteByIdRequest.id', index=1,
+      name='model_type', full_name='grpc.ModelServiceV2DeleteByIdRequest.model_type', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='grpc.ModelServiceV2DeleteByIdRequest.id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -215,8 +218,8 @@ _MODELSERVICEV2DELETEBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=351,
+  serialized_start=342,
+  serialized_end=425,
 )
 
 
@@ -236,8 +239,15 @@ _MODELSERVICEV2DELETEONEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2DeleteOneRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2DeleteOneRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2DeleteOneRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -254,8 +264,8 @@ _MODELSERVICEV2DELETEONEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=353,
-  serialized_end=418,
+  serialized_start=427,
+  serialized_end=512,
 )
 
 
@@ -275,8 +285,15 @@ _MODELSERVICEV2DELETEMANYREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2DeleteManyRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2DeleteManyRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2DeleteManyRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -293,8 +310,8 @@ _MODELSERVICEV2DELETEMANYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=420,
-  serialized_end=486,
+  serialized_start=514,
+  serialized_end=600,
 )
 
 
@@ -314,15 +331,22 @@ _MODELSERVICEV2UPDATEBYIDREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='grpc.ModelServiceV2UpdateByIdRequest.id', index=1,
+      name='model_type', full_name='grpc.ModelServiceV2UpdateByIdRequest.model_type', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update', full_name='grpc.ModelServiceV2UpdateByIdRequest.update', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='id', full_name='grpc.ModelServiceV2UpdateByIdRequest.id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='update', full_name='grpc.ModelServiceV2UpdateByIdRequest.update', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -339,8 +363,8 @@ _MODELSERVICEV2UPDATEBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=488,
-  serialized_end=567,
+  serialized_start=602,
+  serialized_end=701,
 )
 
 
@@ -360,15 +384,22 @@ _MODELSERVICEV2UPDATEONEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2UpdateOneRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2UpdateOneRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2UpdateOneRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update', full_name='grpc.ModelServiceV2UpdateOneRequest.update', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='update', full_name='grpc.ModelServiceV2UpdateOneRequest.update', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -385,8 +416,8 @@ _MODELSERVICEV2UPDATEONEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=569,
-  serialized_end=650,
+  serialized_start=703,
+  serialized_end=804,
 )
 
 
@@ -406,15 +437,22 @@ _MODELSERVICEV2UPDATEMANYREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2UpdateManyRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2UpdateManyRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2UpdateManyRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='update', full_name='grpc.ModelServiceV2UpdateManyRequest.update', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='update', full_name='grpc.ModelServiceV2UpdateManyRequest.update', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -431,8 +469,8 @@ _MODELSERVICEV2UPDATEMANYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=652,
-  serialized_end=734,
+  serialized_start=806,
+  serialized_end=908,
 )
 
 
@@ -452,15 +490,22 @@ _MODELSERVICEV2REPLACEBYIDREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='grpc.ModelServiceV2ReplaceByIdRequest.id', index=1,
+      name='model_type', full_name='grpc.ModelServiceV2ReplaceByIdRequest.model_type', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='grpc.ModelServiceV2ReplaceByIdRequest.model', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='id', full_name='grpc.ModelServiceV2ReplaceByIdRequest.id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='model', full_name='grpc.ModelServiceV2ReplaceByIdRequest.model', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -477,8 +522,8 @@ _MODELSERVICEV2REPLACEBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=736,
-  serialized_end=815,
+  serialized_start=910,
+  serialized_end=1009,
 )
 
 
@@ -498,15 +543,22 @@ _MODELSERVICEV2REPLACEONEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2ReplaceOneRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2ReplaceOneRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2ReplaceOneRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='grpc.ModelServiceV2ReplaceOneRequest.model', index=2,
-      number=3, type=12, cpp_type=9, label=1,
+      name='model', full_name='grpc.ModelServiceV2ReplaceOneRequest.model', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -523,8 +575,8 @@ _MODELSERVICEV2REPLACEONEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=898,
+  serialized_start=1011,
+  serialized_end=1112,
 )
 
 
@@ -544,8 +596,15 @@ _MODELSERVICEV2INSERTONEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='model', full_name='grpc.ModelServiceV2InsertOneRequest.model', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2InsertOneRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='model', full_name='grpc.ModelServiceV2InsertOneRequest.model', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -562,8 +621,8 @@ _MODELSERVICEV2INSERTONEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=900,
-  serialized_end=965,
+  serialized_start=1114,
+  serialized_end=1199,
 )
 
 
@@ -583,8 +642,15 @@ _MODELSERVICEV2INSERTMANYREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='models', full_name='grpc.ModelServiceV2InsertManyRequest.models', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2InsertManyRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='models', full_name='grpc.ModelServiceV2InsertManyRequest.models', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -601,8 +667,8 @@ _MODELSERVICEV2INSERTMANYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=967,
-  serialized_end=1034,
+  serialized_start=1201,
+  serialized_end=1288,
 )
 
 
@@ -622,8 +688,15 @@ _MODELSERVICEV2COUNTREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query', full_name='grpc.ModelServiceV2CountRequest.query', index=1,
-      number=2, type=12, cpp_type=9, label=1,
+      name='model_type', full_name='grpc.ModelServiceV2CountRequest.model_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='grpc.ModelServiceV2CountRequest.query', index=2,
+      number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -640,11 +713,10 @@ _MODELSERVICEV2COUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1036,
-  serialized_end=1097,
+  serialized_start=1290,
+  serialized_end=1371,
 )
 
-DESCRIPTOR.message_types_by_name['Id'] = _ID
 DESCRIPTOR.message_types_by_name['ModelServiceV2GetByIdRequest'] = _MODELSERVICEV2GETBYIDREQUEST
 DESCRIPTOR.message_types_by_name['ModelServiceV2GetOneRequest'] = _MODELSERVICEV2GETONEREQUEST
 DESCRIPTOR.message_types_by_name['ModelServiceV2GetManyRequest'] = _MODELSERVICEV2GETMANYREQUEST
@@ -660,13 +732,6 @@ DESCRIPTOR.message_types_by_name['ModelServiceV2InsertOneRequest'] = _MODELSERVI
 DESCRIPTOR.message_types_by_name['ModelServiceV2InsertManyRequest'] = _MODELSERVICEV2INSERTMANYREQUEST
 DESCRIPTOR.message_types_by_name['ModelServiceV2CountRequest'] = _MODELSERVICEV2COUNTREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Id = _reflection.GeneratedProtocolMessageType('Id', (_message.Message,), {
-  'DESCRIPTOR' : _ID,
-  '__module__' : 'entity.model_service_v2_request_pb2'
-  # @@protoc_insertion_point(class_scope:grpc.Id)
-  })
-_sym_db.RegisterMessage(Id)
 
 ModelServiceV2GetByIdRequest = _reflection.GeneratedProtocolMessageType('ModelServiceV2GetByIdRequest', (_message.Message,), {
   'DESCRIPTOR' : _MODELSERVICEV2GETBYIDREQUEST,

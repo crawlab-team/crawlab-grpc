@@ -68,6 +68,7 @@ proto.grpc.ModelServiceV2GetManyRequest.prototype.toObject = function(opt_includ
 proto.grpc.ModelServiceV2GetManyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeKey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    modelType: jspb.Message.getFieldWithDefault(msg, 2, ""),
     query: msg.getQuery_asB64(),
     findOptions: msg.getFindOptions_asB64()
   };
@@ -111,10 +112,14 @@ proto.grpc.ModelServiceV2GetManyRequest.deserializeBinaryFromReader = function(m
       msg.setNodeKey(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelType(value);
+      break;
+    case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setQuery(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setFindOptions(value);
       break;
@@ -154,17 +159,24 @@ proto.grpc.ModelServiceV2GetManyRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getModelType();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getQuery_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      2,
+      3,
       f
     );
   }
   f = message.getFindOptions_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      3,
+      4,
       f
     );
   }
@@ -190,16 +202,34 @@ proto.grpc.ModelServiceV2GetManyRequest.prototype.setNodeKey = function(value) {
 
 
 /**
- * optional bytes query = 2;
+ * optional string model_type = 2;
  * @return {string}
  */
-proto.grpc.ModelServiceV2GetManyRequest.prototype.getQuery = function() {
+proto.grpc.ModelServiceV2GetManyRequest.prototype.getModelType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes query = 2;
+ * @param {string} value
+ * @return {!proto.grpc.ModelServiceV2GetManyRequest} returns this
+ */
+proto.grpc.ModelServiceV2GetManyRequest.prototype.setModelType = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bytes query = 3;
+ * @return {string}
+ */
+proto.grpc.ModelServiceV2GetManyRequest.prototype.getQuery = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * optional bytes query = 3;
  * This is a type-conversion wrapper around `getQuery()`
  * @return {string}
  */
@@ -210,7 +240,7 @@ proto.grpc.ModelServiceV2GetManyRequest.prototype.getQuery_asB64 = function() {
 
 
 /**
- * optional bytes query = 2;
+ * optional bytes query = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getQuery()`
@@ -227,21 +257,21 @@ proto.grpc.ModelServiceV2GetManyRequest.prototype.getQuery_asU8 = function() {
  * @return {!proto.grpc.ModelServiceV2GetManyRequest} returns this
  */
 proto.grpc.ModelServiceV2GetManyRequest.prototype.setQuery = function(value) {
-  return jspb.Message.setProto3BytesField(this, 2, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
 /**
- * optional bytes find_options = 3;
+ * optional bytes find_options = 4;
  * @return {string}
  */
 proto.grpc.ModelServiceV2GetManyRequest.prototype.getFindOptions = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * optional bytes find_options = 3;
+ * optional bytes find_options = 4;
  * This is a type-conversion wrapper around `getFindOptions()`
  * @return {string}
  */
@@ -252,7 +282,7 @@ proto.grpc.ModelServiceV2GetManyRequest.prototype.getFindOptions_asB64 = functio
 
 
 /**
- * optional bytes find_options = 3;
+ * optional bytes find_options = 4;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getFindOptions()`
@@ -269,7 +299,7 @@ proto.grpc.ModelServiceV2GetManyRequest.prototype.getFindOptions_asU8 = function
  * @return {!proto.grpc.ModelServiceV2GetManyRequest} returns this
  */
 proto.grpc.ModelServiceV2GetManyRequest.prototype.setFindOptions = function(value) {
-  return jspb.Message.setProto3BytesField(this, 3, value);
+  return jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 

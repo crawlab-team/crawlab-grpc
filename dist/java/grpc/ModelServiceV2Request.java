@@ -14,424 +14,6 @@ public final class ModelServiceV2Request {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface IdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:grpc.Id)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code grpc.Id}
-   */
-  public static final class Id extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:grpc.Id)
-      IdOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Id.newBuilder() to construct.
-    private Id(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Id() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Id();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Id(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return grpc.ModelServiceV2Request.internal_static_grpc_Id_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return grpc.ModelServiceV2Request.internal_static_grpc_Id_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              grpc.ModelServiceV2Request.Id.class, grpc.ModelServiceV2Request.Id.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof grpc.ModelServiceV2Request.Id)) {
-        return super.equals(obj);
-      }
-      grpc.ModelServiceV2Request.Id other = (grpc.ModelServiceV2Request.Id) obj;
-
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.ModelServiceV2Request.Id parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static grpc.ModelServiceV2Request.Id parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static grpc.ModelServiceV2Request.Id parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(grpc.ModelServiceV2Request.Id prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code grpc.Id}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:grpc.Id)
-        grpc.ModelServiceV2Request.IdOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return grpc.ModelServiceV2Request.internal_static_grpc_Id_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return grpc.ModelServiceV2Request.internal_static_grpc_Id_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                grpc.ModelServiceV2Request.Id.class, grpc.ModelServiceV2Request.Id.Builder.class);
-      }
-
-      // Construct using grpc.ModelServiceV2Request.Id.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return grpc.ModelServiceV2Request.internal_static_grpc_Id_descriptor;
-      }
-
-      @java.lang.Override
-      public grpc.ModelServiceV2Request.Id getDefaultInstanceForType() {
-        return grpc.ModelServiceV2Request.Id.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public grpc.ModelServiceV2Request.Id build() {
-        grpc.ModelServiceV2Request.Id result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public grpc.ModelServiceV2Request.Id buildPartial() {
-        grpc.ModelServiceV2Request.Id result = new grpc.ModelServiceV2Request.Id(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof grpc.ModelServiceV2Request.Id) {
-          return mergeFrom((grpc.ModelServiceV2Request.Id)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(grpc.ModelServiceV2Request.Id other) {
-        if (other == grpc.ModelServiceV2Request.Id.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        grpc.ModelServiceV2Request.Id parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (grpc.ModelServiceV2Request.Id) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:grpc.Id)
-    }
-
-    // @@protoc_insertion_point(class_scope:grpc.Id)
-    private static final grpc.ModelServiceV2Request.Id DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new grpc.ModelServiceV2Request.Id();
-    }
-
-    public static grpc.ModelServiceV2Request.Id getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Id>
-        PARSER = new com.google.protobuf.AbstractParser<Id>() {
-      @java.lang.Override
-      public Id parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Id(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Id> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Id> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public grpc.ModelServiceV2Request.Id getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface ModelServiceV2GetByIdRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:grpc.ModelServiceV2GetByIdRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -449,12 +31,24 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>string id = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>string id = 3;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -474,6 +68,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2GetByIdRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       id_ = "";
     }
 
@@ -514,6 +109,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
@@ -589,10 +190,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -609,7 +248,7 @@ public final class ModelServiceV2Request {
       }
     }
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -644,8 +283,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -659,8 +301,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -679,6 +324,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -694,6 +341,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -831,6 +480,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         id_ = "";
 
         return this;
@@ -860,6 +511,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2GetByIdRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2GetByIdRequest result = new grpc.ModelServiceV2Request.ModelServiceV2GetByIdRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.id_ = id_;
         onBuilt();
         return result;
@@ -911,6 +563,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2GetByIdRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (!other.getId().isEmpty()) {
@@ -1022,9 +678,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object id_ = "";
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -1040,7 +772,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -1057,7 +789,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -1072,7 +804,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -1082,7 +814,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -1167,13 +899,25 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
 
     /**
-     * <code>bytes find_options = 3;</code>
+     * <code>bytes find_options = 4;</code>
      * @return The findOptions.
      */
     com.google.protobuf.ByteString getFindOptions();
@@ -1192,6 +936,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2GetOneRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
       findOptions_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -1233,11 +978,17 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
             }
-            case 26: {
+            case 34: {
 
               findOptions_ = input.readBytes();
               break;
@@ -1312,10 +1063,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -1323,10 +1112,10 @@ public final class ModelServiceV2Request {
       return query_;
     }
 
-    public static final int FIND_OPTIONS_FIELD_NUMBER = 3;
+    public static final int FIND_OPTIONS_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString findOptions_;
     /**
-     * <code>bytes find_options = 3;</code>
+     * <code>bytes find_options = 4;</code>
      * @return The findOptions.
      */
     @java.lang.Override
@@ -1351,11 +1140,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       if (!findOptions_.isEmpty()) {
-        output.writeBytes(3, findOptions_);
+        output.writeBytes(4, findOptions_);
       }
       unknownFields.writeTo(output);
     }
@@ -1369,13 +1161,16 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       if (!findOptions_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, findOptions_);
+          .computeBytesSize(4, findOptions_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1394,6 +1189,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!getFindOptions()
@@ -1411,6 +1208,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (37 * hash) + FIND_OPTIONS_FIELD_NUMBER;
@@ -1550,6 +1349,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         findOptions_ = com.google.protobuf.ByteString.EMPTY;
@@ -1581,6 +1382,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2GetOneRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2GetOneRequest result = new grpc.ModelServiceV2Request.ModelServiceV2GetOneRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         result.findOptions_ = findOptions_;
         onBuilt();
@@ -1633,6 +1435,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2GetOneRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -1746,9 +1552,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -1756,7 +1638,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -1770,7 +1652,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -1782,7 +1664,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString findOptions_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes find_options = 3;</code>
+       * <code>bytes find_options = 4;</code>
        * @return The findOptions.
        */
       @java.lang.Override
@@ -1790,7 +1672,7 @@ public final class ModelServiceV2Request {
         return findOptions_;
       }
       /**
-       * <code>bytes find_options = 3;</code>
+       * <code>bytes find_options = 4;</code>
        * @param value The findOptions to set.
        * @return This builder for chaining.
        */
@@ -1804,7 +1686,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes find_options = 3;</code>
+       * <code>bytes find_options = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearFindOptions() {
@@ -1883,13 +1765,25 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
 
     /**
-     * <code>bytes find_options = 3;</code>
+     * <code>bytes find_options = 4;</code>
      * @return The findOptions.
      */
     com.google.protobuf.ByteString getFindOptions();
@@ -1908,6 +1802,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2GetManyRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
       findOptions_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -1949,11 +1844,17 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
             }
-            case 26: {
+            case 34: {
 
               findOptions_ = input.readBytes();
               break;
@@ -2028,10 +1929,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -2039,10 +1978,10 @@ public final class ModelServiceV2Request {
       return query_;
     }
 
-    public static final int FIND_OPTIONS_FIELD_NUMBER = 3;
+    public static final int FIND_OPTIONS_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString findOptions_;
     /**
-     * <code>bytes find_options = 3;</code>
+     * <code>bytes find_options = 4;</code>
      * @return The findOptions.
      */
     @java.lang.Override
@@ -2067,11 +2006,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       if (!findOptions_.isEmpty()) {
-        output.writeBytes(3, findOptions_);
+        output.writeBytes(4, findOptions_);
       }
       unknownFields.writeTo(output);
     }
@@ -2085,13 +2027,16 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       if (!findOptions_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, findOptions_);
+          .computeBytesSize(4, findOptions_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2110,6 +2055,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!getFindOptions()
@@ -2127,6 +2074,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (37 * hash) + FIND_OPTIONS_FIELD_NUMBER;
@@ -2266,6 +2215,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         findOptions_ = com.google.protobuf.ByteString.EMPTY;
@@ -2297,6 +2248,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2GetManyRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2GetManyRequest result = new grpc.ModelServiceV2Request.ModelServiceV2GetManyRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         result.findOptions_ = findOptions_;
         onBuilt();
@@ -2349,6 +2301,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2GetManyRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -2462,9 +2418,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -2472,7 +2504,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -2486,7 +2518,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -2498,7 +2530,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString findOptions_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes find_options = 3;</code>
+       * <code>bytes find_options = 4;</code>
        * @return The findOptions.
        */
       @java.lang.Override
@@ -2506,7 +2538,7 @@ public final class ModelServiceV2Request {
         return findOptions_;
       }
       /**
-       * <code>bytes find_options = 3;</code>
+       * <code>bytes find_options = 4;</code>
        * @param value The findOptions to set.
        * @return This builder for chaining.
        */
@@ -2520,7 +2552,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes find_options = 3;</code>
+       * <code>bytes find_options = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearFindOptions() {
@@ -2599,12 +2631,24 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>string id = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>string id = 3;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -2624,6 +2668,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2DeleteByIdRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       id_ = "";
     }
 
@@ -2664,6 +2709,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
@@ -2739,10 +2790,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -2759,7 +2848,7 @@ public final class ModelServiceV2Request {
       }
     }
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -2794,8 +2883,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -2809,8 +2901,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2829,6 +2924,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2844,6 +2941,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2981,6 +3080,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         id_ = "";
 
         return this;
@@ -3010,6 +3111,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2DeleteByIdRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2DeleteByIdRequest result = new grpc.ModelServiceV2Request.ModelServiceV2DeleteByIdRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.id_ = id_;
         onBuilt();
         return result;
@@ -3061,6 +3163,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2DeleteByIdRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (!other.getId().isEmpty()) {
@@ -3172,9 +3278,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object id_ = "";
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -3190,7 +3372,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -3207,7 +3389,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -3222,7 +3404,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -3232,7 +3414,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -3317,7 +3499,19 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
@@ -3336,6 +3530,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2DeleteOneRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -3376,6 +3571,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
@@ -3450,10 +3651,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -3478,8 +3717,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       unknownFields.writeTo(output);
     }
@@ -3493,9 +3735,12 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3514,6 +3759,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3529,6 +3776,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3666,6 +3915,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -3695,6 +3946,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2DeleteOneRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2DeleteOneRequest result = new grpc.ModelServiceV2Request.ModelServiceV2DeleteOneRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         onBuilt();
         return result;
@@ -3746,6 +3998,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2DeleteOneRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -3856,9 +4112,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -3866,7 +4198,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -3880,7 +4212,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -3959,7 +4291,19 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
@@ -3978,6 +4322,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2DeleteManyRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -4018,6 +4363,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
@@ -4092,10 +4443,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -4120,8 +4509,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       unknownFields.writeTo(output);
     }
@@ -4135,9 +4527,12 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4156,6 +4551,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -4171,6 +4568,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4308,6 +4707,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -4337,6 +4738,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2DeleteManyRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2DeleteManyRequest result = new grpc.ModelServiceV2Request.ModelServiceV2DeleteManyRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         onBuilt();
         return result;
@@ -4388,6 +4790,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2DeleteManyRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -4498,9 +4904,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -4508,7 +4990,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -4522,7 +5004,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -4601,19 +5083,31 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>string id = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>string id = 3;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>bytes update = 3;</code>
+     * <code>bytes update = 4;</code>
      * @return The update.
      */
     com.google.protobuf.ByteString getUpdate();
@@ -4632,6 +5126,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2UpdateByIdRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       id_ = "";
       update_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -4675,10 +5170,16 @@ public final class ModelServiceV2Request {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              modelType_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 34: {
 
               update_ = input.readBytes();
               break;
@@ -4753,10 +5254,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -4773,7 +5312,7 @@ public final class ModelServiceV2Request {
       }
     }
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -4791,10 +5330,10 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int UPDATE_FIELD_NUMBER = 3;
+    public static final int UPDATE_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString update_;
     /**
-     * <code>bytes update = 3;</code>
+     * <code>bytes update = 4;</code>
      * @return The update.
      */
     @java.lang.Override
@@ -4819,11 +5358,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       if (!update_.isEmpty()) {
-        output.writeBytes(3, update_);
+        output.writeBytes(4, update_);
       }
       unknownFields.writeTo(output);
     }
@@ -4837,12 +5379,15 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       if (!update_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, update_);
+          .computeBytesSize(4, update_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4861,6 +5406,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (!getUpdate()
@@ -4878,6 +5425,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + UPDATE_FIELD_NUMBER;
@@ -5017,6 +5566,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         id_ = "";
 
         update_ = com.google.protobuf.ByteString.EMPTY;
@@ -5048,6 +5599,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2UpdateByIdRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2UpdateByIdRequest result = new grpc.ModelServiceV2Request.ModelServiceV2UpdateByIdRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.id_ = id_;
         result.update_ = update_;
         onBuilt();
@@ -5100,6 +5652,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2UpdateByIdRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (!other.getId().isEmpty()) {
@@ -5214,9 +5770,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object id_ = "";
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -5232,7 +5864,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -5249,7 +5881,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -5264,7 +5896,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -5274,7 +5906,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -5292,7 +5924,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString update_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @return The update.
        */
       @java.lang.Override
@@ -5300,7 +5932,7 @@ public final class ModelServiceV2Request {
         return update_;
       }
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @param value The update to set.
        * @return This builder for chaining.
        */
@@ -5314,7 +5946,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdate() {
@@ -5393,13 +6025,25 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
 
     /**
-     * <code>bytes update = 3;</code>
+     * <code>bytes update = 4;</code>
      * @return The update.
      */
     com.google.protobuf.ByteString getUpdate();
@@ -5418,6 +6062,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2UpdateOneRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
       update_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -5459,11 +6104,17 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
             }
-            case 26: {
+            case 34: {
 
               update_ = input.readBytes();
               break;
@@ -5538,10 +6189,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -5549,10 +6238,10 @@ public final class ModelServiceV2Request {
       return query_;
     }
 
-    public static final int UPDATE_FIELD_NUMBER = 3;
+    public static final int UPDATE_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString update_;
     /**
-     * <code>bytes update = 3;</code>
+     * <code>bytes update = 4;</code>
      * @return The update.
      */
     @java.lang.Override
@@ -5577,11 +6266,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       if (!update_.isEmpty()) {
-        output.writeBytes(3, update_);
+        output.writeBytes(4, update_);
       }
       unknownFields.writeTo(output);
     }
@@ -5595,13 +6287,16 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       if (!update_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, update_);
+          .computeBytesSize(4, update_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5620,6 +6315,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!getUpdate()
@@ -5637,6 +6334,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (37 * hash) + UPDATE_FIELD_NUMBER;
@@ -5776,6 +6475,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         update_ = com.google.protobuf.ByteString.EMPTY;
@@ -5807,6 +6508,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2UpdateOneRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2UpdateOneRequest result = new grpc.ModelServiceV2Request.ModelServiceV2UpdateOneRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         result.update_ = update_;
         onBuilt();
@@ -5859,6 +6561,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2UpdateOneRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -5972,9 +6678,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -5982,7 +6764,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -5996,7 +6778,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -6008,7 +6790,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString update_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @return The update.
        */
       @java.lang.Override
@@ -6016,7 +6798,7 @@ public final class ModelServiceV2Request {
         return update_;
       }
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @param value The update to set.
        * @return This builder for chaining.
        */
@@ -6030,7 +6812,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdate() {
@@ -6109,13 +6891,25 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
 
     /**
-     * <code>bytes update = 3;</code>
+     * <code>bytes update = 4;</code>
      * @return The update.
      */
     com.google.protobuf.ByteString getUpdate();
@@ -6134,6 +6928,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2UpdateManyRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
       update_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -6175,11 +6970,17 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
             }
-            case 26: {
+            case 34: {
 
               update_ = input.readBytes();
               break;
@@ -6254,10 +7055,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -6265,10 +7104,10 @@ public final class ModelServiceV2Request {
       return query_;
     }
 
-    public static final int UPDATE_FIELD_NUMBER = 3;
+    public static final int UPDATE_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString update_;
     /**
-     * <code>bytes update = 3;</code>
+     * <code>bytes update = 4;</code>
      * @return The update.
      */
     @java.lang.Override
@@ -6293,11 +7132,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       if (!update_.isEmpty()) {
-        output.writeBytes(3, update_);
+        output.writeBytes(4, update_);
       }
       unknownFields.writeTo(output);
     }
@@ -6311,13 +7153,16 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       if (!update_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, update_);
+          .computeBytesSize(4, update_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6336,6 +7181,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!getUpdate()
@@ -6353,6 +7200,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (37 * hash) + UPDATE_FIELD_NUMBER;
@@ -6492,6 +7341,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         update_ = com.google.protobuf.ByteString.EMPTY;
@@ -6523,6 +7374,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2UpdateManyRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2UpdateManyRequest result = new grpc.ModelServiceV2Request.ModelServiceV2UpdateManyRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         result.update_ = update_;
         onBuilt();
@@ -6575,6 +7427,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2UpdateManyRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -6688,9 +7544,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -6698,7 +7630,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -6712,7 +7644,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -6724,7 +7656,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString update_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @return The update.
        */
       @java.lang.Override
@@ -6732,7 +7664,7 @@ public final class ModelServiceV2Request {
         return update_;
       }
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @param value The update to set.
        * @return This builder for chaining.
        */
@@ -6746,7 +7678,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes update = 3;</code>
+       * <code>bytes update = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdate() {
@@ -6825,19 +7757,31 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>string id = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>string id = 3;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>bytes model = 3;</code>
+     * <code>bytes model = 4;</code>
      * @return The model.
      */
     com.google.protobuf.ByteString getModel();
@@ -6856,6 +7800,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2ReplaceByIdRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       id_ = "";
       model_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -6899,10 +7844,16 @@ public final class ModelServiceV2Request {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              modelType_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 34: {
 
               model_ = input.readBytes();
               break;
@@ -6977,10 +7928,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -6997,7 +7986,7 @@ public final class ModelServiceV2Request {
       }
     }
     /**
-     * <code>string id = 2;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -7015,10 +8004,10 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int MODEL_FIELD_NUMBER = 3;
+    public static final int MODEL_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString model_;
     /**
-     * <code>bytes model = 3;</code>
+     * <code>bytes model = 4;</code>
      * @return The model.
      */
     @java.lang.Override
@@ -7043,11 +8032,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       if (!model_.isEmpty()) {
-        output.writeBytes(3, model_);
+        output.writeBytes(4, model_);
       }
       unknownFields.writeTo(output);
     }
@@ -7061,12 +8053,15 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       if (!model_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, model_);
+          .computeBytesSize(4, model_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7085,6 +8080,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getId()
           .equals(other.getId())) return false;
       if (!getModel()
@@ -7102,6 +8099,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
@@ -7241,6 +8240,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         id_ = "";
 
         model_ = com.google.protobuf.ByteString.EMPTY;
@@ -7272,6 +8273,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2ReplaceByIdRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2ReplaceByIdRequest result = new grpc.ModelServiceV2Request.ModelServiceV2ReplaceByIdRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.id_ = id_;
         result.model_ = model_;
         onBuilt();
@@ -7324,6 +8326,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2ReplaceByIdRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (!other.getId().isEmpty()) {
@@ -7438,9 +8444,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object id_ = "";
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -7456,7 +8538,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -7473,7 +8555,7 @@ public final class ModelServiceV2Request {
         }
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -7488,7 +8570,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -7498,7 +8580,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>string id = 2;</code>
+       * <code>string id = 3;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -7516,7 +8598,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString model_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes model = 3;</code>
+       * <code>bytes model = 4;</code>
        * @return The model.
        */
       @java.lang.Override
@@ -7524,7 +8606,7 @@ public final class ModelServiceV2Request {
         return model_;
       }
       /**
-       * <code>bytes model = 3;</code>
+       * <code>bytes model = 4;</code>
        * @param value The model to set.
        * @return This builder for chaining.
        */
@@ -7538,7 +8620,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes model = 3;</code>
+       * <code>bytes model = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearModel() {
@@ -7617,13 +8699,25 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
 
     /**
-     * <code>bytes model = 3;</code>
+     * <code>bytes model = 4;</code>
      * @return The model.
      */
     com.google.protobuf.ByteString getModel();
@@ -7642,6 +8736,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2ReplaceOneRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
       model_ = com.google.protobuf.ByteString.EMPTY;
     }
@@ -7683,11 +8778,17 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
             }
-            case 26: {
+            case 34: {
 
               model_ = input.readBytes();
               break;
@@ -7762,10 +8863,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -7773,10 +8912,10 @@ public final class ModelServiceV2Request {
       return query_;
     }
 
-    public static final int MODEL_FIELD_NUMBER = 3;
+    public static final int MODEL_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString model_;
     /**
-     * <code>bytes model = 3;</code>
+     * <code>bytes model = 4;</code>
      * @return The model.
      */
     @java.lang.Override
@@ -7801,11 +8940,14 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       if (!model_.isEmpty()) {
-        output.writeBytes(3, model_);
+        output.writeBytes(4, model_);
       }
       unknownFields.writeTo(output);
     }
@@ -7819,13 +8961,16 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       if (!model_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, model_);
+          .computeBytesSize(4, model_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7844,6 +8989,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!getModel()
@@ -7861,6 +9008,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
@@ -8000,6 +9149,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         model_ = com.google.protobuf.ByteString.EMPTY;
@@ -8031,6 +9182,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2ReplaceOneRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2ReplaceOneRequest result = new grpc.ModelServiceV2Request.ModelServiceV2ReplaceOneRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         result.model_ = model_;
         onBuilt();
@@ -8083,6 +9235,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2ReplaceOneRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -8196,9 +9352,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -8206,7 +9438,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -8220,7 +9452,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -8232,7 +9464,7 @@ public final class ModelServiceV2Request {
 
       private com.google.protobuf.ByteString model_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes model = 3;</code>
+       * <code>bytes model = 4;</code>
        * @return The model.
        */
       @java.lang.Override
@@ -8240,7 +9472,7 @@ public final class ModelServiceV2Request {
         return model_;
       }
       /**
-       * <code>bytes model = 3;</code>
+       * <code>bytes model = 4;</code>
        * @param value The model to set.
        * @return This builder for chaining.
        */
@@ -8254,7 +9486,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes model = 3;</code>
+       * <code>bytes model = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearModel() {
@@ -8333,7 +9565,19 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes model = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes model = 3;</code>
      * @return The model.
      */
     com.google.protobuf.ByteString getModel();
@@ -8352,6 +9596,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2InsertOneRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       model_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -8392,6 +9637,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               model_ = input.readBytes();
               break;
@@ -8466,10 +9717,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int MODEL_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODEL_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString model_;
     /**
-     * <code>bytes model = 2;</code>
+     * <code>bytes model = 3;</code>
      * @return The model.
      */
     @java.lang.Override
@@ -8494,8 +9783,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!model_.isEmpty()) {
-        output.writeBytes(2, model_);
+        output.writeBytes(3, model_);
       }
       unknownFields.writeTo(output);
     }
@@ -8509,9 +9801,12 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!model_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, model_);
+          .computeBytesSize(3, model_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8530,6 +9825,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getModel()
           .equals(other.getModel())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -8545,6 +9842,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -8682,6 +9981,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         model_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -8711,6 +10012,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2InsertOneRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2InsertOneRequest result = new grpc.ModelServiceV2Request.ModelServiceV2InsertOneRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.model_ = model_;
         onBuilt();
         return result;
@@ -8762,6 +10064,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2InsertOneRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getModel() != com.google.protobuf.ByteString.EMPTY) {
@@ -8872,9 +10178,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString model_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes model = 2;</code>
+       * <code>bytes model = 3;</code>
        * @return The model.
        */
       @java.lang.Override
@@ -8882,7 +10264,7 @@ public final class ModelServiceV2Request {
         return model_;
       }
       /**
-       * <code>bytes model = 2;</code>
+       * <code>bytes model = 3;</code>
        * @param value The model to set.
        * @return This builder for chaining.
        */
@@ -8896,7 +10278,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes model = 2;</code>
+       * <code>bytes model = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearModel() {
@@ -8975,7 +10357,19 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes models = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes models = 3;</code>
      * @return The models.
      */
     com.google.protobuf.ByteString getModels();
@@ -8994,6 +10388,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2InsertManyRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       models_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -9034,6 +10429,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               models_ = input.readBytes();
               break;
@@ -9108,10 +10509,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int MODELS_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MODELS_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString models_;
     /**
-     * <code>bytes models = 2;</code>
+     * <code>bytes models = 3;</code>
      * @return The models.
      */
     @java.lang.Override
@@ -9136,8 +10575,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!models_.isEmpty()) {
-        output.writeBytes(2, models_);
+        output.writeBytes(3, models_);
       }
       unknownFields.writeTo(output);
     }
@@ -9151,9 +10593,12 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!models_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, models_);
+          .computeBytesSize(3, models_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9172,6 +10617,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getModels()
           .equals(other.getModels())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9187,6 +10634,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + MODELS_FIELD_NUMBER;
       hash = (53 * hash) + getModels().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9324,6 +10773,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         models_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -9353,6 +10804,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2InsertManyRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2InsertManyRequest result = new grpc.ModelServiceV2Request.ModelServiceV2InsertManyRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.models_ = models_;
         onBuilt();
         return result;
@@ -9404,6 +10856,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2InsertManyRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getModels() != com.google.protobuf.ByteString.EMPTY) {
@@ -9514,9 +10970,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString models_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes models = 2;</code>
+       * <code>bytes models = 3;</code>
        * @return The models.
        */
       @java.lang.Override
@@ -9524,7 +11056,7 @@ public final class ModelServiceV2Request {
         return models_;
       }
       /**
-       * <code>bytes models = 2;</code>
+       * <code>bytes models = 3;</code>
        * @param value The models to set.
        * @return This builder for chaining.
        */
@@ -9538,7 +11070,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes models = 2;</code>
+       * <code>bytes models = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearModels() {
@@ -9617,7 +11149,19 @@ public final class ModelServiceV2Request {
         getNodeKeyBytes();
 
     /**
-     * <code>bytes query = 2;</code>
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    java.lang.String getModelType();
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    com.google.protobuf.ByteString
+        getModelTypeBytes();
+
+    /**
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     com.google.protobuf.ByteString getQuery();
@@ -9636,6 +11180,7 @@ public final class ModelServiceV2Request {
     }
     private ModelServiceV2CountRequest() {
       nodeKey_ = "";
+      modelType_ = "";
       query_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -9676,6 +11221,12 @@ public final class ModelServiceV2Request {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelType_ = s;
+              break;
+            }
+            case 26: {
 
               query_ = input.readBytes();
               break;
@@ -9750,10 +11301,48 @@ public final class ModelServiceV2Request {
       }
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object modelType_;
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The modelType.
+     */
+    @java.lang.Override
+    public java.lang.String getModelType() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string model_type = 2;</code>
+     * @return The bytes for modelType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getModelTypeBytes() {
+      java.lang.Object ref = modelType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString query_;
     /**
-     * <code>bytes query = 2;</code>
+     * <code>bytes query = 3;</code>
      * @return The query.
      */
     @java.lang.Override
@@ -9778,8 +11367,11 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
+      }
       if (!query_.isEmpty()) {
-        output.writeBytes(2, query_);
+        output.writeBytes(3, query_);
       }
       unknownFields.writeTo(output);
     }
@@ -9793,9 +11385,12 @@ public final class ModelServiceV2Request {
       if (!getNodeKeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
+      if (!getModelTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
+      }
       if (!query_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, query_);
+          .computeBytesSize(3, query_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9814,6 +11409,8 @@ public final class ModelServiceV2Request {
 
       if (!getNodeKey()
           .equals(other.getNodeKey())) return false;
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
       if (!getQuery()
           .equals(other.getQuery())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9829,6 +11426,8 @@ public final class ModelServiceV2Request {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NODE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKey().hashCode();
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9966,6 +11565,8 @@ public final class ModelServiceV2Request {
         super.clear();
         nodeKey_ = "";
 
+        modelType_ = "";
+
         query_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -9995,6 +11596,7 @@ public final class ModelServiceV2Request {
       public grpc.ModelServiceV2Request.ModelServiceV2CountRequest buildPartial() {
         grpc.ModelServiceV2Request.ModelServiceV2CountRequest result = new grpc.ModelServiceV2Request.ModelServiceV2CountRequest(this);
         result.nodeKey_ = nodeKey_;
+        result.modelType_ = modelType_;
         result.query_ = query_;
         onBuilt();
         return result;
@@ -10046,6 +11648,10 @@ public final class ModelServiceV2Request {
         if (other == grpc.ModelServiceV2Request.ModelServiceV2CountRequest.getDefaultInstance()) return this;
         if (!other.getNodeKey().isEmpty()) {
           nodeKey_ = other.nodeKey_;
+          onChanged();
+        }
+        if (!other.getModelType().isEmpty()) {
+          modelType_ = other.modelType_;
           onChanged();
         }
         if (other.getQuery() != com.google.protobuf.ByteString.EMPTY) {
@@ -10156,9 +11762,85 @@ public final class ModelServiceV2Request {
         return this;
       }
 
+      private java.lang.Object modelType_ = "";
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The modelType.
+       */
+      public java.lang.String getModelType() {
+        java.lang.Object ref = modelType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return The bytes for modelType.
+       */
+      public com.google.protobuf.ByteString
+          getModelTypeBytes() {
+        java.lang.Object ref = modelType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          modelType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearModelType() {
+        
+        modelType_ = getDefaultInstance().getModelType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string model_type = 2;</code>
+       * @param value The bytes for modelType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        modelType_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString query_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return The query.
        */
       @java.lang.Override
@@ -10166,7 +11848,7 @@ public final class ModelServiceV2Request {
         return query_;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @param value The query to set.
        * @return This builder for chaining.
        */
@@ -10180,7 +11862,7 @@ public final class ModelServiceV2Request {
         return this;
       }
       /**
-       * <code>bytes query = 2;</code>
+       * <code>bytes query = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuery() {
@@ -10242,11 +11924,6 @@ public final class ModelServiceV2Request {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grpc_Id_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_grpc_Id_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_grpc_ModelServiceV2GetByIdRequest_descriptor;
   private static final 
@@ -10327,128 +12004,129 @@ public final class ModelServiceV2Request {
   static {
     java.lang.String[] descriptorData = {
       "\n%entity/model_service_v2_request.proto\022" +
-      "\004grpc\"\004\n\002Id\"<\n\034ModelServiceV2GetByIdRequ" +
-      "est\022\020\n\010node_key\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\"T\n\033Mod" +
-      "elServiceV2GetOneRequest\022\020\n\010node_key\030\001 \001" +
-      "(\t\022\r\n\005query\030\002 \001(\014\022\024\n\014find_options\030\003 \001(\014\"" +
-      "U\n\034ModelServiceV2GetManyRequest\022\020\n\010node_" +
-      "key\030\001 \001(\t\022\r\n\005query\030\002 \001(\014\022\024\n\014find_options" +
-      "\030\003 \001(\014\"?\n\037ModelServiceV2DeleteByIdReques" +
-      "t\022\020\n\010node_key\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\"A\n\036Model" +
-      "ServiceV2DeleteOneRequest\022\020\n\010node_key\030\001 " +
-      "\001(\t\022\r\n\005query\030\002 \001(\014\"B\n\037ModelServiceV2Dele" +
-      "teManyRequest\022\020\n\010node_key\030\001 \001(\t\022\r\n\005query" +
-      "\030\002 \001(\014\"O\n\037ModelServiceV2UpdateByIdReques" +
-      "t\022\020\n\010node_key\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\016\n\006updat" +
-      "e\030\003 \001(\014\"Q\n\036ModelServiceV2UpdateOneReques" +
-      "t\022\020\n\010node_key\030\001 \001(\t\022\r\n\005query\030\002 \001(\014\022\016\n\006up" +
-      "date\030\003 \001(\014\"R\n\037ModelServiceV2UpdateManyRe" +
-      "quest\022\020\n\010node_key\030\001 \001(\t\022\r\n\005query\030\002 \001(\014\022\016" +
-      "\n\006update\030\003 \001(\014\"O\n ModelServiceV2ReplaceB" +
-      "yIdRequest\022\020\n\010node_key\030\001 \001(\t\022\n\n\002id\030\002 \001(\t" +
-      "\022\r\n\005model\030\003 \001(\014\"Q\n\037ModelServiceV2Replace" +
-      "OneRequest\022\020\n\010node_key\030\001 \001(\t\022\r\n\005query\030\002 " +
-      "\001(\014\022\r\n\005model\030\003 \001(\014\"A\n\036ModelServiceV2Inse" +
-      "rtOneRequest\022\020\n\010node_key\030\001 \001(\t\022\r\n\005model\030" +
-      "\002 \001(\014\"C\n\037ModelServiceV2InsertManyRequest" +
-      "\022\020\n\010node_key\030\001 \001(\t\022\016\n\006models\030\002 \001(\014\"=\n\032Mo" +
-      "delServiceV2CountRequest\022\020\n\010node_key\030\001 \001" +
-      "(\t\022\r\n\005query\030\002 \001(\014B\010Z\006.;grpcb\006proto3"
+      "\004grpc\"P\n\034ModelServiceV2GetByIdRequest\022\020\n" +
+      "\010node_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\n\n\002i" +
+      "d\030\003 \001(\t\"h\n\033ModelServiceV2GetOneRequest\022\020" +
+      "\n\010node_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\r\n\005" +
+      "query\030\003 \001(\014\022\024\n\014find_options\030\004 \001(\014\"i\n\034Mod" +
+      "elServiceV2GetManyRequest\022\020\n\010node_key\030\001 " +
+      "\001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\r\n\005query\030\003 \001(\014\022\024" +
+      "\n\014find_options\030\004 \001(\014\"S\n\037ModelServiceV2De" +
+      "leteByIdRequest\022\020\n\010node_key\030\001 \001(\t\022\022\n\nmod" +
+      "el_type\030\002 \001(\t\022\n\n\002id\030\003 \001(\t\"U\n\036ModelServic" +
+      "eV2DeleteOneRequest\022\020\n\010node_key\030\001 \001(\t\022\022\n" +
+      "\nmodel_type\030\002 \001(\t\022\r\n\005query\030\003 \001(\014\"V\n\037Mode" +
+      "lServiceV2DeleteManyRequest\022\020\n\010node_key\030" +
+      "\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\r\n\005query\030\003 \001(\014" +
+      "\"c\n\037ModelServiceV2UpdateByIdRequest\022\020\n\010n" +
+      "ode_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\n\n\002id\030" +
+      "\003 \001(\t\022\016\n\006update\030\004 \001(\014\"e\n\036ModelServiceV2U" +
+      "pdateOneRequest\022\020\n\010node_key\030\001 \001(\t\022\022\n\nmod" +
+      "el_type\030\002 \001(\t\022\r\n\005query\030\003 \001(\014\022\016\n\006update\030\004" +
+      " \001(\014\"f\n\037ModelServiceV2UpdateManyRequest\022" +
+      "\020\n\010node_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\r\n" +
+      "\005query\030\003 \001(\014\022\016\n\006update\030\004 \001(\014\"c\n ModelSer" +
+      "viceV2ReplaceByIdRequest\022\020\n\010node_key\030\001 \001" +
+      "(\t\022\022\n\nmodel_type\030\002 \001(\t\022\n\n\002id\030\003 \001(\t\022\r\n\005mo" +
+      "del\030\004 \001(\014\"e\n\037ModelServiceV2ReplaceOneReq" +
+      "uest\022\020\n\010node_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001" +
+      "(\t\022\r\n\005query\030\003 \001(\014\022\r\n\005model\030\004 \001(\014\"U\n\036Mode" +
+      "lServiceV2InsertOneRequest\022\020\n\010node_key\030\001" +
+      " \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\r\n\005model\030\003 \001(\014\"" +
+      "W\n\037ModelServiceV2InsertManyRequest\022\020\n\010no" +
+      "de_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\016\n\006mode" +
+      "ls\030\003 \001(\014\"Q\n\032ModelServiceV2CountRequest\022\020" +
+      "\n\010node_key\030\001 \001(\t\022\022\n\nmodel_type\030\002 \001(\t\022\r\n\005" +
+      "query\030\003 \001(\014B\010Z\006.;grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_grpc_Id_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_grpc_Id_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grpc_Id_descriptor,
-        new java.lang.String[] { });
     internal_static_grpc_ModelServiceV2GetByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_grpc_ModelServiceV2GetByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2GetByIdRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Id", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Id", });
     internal_static_grpc_ModelServiceV2GetOneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_grpc_ModelServiceV2GetOneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2GetOneRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", "FindOptions", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", "FindOptions", });
     internal_static_grpc_ModelServiceV2GetManyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_grpc_ModelServiceV2GetManyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2GetManyRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", "FindOptions", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", "FindOptions", });
     internal_static_grpc_ModelServiceV2DeleteByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_grpc_ModelServiceV2DeleteByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2DeleteByIdRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Id", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Id", });
     internal_static_grpc_ModelServiceV2DeleteOneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_grpc_ModelServiceV2DeleteOneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2DeleteOneRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", });
     internal_static_grpc_ModelServiceV2DeleteManyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_grpc_ModelServiceV2DeleteManyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2DeleteManyRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", });
     internal_static_grpc_ModelServiceV2UpdateByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_grpc_ModelServiceV2UpdateByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2UpdateByIdRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Id", "Update", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Id", "Update", });
     internal_static_grpc_ModelServiceV2UpdateOneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_grpc_ModelServiceV2UpdateOneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2UpdateOneRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", "Update", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", "Update", });
     internal_static_grpc_ModelServiceV2UpdateManyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_grpc_ModelServiceV2UpdateManyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2UpdateManyRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", "Update", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", "Update", });
     internal_static_grpc_ModelServiceV2ReplaceByIdRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_grpc_ModelServiceV2ReplaceByIdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2ReplaceByIdRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Id", "Model", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Id", "Model", });
     internal_static_grpc_ModelServiceV2ReplaceOneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_grpc_ModelServiceV2ReplaceOneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2ReplaceOneRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", "Model", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", "Model", });
     internal_static_grpc_ModelServiceV2InsertOneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_grpc_ModelServiceV2InsertOneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2InsertOneRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Model", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Model", });
     internal_static_grpc_ModelServiceV2InsertManyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_grpc_ModelServiceV2InsertManyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2InsertManyRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Models", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Models", });
     internal_static_grpc_ModelServiceV2CountRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_grpc_ModelServiceV2CountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_ModelServiceV2CountRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Query", });
+        new java.lang.String[] { "NodeKey", "ModelType", "Query", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
