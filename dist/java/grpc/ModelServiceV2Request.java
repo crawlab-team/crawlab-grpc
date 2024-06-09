@@ -131,6 +131,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -280,13 +282,13 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       unknownFields.writeTo(output);
@@ -298,13 +300,13 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
@@ -1004,6 +1006,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -1137,10 +1141,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -1158,10 +1162,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -1870,6 +1874,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -2003,10 +2009,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -2024,10 +2030,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -2731,6 +2737,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -2880,13 +2888,13 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       unknownFields.writeTo(output);
@@ -2898,13 +2906,13 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
@@ -3592,6 +3600,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -3714,10 +3724,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -3732,10 +3742,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -4384,6 +4394,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -4506,10 +4518,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -4524,10 +4536,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -5195,6 +5207,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -5355,13 +5369,13 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       if (!update_.isEmpty()) {
@@ -5376,13 +5390,13 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       if (!update_.isEmpty()) {
@@ -6130,6 +6144,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -6263,10 +6279,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -6284,10 +6300,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -6996,6 +7012,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -7129,10 +7147,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -7150,10 +7168,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -7869,6 +7887,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -8029,13 +8049,13 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       if (!model_.isEmpty()) {
@@ -8050,13 +8070,13 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
-      if (!getIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       if (!model_.isEmpty()) {
@@ -8804,6 +8824,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -8937,10 +8959,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -8958,10 +8980,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -9658,6 +9680,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -9780,10 +9804,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!model_.isEmpty()) {
@@ -9798,10 +9822,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!model_.isEmpty()) {
@@ -10450,6 +10474,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -10572,10 +10598,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!models_.isEmpty()) {
@@ -10590,10 +10616,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!models_.isEmpty()) {
@@ -11242,6 +11268,8 @@ public final class ModelServiceV2Request {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -11364,10 +11392,10 @@ public final class ModelServiceV2Request {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelType_);
       }
       if (!query_.isEmpty()) {
@@ -11382,10 +11410,10 @@ public final class ModelServiceV2Request {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNodeKeyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeKey_);
       }
-      if (!getModelTypeBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelType_);
       }
       if (!query_.isEmpty()) {

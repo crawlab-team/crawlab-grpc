@@ -25,10 +25,12 @@ public final class TaskServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033services/task_service.proto\022\004grpc\032\024ent" +
       "ity/request.proto\032\025entity/response.proto" +
-      "\032\033entity/stream_message.proto2m\n\013TaskSer" +
-      "vice\0224\n\tSubscribe\022\023.grpc.StreamMessage\032\016" +
-      ".grpc.Response\"\000(\001\022(\n\005Fetch\022\r.grpc.Reque" +
-      "st\032\016.grpc.Response\"\000B\010Z\006.;grpcb\006proto3"
+      "\032\033entity/stream_message.proto2\242\001\n\013TaskSe" +
+      "rvice\0224\n\tSubscribe\022\023.grpc.StreamMessage\032" +
+      "\016.grpc.Response\"\000(\001\022(\n\005Fetch\022\r.grpc.Requ" +
+      "est\032\016.grpc.Response\"\000\0223\n\020SendNotificatio" +
+      "n\022\r.grpc.Request\032\016.grpc.Response\"\000B\010Z\006.;" +
+      "grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

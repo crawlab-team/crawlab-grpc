@@ -26,10 +26,11 @@ namespace Grpc {
           string.Concat(
             "ChtzZXJ2aWNlcy90YXNrX3NlcnZpY2UucHJvdG8SBGdycGMaFGVudGl0eS9y",
             "ZXF1ZXN0LnByb3RvGhVlbnRpdHkvcmVzcG9uc2UucHJvdG8aG2VudGl0eS9z",
-            "dHJlYW1fbWVzc2FnZS5wcm90bzJtCgtUYXNrU2VydmljZRI0CglTdWJzY3Jp",
-            "YmUSEy5ncnBjLlN0cmVhbU1lc3NhZ2UaDi5ncnBjLlJlc3BvbnNlIgAoARIo",
-            "CgVGZXRjaBINLmdycGMuUmVxdWVzdBoOLmdycGMuUmVzcG9uc2UiAEIIWgYu",
-            "O2dycGNiBnByb3RvMw=="));
+            "dHJlYW1fbWVzc2FnZS5wcm90bzKiAQoLVGFza1NlcnZpY2USNAoJU3Vic2Ny",
+            "aWJlEhMuZ3JwYy5TdHJlYW1NZXNzYWdlGg4uZ3JwYy5SZXNwb25zZSIAKAES",
+            "KAoFRmV0Y2gSDS5ncnBjLlJlcXVlc3QaDi5ncnBjLlJlc3BvbnNlIgASMwoQ",
+            "U2VuZE5vdGlmaWNhdGlvbhINLmdycGMuUmVxdWVzdBoOLmdycGMuUmVzcG9u",
+            "c2UiAEIIWgYuO2dycGNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grpc.RequestReflection.Descriptor, global::Grpc.ResponseReflection.Descriptor, global::Grpc.StreamMessageReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, null));

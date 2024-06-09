@@ -112,6 +112,8 @@ public final class StreamMessageDataTaskOuterClass {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -223,10 +225,10 @@ public final class StreamMessageDataTaskOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTaskIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskId_);
       }
-      if (!getDataBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, data_);
       }
       unknownFields.writeTo(output);
@@ -238,10 +240,10 @@ public final class StreamMessageDataTaskOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTaskIdBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskId_);
       }
-      if (!getDataBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, data_);
       }
       size += unknownFields.getSerializedSize();
