@@ -15,6 +15,7 @@ message DependenciesServiceV2ConnectRequest {
 message DependenciesServiceV2SyncRequest {
   string node_key = 1;
   string lang = 2;
+  repeated Dependency dependencies = 3;
 }
 
 message DependenciesServiceV2InstallRequest {

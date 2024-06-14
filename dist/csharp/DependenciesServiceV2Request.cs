@@ -27,20 +27,21 @@ namespace Grpc {
             "CixlbnRpdHkvZGVwZW5kZW5jaWVzX3NlcnZpY2VfdjJfcmVxdWVzdC5wcm90",
             "bxIEZ3JwYyIrCgpEZXBlbmRlbmN5EgwKBG5hbWUYASABKAkSDwoHdmVyc2lv",
             "bhgCIAEoCSI3CiNEZXBlbmRlbmNpZXNTZXJ2aWNlVjJDb25uZWN0UmVxdWVz",
-            "dBIQCghub2RlX2tleRgBIAEoCSJCCiBEZXBlbmRlbmNpZXNTZXJ2aWNlVjJT",
-            "eW5jUmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRIMCgRsYW5nGAIgASgJInwK",
-            "I0RlcGVuZGVuY2llc1NlcnZpY2VWMkluc3RhbGxSZXF1ZXN0EhAKCG5vZGVf",
-            "a2V5GAEgASgJEgwKBGxhbmcYAiABKAkSJgoMZGVwZW5kZW5jaWVzGAMgAygL",
-            "MhAuZ3JwYy5EZXBlbmRlbmN5Eg0KBXByb3h5GAQgASgJIm8KJURlcGVuZGVu",
-            "Y2llc1NlcnZpY2VWMlVuaW5zdGFsbFJlcXVlc3QSEAoIbm9kZV9rZXkYASAB",
-            "KAkSDAoEbGFuZxgCIAEoCRImCgxkZXBlbmRlbmNpZXMYAyADKAsyEC5ncnBj",
-            "LkRlcGVuZGVuY3lCCFoGLjtncnBjYgZwcm90bzM="));
+            "dBIQCghub2RlX2tleRgBIAEoCSJqCiBEZXBlbmRlbmNpZXNTZXJ2aWNlVjJT",
+            "eW5jUmVxdWVzdBIQCghub2RlX2tleRgBIAEoCRIMCgRsYW5nGAIgASgJEiYK",
+            "DGRlcGVuZGVuY2llcxgDIAMoCzIQLmdycGMuRGVwZW5kZW5jeSJ8CiNEZXBl",
+            "bmRlbmNpZXNTZXJ2aWNlVjJJbnN0YWxsUmVxdWVzdBIQCghub2RlX2tleRgB",
+            "IAEoCRIMCgRsYW5nGAIgASgJEiYKDGRlcGVuZGVuY2llcxgDIAMoCzIQLmdy",
+            "cGMuRGVwZW5kZW5jeRINCgVwcm94eRgEIAEoCSJvCiVEZXBlbmRlbmNpZXNT",
+            "ZXJ2aWNlVjJVbmluc3RhbGxSZXF1ZXN0EhAKCG5vZGVfa2V5GAEgASgJEgwK",
+            "BGxhbmcYAiABKAkSJgoMZGVwZW5kZW5jaWVzGAMgAygLMhAuZ3JwYy5EZXBl",
+            "bmRlbmN5QghaBi47Z3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.Dependency), global::Grpc.Dependency.Parser, new[]{ "Name", "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.DependenciesServiceV2ConnectRequest), global::Grpc.DependenciesServiceV2ConnectRequest.Parser, new[]{ "NodeKey" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.DependenciesServiceV2SyncRequest), global::Grpc.DependenciesServiceV2SyncRequest.Parser, new[]{ "NodeKey", "Lang" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.DependenciesServiceV2SyncRequest), global::Grpc.DependenciesServiceV2SyncRequest.Parser, new[]{ "NodeKey", "Lang", "Dependencies" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.DependenciesServiceV2InstallRequest), global::Grpc.DependenciesServiceV2InstallRequest.Parser, new[]{ "NodeKey", "Lang", "Dependencies", "Proxy" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Grpc.DependenciesServiceV2UninstallRequest), global::Grpc.DependenciesServiceV2UninstallRequest.Parser, new[]{ "NodeKey", "Lang", "Dependencies" }, null, null, null, null)
           }));
@@ -500,6 +501,7 @@ namespace Grpc {
     public DependenciesServiceV2SyncRequest(DependenciesServiceV2SyncRequest other) : this() {
       nodeKey_ = other.nodeKey_;
       lang_ = other.lang_;
+      dependencies_ = other.dependencies_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -533,6 +535,17 @@ namespace Grpc {
       }
     }
 
+    /// <summary>Field number for the "dependencies" field.</summary>
+    public const int DependenciesFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Grpc.Dependency> _repeated_dependencies_codec
+        = pb::FieldCodec.ForMessage(26, global::Grpc.Dependency.Parser);
+    private readonly pbc::RepeatedField<global::Grpc.Dependency> dependencies_ = new pbc::RepeatedField<global::Grpc.Dependency>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Grpc.Dependency> Dependencies {
+      get { return dependencies_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -550,6 +563,7 @@ namespace Grpc {
       }
       if (NodeKey != other.NodeKey) return false;
       if (Lang != other.Lang) return false;
+      if(!dependencies_.Equals(other.dependencies_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -559,6 +573,7 @@ namespace Grpc {
       int hash = 1;
       if (NodeKey.Length != 0) hash ^= NodeKey.GetHashCode();
       if (Lang.Length != 0) hash ^= Lang.GetHashCode();
+      hash ^= dependencies_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -585,6 +600,7 @@ namespace Grpc {
         output.WriteRawTag(18);
         output.WriteString(Lang);
       }
+      dependencies_.WriteTo(output, _repeated_dependencies_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -603,6 +619,7 @@ namespace Grpc {
         output.WriteRawTag(18);
         output.WriteString(Lang);
       }
+      dependencies_.WriteTo(ref output, _repeated_dependencies_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -619,6 +636,7 @@ namespace Grpc {
       if (Lang.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Lang);
       }
+      size += dependencies_.CalculateSize(_repeated_dependencies_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -637,6 +655,7 @@ namespace Grpc {
       if (other.Lang.Length != 0) {
         Lang = other.Lang;
       }
+      dependencies_.Add(other.dependencies_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -660,6 +679,10 @@ namespace Grpc {
             Lang = input.ReadString();
             break;
           }
+          case 26: {
+            dependencies_.AddEntriesFrom(input, _repeated_dependencies_codec);
+            break;
+          }
         }
       }
     #endif
@@ -681,6 +704,10 @@ namespace Grpc {
           }
           case 18: {
             Lang = input.ReadString();
+            break;
+          }
+          case 26: {
+            dependencies_.AddEntriesFrom(ref input, _repeated_dependencies_codec);
             break;
           }
         }

@@ -1331,6 +1331,30 @@ public final class DependenciesServiceV2Request {
      */
     com.google.protobuf.ByteString
         getLangBytes();
+
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    java.util.List<grpc.DependenciesServiceV2Request.Dependency> 
+        getDependenciesList();
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    grpc.DependenciesServiceV2Request.Dependency getDependencies(int index);
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    int getDependenciesCount();
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    java.util.List<? extends grpc.DependenciesServiceV2Request.DependencyOrBuilder> 
+        getDependenciesOrBuilderList();
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    grpc.DependenciesServiceV2Request.DependencyOrBuilder getDependenciesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code grpc.DependenciesServiceV2SyncRequest}
@@ -1347,6 +1371,7 @@ public final class DependenciesServiceV2Request {
     private DependenciesServiceV2SyncRequest() {
       nodeKey_ = "";
       lang_ = "";
+      dependencies_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1369,6 +1394,7 @@ public final class DependenciesServiceV2Request {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1391,6 +1417,15 @@ public final class DependenciesServiceV2Request {
               lang_ = s;
               break;
             }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dependencies_ = new java.util.ArrayList<grpc.DependenciesServiceV2Request.Dependency>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dependencies_.add(
+                  input.readMessage(grpc.DependenciesServiceV2Request.Dependency.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1408,6 +1443,9 @@ public final class DependenciesServiceV2Request {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dependencies_ = java.util.Collections.unmodifiableList(dependencies_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1501,6 +1539,46 @@ public final class DependenciesServiceV2Request {
       }
     }
 
+    public static final int DEPENDENCIES_FIELD_NUMBER = 3;
+    private java.util.List<grpc.DependenciesServiceV2Request.Dependency> dependencies_;
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<grpc.DependenciesServiceV2Request.Dependency> getDependenciesList() {
+      return dependencies_;
+    }
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends grpc.DependenciesServiceV2Request.DependencyOrBuilder> 
+        getDependenciesOrBuilderList() {
+      return dependencies_;
+    }
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    @java.lang.Override
+    public int getDependenciesCount() {
+      return dependencies_.size();
+    }
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    @java.lang.Override
+    public grpc.DependenciesServiceV2Request.Dependency getDependencies(int index) {
+      return dependencies_.get(index);
+    }
+    /**
+     * <code>repeated .grpc.Dependency dependencies = 3;</code>
+     */
+    @java.lang.Override
+    public grpc.DependenciesServiceV2Request.DependencyOrBuilder getDependenciesOrBuilder(
+        int index) {
+      return dependencies_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1521,6 +1599,9 @@ public final class DependenciesServiceV2Request {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lang_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lang_);
       }
+      for (int i = 0; i < dependencies_.size(); i++) {
+        output.writeMessage(3, dependencies_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1535,6 +1616,10 @@ public final class DependenciesServiceV2Request {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lang_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lang_);
+      }
+      for (int i = 0; i < dependencies_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, dependencies_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1555,6 +1640,8 @@ public final class DependenciesServiceV2Request {
           .equals(other.getNodeKey())) return false;
       if (!getLang()
           .equals(other.getLang())) return false;
+      if (!getDependenciesList()
+          .equals(other.getDependenciesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1570,6 +1657,10 @@ public final class DependenciesServiceV2Request {
       hash = (53 * hash) + getNodeKey().hashCode();
       hash = (37 * hash) + LANG_FIELD_NUMBER;
       hash = (53 * hash) + getLang().hashCode();
+      if (getDependenciesCount() > 0) {
+        hash = (37 * hash) + DEPENDENCIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDependenciesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1698,6 +1789,7 @@ public final class DependenciesServiceV2Request {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getDependenciesFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1707,6 +1799,12 @@ public final class DependenciesServiceV2Request {
 
         lang_ = "";
 
+        if (dependenciesBuilder_ == null) {
+          dependencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          dependenciesBuilder_.clear();
+        }
         return this;
       }
 
@@ -1733,8 +1831,18 @@ public final class DependenciesServiceV2Request {
       @java.lang.Override
       public grpc.DependenciesServiceV2Request.DependenciesServiceV2SyncRequest buildPartial() {
         grpc.DependenciesServiceV2Request.DependenciesServiceV2SyncRequest result = new grpc.DependenciesServiceV2Request.DependenciesServiceV2SyncRequest(this);
+        int from_bitField0_ = bitField0_;
         result.nodeKey_ = nodeKey_;
         result.lang_ = lang_;
+        if (dependenciesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            dependencies_ = java.util.Collections.unmodifiableList(dependencies_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.dependencies_ = dependencies_;
+        } else {
+          result.dependencies_ = dependenciesBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1791,6 +1899,32 @@ public final class DependenciesServiceV2Request {
           lang_ = other.lang_;
           onChanged();
         }
+        if (dependenciesBuilder_ == null) {
+          if (!other.dependencies_.isEmpty()) {
+            if (dependencies_.isEmpty()) {
+              dependencies_ = other.dependencies_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDependenciesIsMutable();
+              dependencies_.addAll(other.dependencies_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dependencies_.isEmpty()) {
+            if (dependenciesBuilder_.isEmpty()) {
+              dependenciesBuilder_.dispose();
+              dependenciesBuilder_ = null;
+              dependencies_ = other.dependencies_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dependenciesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDependenciesFieldBuilder() : null;
+            } else {
+              dependenciesBuilder_.addAllMessages(other.dependencies_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1819,6 +1953,7 @@ public final class DependenciesServiceV2Request {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object nodeKey_ = "";
       /**
@@ -1970,6 +2105,246 @@ public final class DependenciesServiceV2Request {
         lang_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<grpc.DependenciesServiceV2Request.Dependency> dependencies_ =
+        java.util.Collections.emptyList();
+      private void ensureDependenciesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          dependencies_ = new java.util.ArrayList<grpc.DependenciesServiceV2Request.Dependency>(dependencies_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.DependenciesServiceV2Request.Dependency, grpc.DependenciesServiceV2Request.Dependency.Builder, grpc.DependenciesServiceV2Request.DependencyOrBuilder> dependenciesBuilder_;
+
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public java.util.List<grpc.DependenciesServiceV2Request.Dependency> getDependenciesList() {
+        if (dependenciesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dependencies_);
+        } else {
+          return dependenciesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public int getDependenciesCount() {
+        if (dependenciesBuilder_ == null) {
+          return dependencies_.size();
+        } else {
+          return dependenciesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public grpc.DependenciesServiceV2Request.Dependency getDependencies(int index) {
+        if (dependenciesBuilder_ == null) {
+          return dependencies_.get(index);
+        } else {
+          return dependenciesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder setDependencies(
+          int index, grpc.DependenciesServiceV2Request.Dependency value) {
+        if (dependenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependenciesIsMutable();
+          dependencies_.set(index, value);
+          onChanged();
+        } else {
+          dependenciesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder setDependencies(
+          int index, grpc.DependenciesServiceV2Request.Dependency.Builder builderForValue) {
+        if (dependenciesBuilder_ == null) {
+          ensureDependenciesIsMutable();
+          dependencies_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dependenciesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder addDependencies(grpc.DependenciesServiceV2Request.Dependency value) {
+        if (dependenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependenciesIsMutable();
+          dependencies_.add(value);
+          onChanged();
+        } else {
+          dependenciesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder addDependencies(
+          int index, grpc.DependenciesServiceV2Request.Dependency value) {
+        if (dependenciesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDependenciesIsMutable();
+          dependencies_.add(index, value);
+          onChanged();
+        } else {
+          dependenciesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder addDependencies(
+          grpc.DependenciesServiceV2Request.Dependency.Builder builderForValue) {
+        if (dependenciesBuilder_ == null) {
+          ensureDependenciesIsMutable();
+          dependencies_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dependenciesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder addDependencies(
+          int index, grpc.DependenciesServiceV2Request.Dependency.Builder builderForValue) {
+        if (dependenciesBuilder_ == null) {
+          ensureDependenciesIsMutable();
+          dependencies_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dependenciesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder addAllDependencies(
+          java.lang.Iterable<? extends grpc.DependenciesServiceV2Request.Dependency> values) {
+        if (dependenciesBuilder_ == null) {
+          ensureDependenciesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, dependencies_);
+          onChanged();
+        } else {
+          dependenciesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder clearDependencies() {
+        if (dependenciesBuilder_ == null) {
+          dependencies_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dependenciesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public Builder removeDependencies(int index) {
+        if (dependenciesBuilder_ == null) {
+          ensureDependenciesIsMutable();
+          dependencies_.remove(index);
+          onChanged();
+        } else {
+          dependenciesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public grpc.DependenciesServiceV2Request.Dependency.Builder getDependenciesBuilder(
+          int index) {
+        return getDependenciesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public grpc.DependenciesServiceV2Request.DependencyOrBuilder getDependenciesOrBuilder(
+          int index) {
+        if (dependenciesBuilder_ == null) {
+          return dependencies_.get(index);  } else {
+          return dependenciesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public java.util.List<? extends grpc.DependenciesServiceV2Request.DependencyOrBuilder> 
+           getDependenciesOrBuilderList() {
+        if (dependenciesBuilder_ != null) {
+          return dependenciesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dependencies_);
+        }
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public grpc.DependenciesServiceV2Request.Dependency.Builder addDependenciesBuilder() {
+        return getDependenciesFieldBuilder().addBuilder(
+            grpc.DependenciesServiceV2Request.Dependency.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public grpc.DependenciesServiceV2Request.Dependency.Builder addDependenciesBuilder(
+          int index) {
+        return getDependenciesFieldBuilder().addBuilder(
+            index, grpc.DependenciesServiceV2Request.Dependency.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .grpc.Dependency dependencies = 3;</code>
+       */
+      public java.util.List<grpc.DependenciesServiceV2Request.Dependency.Builder> 
+           getDependenciesBuilderList() {
+        return getDependenciesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          grpc.DependenciesServiceV2Request.Dependency, grpc.DependenciesServiceV2Request.Dependency.Builder, grpc.DependenciesServiceV2Request.DependencyOrBuilder> 
+          getDependenciesFieldBuilder() {
+        if (dependenciesBuilder_ == null) {
+          dependenciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              grpc.DependenciesServiceV2Request.Dependency, grpc.DependenciesServiceV2Request.Dependency.Builder, grpc.DependenciesServiceV2Request.DependencyOrBuilder>(
+                  dependencies_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dependencies_ = null;
+        }
+        return dependenciesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4401,9 +4776,10 @@ public final class DependenciesServiceV2Request {
       "\n,entity/dependencies_service_v2_request" +
       ".proto\022\004grpc\"+\n\nDependency\022\014\n\004name\030\001 \001(\t" +
       "\022\017\n\007version\030\002 \001(\t\"7\n#DependenciesService" +
-      "V2ConnectRequest\022\020\n\010node_key\030\001 \001(\t\"B\n De" +
+      "V2ConnectRequest\022\020\n\010node_key\030\001 \001(\t\"j\n De" +
       "pendenciesServiceV2SyncRequest\022\020\n\010node_k" +
-      "ey\030\001 \001(\t\022\014\n\004lang\030\002 \001(\t\"|\n#DependenciesSe" +
+      "ey\030\001 \001(\t\022\014\n\004lang\030\002 \001(\t\022&\n\014dependencies\030\003" +
+      " \003(\0132\020.grpc.Dependency\"|\n#DependenciesSe" +
       "rviceV2InstallRequest\022\020\n\010node_key\030\001 \001(\t\022" +
       "\014\n\004lang\030\002 \001(\t\022&\n\014dependencies\030\003 \003(\0132\020.gr" +
       "pc.Dependency\022\r\n\005proxy\030\004 \001(\t\"o\n%Dependen" +
@@ -4432,7 +4808,7 @@ public final class DependenciesServiceV2Request {
     internal_static_grpc_DependenciesServiceV2SyncRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_DependenciesServiceV2SyncRequest_descriptor,
-        new java.lang.String[] { "NodeKey", "Lang", });
+        new java.lang.String[] { "NodeKey", "Lang", "Dependencies", });
     internal_static_grpc_DependenciesServiceV2InstallRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_grpc_DependenciesServiceV2InstallRequest_fieldAccessorTable = new
